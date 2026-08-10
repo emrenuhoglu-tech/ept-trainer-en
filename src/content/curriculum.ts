@@ -305,6 +305,11 @@ export function riverBluffCatch(): MdTable | null {
   return tableFromSection("Chapter 11", "11.2");
 }
 
+/** River thin-value matrix (Section 11.3): my hand class × villain type → value-bet / check-call. */
+export function riverThinValue(): MdTable | null {
+  return tableFromSection("Chapter 11", "11.3");
+}
+
 /** Bad-river catalog (Section 11.4): the cards that kill an overpair's value. */
 export function badRiverCatalog(): string[] {
   return listItems(findSub(sectionBlock("Chapter 11"), "11.4"), false);

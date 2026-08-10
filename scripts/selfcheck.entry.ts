@@ -9,11 +9,12 @@ import {
   turnBarrelMatrix,
   drawTurnMatrix,
   riverBluffCatch,
+  riverThinValue,
   badRiverCatalog,
 } from "../src/content/curriculum";
 import { parseRange } from "../src/lib/handgrid";
 import { flatText, flatScope } from "../src/modes/quiz/quizEngine";
-import { postflopQuestion } from "../src/modes/quiz/postflopEngine";
+import { postflopQuestion, betType } from "../src/modes/quiz/postflopEngine";
 
 function poolsFor(opener: string, position: string) {
   const g = rangeGroups().find((x) => x.opener === opener)!;
@@ -105,6 +106,8 @@ for (const n of [11, 12, 13, 14, 15, 16]) {
   check("B6.2 draw matrix 4 rows", !!dr && dr.rows.length === 4, dr ? String(dr.rows.length) : "null");
   const rv = riverBluffCatch();
   check("B11.2 river matrix 3 rows", !!rv && rv.rows.length === 3, rv ? String(rv.rows.length) : "null");
+  const tv = riverThinValue();
+  check("B11.3 thin-value matrix 3 rows", !!tv && tv.rows.length === 3, tv ? String(tv.rows.length) : "null");
   const cat = badRiverCatalog();
   check("B11.4 bad-river catalog 4 items", cat.length === 4, String(cat.length));
   // TPGK vs an overcard turn → the book cell is "Check-call" (col index 2). If this drifts, the
@@ -112,7 +115,16 @@ for (const n of [11, 12, 13, 14, 15, 16]) {
   if (tb) {
     const tpgk = tb.rows.find((r) => /good kicker|iyi kicker/i.test(r[0]));
     check("B11.1 TPGK×overcard = check-call", !!tpgk && /check-call/i.test(tpgk[2] || ""), tpgk?.[2]);
+    // The value/bluff split hinges on the air+blocker row existing (→ bluff barrel).
+    check("B11.1 air+blocker row present", tb.rows.some((r) => /air|hava|blocker|bloker/i.test(r[0])));
   }
+  // 11.3 rec column is a value bet (the river's home for VALUE betting).
+  check("B11.3 rec col = value bet", !!tv && /value bet/i.test(tv.rows[0]?.[1] || ""), tv?.rows[0]?.[1]);
+  // value/bluff tag: pair hands bet for VALUE, only air+blocker is a bluff barrel. (Regression gate:
+  // a bare /air/ regex silently tagged "Overpair"/"Top pair" as bluffs — every value bet mis-graded.)
+  check("betType Overpair = value", betType("Overpair") === "betvalue");
+  check("betType Top pair good kicker = value", betType("Top pair good kicker") === "betvalue");
+  check("betType Air + blocker = bluff", betType("Air + blocker") === "betbluff");
   check("postflop turn Q generates", !!postflopQuestion("turn"));
   check("postflop river Q generates", !!postflopQuestion("river"));
 }
