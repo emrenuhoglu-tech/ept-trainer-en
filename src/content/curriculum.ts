@@ -284,3 +284,28 @@ export function squeezeRange(): { value: string; blof: string } | null {
 export function stackLayer(): MdTable | null {
   return tableFromSection("Chapter 4", "4.7");
 }
+
+// ---- Chapters 6 & 11 — Turn/River decision tables (Postflop drill) ----
+// These are the book's DIRECTION tables. Sizes are (calibrate) in the book, so the drill
+// surfaces DIRECTION only (bet/check/call/fold) — never an invented size. Each cell IS the
+// correct answer; nothing here is hand-written.
+
+/** Turn second-barrel matrix (Section 11.1): my hand × turn-card type → action. */
+export function turnBarrelMatrix(): MdTable | null {
+  return tableFromSection("Chapter 11", "11.1");
+}
+
+/** Turn draw matrix (Section 6.2): draw quality → bet/check direction. */
+export function drawTurnMatrix(): MdTable | null {
+  return tableFromSection("Chapter 6", "6.2");
+}
+
+/** River bluff-catch matrix (Section 11.2): villain size → call/fold tendency. */
+export function riverBluffCatch(): MdTable | null {
+  return tableFromSection("Chapter 11", "11.2");
+}
+
+/** Bad-river catalog (Section 11.4): the cards that kill an overpair's value. */
+export function badRiverCatalog(): string[] {
+  return listItems(findSub(sectionBlock("Chapter 11"), "11.4"), false);
+}

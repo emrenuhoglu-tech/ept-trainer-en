@@ -1,9 +1,19 @@
 // Content selfcheck (assertions) — runs the REAL modules that parse the book and
 // verifies that quiz answers stay consistent with poker_pocket_book_v5.md. A gate
 // against parser regressions. No logic is copied; the source code itself is what's tested.
-import { rangeGroups, questionBank, sectionBlock, tenSentences } from "../src/content/curriculum";
+import {
+  rangeGroups,
+  questionBank,
+  sectionBlock,
+  tenSentences,
+  turnBarrelMatrix,
+  drawTurnMatrix,
+  riverBluffCatch,
+  badRiverCatalog,
+} from "../src/content/curriculum";
 import { parseRange } from "../src/lib/handgrid";
 import { flatText, flatScope } from "../src/modes/quiz/quizEngine";
+import { postflopQuestion } from "../src/modes/quiz/postflopEngine";
 
 function poolsFor(opener: string, position: string) {
   const g = rangeGroups().find((x) => x.opener === opener)!;
@@ -84,6 +94,27 @@ for (const n of [11, 12, 13, 14, 15, 16]) {
   const body = sectionBlock("Chapter " + n);
   check(`C${n} sectionBlock non-empty`, body.trim().length > 0, String(body.length));
   check(`C${n} contains at least one table`, body.includes("|"));
+}
+
+// Postflop drill (B6/B11 turn+river tables) — fidelity gate: the drilled tables must parse, a known
+// crisp cell must carry the book's direction, and the engine must yield a question per street.
+{
+  const tb = turnBarrelMatrix();
+  check("B11.1 turn matrix 4 rows", !!tb && tb.rows.length === 4, tb ? String(tb.rows.length) : "null");
+  const dr = drawTurnMatrix();
+  check("B6.2 draw matrix 4 rows", !!dr && dr.rows.length === 4, dr ? String(dr.rows.length) : "null");
+  const rv = riverBluffCatch();
+  check("B11.2 river matrix 3 rows", !!rv && rv.rows.length === 3, rv ? String(rv.rows.length) : "null");
+  const cat = badRiverCatalog();
+  check("B11.4 bad-river catalog 4 items", cat.length === 4, String(cat.length));
+  // TPGK vs an overcard turn → the book cell is "Check-call" (col index 2). If this drifts, the
+  // grader would teach a wrong direction — stop the build.
+  if (tb) {
+    const tpgk = tb.rows.find((r) => /good kicker|iyi kicker/i.test(r[0]));
+    check("B11.1 TPGK×overcard = check-call", !!tpgk && /check-call/i.test(tpgk[2] || ""), tpgk?.[2]);
+  }
+  check("postflop turn Q generates", !!postflopQuestion("turn"));
+  check("postflop river Q generates", !!postflopQuestion("river"));
 }
 
 console.log(out.join("\n"));
