@@ -87,7 +87,9 @@ export function nextQuestion(weak?: { opener: string; position: string }[]): Que
 
   // A prose flat like "BB flat: very wide" doesn't expand onto the grid. There the fold pool would
   // mistakenly grade the book's wide flat hands as "fold" → don't generate fold questions (3-bet/bluff only).
-  const flatWide = setFlat.size === 0 && /\b(wide|all|most|every)\b/i.test(ft);
+  // Test the RAW flat text: flatText strips tails like "…and all 65s+ suited connectors" before parse,
+  // so testing ft would miss them and mis-grade them fold (CO→BTN).
+  const flatWide = /\b(wide|all|most|every)\b/i.test(applicableFlats.join(" "));
 
   const pool3 = [...set3];
   const poolFlat = [...setFlat];

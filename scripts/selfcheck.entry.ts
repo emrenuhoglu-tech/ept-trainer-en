@@ -10,7 +10,8 @@ function poolsFor(opener: string, position: string) {
   const applicable = g.flats.filter((fl) => flatScope(fl).includes(position));
   const ft = flatText(applicable);
   const cells = parseRange(ft).cells;
-  const flatWide = cells.size === 0 && /\b(wide|all|most|every)\b/i.test(ft);
+  // Test the RAW flat text (flatText strips "…and all 65s+ suited connectors" tails).
+  const flatWide = /\b(wide|all|most|every)\b/i.test(applicable.join(" "));
   return { ft, cells, flatWide };
 }
 
@@ -46,6 +47,8 @@ check("BTN→SB fold geçerli", poolsFor("BTN", "SB").flatWide === false);
   check("UTG→CO flat: 76s (150bb+) sızmıyor", !co.has("76s"));
   const btn = poolsFor("CO", "BTN").cells;
   check("CO→BTN flat: JTs kurtarıldı", btn.has("JTs"));
+  // 65s+ suited-connector prose flat → fold pool suppressed (T9s/98s/87s/76s/65s not mis-graded fold)
+  check("CO→BTN flatWide (65s+ connector prose → fold suppressed)", poolsFor("CO", "BTN").flatWide === true);
 }
 
 // BB-vs-SB "the field's most profitable 3-bet spot" is surfaced (bullet group)

@@ -6,6 +6,7 @@ import { loadKarne, recordResult } from "../../lib/karne";
 import { recordQuiz, getStats } from "../../lib/progress";
 import { ScenarioQuiz } from "./ScenarioQuiz";
 import { BustoutRun } from "./BustoutRun";
+import { RangeRecall } from "./RangeRecall";
 
 // Weak (opener, position) pairs: from 3-bet quiz records answered wrong.
 function weakPositions(): { opener: string; position: string }[] {
@@ -25,6 +26,7 @@ function weakPositions(): { opener: string; position: string }[] {
 const MODES = [
   { id: "range", label: "🎯 Range" },
   { id: "scenario", label: "📖 Scenario" },
+  { id: "recall", label: "🧠 Recall" },
   { id: "run", label: "💥 Run" },
 ] as const;
 type QuizMode = (typeof MODES)[number]["id"];
@@ -33,7 +35,7 @@ export function Quiz() {
   const [mode, setMode] = useState<QuizMode>("range");
   return (
     <div className="flex flex-col gap-4 p-4">
-      <div className="grid grid-cols-3 gap-1 rounded-xl bg-surface-2 p-1">
+      <div className="grid grid-cols-4 gap-1 rounded-xl bg-surface-2 p-1">
         {MODES.map((m) => (
           <button
             key={m.id}
@@ -47,7 +49,15 @@ export function Quiz() {
           </button>
         ))}
       </div>
-      {mode === "range" ? <RangeQuizBody /> : mode === "scenario" ? <ScenarioQuiz /> : <BustoutRun />}
+      {mode === "range" ? (
+        <RangeQuizBody />
+      ) : mode === "scenario" ? (
+        <ScenarioQuiz />
+      ) : mode === "recall" ? (
+        <RangeRecall />
+      ) : (
+        <BustoutRun />
+      )}
     </div>
   );
 }
