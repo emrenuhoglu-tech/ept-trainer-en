@@ -3,8 +3,8 @@ import { modules } from "../../src/data/modules";
 import { ModuleVideo } from "./ModuleVideo";
 import { FPS, WIDTH, HEIGHT, slideFrames } from "./timing";
 
-// Her modül kendi kompozisyonu (id = M1..M7).
-// npm run render:module -- M5  →  M5 kompozisyonunu render eder.
+// Each module is its own composition (id = M1..M7).
+// npm run render:module -- M5  →  renders the M5 composition.
 export const RemotionRoot: React.FC = () => (
   <>
     {modules.map((m) => {

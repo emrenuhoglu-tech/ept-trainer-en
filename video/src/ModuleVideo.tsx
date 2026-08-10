@@ -2,9 +2,9 @@ import { AbsoluteFill, Sequence, Audio, staticFile, useVideoConfig } from "remot
 import { moduleById, type Slide } from "../../src/data/modules";
 import { slideFrames } from "./timing";
 
-// Dikey (1080x1920) modül videosu. Her slayt bir Sequence.
-// Anlatım sesi: video/public/audio/<moduleId>-<i>.mp3 varsa oynatılır
-// (npm run tts:prerender ile üretilir); yoksa sessiz + altyazı.
+// Vertical (1080x1920) module video. Each slide is a Sequence.
+// Narration audio: plays video/public/audio/<moduleId>-<i>.mp3 if present
+// (generated via npm run tts:prerender); otherwise silent + subtitles.
 export const ModuleVideo: React.FC<{ moduleId: string }> = ({ moduleId }) => {
   const mod = moduleById(moduleId);
   if (!mod) return <AbsoluteFill style={{ background: "#05080d" }} />;
@@ -53,7 +53,7 @@ const SlideView: React.FC<{
       )}
       {(slide.table || slide.rangeMatrix) && (
         <div style={{ fontSize: 40, color: "#9fa3c0", fontStyle: "italic" }}>
-          [ Tablo/aralık — uygulamada interaktif ]
+          [ Table/range — interactive in the app ]
         </div>
       )}
       {slide.ruleBox && (
@@ -75,7 +75,7 @@ const SlideView: React.FC<{
   );
 };
 
-// mp3 yoksa Remotion render'ı hata vermesin diye sarmalayıcı.
+// Wrapper so Remotion's render doesn't error if the mp3 is missing.
 const TryAudio: React.FC<{ src: string }> = ({ src }) => {
   try {
     return <Audio src={staticFile(src)} />;

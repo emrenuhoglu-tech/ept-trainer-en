@@ -1,6 +1,6 @@
-// Modül anlatımlarını mp3'e çevirip video/public/audio/<id>-<i>.mp3 olarak kaydeder.
-// Proxy (npm run server, ana proje) + TTS anahtarı çalışıyor olmalı.
-// Kullanım: node scripts/prerender-audio.mjs [PROXY_URL]
+// Renders module narrations to mp3 and saves them as video/public/audio/<id>-<i>.mp3.
+// The proxy (npm run server, main project) + a TTS key must be running.
+// Usage: node scripts/prerender-audio.mjs [PROXY_URL]
 import { mkdirSync, writeFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 
@@ -8,7 +8,7 @@ const PROXY = process.argv[2] || "http://localhost:8787";
 const mod = await import(pathToFileURL("../src/data/modules.ts").href).catch(
   () => import(pathToFileURL("../../src/data/modules.ts").href),
 );
-// NOT: .ts importu Node'da çalışmayabilir; gerekirse modules'ı JSON'a çevirin.
+// NOTE: a .ts import may not work in Node; convert modules to JSON if needed.
 const modules = mod.modules;
 
 mkdirSync("public/audio", { recursive: true });
@@ -21,12 +21,12 @@ for (const m of modules) {
       body: JSON.stringify({ text }),
     });
     if (!r.ok) {
-      console.error(`[tts] ${m.id}-${i} atlandı (${r.status})`);
+      console.error(`[tts] ${m.id}-${i} skipped (${r.status})`);
       continue;
     }
     const buf = Buffer.from(await r.arrayBuffer());
     writeFileSync(`public/audio/${m.id}-${i}.mp3`, buf);
-    console.log(`[tts] ${m.id}-${i}.mp3 (${buf.length} bayt)`);
+    console.log(`[tts] ${m.id}-${i}.mp3 (${buf.length} bytes)`);
   }
 }
-console.log("bitti.");
+console.log("done.");

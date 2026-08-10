@@ -4,7 +4,7 @@ import { mkdirSync } from "node:fs";
 
 const id = process.argv[2];
 if (!id) {
-  console.error("Kullanım: npm run render:module -- M5");
+  console.error("Usage: npm run render:module -- M5");
   process.exit(1);
 }
 mkdirSync("out", { recursive: true });
