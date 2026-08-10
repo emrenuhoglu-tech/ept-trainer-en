@@ -671,6 +671,8 @@ Notch contents in drills with ICMIZER/solver *(calibrate)* — no made-up thresh
 
 **Emre calibration (2026-08-10)** — harsh bubble, wide BvB jam from someone covering you, ~22bb: **CALL = 88+ · AJs+ · AQo; A9s / KQs FOLD.** Driver: cover + bubble = losing means bust €0, a marginal edge isn't worth tournament life (A9s reverse-dominated, KQs a flip). *If you're NOT covered (jammer is shorter than you, you don't bust even losing) the line is much wider; if the jammer tightens, the call gets even tighter. The exact threshold is verified from the lobby with ICMIZER.*
 
+**Drill add-on (2026-08-10, session 2)** — the NOT-covered side, where the leak actually lives: not covered, 22bb in the BB, bubble, wide short jam — folded **both A9s and KTo** ("range not enough"). Both are calls (KTo ~54% vs a wide 13bb BTN jam, needing ~44% for the price; A9s clearer still). The **not-covered fold reflex is the sticky half of the leak** — it survived the covered/not-covered contrast in the very same session. So the not-covered CALL floor sits *at least* as wide as A9s/KTo here; the full range stays `(calibrate)` with ICMIZER, but the error is the fold, not the call. Table cue: **before folding to any jam, ask "am I covered?" — if No, the call is much wider than it feels.**
+
 ### 12.2 Final table — role matrix
 
 At the FT the correct behavior depends on STACK ROLE, not the HAND.
@@ -862,11 +864,11 @@ The root error is rarely committed in cold blood; it typically happens in the ha
 
 | Trigger *(all 3 apply to Emre — 2026-08-10)* | Tell | Immediate move |
 |---|---|---|
-| Bad beat / big pot loss | *(label live)* | Deep breath |
-| Long card-dead → action hunger | *(label live)* | 1-orbit VPIP lock |
-| Bluff shown / ego | *(label live)* | Drink water / stand up |
+| Bad beat / big pot loss | Chasing with worse hands | Deep breath |
+| Long card-dead → action hunger | Faster play / snap-action | 1-orbit VPIP lock |
+| Bluff shown / ego | Reaching for the phone | Drink water / stand up |
 
-*Emre: all three apply, no single dominant trigger. The tell will be labeled by live observation at the moment of tilt, not by recall — on the next trigger, note "what just changed in my body/behavior?".*
+*Emre tells (2026-08-10) — cross-cutting, no single dominant trigger: **faster / snap play**, **reaching for the phone**, **chasing with worse hands**. Any ONE of the three appearing is the alarm — don't stop to diagnose which trigger fired; notice the tell, then run that row's move. The three map above by best fit, but any tell can come from any trigger.*
 
 The trigger rows are back-filled with references from your three elimination cases (B7) — no generic tilt list is written.
 
