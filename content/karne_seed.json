@@ -1,0 +1,7 @@
+[
+{"id":"S1-value-boyut","kavram":"boyut","soru_ozeti":"AK top pair kuru boardda river value boyutu","sonuc":"half","not":"Fold okuması doğru, yarım pot yerine 1/3 olmalıydı","due":"2026-07-28"},
+{"id":"S2-ak-stack-call","kavram":"kök-hata","soru_ozeti":"3-bet potunda AK top pair, eşleşmiş riverda stack lead'ine call","sonuc":"wrong","not":"Pasiften agresife geçiş + eşleşmiş river = value","due":"2026-07-27"},
+{"id":"S4-kjo-xr","kavram":"blof-secimi","soru_ozeti":"T94 boardda KJo gutshot ile check-raise","sonuc":"wrong","not":"Board sahipliği ≠ el sınıfı. Gutshot bağlantı değil; showdown değeri blöfe çevrilmez","due":"2026-07-27"},
+{"id":"S5-aa-fold-erken","kavram":"kök-hata","soru_ozeti":"T94 boardda AA'yı flop check-raise'ine fold","sonuc":"wrong","not":"Aşırı düzeltme. Erken sokakta call, hikâye tamamlanınca fold","due":"2026-07-27"},
+{"id":"S6-jt-60bb","kavram":"3bet-aralik","soru_ozeti":"60bb CO'da JTs vs LJ reg açılışı — cevaplanmadı","sonuc":"wrong","not":"Üç kez ertelendi. İlk seansta MUTLAKA sorulacak","due":"2026-07-27"}
+]

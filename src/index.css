@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-surface-0 text-neutral-100 antialiased;
+    /* iPhone safe-area: keep the bottom tab bar from sliding under the home indicator */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  /* keep poker terms from breaking across lines */
+  .term {
+    white-space: nowrap;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-1 border border-surface-3 rounded-2xl;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2
+           font-medium transition active:scale-[0.98] disabled:opacity-40;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-black;
+  }
+  .btn-ghost {
+    @apply btn bg-surface-2 text-neutral-100 border border-surface-3;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade {
+    animation: eptFade 0.2s ease both;
+  }
+  @keyframes eptFade {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  /* Guided narration: each step eases in from below as it appears */
+  .reveal-in {
+    animation: eptReveal 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes eptReveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  /* "now speaking" pulse */
+  .live-pulse {
+    animation: eptPulse 1.3s ease-in-out infinite;
+  }
+  @keyframes eptPulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
