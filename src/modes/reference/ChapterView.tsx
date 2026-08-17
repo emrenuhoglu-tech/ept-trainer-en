@@ -14,6 +14,7 @@ export const NEW_CHAPTERS: { n: number; short: string }[] = [
   { n: 14, short: "40–70bb Bridge" },
   { n: 15, short: "PLO Tournament Layer" },
   { n: 16, short: "Mental Spine" },
+  { n: 17, short: "WSOP Online ME Day 2 ★" },
 ];
 
 type Block =

@@ -91,7 +91,7 @@ check("BTN→SB fold geçerli", poolsFor("BTN", "SB").flatWide === false);
 
 // The new v5 chapters (B11–B16) are rendered by ChapterView via sectionBlock.
 // If one comes back empty or a table vanishes, the new Reference view silently goes blank → stop the build.
-for (const n of [11, 12, 13, 14, 15, 16]) {
+for (const n of [11, 12, 13, 14, 15, 16, 17]) {
   const body = sectionBlock("Chapter " + n);
   check(`C${n} sectionBlock non-empty`, body.trim().length > 0, String(body.length));
   check(`C${n} contains at least one table`, body.includes("|"));

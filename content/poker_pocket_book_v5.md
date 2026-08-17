@@ -997,3 +997,168 @@ This filter PROTECTS calibration: at the SHR, correct jams will be lost often; w
 ---
 
 *Poker Pocket Book v5 — EPT Barcelona Edition · August 2026*
+
+## Chapter 17 — SPECIAL MODULE: WSOP Online Main Event Day 2
+
+> WSOP Online #28 — $5,000 MAIN EVENT, $25M GTD · Day 2 game plan and range guide. Muzun · 784,748 chips (56 BB) · Restart: 21 September 2026, 20:00. This is a tournament-specific module to study after EPT Barcelona (1–20 September); it adapts the general doctrine (Chapters 0–16) to this exact structure.
+
+### 17.1 Tournament profile and reality
+
+This is a **freezeout** with **no re-entry**. Day 1 flights run daily through 21 September; Day 2 starts with an estimated 600–900 players. **The money is not locked yet** — you sit down at the restart as if it were a tournament before the bubble.
+
+| Item | Value | Item | Value |
+| --- | --- | --- | --- |
+| Stack | 784,748 (56 BB) | Blinds | 7,000/14,000 (1,750) |
+| Format | 8-handed, freezeout | Level length | 25 min (fast!) |
+| Prize pool | $25,000,000+ | First place | ~$5,000,000 |
+| Deal | Banned (incl. FT) | FT | 9 players, next day |
+
+**Critical structural fact:** at 25-minute levels blinds rise ~2.4× per hour. 56 BB drops to 25 BB after three hours of passive play. Passivity here is not "safe" — it is **slow elimination**.
+
+### 17.2 Core philosophy: not tight, selectively aggressive
+
+**We will not sit and wait for premiums.** The right profile rests on a dual split:
+
+- **Active in small pots:** positional opens, blind steals, c-bet pressure, 3-bet pressure on short/medium stacks. This is the main chip source — pots won without going to showdown.
+- **Disciplined in big pots:** the whole stack goes in only with a clear plan + a strong hand combo. Never risk your stack with one pair (AA included) in a bloated pot — the root-error rule applies here too.
+
+In short: **wide in hand count, narrow in stack risk.**
+
+### 17.3 Opening ranges (8-handed, ~50 BB, 2.1–2.3x open)
+
+Online opponents defend blinds more accurately, so early position is a touch tighter and late position is standard. With antes, stealing is still very profitable.
+
+| Position | Range (~%) | Hands |
+| --- | --- | --- |
+| UTG / UTG+1 | 13–15% | 77+, ATs+, KJs+, QJs, JTs, T9s, AJo+, KQo |
+| LJ (MP) | 17% | 66+, A9s+, A5s, KTs+, QTs+, J9s+, T9s, 98s, ATo+, KJo+ |
+| HJ | 20% | 55+, A8s+, A4s–A5s, K9s+, Q9s+, J9s+, T8s+, 98s, 87s, ATo+, KJo+, QJo |
+| CO | 26% | 44+, A2s+, K8s+, Q9s+, J8s+, T8s+, 97s+, 87s, 76s, A9o+, KTo+, QTo+, JTo |
+| BTN | 40–44% | 22+, all suited aces, K5s+, Q7s+, J7s+, T7s+, 96s+, 86s+, 75s+, 65s, 54s, A4o+, K9o+, Q9o+, J9o+, T9o |
+| SB | 35% (raise-only) | Slightly tighter than BTN; no limp, open 3x |
+
+- **Table adjust:** if BB is a tight player (fold 60%+), widen BTN/CO by 10%. If a 3-bettor reg is on your left, tighten CO, keep BTN.
+- **If the stack drops:** below 35 BB this table no longer applies — go to the stack modes in 17.8.
+
+### 17.4 3-Bet ranges
+
+**Sizing:** in position (IP) ~3x the open, out of position (OOP) ~4x. At 56 BB deep a 3-bet pot already sees half the stack — so your 3-bet range is polarized, but the bluff side wants "good blocker + playability."
+
+| Scenario | Value | Bluff / Semi-bluff |
+| --- | --- | --- |
+| vs EP open (IP) | QQ+, AK | A5s–A4s, KQs (low freq) |
+| vs MP/HJ open (IP) | TT+, AQs+, AKo | A5s–A3s, KJs, QJs, 76s–65s (mixed) |
+| vs CO/BTN open | 99+, AJs+, KQs, AQo+ | A5s–A2s, K9s–KTs, QTs, J9s, T9s, 87s |
+| SB vs BTN open | TT+, AQ+ value; wide bluff | A2s–A5s, K9s+, Q9s+, suited connectors — no flat from SB, 3-bet or fold |
+| BB vs BTN/SB | 99+, AQ+ | A5s-type + KTs/QTs/JTs; defend (call) with the rest |
+
+- **Whom to 3-bet:** 30–50 BB medium stacks (they feel bubble pressure most) and reg opening too much.
+- **Whom NOT to 3-bet:** big stacks that cover you (as the bubble nears) and sub-20 BB — their only reply is a jam, and your bluff 3-bet burns.
+
+### 17.5 3-Bet sizes (IP and OOP)
+
+Playing OOP is a disadvantage, so the OOP 3-bet is bigger (raises the call price, lowers SPR). IP, position already creates pressure, so a smaller size is enough.
+
+| Scenario | Size | Example (vs 2.2x open) |
+| --- | --- | --- |
+| IP 3-bet (BTN vs CO) | 3.0–3.3x the open | 2.2 BB → 7 BB |
+| IP 3-bet (vs EP) | ~3x the open | 2.3 BB → 7 BB |
+| OOP 3-bet (SB vs BTN) | 3.8–4.2x | 2.2 BB → 8.5–9 BB |
+| OOP 3-bet (BB vs BTN/SB) | 3.6–4x | 2.2 BB → 8–8.5 BB |
+| Squeeze IP (open + caller) | 4x + 1 open per caller | 2.2 + 1 call → ~11 BB |
+| Squeeze OOP | 5x + 1 open per caller | 2.2 + 1 call → ~13 BB |
+| 20–25 BB | 3-bet ≈ jam / small-commit (~2.5x, no fold) | finish the plan preflop |
+
+**Don't size by hand:** same size with AA and with A5s. A sizing tell is more expensive online than live.
+
+### 17.6 4-Bet and play vs a 3-bet
+
+**Sizing:** 4-bet = ~2.2–2.4x the 3-bet (IP), OOP ~2.5x. At 56 BB the 4-bet is ~20–22 BB = the commit threshold; a stack that continues past the 4-bet can't fold.
+
+| Scenario | Action | Hands |
+| --- | --- | --- |
+| Faced 3-bet on your open (IP) | 4-bet value | KK+, (AK jam/4-bet mixed); QQ depends on villain |
+| Faced 3-bet on your open (IP) | 4-bet bluff | A5s–A4s (ace blocker), low freq, vs aggressive 3-bettors |
+| Faced 3-bet on your open (IP) | Call | QQ–99, AQs, AJs, KQs, JJ–TT, suited broadway |
+| Faced 3-bet on your open (IP) | Fold | A9o-type offsuit edges, low suited gappers |
+| Faced 3-bet (OOP) | Tighter continue | KK+ 4-bet; QQ/AK mixed; JJ–TT, AQs call; rest fold |
+| Facing a 4-bet | Jam / call | KK+ always; QQ/AK per villain profile (fold QQ vs nit, jam vs aggressor) |
+
+**Golden rule:** every hand you 4-bet at 56 BB must have a pre-decided plan against a 5-bet jam. There is no "4-bet and see" mode.
+
+### 17.7 Fold discipline
+
+- **Preflop:** vs a 3-bet, offsuit broadways (KQo, AJo) to the muck. If the 3-bet came from a stack that covers you, you're one tier tighter.
+- **Flop:** in a multiway pot don't continue with one pair vs a raise. If your c-bet got check-raised and you hold less than overpair + backdoor on a wet board, folding is on the table.
+- **Turn:** a big turn barrel + a board that completes a four-straight/flush ends one pair. "The pot got big, I'm committed" is the root error itself — pot size is not a commit reason.
+- **River:** overpair + bad river → check-call a small bet, check-fold a big bet. Before jamming, the only question: "Which hand worse than mine pays?" If the answer is empty, the jam has no value — check.
+- **ICM folds:** on the bubble and at big ladder jumps, even a chip-EV marginally profitable call is a fold. A flip vs an equal stack = last resort, never a plan.
+
+### 17.8 Stack modes
+
+| Mode | Stack | Play |
+| --- | --- | --- |
+| Mode A — Standard | 45 BB+ | Full ranges; postflop room; suited connectors + small pairs at full value |
+| Mode B — Squeezed middle | 30–45 BB | Opens hold, flat calls narrow (set-mine math breaks); commit threshold near, bluff 3-bet down, value up |
+| Mode C — Pressure | 20–30 BB | Open 15–20%, 2.1x. 3-bet is mostly jam/small-commit. A5s–A2s becomes jam-3bet ammo |
+| Mode D — Jam/Fold | 12–20 BB | Some opens are direct jams (esp. SB/BTN). If you opened, jam or fold vs a 3-bet. Near Nash; ICM tightens jams slightly |
+| Mode E — Short | <12 BB | Pure jam/fold; first-in edge; isolate-jam over limps |
+
+### 17.9 Phase plan and ICM
+
+- **Phase 1 (bubble far):** Mode A. Keep the stack above 50 BB, steal from the table's passives, no needless wars with big stacks.
+- **Phase 2 (bubble nearing):** your most profitable phase. 15–25 BB stacks freeze up: 3-bet their opens, open into their blinds, float their c-bets. The only brake: stacks that cover you (one tier tighter). **On the bubble vs a covering stack, even QQ may not be a 4-bet-call.**
+- **Phase 3 (money hits):** stay tight for 3–4 hands (shorts kamikaze-jam, meet them with premiums), then return to normal.
+- **Phase 4 (deep ITM / FT):** ladder jumps are huge: $227K → $346K → $631K → $1M+. ICM overrides chip-EV. **Crush the shorts, dodge the equals, premiums only vs the bigs.** FT is 9-handed, deal banned. Going to the FT short beats not going at all; at the last 2 tables survival is the priority.
+
+### 17.10 Root-error guardrails
+
+- **One pair in a bloated pot = alarm.** AA included. If the pot passed 40 BB and you still hold one pair, the default is pot control + bluff-catcher play, not a stack race.
+- **AA river jam:** if no worse hand pays, the jam has no value — check.
+- **The check-raise all-in urge** (the KTo lesson): the correct line is check-call then re-evaluate.
+- **Chop mechanics:** re-read the board on the river (the A4s case).
+- **Tilt protocol:** after a bad hand, 2 hands auto-fold (premiums excepted).
+
+### 17.11 Coach notes — blind spots in the plan
+
+- **BTN 40% open is a live assumption.** Online vs a reg, tighten to 33–35%, muck the offsuit trash (Q9o, J9o); vs weak players keep 40%+.
+- **Medium-stack 3-bet pressure is a thin exploit.** Limit bluff 3-bets to blocker hands (A5s, K9s). The real danger: your 3-bet gets called and you enter a bloated pot with an overpair on the flop.
+- **"Escaping" cover is not a strategy.** Narrow but resolute defense; every hand vs a covering stack has a street-by-street plan written in advance.
+- **Transition errors:** 56→35 flat-call habit (below 40 BB go 3-bet-or-fold); 35→20 the commit threshold slides forward (commit is decided preflop with an SPR plan); ~20 BB panic-jam/freeze (memorize the Mode C/D thresholds — at 20 BB A5s is resteal-jam ammo, ATo still min-raises from the BTN).
+- **ICM thresholds:** QQ vs a covering stack's 4-bet jam has ~40% equity vs {KK+, AK} + a bubble ICM premium of 6–10% → required ~48–50% → **FOLD**; vs an aggressive reg (TT+, AQ+) ~54% → call. AK: fold to a covering stack's tight jam, always call a ≤20 BB jam. Practical: on the bubble, for-your-whole-stack vs a cover the range is **KK+**. When you cover, it flips (open into 15–25 BB blinds up to 60%).
+- **Online substitutes:** min-3-bet = value-heavy; river overbet = polarized (bluff-catcher math); 1/3 flop = a range bet, no info. Timing is a weak signal. Note system: a 5-second tag every showdown. 14-hour protocol: stand up every 55-min break; cut caffeine after hour 8.
+
+### 17.12 Socratic trap set (S-T1–S-T5)
+
+Each scenario has a "feeling" pulling you into the mistake. Write a street-by-street plan; autopsy after.
+
+1. **S-T1.** 52 BB, you open AA from CO, BTN reg (48 BB) 3-bets, you 4-bet, call. Pot ~44 BB, SPR ~1.3. Flop T♠ 9♠ 8♣. C-bet 1/3, villain RAISES. Feeling: "AA + SPR 1.3 = already committed." Action?
+2. **S-T2.** 34 BB, KK in the BB. HJ (38 BB, tight-passive) opens, you 3-bet, call. Flop Q-J-T rainbow, you bet, call. Turn 9♦. Feeling: "take back the initiative with a check-raise all-in." What do you do, and why?
+3. **S-T3.** 25 to the bubble, 41 BB. Chip leader (140 BB) opens the BTN for the 3rd time in a row. QQ in the BB. 3-bet or call? A jam comes over your 3-bet — is there a call?
+4. **S-T4.** Deep ITM, 3-bet pot, IP, TT. Board 8-6-2r, villain check-calls. Turn 8, checks. River A, villain POT DONKS. Feeling: "I had an overpair, the A is a scare card." Decision?
+5. **S-T5.** 47 BB, BB vs BTN single-raised pot, you hold A9o, board A-9-4 two hearts. Check-raise, call. Turn 6♥ (flush completes). You bet, RAISE comes. "I have two pair, not one pair, I'm safe"... are you? Decision and reasoning.
+
+### 17.13 Drill set — 10 questions (specific to this tournament)
+
+When you say "prep me" during restart week, we'll work from this set. The answer key is kept separate; decide for yourself first.
+
+1. **S1.** 56 BB, Phase 1. You open A9s from HJ, the 48 BB reg on the BTN 3-bets. Your action?
+2. **S2.** You've dropped to 38 BB (Mode B). Should you open 66 from CO? If you do, what's your plan vs the BB's 3-bet?
+3. **S3.** 40 to the bubble. A 130 BB chip leader sits in the BB, you hold KQo on the BTN. Open?
+4. **S4.** Phase 2, you have 60 BB. The 22 BB in the SB opens, you're in the BB with A5s. Most profitable line?
+5. **S5.** 3-bet pot, OOP, you have QQ. Flop 9-7-5 two spades, villain pot-bets. Plan (flop/turn/river)?
+6. **S6.** Money's in, first hand. A 9 BB UTG jam, you're HJ with ATo, 3 big stacks behind you. Call?
+7. **S7.** Turn overpair KK, board T-8-4-J two-flush completed, villain 3/4-pot second barrel. What's your continue criterion?
+8. **S8.** Mode D (17 BB), A7o from the BTN. Jam, open-fold, or fold? Why?
+9. **S9.** Deep ITM, 3 tables left. An equal stack (45 BB) opens CO, you have AQo in the SB. Your 3-bet size and plan vs a 4-bet?
+10. **S10.** River AA, pot bloated, board 2-4-5-9-6. Villain checks. Is there a bet? What size, targeting which hand?
+
+### 17.14 Prep calendar
+
+| Period | Focus | Note |
+| --- | --- | --- |
+| 17–29 August | EPT Barcelona | Don't think about this tournament; all focus on the live series |
+| 1–10 September | 2 drills/week | ICM/bubble-weighted + stack-mode transitions |
+| 11–18 September | 3 drills/week | Derivatives of this set; mistakes return 1–2 days later in a different form |
+| 19–20 September | Light review | Range tables + guardrails; no new concepts |
+| 21 September 20:00 | RESTART | Table draw analysis when posted; sit rested — it can run 14+ hours |
