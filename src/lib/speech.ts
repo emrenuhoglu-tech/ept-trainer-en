@@ -117,7 +117,7 @@ export function setTtsMode(m: TtsMode): void {
   localStorage.setItem("ept:tts:mode", m);
 }
 
-function hashKey(s: string): string {
+export function hashKey(s: string): string {
   let h = 5381;
   for (let i = 0; i < s.length; i++) h = (h * 33) ^ s.charCodeAt(i);
   return "a" + (h >>> 0).toString(36);
@@ -152,6 +152,46 @@ async function cachePut(key: string, blob: Blob): Promise<void> {
   }
 }
 
+// Build-time bake: all lesson narration is pre-rendered to public/tts/<key>.mp3
+// (scripts/bake-tts.mjs, SAME hashKey). No proxy in production → HD audio comes from here.
+async function fetchStatic(key: string): Promise<Blob | null> {
+  try {
+    const base =
+      (typeof import.meta !== "undefined" && (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL) ||
+      "/";
+    const r = await fetch(`${base}tts/${key}.mp3`);
+    if (!r.ok) return null;
+    const b = await r.blob();
+    // guard against hosts that return HTML (with 200) instead of a 404
+    if (b.size < 256 || (b.type && !/audio|mpeg|octet/.test(b.type))) return null;
+    return b;
+  } catch {
+    return null;
+  }
+}
+
+// Get the HD audio blob: IndexedDB → static bake → proxy (dev only). Caches the result.
+async function loadAudio(text: string): Promise<Blob | null> {
+  const key = hashKey("v1|" + text);
+  let blob = await cacheGet(key);
+  if (blob) return blob;
+  blob = await fetchStatic(key);
+  if (!blob) {
+    try {
+      const r = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      if (r.ok) blob = await r.blob();
+    } catch {
+      /* no proxy → null (fall back to Web Speech) */
+    }
+  }
+  if (blob) void cachePut(key, blob);
+  return blob;
+}
+
 class HybridSpeaker implements Speaker {
   private web = new WebSpeaker();
   private audio: HTMLAudioElement | null = null;
@@ -167,33 +207,18 @@ class HybridSpeaker implements Speaker {
   }
   async speak(text: string, rate = 1.0): Promise<void> {
     if (getTtsMode() !== "hd") return this.web.speak(text, rate);
-    // Proxy mode: do NOT pass the text through forSpeech (a real TTS reads the terms correctly).
-    const key = hashKey("v1|" + text);
-    try {
-      let blob = await cacheGet(key);
-      if (!blob) {
-        const r = await fetch("/api/tts", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ text }),
-        });
-        if (!r.ok) throw new Error(`tts ${r.status}`);
-        blob = await r.blob();
-        void cachePut(key, blob);
-      }
-      await new Promise<void>((resolve) => {
-        this.stopAudio();
-        const a = new Audio(URL.createObjectURL(blob!));
-        a.playbackRate = rate;
-        a.onended = () => resolve();
-        a.onerror = () => resolve();
-        this.audio = a;
-        void a.play().catch(() => resolve());
-      });
-    } catch {
-      // No proxy/key — fall back to Web Speech
-      return this.web.speak(text, rate);
-    }
+    // HD: do NOT pass the text through forSpeech (a real TTS reads the terms correctly).
+    const blob = await loadAudio(text);
+    if (!blob) return this.web.speak(text, rate); // no audio found → Web Speech
+    await new Promise<void>((resolve) => {
+      this.stopAudio();
+      const a = new Audio(URL.createObjectURL(blob));
+      a.playbackRate = rate;
+      a.onended = () => resolve();
+      a.onerror = () => resolve();
+      this.audio = a;
+      void a.play().catch(() => resolve());
+    });
   }
   stop() {
     this.stopAudio();
@@ -224,22 +249,8 @@ export async function prefetchHd(
   let fail = 0;
   const total = texts.length;
   for (let i = 0; i < texts.length; i++) {
-    const text = texts[i];
-    const key = hashKey("v1|" + text);
-    try {
-      if (!(await cacheGet(key))) {
-        const r = await fetch("/api/tts", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ text }),
-        });
-        if (!r.ok) throw new Error(`tts ${r.status}`);
-        await cachePut(key, await r.blob());
-      }
-      ok++;
-    } catch {
-      fail++;
-    }
+    if (await loadAudio(texts[i])) ok++;
+    else fail++;
     onProgress?.(i + 1, total);
   }
   return { ok, fail };
