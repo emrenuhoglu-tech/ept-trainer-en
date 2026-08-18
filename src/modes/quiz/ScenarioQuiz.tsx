@@ -83,6 +83,11 @@ export function ScenarioQuiz() {
     const seen = load<SeenMap>(SEEN_KEY, {});
     return SCENARIOS.every((x) => (seen[x.q] ?? 0) >= 2);
   }, [s]);
+  // The "why" behind a wrong answer lives in the book: parse the chapter no from source → tappable link.
+  const chapterHash = useMemo(() => {
+    const m = /Chapter\s*(\d+)/i.exec(s.source || "");
+    return m ? `#/referans/bolum/${m[1]}` : null;
+  }, [s]);
 
   // Table-mode shot clock: time runs out → decision = wrong (the clock runs in a tournament).
   useEffect(() => {
@@ -225,6 +230,11 @@ export function ScenarioQuiz() {
             {correct ? "Correct. " : "Wrong. "}
             {s.explain}
           </div>
+          {chapterHash && (
+            <a href={chapterHash} className="btn-ghost w-full justify-start py-2.5 text-sm">
+              📖 {s.source} — read in the book →
+            </a>
+          )}
           {overseen && (
             <div className="rounded-xl bg-accent-soft px-4 py-2 text-xs text-accent">
               You've seen every scenario at least twice — surface memorization is now a risk. Work these concepts in
