@@ -12,6 +12,7 @@ import { getStats, daysUntilEPT, cornermanActive } from "../../lib/progress";
 import { modules } from "../../data/modules";
 import { prefetchHd, sentencesOf, getTtsMode, setTtsMode, type TtsMode } from "../../lib/speech";
 import { exportAll, importAll } from "../../lib/storage";
+import { KarneTrend } from "../../components/KarneTrend";
 
 const DOT: Record<Sonuc, string> = {
   correct: "text-emerald-400",
@@ -136,6 +137,9 @@ export function Progress({ onReview, onJournal }: { onReview?: () => void; onJou
           Solid = correct in 3 different guises, on ≥3 separate days. A single miss resets the streak — the tier is rebuilt from scratch.
         </p>
       </section>
+
+      {/* progress trend (sparkline) */}
+      <KarneTrend />
 
       {/* calibration + confident-but-wrong */}
       {(cal || cwrong.length > 0) && (

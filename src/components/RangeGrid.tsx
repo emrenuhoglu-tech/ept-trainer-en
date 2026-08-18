@@ -90,6 +90,7 @@ export function RangeGrid({ value, blof, flat, caption, compact, highlight, valu
         {has("mix") && <Legend cls="bg-emerald-500/35 ring-1 ring-inset ring-emerald-400/70" label="Mixed" />}
         {has("blof") && <Legend cls="bg-accent" label={blofLabel || "Bluff 3-bet"} />}
         {has("flat") && <Legend cls="bg-sky-600" label="Flat (call)" />}
+        {!compact && <span className="text-neutral-500">↗ suited · ↙ offsuit · diagonal = pairs</span>}
       </div>
 
       {caption && <p className="mt-2 text-xs text-neutral-500">{caption}</p>}
