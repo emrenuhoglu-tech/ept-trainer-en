@@ -1,21 +1,30 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { LessonList } from "./modes/lessons/LessonList";
 import { LessonPlayer } from "./modes/lessons/LessonPlayer";
-import { QuickReference } from "./modes/reference/QuickReference";
-import { Drill } from "./modes/drill/Drill";
-import { Simulator } from "./modes/sim/Simulator";
-import { Quiz } from "./modes/quiz/Quiz";
-import { Progress } from "./modes/progress/Progress";
 import { Review } from "./modes/review/Review";
-import { Sentences } from "./modes/cards/Sentences";
-import { RangeAtlas } from "./modes/ranges/RangeAtlas";
-import { EquityIntuition } from "./modes/reference/EquityIntuition";
-import { BetTypes } from "./modes/reference/BetTypes";
-import { QuestionBank } from "./modes/reference/QuestionBank";
 import { ChapterView, NEW_CHAPTERS } from "./modes/reference/ChapterView";
 import { LeakCard } from "./modes/leak/LeakCard";
 import { BustoutAutopsy } from "./modes/autopsy/BustoutAutopsy";
 import { DecisionJournal } from "./modes/cornerman/DecisionJournal";
+
+// Heavy tabs are lazy-loaded → smaller initial bundle.
+const Quiz = lazy(() => import("./modes/quiz/Quiz").then((m) => ({ default: m.Quiz })));
+const Drill = lazy(() => import("./modes/drill/Drill").then((m) => ({ default: m.Drill })));
+const Simulator = lazy(() => import("./modes/sim/Simulator").then((m) => ({ default: m.Simulator })));
+const Progress = lazy(() => import("./modes/progress/Progress").then((m) => ({ default: m.Progress })));
+const QuickReference = lazy(() =>
+  import("./modes/reference/QuickReference").then((m) => ({ default: m.QuickReference })),
+);
+const Sentences = lazy(() => import("./modes/cards/Sentences").then((m) => ({ default: m.Sentences })));
+const RangeAtlas = lazy(() => import("./modes/ranges/RangeAtlas").then((m) => ({ default: m.RangeAtlas })));
+const EquityIntuition = lazy(() =>
+  import("./modes/reference/EquityIntuition").then((m) => ({ default: m.EquityIntuition })),
+);
+const BetTypes = lazy(() => import("./modes/reference/BetTypes").then((m) => ({ default: m.BetTypes })));
+const QuestionBank = lazy(() =>
+  import("./modes/reference/QuestionBank").then((m) => ({ default: m.QuestionBank })),
+);
+const IcmCard = lazy(() => import("./modes/reference/IcmCard").then((m) => ({ default: m.IcmCard })));
 
 type Tab = "ders" | "quiz" | "drill" | "ilerleme" | "referans";
 
@@ -41,6 +50,14 @@ const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: "referans", label: "Reference", icon: "⚡" },
 ];
 
+function TabFallback() {
+  return (
+    <div className="flex h-full items-center justify-center text-sm text-neutral-500">
+      Loading…
+    </div>
+  );
+}
+
 export default function App() {
   const hash = useHash();
   const segs = hash.replace(/^#\/?/, "").split("/").filter(Boolean);
@@ -49,10 +66,34 @@ export default function App() {
   const tab: Tab = known.has(segs[0] as Tab) ? (segs[0] as Tab) : "ders";
   const lessonId = segs[1];
 
+  const mainRef = useRef<HTMLElement>(null);
+  const [storageFail, setStorageFail] = useState(false);
+
+  // Reset scroll when the tab/section changes (not on in-lesson slide changes).
+  useEffect(() => {
+    mainRef.current?.scrollTo(0, 0);
+  }, [segs[0], segs[1]]);
+
+  // storage.ts dispatches this when a save fails → one-time warning banner.
+  useEffect(() => {
+    const on = () => setStorageFail(true);
+    window.addEventListener("ept:storage-fail", on, { once: true });
+    return () => window.removeEventListener("ept:storage-fail", on);
+  }, []);
+
   return (
-    <div className="mx-auto flex h-[100dvh] max-w-md flex-col bg-surface-0">
+    <div className="mx-auto flex h-[100dvh] max-w-md flex-col bg-surface-0 pt-[env(safe-area-inset-top)]">
       <LeakCard />
-      <main className="flex-1 overflow-y-auto">
+      {storageFail && (
+        <div className="flex items-center justify-between gap-3 bg-red-900/80 px-4 py-2 text-[13px] text-red-100">
+          <span>Can't save — storage full/restricted</span>
+          <button aria-label="Dismiss" className="px-1 font-semibold" onClick={() => setStorageFail(false)}>
+            ✕
+          </button>
+        </div>
+      )}
+      <main ref={mainRef} className="flex-1 overflow-y-auto">
+        <Suspense fallback={<TabFallback />}>
         {tab === "ders" &&
           (lessonId === "otopsi" ? (
             <BustoutAutopsy onBack={() => nav("#/ders")} />
@@ -113,6 +154,8 @@ export default function App() {
             <BetTypes onDone={() => nav("#/referans")} />
           ) : segs[1] === "sorubankasi" ? (
             <QuestionBank onDone={() => nav("#/referans")} />
+          ) : segs[1] === "icmkart" ? (
+            <IcmCard onDone={() => nav("#/referans")} />
           ) : segs[1] === "bolum" && segs[2] ? (
             <ChapterView title={"Chapter " + segs[2]} onDone={() => nav("#/referans/bolum")} />
           ) : segs[1] === "bolum" ? (
@@ -174,6 +217,12 @@ export default function App() {
                   📝 Question Bank (Chapter 10 · 37 questions) →
                 </button>
                 <button
+                  onClick={() => nav("#/referans/icmkart")}
+                  className="btn-ghost col-span-2 py-2.5"
+                >
+                  🧮 My ICM Card (ladder + &lt;15bb jam · Chapter 12) →
+                </button>
+                <button
                   onClick={() => nav("#/referans/bolum")}
                   className="btn-accent col-span-2 py-2.5"
                 >
@@ -183,14 +232,19 @@ export default function App() {
               <QuickReference />
             </>
           ))}
+        </Suspense>
       </main>
 
-      <nav className="grid grid-cols-5 border-t border-surface-3 bg-surface-1">
+      <nav
+        aria-label="Main tabs"
+        className="grid grid-cols-5 border-t border-surface-3 bg-surface-1 pb-[env(safe-area-inset-bottom)]"
+      >
         {TABS.map((t) => {
           const active = t.id === tab;
           return (
             <button
               key={t.id}
+              aria-current={active ? "page" : undefined}
               onClick={() => nav("#/" + t.id)}
               className={
                 "flex flex-col items-center gap-0.5 py-2.5 text-xs transition " +

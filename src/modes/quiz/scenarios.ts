@@ -41,8 +41,8 @@ export const SCENARIOS: Scenario[] = [
     options: ["Check-raise all-in", "Check-call — bluff-catcher"],
     correct: 1,
     explain:
-      "No weaker hand calls the all-in: every other ten outkicks you, boats are ahead. On this runout your trips are a bluff-catcher → check-call. Raising folds out the bluffs and only gets called by hands that beat you (sentence 2). Your actual bustout — the exact mirror of Case 2.",
-    source: "Chapter 0.2 / Case 2",
+      "No weaker hand calls the all-in: every other ten outkicks you, boats are ahead. On this runout your trips are a bluff-catcher → check-call. Raising folds out the bluffs and only gets called by hands that beat you (sentence 2). Your actual bustout (B7 Case 4).",
+    source: "Chapter 7 / Case 4",
     kavram: "kök-hata",
   },
   {
@@ -259,9 +259,9 @@ export const SCENARIOS: Scenario[] = [
     options: ["3-bet (value); if a jam comes, FOLD — on the bubble against a covering stack the full-stack range is ~KK+; QQ doesn't meet the ICM-adjusted threshold against a {KK+, AK} jam", "3-bet and call the jam — QQ is never folded on the bubble, the guy is opening for the 3rd time in a row", "Just call — 3-betting against a cover is completely off-limits, keep the pot small", "Fold — play no pots with the chip leader, stay away from him"],
     correct: 0,
     explain:
-      "MW.9 ICM thresholds: QQ gets ~40% equity against the cover's {KK+, AK} jam; with a 6–10% bubble ICM premium the required ~48–50% → FOLD. MW.8: 'On the bubble against a cover, even QQ may not be a 4-bet-call'; the practical full-stack rule is KK+. QQ is still a value 3-bet (MW.4: 99+ from the BB, target the over-active reg); the mistake isn't the 3-bet, it's calling the jam. Completely avoiding the cover isn't a strategy either (MW.9B).",
-    source: "Chapter 17",
-    kavram: "kök-hata",
+      "MW.9 ICM thresholds: QQ gets ~40% equity against the cover's {KK+, AK} jam; with a 6–10% bubble ICM premium the required ~48–50% → FOLD. MW.8: 'On the bubble against a cover, even QQ may not be a 4-bet-call'; the practical full-stack rule is KK+. QQ is still a value 3-bet (MW.4: 99+ from the BB, target the over-active reg); the mistake isn't the 3-bet, it's calling the jam. Completely avoiding the cover isn't a strategy either (MW.9B). (17.4 'don't 3-bet a cover' means BLUFF 3-bet; a value 3-bet — QQ, continue KK+ vs a jam — is free.)",
+    source: "Chapter 17 / 17.4",
+    kavram: "icm-cover",
   },
   {
     q: "You're deep ITM. You're playing TT in position in a 3-bet pot. On the 8-6-2 rainbow flop your c-bet got check-called; the turn 8 (board 8-6-2-8) went check-check. The river came an A and your opponent led out with a POT-sized DONK bet. You're thinking 'I had an overpair, the A is just a scare card'. Your decision?",
@@ -306,7 +306,7 @@ export const SCENARIOS: Scenario[] = [
     explain:
       "MW.8 Phase 2: the only brake against covers is playing 'one notch tighter'; MW.9B: 'running away from the cover isn't a strategy'. KQo is a clear open even in the tightened version of the MW.3 BTN 40–44% range. The real discipline comes when the 3-bet arrives: MW.6 — offsuit broadways (KQo, AJo) are trash against a 3-bet, 'the most expensive pretty-looking hand'; against a cover's 3-bet you continue one notch tighter still. There is no limp in MW.3.",
     source: "Chapter 17",
-    kavram: "kök-hata",
+    kavram: "icm-cover",
   },
   {
     q: "Phase 2, your stack is 60 BB. The 22 BB stack in the SB opened; you hold A5s in the BB (you'll be IP postflop). The most profitable line?",
@@ -369,6 +369,142 @@ export const SCENARIOS: Scenario[] = [
     explain:
       "MW.9 root-error guardrail: 'AA river jam: if no worse hand pays, the jam is worthless — check.' The MW.6 river rule asks the same single question. On 2-4-5-9-6 every 3 and every 7-8 makes a straight; in a bloated pot the range that gives your bet action is weighted toward the region that beats you, and worse hands just fold. MW.9: one pair in a bloated pot = pot control, not a place to generate value.",
     source: "Chapter 17",
+    kavram: "kök-hata",
+  },
+  // === Chapter 11–16 scenarios (v5 tournament-winning chapters; answers taken verbatim from book tables) ===
+  {
+    q: "You're in a 3-bet pot (SPR ~2.5) with the overpair KK. The flop comes and your one pair still looks best. You think 'bloated pot, I'm committed'. What is the book's measure of a 'bloated pot'?",
+    options: ["Number of bets — a 3-bet pot is bloated", "SPR (stack ÷ pot); SPR 1–4 = bluff-catcher, do NOT start a big pot", "Effective stack — 100bb+ is deep", "Board texture — wet is bloated"],
+    correct: 1,
+    explain:
+      "B11.0: 'When deep, SPR — not the number of bets — defines a bloated pot.' In the SPR 1–4 band one pair is a bluff-catcher — don't start a big pot. Read SPR first, then assign the role; SPR<1 commit, SPR>8 thin value is available but a pot that gets re-raised suddenly drops to 1–4.",
+    source: "Chapter 11.0",
+    kavram: "kök-hata",
+  },
+  {
+    q: "The river comes, you hold a strong one pair (overpair). Your opponent fires OVER pot (an overbet). Your decision?",
+    options: ["Call — an overpair is a bluff-catcher, an overbet still has bluffs", "Fold — an overbet is polarized (nuts or air); one pair folds, only a bluff-catcher holding a blocker calls", "Raise — push the polarized range to bluff", "Depends — look at the board"],
+    correct: 1,
+    explain:
+      "B11.2: 'As the size grows the opponent's range shifts toward value; read an overbet as polarized, and one pair clarifies from bluff-catcher to FOLD. Only a bluff-catcher holding a blocker calls.' The panic hero-call is the mistake here (Case 1).",
+    source: "Chapter 11.2",
+    kavram: "kök-hata",
+  },
+  {
+    q: "River on a dry board, you have top pair good kicker. You're against a rec/station (never folds) type and it's checked to you. Is there a bet?",
+    options: ["Check — go to showdown, thin value is risky", "Small value BET — the answer to 'which worse hand pays?' EXISTS (the rec pays); missed thin value is lost chips", "Pot bet — maximum value", "Get ready for a check-raise"],
+    correct: 1,
+    explain:
+      "B11.3: 'If someone pays, THIN value BET.' The filter runs positive: if 'which worse hand pays me?' has an answer (a rec/station pays), bet — even thin. In the rec-heavy Main, missed thin value is a direct chip loss.",
+    source: "Chapter 11.3",
+    kavram: "boyut",
+  },
+  {
+    q: "You have an overpair, the pot is bloated. On the river the board 2-4-5 gets a 6 (2-4-5-6). Your opponent fires a big bet. In the book's 'bad river' catalog, what class is this card and what's your decision?",
+    options: ["Neutral card — call", "Bad river (completes straight/set); check-fold to a big pot, JAM NEVER — the jam is value only if a worse hand pays", "Scare card — raise", "Small value bet"],
+    correct: 1,
+    explain:
+      "B11.4 bad-river catalog: 'fourth low card / straight completer' (2-4-5 with a 6 → trips, straight, set all beat you). On these cards: check-call a small pot, check-fold a big one; JAM NEVER. (Case 3.)",
+    source: "Chapter 11.4",
+    kavram: "kök-hata",
+  },
+  {
+    q: "Hard bubble. A big stack that COVERS you fires a wide BvB jam (~22bb effective), you hold A9s. Call?",
+    options: ["Call — A9s suited, ahead enough even on the bubble", "Fold — cover + bubble: CALL = 88+/AJs+/AQo; A9s is reverse-dominated, fold it along with KQs", "Do the jamming yourself — take the initiative", "Depends"],
+    correct: 1,
+    explain:
+      "B12.1 Emre calibration (2026-08-10): hard bubble + a wide jam that covers you, ~22bb → CALL = 88+ · AJs+ · AQo; fold A9s/KQs. Driver: cover + bubble = if you lose you bust for €0, the marginal edge isn't worth tournament life (A9s reverse-dominated). The FIRST question isn't 'is it the bubble' but 'am I covered'.",
+    source: "Chapter 12.1",
+    kavram: "icm-cover",
+  },
+  {
+    q: "Bubble, you're in the BB with 22bb. A short stack that does NOT cover you (shorter than you; you don't bust if you lose) fires a wide 13bb BTN jam; you hold KTo. Your reflex is 'range too weak, fold'. The right play?",
+    options: ["Fold — KTo is trash on the bubble", "Call — if you are NOT covered the line is much wider; KTo gets ~54% vs the wide 13bb jam, ~44% needed", "Re-jam over the jam", "Only call premiums"],
+    correct: 1,
+    explain:
+      "B12.1 drill addendum (2026-08-10): the sticky half of the leak is the fold reflex on the NOT-covered side. If you're not covered (the jammer is shorter), A9s and KTo are a CALL — KTo ~54% vs the required ~44%. Cue: 'before folding to a jam, am I covered? If no, the call is much wider than you think.'",
+    source: "Chapter 12.1",
+    kavram: "icm-cover",
+  },
+  {
+    q: "FT, everyone has locked each other up (no shorter stack at the table, you're effectively the shortest, <15bb). Your 'tighten under ICM' reflex kicks in. The right play?",
+    options: ["Tighten — ICM always tightens", "WIDEN — when everyone is locked up nobody wants to pay you off; 'tighten generally' is actively wrong in this band", "Fold along, wait for busts", "Only jam premiums"],
+    correct: 1,
+    explain:
+      "B12.5 short-stack ICM exception: '⚠ tighten under ICM is NOT always right. When everyone is locked up the short stack's correct play is to WIDEN — nobody wants to pay you off.' 12.2: 'you're effectively the shortest → widen your jam range, don't fold along.'",
+    source: "Chapter 12.5 / 12.2",
+    kavram: "icm",
+  },
+  {
+    q: "Bubble, you're the big (covering) stack. There's a locked-up mid stack and a few shorts at the table. Who is your most profitable target?",
+    options: ["The short stacks — easy folds", "The locked-up mid stack — the most profitable target at the table; widen opens + 3-bet pressure", "The other big stack — most chips at stake", "Nobody — wait on the bubble"],
+    correct: 1,
+    explain:
+      "B12.4 bubble hunting map: 'the locked-up mid stack is the most profitable target at the table.' As the big stack, plunder it (widen opens + 3-bet pressure). The bubble isn't defense — if you're on the RIGHT side it's the tournament's highest chip-EV window.",
+    source: "Chapter 12.4",
+    kavram: "icm",
+  },
+  {
+    q: "You have top pair in a 3+ way (multiway) pot, several players saw the flop. Your HU reflex says value. What's the book's multiway rule?",
+    options: ["Value bet — top pair is always value", "Drops a class → check / pot control; each extra player in a multiway raises the value bar", "Fold — top pair is trash multiway", "Overbet — clear the crowd"],
+    correct: 1,
+    explain:
+      "B13.1 HU→3+ way transition: multiway, top pair 'drops a class → check/pot control.' B13.0: 'each extra player RAISES the value bar.' C-bet frequency collapses (only strong value + a real nut-draw).",
+    source: "Chapter 13.1",
+    kavram: "multiway",
+  },
+  {
+    q: "You're thinking of bluffing in a multiway pot; you hold a good blocker. How many ways can the pot be for the bluff to still be legit? (the book's 4th criterion)",
+    options: ["Even 4+ way — a blocker is enough", "3-way: nut-blocker semi-bluff only; 4+ way: NO bluff; a single station kills the bluff", "Standard bluff in any multiway", "Bluff only HU"],
+    correct: 1,
+    explain:
+      "B13.3 fourth criterion: 'number of opponents = number of doors the bluff must get through.' HU=three criteria, 3-way=nut-blocker semi-bluff only, 4+ way=NONE. 'Multiway pot (whoever it is)' is added to the B1.4 'who not to bluff' list.",
+    source: "Chapter 13.3",
+    kavram: "multiway",
+  },
+  {
+    q: "You're in the 40–60bb band (the bridge band), considering a 3-bet. What's the book's bluff-3-bet direction?",
+    options: ["Widen the bluffs — there's depth", "NEARLY CUT the bluffs — nobody folds live; the hand you 3-bet must be able to continue vs a 4-bet/jam", "Standard B4 range — unchanged", "Suited connectors only as bluffs"],
+    correct: 1,
+    explain:
+      "B14.1: '40–60bb: NEARLY CUT the bluffs — nobody folds live.' Rule: the hand you 3-bet must be able to continue vs a 4-bet/jam; if it can't, flat (IP/BB) or fold. The '3-bet then fold' structure weakens below 60bb and ends at 40bb (commit).",
+    source: "Chapter 14.1",
+    kavram: "3bet-aralik",
+  },
+  {
+    q: "€25K PLO HR, you have 30bb and naked AA. Your NLH reflex says 'under 30bb → Chapter 5 → 3-bet = JAM'. Does that hold in PLO?",
+    options: ["Yes — 30bb is the jam band in any game", "No — in PLO B5 is INVALID: no jam, there's a pot-raise; naked AA doesn't play postflop, its value is in pre-commit (3-bet→SPR≤1)", "Fold — you don't play AA at 30bb PLO", "Limp-call"],
+    correct: 1,
+    explain:
+      "B15.1/15.0: 'B5's NLH jam/fold reflex is invalid in PLO — in pot-limit there's no jam, only a max pot-raise.' In 25–60bb PLO naked AA doesn't play postflop; its value is in pre-commit (3-bet → SPR≤1). '30bb PLO ≠ 30bb NLH.'",
+    source: "Chapter 15.1 / 15.0",
+    kavram: "plo",
+  },
+  {
+    q: "Short PLO (<25bb), you made a pot-raise. What does that mean?",
+    options: ["A standard raise — the continue decision on the flop is separate", "Pot-raise = COMMIT: the remaining stack goes in automatically on the flop; pick your range assuming 'the stack goes in on the flop', cut everything with a dangler", "An info raise — it's cheap", "Be ready to fold"],
+    correct: 1,
+    explain:
+      "B15.1: 'In short PLO a pot-raise = commit. Pick your range assuming the stack goes in on the flop: double-suited rundowns, strong AAxx; CUT everything with a dangler.' B15.2: in PLO the commit decision is made on the street you bloat the pot, not on the flop.",
+    source: "Chapter 15.1 / 15.2",
+    kavram: "plo",
+  },
+  {
+    q: "You busted SHR Day 1, 5 minutes have passed, mild tilt. Does an immediate re-entry (a second bullet into the same event) make sense?",
+    options: ["Yes — get in now, don't lose momentum", "No — mandatory 20-min wait, fill in the decision card; SHR has NO re-entry (max 1 bullet); an automatic re-entry under tilt = the bankroll-scale root error", "Switch to another event", "End the day, decide tomorrow"],
+    correct: 1,
+    explain:
+      "B16.1: 'The single most expensive decision of the series is the re-entry made in the 5 minutes after busting.' Mandatory wait: bustout → 20 min away from the table → fill in the decision card. SHR max 1 bullet (no re-entry); an automatic re-entry under tilt = treating a single bullet as value in a bloated 'series investment'.",
+    source: "Chapter 16.1",
+    kavram: "kök-hata",
+  },
+  {
+    q: "End-of-day autopsy: you played a hand by the book's rule but lost (correct jam, bad result). Tomorrow, in that spot, do you change your range?",
+    options: ["Yes — if I lost something was wrong, tighten", "No — 'followed the rule + lost' = correct decision, bad result; the RANGE DOESN'T CHANGE (else you'd wreck the B4-B5 tables mid-SHR)", "Depends — look at the result", "Widen the range — be more aggressive"],
+    correct: 1,
+    explain:
+      "B16.3 autopsy rule: 'Followed + lost → log it as correct decision/bad result in the case book, the RANGE DOESN'T CHANGE.' This filter protects calibration: correct jams lose often in the SHR; without the filter you'd wreck the careful tables mid-tournament. (Valid only if you actually FOLLOWED the rule — not a self-exoneration door.)",
+    source: "Chapter 16.3",
     kavram: "kök-hata",
   },
 ];

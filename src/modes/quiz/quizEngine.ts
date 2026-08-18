@@ -53,24 +53,13 @@ function pick<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export function nextQuestion(weak?: { opener: string; position: string }[]): Question | null {
-  const groups = rangeGroups().filter((g) => g.table && g.table.rows.length > 0);
-  if (!groups.length) return null;
-
-  let g = pick(groups);
-  let row = pick(g.table.rows);
-
-  // adaptive: with 55% probability steer toward a weak (opener, position) pair
-  if (weak && weak.length && Math.random() < 0.55) {
-    const w = pick(weak);
-    const mg = groups.find((x) => x.opener === w.opener);
-    const mr = mg?.table.rows.find((r) => r[0] === w.position);
-    if (mg && mr) {
-      g = mg;
-      row = mr;
-    }
-  }
-  const [position, value, blof] = row;
+// Build the question pools for (opener, position). SINGLE source: nextQuestion AND selfcheck
+// call this (no copied logic — a copy would silently test the old behavior after the engine changes).
+export function buildPools(opener: string, position: string) {
+  const g = rangeGroups().find((x) => x.opener === opener);
+  const row = g?.table.rows.find((r) => r[0] === position);
+  if (!g || !row) return null;
+  const [, value, blof] = row;
 
   const mix = new Set<string>();
   const v = parseRange(value || "", mix);
@@ -89,17 +78,48 @@ export function nextQuestion(weak?: { opener: string; position: string }[]): Que
   // mistakenly grade the book's wide flat hands as "fold" → don't generate fold questions (3-bet/bluff only).
   // Test the RAW flat text: flatText strips tails like "…and all 65s+ suited connectors" before parse,
   // so testing ft would miss them and mis-grade them fold (CO→BTN).
-  const flatWide = /\b(wide|all|most|every)\b/i.test(applicableFlats.join(" "));
+  // For opens with no separate BB flat list (UTG/LJ-HJ/CO→BB) the book says "BB flat very wide:
+  // all pairs, all suited" — don't generate fold (so JJ/TT/AQs aren't graded 'fold'). Only losing blind is SB.
+  const flatWide =
+    (position === "BB" && applicableFlats.length === 0) ||
+    /\b(wide|all|most|every)\b/i.test(applicableFlats.join(" "));
+  const poolFold = flatWide ? [] : ALL.filter((c) => !set3.has(c) && !setFlat.has(c));
+
+  return { g, value, blof, mix, v, b, set3, setFlat, poolFold, flatWide, ft, flatCells: f.cells };
+}
+
+export function nextQuestion(weak?: { opener: string; position: string }[]): Question | null {
+  const groups = rangeGroups().filter((g) => g.table && g.table.rows.length > 0);
+  if (!groups.length) return null;
+
+  let g = pick(groups);
+  let row = pick(g.table.rows);
+
+  // adaptive: with 55% probability steer toward a weak (opener, position) pair
+  if (weak && weak.length && Math.random() < 0.55) {
+    const w = pick(weak);
+    const mg = groups.find((x) => x.opener === w.opener);
+    const mr = mg?.table.rows.find((r) => r[0] === w.position);
+    if (mg && mr) {
+      g = mg;
+      row = mr;
+    }
+  }
+  const [position] = row;
+
+  const pools = buildPools(g.opener, position);
+  if (!pools) return null;
+  const { value, blof, mix, v, b, set3, setFlat, poolFold, ft } = pools;
 
   const pool3 = [...set3];
   const poolFlat = [...setFlat];
-  const poolFold = flatWide ? [] : ALL.filter((c) => !set3.has(c) && !setFlat.has(c));
 
   // weighted category pick (skip empty pools)
   const bag: QAction[] = [];
   if (pool3.length) bag.push("3bet", "3bet", "3bet");
   if (poolFlat.length) bag.push("call", "call");
   if (poolFold.length) bag.push("fold", "fold");
+  if (!bag.length) return null; // all three pools empty → can't build a question (null, not an undefined card)
   const cat = pick(bag);
 
   const hand =

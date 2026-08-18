@@ -7,7 +7,11 @@ import {
   jamRanges,
   jamCallRange,
   stackLayer,
+  bridgeBand,
+  bridgeRule,
 } from "../../content/curriculum";
+import { flatText, flatScope } from "../quiz/quizEngine";
+import { parseRange } from "../../lib/handgrid";
 import { RangeGrid } from "../../components/RangeGrid";
 import { DataTable } from "../../components/DataTable";
 
@@ -196,12 +200,39 @@ function DerinBody({
 }
 
 function CallBody({ flats }: { flats: string[] }) {
-  const text = flats
-    .map((f) => (f.includes(":") ? f.slice(f.indexOf(":") + 1) : f))
-    .join(" ")
-    .trim();
-  if (!text) return <Note>No flat note is given for this open in this group.</Note>;
-  return <RangeGrid flat={text} valueLabel="Flat" caption="Flat / call range (Chapter 4.3)" />;
+  if (!flats.length) return <Note>No flat note is given for this open in this group.</Note>;
+  return (
+    <div className="space-y-3">
+      {flats.map((f, i) => {
+        // flatText: strips depth-conditional (150bb+) sentences and the prose tail that can't
+        // expand onto the grid — rescues 98s/JTs stuck to sentence tails. The stripped part
+        // stays visible as a note.
+        const body = (f.includes(":") ? f.slice(f.indexOf(":") + 1) : f).trim();
+        const cleaned = flatText([f]);
+        const griddable = parseRange(cleaned).cells.size > 0;
+        const rest =
+          griddable && body.startsWith(cleaned)
+            ? body.slice(cleaned.length).replace(/^[.,\s]+/, "")
+            : "";
+        return (
+          <div key={i}>
+            <div className="mb-1 text-xs font-semibold text-neutral-300">
+              You: {flatScope(f).join(" / ")}
+            </div>
+            {griddable ? (
+              <>
+                <RangeGrid flat={cleaned} valueLabel="Flat" caption="Flat / call range (Chapter 4.3)" />
+                {rest && <p className="mt-1 text-xs text-neutral-400">{rest}</p>}
+              </>
+            ) : (
+              // A prose flat ("very wide" / "almost none") can't expand onto the grid — show the book's sentence.
+              <Note>{body}</Note>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 // ---- 25–30bb (Chapter 5) ----
@@ -227,6 +258,10 @@ function KisaBody({ act }: { act: Action }) {
         <Note>
           In this band <b>3-bet = jam</b> (commit). No flatting — not from the SB, not from the BB, not IP (Chapter 5.2).
         </Note>
+        <Note>
+          <b>This card is invalid in PLO</b> — at pot-limit there is no jam, only a pot-raise; at 25–60bb
+          B5 is INVALID (Chapter 15.1).
+        </Note>
         {rows.map((r, i) => (
           <div key={i}>
             <div className="mb-1 text-xs font-semibold text-neutral-300">{r.vs}</div>
@@ -249,25 +284,37 @@ function KisaBody({ act }: { act: Action }) {
 // ---- Mid / edge depths: the book gives NO hand list, qualitative adjustment ----
 function NitelBody({ depth }: { depth: Depth }) {
   const t = stackLayer();
+  const bb = depth === "orta" ? bridgeBand() : null;
+  const rule = depth === "orta" ? bridgeRule() : "";
   return (
     <div className="space-y-3">
       <Note>
         The book <b>gives no separate hand list</b> for this depth. The base range is the 100bb+ (Chapter 4)
-        tables; you <b>adjust</b> from them per the 4.7 character below — the grid is not invented.
+        tables; you <b>adjust</b> from them per the DIRECTION tables below — the grid is not invented.
       </Note>
       {depth === "orta" ? (
-        <p className="text-sm leading-relaxed text-neutral-300">
-          60–100bb: more polarized, bluffs increase, flat narrows (set-mining weakens). 40–60bb: linear /
-          merged, <b>almost no flat — 3-bet or fold.</b>
-        </p>
+        <>
+          {bb && <DataTable table={bb} />}
+          {rule && <p className="text-sm leading-relaxed text-neutral-300">{rule}</p>}
+        </>
       ) : (
-        <p className="text-sm leading-relaxed text-neutral-300">
-          25–40bb: 3-bet = commit (a hand you 3-bet must be able to continue vs a 4-bet). <b>&lt;25bb: jam /
-          fold</b>, no 3-bet-fold structure. Closest hand reference: <b>25–30bb → Jam</b>.
-        </p>
+        <>
+          <p className="text-sm leading-relaxed text-neutral-300">
+            25–40bb: 3-bet = commit (a hand you 3-bet must be able to continue vs a 4-bet). <b>&lt;25bb: jam /
+            fold</b>, no 3-bet-fold structure. Closest hand reference: <b>25–30bb → Jam</b>.
+          </p>
+          <button
+            onClick={() => (window.location.hash = "#/referans/icmkart")}
+            className="btn-ghost w-full py-2.5 text-sm"
+          >
+            🧮 My ICM Card — ladder + &lt;15bb jam card (Chapter 12) →
+          </button>
+        </>
       )}
       {t && <DataTable table={t} />}
-      <p className="text-xs text-neutral-500">Chapter 4.7 — the stack-mode top layer.</p>
+      <p className="text-xs text-neutral-500">
+        {depth === "orta" ? "Chapter 4.7 + Chapter 14 — the bridge-band direction framework." : "Chapter 4.7 — the stack-mode top layer."}
+      </p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   dueEntries,
   confidentWrong,
@@ -10,7 +10,8 @@ import {
 } from "../../lib/karne";
 import { getStats, daysUntilEPT, cornermanActive } from "../../lib/progress";
 import { modules } from "../../data/modules";
-import { prefetchHd } from "../../lib/speech";
+import { prefetchHd, sentencesOf, getTtsMode, setTtsMode, type TtsMode } from "../../lib/speech";
+import { exportAll, importAll } from "../../lib/storage";
 
 const DOT: Record<Sonuc, string> = {
   correct: "text-emerald-400",
@@ -31,9 +32,41 @@ export function Progress({ onReview, onJournal }: { onReview?: () => void; onJou
     done: 0,
     total: 0,
   });
+  const [tts, setTts] = useState<TtsMode>(() => getTtsMode());
+  const [bkMsg, setBkMsg] = useState<string | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  function pickTts(m: TtsMode) {
+    setTtsMode(m);
+    setTts(m);
+  }
+
+  function downloadBackup() {
+    const blob = new Blob([exportAll()], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "ept-backup.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  async function onBackupFile(input: HTMLInputElement) {
+    const f = input.files?.[0];
+    input.value = "";
+    if (!f) return;
+    const res = importAll(await f.text());
+    if (res.ok) {
+      location.reload();
+    } else {
+      setBkMsg("Couldn't read the backup — the file isn't a valid EPT backup.");
+    }
+  }
 
   async function downloadAudio() {
-    const texts = modules.flatMap((m) => m.slides.map((s) => s.narration));
+    // Playback speaks sentence by sentence (LessonPlayer) → prefetch must produce
+    // the SAME sentence keys, or the offline cache misses.
+    const texts = modules.flatMap((m) => m.slides.flatMap((s) => sentencesOf(s.narration)));
     setDl({ running: true, done: 0, total: texts.length });
     const res = await prefetchHd(texts, (done, total) => setDl({ running: true, done, total }));
     setDl({
@@ -100,7 +133,7 @@ export function Progress({ onReview, onJournal }: { onReview?: () => void; onJou
           ))}
         </div>
         <p className="mt-2 text-[11px] text-neutral-500">
-          Solid = correct in 3 different guises, on ≥3 separate days. Each miss drops one tier.
+          Solid = correct in 3 different guises, on ≥3 separate days. A single miss resets the streak — the tier is rebuilt from scratch.
         </p>
       </section>
 
@@ -174,6 +207,26 @@ export function Progress({ onReview, onJournal }: { onReview?: () => void; onJou
         <p className="mb-3 text-sm text-neutral-500">
           Pre-download all lesson narrations in HD audio — then everything works offline, no waiting.
         </p>
+        <div className="mb-3 flex items-center gap-2">
+          <span className="text-xs text-neutral-500">Audio:</span>
+          <div className="flex overflow-hidden rounded-full border border-surface-3">
+            {(["hd", "web"] as TtsMode[]).map((m) => (
+              <button
+                key={m}
+                onClick={() => pickTts(m)}
+                className={
+                  "px-3.5 py-1.5 text-xs " +
+                  (tts === m ? "bg-accent font-semibold text-black" : "bg-surface-2 text-neutral-400")
+                }
+              >
+                {m === "hd" ? "HD" : "Device"}
+              </button>
+            ))}
+          </div>
+          <span className="text-[11px] text-neutral-600">
+            {tts === "hd" ? "proxy /api/tts" : "browser voice"}
+          </span>
+        </div>
         <button
           onClick={downloadAudio}
           disabled={dl.running}
@@ -182,6 +235,31 @@ export function Progress({ onReview, onJournal }: { onReview?: () => void; onJou
           {dl.running ? `Downloading… ${dl.done}/${dl.total}` : "🔊 Download HD audio"}
         </button>
         {dl.msg && <p className="mt-2 text-xs text-neutral-400">{dl.msg}</p>}
+      </section>
+
+      {/* backup */}
+      <section className="card p-4">
+        <h2 className="mb-1 font-semibold">Backup</h2>
+        <p className="mb-3 text-sm text-neutral-500">
+          Report card, streak and journal live in this device's browser. Download them as a
+          file; restore on another device.
+        </p>
+        <div className="grid grid-cols-2 gap-2">
+          <button onClick={downloadBackup} className="btn-ghost py-2.5">
+            ⬇ Download backup
+          </button>
+          <button onClick={() => fileRef.current?.click()} className="btn-ghost py-2.5">
+            ⬆ Load backup
+          </button>
+        </div>
+        <input
+          ref={fileRef}
+          type="file"
+          accept="application/json,.json"
+          className="hidden"
+          onChange={(e) => void onBackupFile(e.currentTarget)}
+        />
+        {bkMsg && <p className="mt-2 text-xs text-red-300">{bkMsg}</p>}
       </section>
     </div>
   );

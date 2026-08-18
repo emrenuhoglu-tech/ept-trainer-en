@@ -9,8 +9,11 @@
   }
   body {
     @apply bg-surface-0 text-neutral-100 antialiased;
-    /* iPhone safe-area: keep the bottom tab bar from sliding under the home indicator */
-    padding-bottom: env(safe-area-inset-bottom);
+  }
+  /* visible focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid theme(colors.accent.DEFAULT);
+    outline-offset: 2px;
   }
   /* keep poker terms from breaking across lines */
   .term {

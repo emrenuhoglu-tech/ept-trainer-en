@@ -207,6 +207,13 @@ export function getSpeaker(): Speaker {
   return instance;
 }
 
+// Split narration into sentences (NO lookbehind — broad compatibility). Hyphens/digits
+// in poker terms are not sentence ends; only . ! ? split. Playback (LessonPlayer) and
+// prefetch (Progress) MUST use the same splitter → cache keys match exactly.
+export function sentencesOf(text: string): string[] {
+  return (text.match(/[^.!?]+[.!?]*/g) || [text]).map((s) => s.trim()).filter(Boolean);
+}
+
 // Render all narrations to HD audio and cache them in IndexedDB (for the offline Lesson).
 // Uses the same key as speak() → later playback never hits the API.
 export async function prefetchHd(

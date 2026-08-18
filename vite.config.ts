@@ -6,6 +6,13 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/ept-trainer-en/",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: { vendor: ["react", "react-dom"] },
+      },
+    },
+  },
   server: {
     host: true,
     port: 5173,

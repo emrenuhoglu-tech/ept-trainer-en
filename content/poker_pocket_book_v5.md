@@ -420,7 +420,7 @@ If you've seen the chip leader fold to a jam once, widen your jam range against 
 
 ## Chapter 7 — Case Autopsies
 
-> **The root error of all three cases is the same:**
+> **The root error of all four cases is the same:**
 > Misclassifying one pair (including AA) in a bloated or multiway pot.
 
 ### Case 1 — A4s river call ($50K High Roller, WSOP 2026)
@@ -451,6 +451,14 @@ If you've seen the chip leader fold to a jam once, widen your jam range against 
 > Overpair on a bad river: check-call into a small pot, check-fold into a big pot.
 
 *Chapter 4 link: the reason this hand became a bloated pot was born preflop. Building your 3-bet range correctly directly lowers the odds of this case repeating.*
+
+### Case 4 — T6s trip-ten river check-raise all-in (WSOP Online ME Day 2 prep)
+
+**What happened:** T6s in the BB, called a BTN min-raise. Flop A-T-3, call 1/3 pot. Turn 5 check-check. River T (board A-T-3-5-T) → trip tens, kicker 6. You checked, BTN fired a thin bet, you check-raised all-in.
+
+**Correct play:** Check-call. On this runout your trips are a bluff-catcher: no weaker hand calls the all-in (every ten outkicks you, boats are ahead); the raise folds out the bluffs and only gets paid by hands that beat you.
+
+**Rule:** A good-looking single/strong hand (trips included) turns into a bluff-catcher on a paired/bloated board — the exact mirror of Case 2 (KTo). (B9.2 protocol: this hand from the table was logged as a case.)
 
 ---
 
@@ -1053,7 +1061,7 @@ Online opponents defend blinds more accurately, so early position is a touch tig
 | BB vs BTN/SB | 99+, AQ+ | A5s-type + KTs/QTs/JTs; defend (call) with the rest |
 
 - **Whom to 3-bet:** 30–50 BB medium stacks (they feel bubble pressure most) and reg opening too much.
-- **Whom NOT to 3-bet:** big stacks that cover you (as the bubble nears) and sub-20 BB — their only reply is a jam, and your bluff 3-bet burns.
+- **Whom NOT to BLUFF 3-bet:** big stacks that cover you (as the bubble nears) and sub-20 BB — their only reply is a jam, and your bluff 3-bet burns. **A value 3-bet is free** (QQ+/AK 3-bet); continue vs the cover's jam only with KK+, and 3-bet-fold QQ (see 17.10 ICM thresholds). What's forbidden is the bluff 3-bet, not value.
 
 ### 17.5 3-Bet sizes (IP and OOP)
 

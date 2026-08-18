@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { CardRow } from "../../components/Cards";
 import { recordResult } from "../../lib/karne";
 import { recordPractice } from "../../lib/progress";
+import { load, save } from "../../lib/storage";
+import { tableFromSection } from "../../content/curriculum";
 
 // Bustout Autopsy — the book's 3 bustout hands (Chapter 7) + 1 of your own (beyond the book, yesterday).
 // Book case content is verbatim from the book (nothing invented): YOU decide first, then
@@ -79,6 +81,9 @@ const HANDS: Hand[] = [
 export function BustoutAutopsy({ onBack }: { onBack: () => void }) {
   const [i, setI] = useState(0);
   const [chosen, setChosen] = useState<number | null>(null);
+  // Replay: once the first completion is marked, do NOT write to the report card —
+  // memorized binary answers inflate the 'kök-hata' streak. Replays are for self-explain.
+  const [replay] = useState<boolean>(() => load<boolean>("autopsy:done", false));
   const h = HANDS[i];
   const answered = chosen !== null;
   const done = i >= HANDS.length;
@@ -86,6 +91,7 @@ export function BustoutAutopsy({ onBack }: { onBack: () => void }) {
   function answer(idx: number) {
     if (answered) return;
     setChosen(idx);
+    if (replay) return;
     const ok = idx === h.correct;
     recordPractice();
     recordResult({
@@ -98,6 +104,7 @@ export function BustoutAutopsy({ onBack }: { onBack: () => void }) {
   }
   function next() {
     setChosen(null);
+    if (i + 1 >= HANDS.length && !replay) save("autopsy:done", true);
     setI((x) => x + 1);
   }
 
@@ -124,6 +131,12 @@ export function BustoutAutopsy({ onBack }: { onBack: () => void }) {
         </button>
         <span className="text-neutral-500">{i + 1} / {HANDS.length}</span>
       </div>
+
+      {replay && (
+        <div className="rounded-lg bg-surface-2 px-3 py-2 text-xs text-neutral-400">
+          Replay — not scored; focus on explaining it to yourself.
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center gap-2">
         <h1 className="text-xl font-bold">{h.title}</h1>
@@ -186,10 +199,100 @@ export function BustoutAutopsy({ onBack }: { onBack: () => void }) {
               className="mt-2 w-full resize-none rounded-xl border border-surface-3 bg-surface-1 px-3 py-2 text-sm outline-none focus:border-accent"
             />
           </div>
+          <SprEstimator key={h.id} hand={h} />
           <button onClick={next} className="btn-accent py-3 text-base">
             {i + 1 >= HANDS.length ? "Finish" : "Next case →"}
           </button>
         </>
+      )}
+    </div>
+  );
+}
+
+// C11.0 "calibrate: assign an SPR to the 3 elimination hands" slot. The numbers are
+// entered from EMRE'S memory — the app NEVER fabricates a pot/stack, it only does the
+// arithmetic (stack ÷ pot) and shows the matching row of the book's 11.0 band table
+// (READ-ONLY parse).
+interface SprRecord {
+  id: string;
+  pot: number;
+  stack: number;
+  spr: number;
+}
+
+function bandIndex(spr: number): number {
+  if (spr < 1) return 0;
+  if (spr <= 4) return 1;
+  if (spr <= 8) return 2;
+  return 3;
+}
+
+function SprEstimator({ hand }: { hand: Hand }) {
+  const [pot, setPot] = useState("");
+  const [stack, setStack] = useState("");
+  const [spr, setSpr] = useState<number | null>(() => {
+    const rec = load<SprRecord[]>("spr-kalibrasyon", []).find((r) => r.id === hand.id);
+    return rec ? rec.spr : null;
+  });
+  const table = useMemo(() => tableFromSection("Chapter 11", "11.0"), []);
+
+  function compute() {
+    const p = Number(pot);
+    const s = Number(stack);
+    if (!isFinite(p) || p <= 0 || !isFinite(s) || s < 0) return;
+    const v = Math.round((s / p) * 10) / 10;
+    setSpr(v);
+    const list = load<SprRecord[]>("spr-kalibrasyon", []).filter((r) => r.id !== hand.id);
+    save("spr-kalibrasyon", [...list, { id: hand.id, pot: p, stack: s, spr: v }]);
+    recordResult({
+      kavram: "spr-kalibrasyon",
+      soru_ozeti: `Estimate SPR: ${hand.title}`,
+      sonuc: "correct",
+      not: `flop pot ${p}bb, remaining stack ${s}bb → SPR ${v}`,
+    });
+  }
+
+  const row = spr !== null && table ? table.rows[bandIndex(spr)] : null;
+
+  return (
+    <div className="card p-3">
+      <div className="text-xs uppercase tracking-wide text-neutral-500">
+        Estimate SPR (C11.0 · optional)
+      </div>
+      <p className="mt-1 text-xs text-neutral-500">
+        From memory: the pot on the flop and the stack you had behind (bb). If you don't
+        remember, leave it blank — never make numbers up.
+      </p>
+      <div className="mt-2 flex items-center gap-2">
+        <input
+          value={pot}
+          onChange={(e) => setPot(e.target.value)}
+          inputMode="decimal"
+          placeholder="flop pot (bb)"
+          className="w-full min-w-0 rounded-xl border border-surface-3 bg-surface-1 px-3 py-2 text-sm outline-none focus:border-accent"
+        />
+        <input
+          value={stack}
+          onChange={(e) => setStack(e.target.value)}
+          inputMode="decimal"
+          placeholder="stack behind (bb)"
+          className="w-full min-w-0 rounded-xl border border-surface-3 bg-surface-1 px-3 py-2 text-sm outline-none focus:border-accent"
+        />
+        <button onClick={compute} className="btn-ghost shrink-0 px-3 py-2 text-sm">
+          Compute
+        </button>
+      </div>
+      {spr !== null && (
+        <div className="mt-3 text-sm">
+          <div className="font-semibold text-accent">SPR ≈ {spr}</div>
+          {row ? (
+            <div className="mt-1 rounded-lg bg-surface-2 px-3 py-2 text-xs leading-relaxed text-neutral-300">
+              <b>{row[0]}</b> · {row[1]} → {row[2]}
+            </div>
+          ) : (
+            <p className="mt-1 text-xs text-neutral-500">Couldn't load the band table (C11.0).</p>
+          )}
+        </div>
       )}
     </div>
   );

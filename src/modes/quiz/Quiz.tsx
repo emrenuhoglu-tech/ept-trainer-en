@@ -28,7 +28,7 @@ const MODES = [
   { id: "range", label: "🎯 Range" },
   { id: "scenario", label: "📖 Scenario" },
   { id: "recall", label: "🧠 Recall" },
-  { id: "postflop", label: "🃏 Turn/River" },
+  { id: "postflop", label: "🃏 T/R" },
   { id: "run", label: "💥 Run" },
 ] as const;
 type QuizMode = (typeof MODES)[number]["id"];
@@ -43,7 +43,7 @@ export function Quiz() {
             key={m.id}
             onClick={() => setMode(m.id)}
             className={
-              "rounded-lg py-2 text-sm font-medium transition " +
+              "rounded-lg py-2 text-xs font-medium transition " +
               (mode === m.id ? "bg-accent text-black" : "text-neutral-400")
             }
           >

@@ -189,6 +189,10 @@ export interface QuickRef {
   decisionOrder: string[];
   sizes: MdTable | null;
   band2530: MdTable | null; // 25–30bb card (v4)
+  postflop: MdTable | null; // Postflop sizes (Chapter 11, v5)
+  icm: MdTable | null; // ICM / Final Table card (Chapter 12, v5)
+  multiway: MdTable | null; // Multiway card (Chapter 13, v5)
+  tilt: MdTable | null; // Tilt card (Chapter 16, v5)
   redFlags: string[];
 }
 
@@ -198,6 +202,10 @@ export function quickReference(): QuickRef {
     decisionOrder: listItems(findSub(block, "Decision order"), true),
     sizes: firstTable(findSub(block, "Sizes")),
     band2530: firstTable(findSub(block, "25")),
+    postflop: firstTable(findSub(block, "Postflop")),
+    icm: firstTable(findSub(block, "ICM")),
+    multiway: firstTable(findSub(block, "Multiway")),
+    tilt: firstTable(findSub(block, "Tilt")),
     redFlags: listItems(findSub(block, "Red flags"), false),
   };
 }
@@ -285,6 +293,18 @@ export function stackLayer(): MdTable | null {
   return tableFromSection("Chapter 4", "4.7");
 }
 
+/** Bridge-band 3-bet framework (Section 14.1) — a DIRECTION table off B4; not a combo list. */
+export function bridgeBand(): MdTable | null {
+  return tableFromSection("Chapter 14", "14.1");
+}
+
+/** Bridge-band "Rule" sentence (Section 14.1) — the (calibrate) placeholder is kept as-is. */
+export function bridgeRule(): string {
+  const body = findSub(sectionBlock("Chapter 14"), "14.1");
+  const m = body.match(/\*\*Rule:\*\*\s*(.+)/);
+  return m ? stripInline(m[1]) : "";
+}
+
 // ---- Chapters 6 & 11 — Turn/River decision tables (Postflop drill) ----
 // These are the book's DIRECTION tables. Sizes are (calibrate) in the book, so the drill
 // surfaces DIRECTION only (bet/check/call/fold) — never an invented size. Each cell IS the
@@ -313,4 +333,19 @@ export function riverThinValue(): MdTable | null {
 /** Bad-river catalog (Section 11.4): the cards that kill an overpair's value. */
 export function badRiverCatalog(): string[] {
   return listItems(findSub(sectionBlock("Chapter 11"), "11.4"), false);
+}
+
+/** HU → 3+ way transition matrix (Section 13.1): situation × HU/3+ column → action. */
+export function multiwayMatrix(): MdTable | null {
+  return tableFromSection("Chapter 13", "13.1");
+}
+
+/** PLO stack modes (Section 15.1): mode × difference from NLH × character. */
+export function ploModes(): MdTable | null {
+  return tableFromSection("Chapter 15", "15.1");
+}
+
+/** PLO SPR × stack-off matrix (Section 15.2): the commit threshold. */
+export function ploStackOff(): MdTable | null {
+  return tableFromSection("Chapter 15", "15.2");
 }

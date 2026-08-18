@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { load, save } from "../../lib/storage";
 import { recordPractice, cornermanActive } from "../../lib/progress";
+import { localIsoDay } from "../../lib/date";
 
 // Decision journal — write it BEFORE you know the result. Grade the process: entering well and losing is correct.
 // Across the EPT series, the leaks you bring back from the table become the next day's drill seed.
@@ -19,10 +20,6 @@ const CONF = [
   { v: 0.95, label: "95%" },
 ];
 
-function today(): string {
-  return new Date().toISOString().slice(0, 10);
-}
-
 export function DecisionJournal({ onDone }: { onDone: () => void }) {
   const [list, setList] = useState<JEntry[]>(() => load<JEntry[]>(KEY, []));
   const [el, setEl] = useState("");
@@ -30,13 +27,15 @@ export function DecisionJournal({ onDone }: { onDone: () => void }) {
   const [gerekce, setGerekce] = useState("");
   const [guven, setGuven] = useState(0.8);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  // Close the "next day the process gets scored" loop: yesterday's hands seed the drill.
+  const yesterdayHands = list.filter((e) => e.day === localIsoDay(-1)).length;
 
   function add() {
     if (!el.trim() || !aksiyon.trim()) {
       setMsg({ ok: false, text: "Hand and Action are required — fill in both." });
       return;
     }
-    const next = [{ day: today(), el, aksiyon, gerekce, guven }, ...list];
+    const next = [{ day: localIsoDay(0), el, aksiyon, gerekce, guven }, ...list];
     setList(next);
     save(KEY, next);
     recordPractice();
@@ -65,6 +64,15 @@ export function DecisionJournal({ onDone }: { onDone: () => void }) {
       <p className="text-sm text-neutral-500">
         Write it before you know the result. Good decision, bad result = correct. The next day you grade the process, not the result.
       </p>
+
+      {yesterdayHands > 0 && (
+        <a
+          href="#/drill"
+          className="rounded-xl border border-accent/40 bg-accent-soft px-4 py-2.5 text-sm text-accent"
+        >
+          You brought {yesterdayHands} hand{yesterdayHands > 1 ? "s" : ""} back from the table yesterday → score them in Drill
+        </a>
+      )}
 
       <div className="card space-y-2 p-4">
         <input

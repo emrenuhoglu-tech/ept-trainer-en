@@ -11,19 +11,35 @@ import {
   riverBluffCatch,
   riverThinValue,
   badRiverCatalog,
+  openRanges,
+  jamRanges,
+  jamCallRange,
+  fourBetRanges,
+  squeezeRange,
+  quickReference,
+  bridgeBand,
+  multiwayMatrix,
+  ploStackOff,
+  ploModes,
 } from "../src/content/curriculum";
 import { parseRange } from "../src/lib/handgrid";
-import { flatText, flatScope } from "../src/modes/quiz/quizEngine";
+import { buildPools } from "../src/modes/quiz/quizEngine";
 import { postflopQuestion, betType } from "../src/modes/quiz/postflopEngine";
+import { SCENARIOS } from "../src/modes/quiz/scenarios";
+import { KARNE_SEED } from "../src/data/karne_seed";
+import { computeDue, capDue, migrate, computeMastery, CONCEPT_LABEL } from "../src/lib/karne";
+import { localIsoDay } from "../src/lib/date";
 
+// D4-43: use the engine's OWN pool builder (no copied logic — a copy would silently test the
+// old behavior after the engine changes). buildPools is the same fn nextQuestion calls.
 function poolsFor(opener: string, position: string) {
-  const g = rangeGroups().find((x) => x.opener === opener)!;
-  const applicable = g.flats.filter((fl) => flatScope(fl).includes(position));
-  const ft = flatText(applicable);
-  const cells = parseRange(ft).cells;
-  // Test the RAW flat text (flatText strips "…and all 65s+ suited connectors" tails).
-  const flatWide = /\b(wide|all|most|every)\b/i.test(applicable.join(" "));
-  return { ft, cells, flatWide };
+  const p = buildPools(opener, position);
+  return {
+    ft: p?.ft ?? "",
+    cells: p?.flatCells ?? new Set<string>(),
+    flatWide: p?.flatWide ?? false,
+    poolFold: p?.poolFold ?? [],
+  };
 }
 
 const out: string[] = [];
@@ -128,6 +144,87 @@ for (const n of [11, 12, 13, 14, 15, 16, 17]) {
   check("postflop turn Q generates", !!postflopQuestion("turn"));
   check("postflop river Q generates", !!postflopQuestion("river"));
 }
+
+// D1-1: an open with no separate BB flat list generates no fold pool (JJ/TT/AQs not graded 'fold').
+check("D1-1 UTG→BB fold pool empty (BB flat wide)", poolsFor("UTG/UTG+1", "BB").poolFold.length === 0);
+
+// D4-41: buildPools returns null for an invalid group/position; every real row yields a pool.
+check("D4-41 buildPools null on invalid group", buildPools("YOK", "XX") === null);
+for (const g of groups) {
+  for (const row of g.table.rows) {
+    const p = buildPools(g.opener, row[0]);
+    check(
+      `D4-41 ${g.opener}→${row[0]} yields a pool`,
+      !!p && (p.set3.size > 0 || p.setFlat.size > 0 || p.poolFold.length > 0),
+    );
+  }
+}
+
+// D4-37: Range Guide / RangeRecall parsers — if the book wording changes, don't silently blank.
+check("D4-37 openRanges non-empty", openRanges().length > 0);
+check("D4-37 jamRanges non-empty", jamRanges().length > 0);
+{
+  const jc = jamCallRange();
+  check("D4-37 jamCallRange non-empty + hand token", jc !== "" && parseRange(jc).cells.size > 0, jc);
+}
+check("D4-37 fourBetRanges parses", fourBetRanges() !== null);
+check("D4-37 squeezeRange parses", squeezeRange() !== null);
+{
+  const qr = quickReference();
+  check(
+    "D4-37 quickRef 4 base fields filled",
+    qr.decisionOrder.length > 0 && !!qr.sizes && !!qr.band2530 && qr.redFlags.length > 0,
+  );
+  // D6-55: the 4 missing of the v5 Quick Reference's 8 cards (Postflop/ICM/Multiway/Tilt) surfaced.
+  check("D6-55 quickRef Postflop card", !!qr.postflop && qr.postflop.rows.length > 0);
+  check("D6-55 quickRef ICM card", !!qr.icm && qr.icm.rows.length > 0);
+  check("D6-55 quickRef Multiway card", !!qr.multiway && qr.multiway.rows.length > 0);
+  check("D6-55 quickRef Tilt card", !!qr.tilt && qr.tilt.rows.length > 0);
+}
+
+// D1-9 / D1-7 / D6-63: new postflop/PLO/bridge tables parse and the engine yields questions.
+check("D1-9 bridgeBand (B14.1) parses", !!bridgeBand() && bridgeBand()!.rows.length > 0);
+check("D1-7 multiwayMatrix (B13.1) parses", !!multiwayMatrix() && multiwayMatrix()!.rows.length > 0);
+check("D1-7 postflop multiway Q generates", !!postflopQuestion("multiway"));
+check("D6-63 ploStackOff (B15.2) parses", !!ploStackOff() && ploStackOff()!.rows.length > 0);
+check("D6-63 ploModes (B15.1) parses", !!ploModes() && ploModes()!.rows.length > 0);
+check("D6-63 postflop PLO Q generates", !!postflopQuestion("plo"));
+
+// D4-38: structural integrity of the 57 scenarios — correct in range, source filled, kavram filled, count fixed.
+{
+  const badCorrect = SCENARIOS.filter((s) => !(s.correct >= 0 && s.correct < s.options.length));
+  const badSource = SCENARIOS.filter((s) => !s.source || !s.source.trim());
+  const badKavram = SCENARIOS.filter((s) => typeof s.kavram !== "string" || !s.kavram);
+  check("D4-38 scenario count 57 (TR=EN parity)", SCENARIOS.length === 57, String(SCENARIOS.length));
+  check("D4-38 all correct within options", badCorrect.length === 0, badCorrect.map((s) => s.q.slice(0, 24)).join("|"));
+  check("D4-38 all source filled", badSource.length === 0, String(badSource.length));
+  check("D4-38 all kavram filled", badKavram.length === 0, String(badKavram.length));
+}
+
+// D4-44 (EN-only): every scenario/seed concept slug has a CONCEPT_LABEL key (else EN chips show raw slug).
+{
+  const keys = new Set(Object.keys(CONCEPT_LABEL));
+  const slugs = new Set<string>([...SCENARIOS.map((s) => s.kavram), ...KARNE_SEED.map((k) => k.kavram)]);
+  const missing = [...slugs].filter((s) => !keys.has(s));
+  check("D4-44 every slug has a CONCEPT_LABEL", missing.length === 0, missing.join("|"));
+}
+
+// D7-73: the karne data layer's pure functions (DUE_CAP expired silently through exactly this gap).
+check("D7-73 P0: a correct answer's due is not in the past", computeDue("correct", 1) >= localIsoDay(0), computeDue("correct", 1));
+check("D7-73 capDue doesn't push a past date forward", capDue("2000-01-01") === "2000-01-01");
+check("D7-73 capDue farFuture <= farFuture", capDue(localIsoDay(365)) <= localIsoDay(365));
+check("D7-73 mastery: 3 streak + 3 days = saglam", computeMastery(3, ["a", "b", "c"]) === "saglam");
+check("D7-73 mastery: 2 streak + 2 days = yetkin", computeMastery(2, ["a", "b"]) === "yetkin");
+check("D7-73 mastery: 1 streak = asina", computeMastery(1, ["a"]) === "asina");
+check("D7-73 mastery: 0 = gorundu", computeMastery(0, []) === "gorundu");
+{
+  const mig = migrate([{ kavram: "x", due: "2030-01-01" }, { kavram: "x" }, { kavram: "y" }]);
+  const x = mig.find((e) => e.kavram === "x");
+  check("D7-73 migrate v1 multi-row → consolidated (x reps=2)", mig.length === 2 && x?.reps === 2, String(mig.length));
+  check("D7-73 migrate malformed field doesn't crash (correctDays array)", Array.isArray(x?.correctDays));
+}
+
+check("KARNE_SEED slugs filled", KARNE_SEED.every((k) => typeof k.kavram === "string" && k.kavram.length > 0));
 
 console.log(out.join("\n"));
 console.log(`\nRESULT: ${failed === 0 ? "ALL PASS" : failed + " FAIL"}`);

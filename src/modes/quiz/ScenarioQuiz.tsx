@@ -1,17 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import { SCENARIOS, type Scenario } from "./scenarios";
-import { recordResult } from "../../lib/karne";
+import { recordResult, dueEntries, confidentWrong } from "../../lib/karne";
 import { recordQuiz } from "../../lib/progress";
 import { load, save } from "../../lib/storage";
 
 const SHOT_SECS = 20; // table-mode decision clock
-// Table-mode atmosphere frames — stack depth is INTENTIONALLY absent: each scenario
-// states its own depth in its text; putting bb here would contradict it.
+// Table-mode atmosphere frames — stack depth is INTENTIONALLY absent (each scenario states its
+// own depth). ICM is INTENTIONALLY absent too: a "bubble/final table/chip leader" frame stuck
+// randomly to a chipEV-keyed question (Chapter 5/12) and contradicted the book — keep clock/pressure only.
 const FRAMES = [
-  "Day 2 · 2 off the bubble",
-  "Final table · all eyes on you",
-  "Day 1 · deep table",
-  "Post-ITM · chip leader on your left",
+  "Decision clock running · be precise",
+  "Live table · all eyes on you",
+  "Standard table · antes in",
+  "Tournament day · focus",
 ];
 
 // Scenario quiz: decision questions from every chapter of the book.
@@ -26,11 +27,31 @@ const CONF = [
 
 type SeenMap = Record<string, number>;
 
-function pickScenario(biasKavram?: string): Scenario {
+// Concepts due + sure-but-wrong in the scorecard (let the spaced-review signal reach quiz selection).
+function dueKavramSet(): Set<string> {
+  const set = new Set<string>();
+  for (const e of dueEntries()) set.add(e.kavram);
+  for (const e of confidentWrong()) set.add(e.kavram);
+  return set;
+}
+
+function pickScenario(biasKavram?: string, excludeQ?: string): Scenario {
   const seen = load<SeenMap>(SEEN_KEY, {});
   const count = (s: Scenario) => seen[s.q] ?? 0;
   let pool = biasKavram ? SCENARIOS.filter((s) => s.kavram === biasKavram) : SCENARIOS;
   if (!pool.length) pool = SCENARIOS;
+  // The Range Quiz weak-spot adaptation (Quiz.tsx 55% bias) ported to the scenario side:
+  // with 55% probability narrow the pool to due/sure-but-wrong concepts (full pool if empty).
+  if (!biasKavram && Math.random() < 0.55) {
+    const dueSet = dueKavramSet();
+    const narrowed = pool.filter((s) => dueSet.has(s.kavram));
+    if (narrowed.length) pool = narrowed;
+  }
+  // Don't re-ask the exact same question immediately (produced a fake 'correct' on single-scenario concepts).
+  if (excludeQ) {
+    const ex = pool.filter((s) => s.q !== excludeQ);
+    if (ex.length) pool = ex;
+  }
   const min = Math.min(...pool.map(count));
   const fresh = pool.filter((s) => count(s) === min);
   return fresh[Math.floor(Math.random() * fresh.length)];
@@ -53,8 +74,11 @@ export function ScenarioQuiz() {
 
   const answered = chosen !== null;
   const correct = chosen === s.correct;
-  const confWrong = answered && !correct && conf >= 0.8;
   const timedOut = answered && chosen === -1;
+  // A timeout is NOT counted as sure-but-wrong (the user timed out without declaring confidence).
+  const confWrong = answered && !correct && conf >= 0.8 && !timedOut;
+  // If there's no other scenario in this concept, hypercorrection would re-ask the same question → route to Drill.
+  const soloConcept = useMemo(() => SCENARIOS.filter((x) => x.kavram === s.kavram).length <= 1, [s]);
   const overseen = useMemo(() => {
     const seen = load<SeenMap>(SEEN_KEY, {});
     return SCENARIOS.every((x) => (seen[x.q] ?? 0) >= 2);
@@ -90,13 +114,14 @@ export function ScenarioQuiz() {
       soru_ozeti: s.q,
       sonuc: ok ? "correct" : "wrong",
       not: s.explain,
-      confidence: conf,
+      // A timeout (idx=-1) = failure to decide; don't produce overconfidence data (omit confidence).
+      ...(idx === -1 ? {} : { confidence: conf }),
     });
   }
 
   function again() {
-    // if sure-but-wrong, re-ask the same concept in a different guise (hypercorrection)
-    const next = pickScenario(confWrong ? s.kavram : undefined);
+    // if sure-but-wrong, re-ask the same concept in a different guise; exclude the same question (hypercorrection)
+    const next = pickScenario(confWrong ? s.kavram : undefined, s.q);
     setChosen(null);
     setS(next);
     setFrameI((x) => (x + 1) % FRAMES.length);
@@ -206,9 +231,15 @@ export function ScenarioQuiz() {
               <b> Drill</b> in a fresh guise (it generates new spots).
             </div>
           )}
-          <button onClick={again} className="btn-accent py-3 text-base">
-            {confWrong ? "Same concept, new spot →" : "Next question →"}
-          </button>
+          {confWrong && soloConcept ? (
+            <button onClick={() => (window.location.hash = "#/drill")} className="btn-accent py-3 text-base">
+              Work this concept in Drill →
+            </button>
+          ) : (
+            <button onClick={again} className="btn-accent py-3 text-base">
+              {confWrong ? "Same concept, new spot →" : "Next question →"}
+            </button>
+          )}
         </>
       )}
     </div>

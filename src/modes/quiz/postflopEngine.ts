@@ -10,6 +10,8 @@ import {
   riverBluffCatch,
   riverThinValue,
   badRiverCatalog,
+  multiwayMatrix,
+  ploStackOff,
   type MdTable,
 } from "../../content/curriculum";
 
@@ -23,7 +25,7 @@ export type PostflopAction =
   | "checkfold"
   | "call"
   | "fold";
-export type PostflopStreet = "turn" | "river";
+export type PostflopStreet = "turn" | "river" | "multiway" | "plo";
 
 export interface PostflopQuestion {
   kavram: string;
@@ -97,6 +99,17 @@ function classifyThin(cell: string): "betvalue" | "checkcall" | null {
   // \bbet\b so "…the reg pays with better" (a crisp check-call cell) isn't swallowed by "bet" in "better".
   if (/check-call/.test(c)) return "checkcall";
   if (/value|bet/.test(c)) return "betvalue";
+  return null;
+}
+
+/** Multiway (13.1) 3+ cell → direction. Read-dependent cells ("Depends"/SPR) and frequency /
+ *  conditional statements ("Collapses…", "Almost none…") don't resolve to one action → skip. */
+function classifyMultiway(cell: string): "bet" | "check" | null {
+  const c = cell.toLowerCase();
+  if (/duruma göre|depends|\bspr\b/.test(c)) return null;
+  if (/çöker|collapses|neredeyse yok|almost none/.test(c)) return null;
+  if (/check/.test(c)) return "check";
+  if (/\bbet\b/.test(c)) return "bet";
   return null;
 }
 
@@ -229,11 +242,72 @@ function qBadRiver(): PostflopQuestion | null {
   };
 }
 
+function qMultiway(): PostflopQuestion | null {
+  const t = multiwayMatrix();
+  if (!t || t.rows.length === 0) return null;
+  const last = t.headers.length - 1; // "3+ way" column = the correct answer; the HU column is context
+  const crisp = t.rows
+    .map((row, i) => ({ i, a: classifyMultiway(row[last] || "") }))
+    .filter((x): x is { i: number; a: "bet" | "check" } => x.a !== null);
+  if (!crisp.length) return null;
+  const p = pick(crisp);
+  const row = t.rows[p.i];
+  // A bet from a draw row is a semi-bluff (6.1 doctrine — never value); other bets resolve by row.
+  const correct: PostflopAction =
+    p.a === "bet" ? (/\bfd\b|draw/i.test(row[0]) ? "betbluff" : betType(row[0])) : "check";
+  return {
+    kavram: "postflop:multiway",
+    street: "multiway",
+    headline: `Multiway — the pot is 3+ way. Your hand class: ${row[0]}. (If HU: ${row[1]}.)`,
+    prompt: "What do you do in the 3+ way pot?",
+    answers: ["betvalue", "betbluff", "check"],
+    correct,
+    note: `Book 13.1: "${row[last]}" — every additional player multiplies the price of a bluff and raises the bar for value (13.0).`,
+    table: t,
+    highlightRow: p.i,
+    source: "13.1",
+  };
+}
+
+function qPloStackOff(): PostflopQuestion | null {
+  const t = ploStackOff();
+  if (!t || t.rows.length === 0) return null;
+  // Column 1 = CAN stack off, column 2 = cannot. Calibration-marked cells are skipped
+  // (the same read-dependent-cell doctrine as the turn/river drills).
+  const crisp: { r: number; c: number }[] = [];
+  for (let r = 0; r < t.rows.length; r++)
+    for (let c = 1; c < t.headers.length; c++) {
+      const cell = t.rows[r][c] || "";
+      if (!cell.trim() || /kalibre|calibrate/i.test(cell)) continue;
+      crisp.push({ r, c });
+    }
+  if (!crisp.length) return null;
+  const p = pick(crisp);
+  const row = t.rows[p.r];
+  const can = p.c === 1;
+  return {
+    kavram: "postflop:plo:stackoff",
+    street: "plo",
+    headline: `PLO — SPR ${row[0]} on the flop. Your hand class: ${row[p.c]}.`,
+    prompt: "Can you stack off in this SPR band?",
+    answers: ["betvalue", "check"],
+    answerLabels: { betvalue: "Yes — stack off (commit)", check: "No — pot control" },
+    correct: can ? "betvalue" : "check",
+    note: `Book 15.2: at SPR ${row[0]} this class sits in the "${t.headers[p.c]}" column. The commit decision is made not on the flop, but on the street where you bloat the pot.`,
+    table: t,
+    highlightRow: p.r,
+    source: "15.2",
+  };
+}
+
 const TURN_GENS = [qTurnBarrel, qDrawTurn];
 const RIVER_GENS = [qRiverSize, qThinValue, qBadRiver];
 
-/** Build one postflop question for the chosen street ("all" mixes turn + river). */
+/** Build one postflop question for the chosen street ("all" mixes turn + river;
+ *  "multiway" draws from B13.1, "plo" from B15.2 — turn/river behavior is unchanged). */
 export function postflopQuestion(street: "all" | PostflopStreet): PostflopQuestion | null {
+  if (street === "multiway") return qMultiway();
+  if (street === "plo") return qPloStackOff();
   const gens =
     street === "turn" ? TURN_GENS : street === "river" ? RIVER_GENS : [...TURN_GENS, ...RIVER_GENS];
   // shuffle then take the first that yields (so a missing table doesn't dead-end the drill)

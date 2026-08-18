@@ -19,7 +19,11 @@ export const MODULE_PRETEST: Record<string, string> = {
 };
 
 function pickByKavram(kavram: string): Scenario | null {
-  const pool = SCENARIOS.filter((s) => s.kavram === kavram);
+  // Chapter 17 (WSOP) scenarios stay out of the pretest pool — the pretest question
+  // must be one the lesson that follows actually answers.
+  const pool = SCENARIOS.filter(
+    (s) => s.kavram === kavram && !s.source.includes("Chapter 17"),
+  );
   return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
 }
 
