@@ -737,6 +737,78 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M14",
+    title: "PLO tournament layer",
+    chapter: "Chapter 15 ★",
+    minutes: 6,
+    slides: [
+      {
+        title: "Why a separate layer",
+        bullets: [
+          "In pot-limit there's no 'jam' — only a max pot-raise.",
+          "Equities run close → the fold-equity doctrine weakens.",
+          "'30bb PLO' ≠ '30bb NLH' — the B5 jam/fold reflex is void.",
+        ],
+        narration:
+          "We covered PLO basics in module nine; this module adds the tournament layer, because the twenty-five-thousand-euro PLO High Roller is a separate event. First, why do we need a separate layer? Because chapter five's NLH jam-fold reflex is void in PLO. One: in pot-limit there's no such thing as a 'jam', only a maximum pot-raise; you can't put your stack in with a single move. Two: in PLO equities run very close, so the doctrine built on fold equity — your power to make an opponent fold — weakens; nobody folds easily. The result: thirty big blinds in PLO is not the same as thirty big blinds in NLH. Carry the NLH reflex of 'short stack, 3-bet equals jam' into PLO and you'll burn. This module closes that contradiction: same depth, completely different execution.",
+      },
+      {
+        title: "PLO stack modes",
+        table: { section: "Chapter 15", sub: "15.1", caption: "Short PLO: a pot-raise = commit." },
+        narration:
+          "Stack modes work differently in PLO. At sixty big blinds and up you play standard PLO: implied odds are at their peak, and the value of rundowns and double-suited hands is highest. Twenty-five to sixty is the critical band: chapter five is void here, because there's no jam, only a pot-raise. In this band you play nut-focused; bare aces don't play postflop, their value is in pre-commit — that is, 3-betting to bring the stack-to-pot ratio to one or below. Below twenty-five, a pot-raise already puts the remaining stack in automatically on the flop; treat that as a jam and pick your range accordingly. One sentence: in short PLO a pot-raise means commit. Pick your range on the assumption that 'the stack goes in on the flop' — double-suited rundowns and strong ace-ace hands; cut anything with a dangler, that is, a disconnected fourth card.",
+      },
+      {
+        title: "Commit threshold — SPR",
+        table: { section: "Chapter 15", sub: "15.2", caption: "Commit is decided on the street you bloat the pot." },
+        ruleBox: "In PLO the commit decision is made not on the flop, but on the street where you bloat the pot.",
+        narration:
+          "In PLO a bloated pot forms two streets earlier than in NLH, so know your commit decision before the pot bloats. Look at the table; the measure is again the stack-to-pot ratio. Below two, only the nuts plus a strong redraw put the stack in — a nut set plus a flush draw, or a wrap plus a nut flush draw. Bare aces or a one-way hand don't stack off at this ratio. Two to four: a made nut hand and a strong combo draw continue; the second nuts and a non-nut draw don't. Above four: you build high-nut-potential hands street by street, but a non-nut made hand here is a trap. One exception: if you bloated the pot yourself preflop — a 3-bet pot with a stack-to-pot ratio below one — bare aces as an overpair is a commit; that's not the root error, it's a preflop equity decision. What's forbidden is stacking off a one-way hand in a postflop bloated pot. In short: in PLO you decide commit not on the flop, but on the street where you bloat the pot.",
+      },
+      {
+        title: "Counting outs — nut outs",
+        bullets: [
+          "Raw outs mislead; the stack-off threshold is measured in NUT outs.",
+          "'Wrap + FD: 13 outs' — if half are non-nut, it's a trap, not a weapon.",
+          "The real weapon: a nut-end wrap + a nut flush draw.",
+        ],
+        ruleBox: "For a stack-off, count NUT outs, not raw outs.",
+        narration:
+          "Finally, counting outs — and this is where PLO's most expensive illusion lives. Raw outs mislead you; you must measure the stack-off threshold in nut outs. The line 'wrap plus flush draw, thirteen outs' is dangerous undiscounted: if half of those thirteen outs are non-nut, you hold not a real weapon but a trap — even when it completes you make the second-best hand and lose the stack. Module nine's 'real weapon' label holds only for a wrap with a nut flush draw. The rule is clear: for a stack-off decision, count nut outs, not raw outs. How many of your outs actually put you ahead, and how many take you to second-best — don't put your whole stack in without making that distinction. This is module nine's rule that 'bare aces is one pair' extended to draws and to depth.",
+      },
+    ],
+  },
+  {
+    id: "M15",
+    title: "Mental spine: tilt, autopsy, re-entry",
+    chapter: "Chapter 16 ★",
+    minutes: 6,
+    slides: [
+      {
+        title: "Bustout + re-entry card",
+        table: { section: "Chapter 16", sub: "16.1", caption: "Bustout → 20 min away → fill in → decide." },
+        ruleBox:
+          "The series' most expensive decision isn't a hand: it's the re-entry decision made in the 5 minutes after a bustout. Auto-re-entry on tilt = the bankroll scale of the root error.",
+        narration:
+          "The book has been a hundred percent technical so far. But August twenty-first to twenty-ninth is an endurance race: the SHR, the PLO, an eight-day Main, and the HR, plus event overlaps. However good the technique, there was no single line managing the decision-state — fatigue, tilt, re-entry pressure — that has to apply it. This module gives those cards. The single most expensive decision isn't a hand: it's the re-entry decision made in the five minutes after a bustout. Firing an automatic re-entry on tilt is the bankroll scale of the root error — treating a single bullet as value inside a bloated series investment. The mandatory wait: bust out, twenty minutes away from the table, then fill in the card's questions, then decide. Look at the table: was the bustout a bad decision or variance, which flight does the next bullet eat, is your total series exposure within your pre-limit, is your physical state green. And your calibration, max bullets per event: SHR one, PLO two, Main two, HR two. The hundred-thousand SHR has no re-entry — there a second bullet alone is plus a hundred thousand euros, outside discipline.",
+      },
+      {
+        title: "Tilt card",
+        table: { section: "Chapter 16", sub: "16.2", caption: "First you NOTICE tilt, then you act." },
+        ruleBox: "A decision made on tilt comes not from your range but from the wound — label the wound first.",
+        narration:
+          "The root error is rarely made cold; it typically shows up in the hands following a trigger. So on tilt you don't recite a memorized line — first you notice the tilt itself. Look at the table, three triggers and their immediate move: a bad beat or a big pot loss, symptom is chasing with bad hands, move is a deep breath. A long card-dead stretch and action hunger, symptom is playing faster and snap-calling, move is locking your hand for one orbit. Getting a bluff shown or ego, symptom is reaching for your phone, move is drinking water and standing up. Your symptoms, in your calibration, all three are present with no single dominant trigger: playing faster and snapping, reaching for the phone, chasing with bad hands. When any one of the three appears, sound the alarm; don't stop to diagnose which trigger it is — notice the symptom and apply that row's move. The rule: a decision on tilt comes not from your range but from the wound — so label the wound first.",
+      },
+      {
+        title: "The autopsy rule",
+        table: { section: "Chapter 16", sub: "16.3", caption: "Right decision + bad result → range DOESN'T change." },
+        ruleBox: "If you followed the rule and lost: 'right decision, bad result' — the range DOESN'T change.",
+        narration:
+          "The last card is the autopsy rule, and this is the filter that protects your calibration. When do you run an autopsy? Not the moment the hand ends — after the day ends. At the table just note the hand, leave the analysis for the evening. You ask two questions: one, with what I knew at the moment of decision, what was the book rule? Two, did I follow that rule? If you followed it and still lost, write 'right decision, bad result' in your case log — and don't change your range. Why is this filter critical? Because in the SHR correct jams will often lose; without this filter you'd start breaking chapter four and five's carefully calibrated tables mid-tournament. One warning: don't let the 'it was right, it was variance' label become a self-absolution door — it's valid only if you genuinely followed the rule. It's the decision that's judged, not the result.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {
