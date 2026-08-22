@@ -322,6 +322,25 @@ If the coldcaller is tight, widen the bluff side. If the coldcaller is a fish (d
 
 **The most common mistake:** playing a 130bb range at 45bb — flatting small pairs, 3-bet bluffing suited connectors. Both lose money at 45bb.
 
+### 4.8 BB Defense — The Ante Price
+
+In an ante structure, BB defense is the most generous spot in your math: there's already a lot in the pot and your call adds little. That's why the BB defend range is very wide — but "getting in cheap" does not replace postflop discipline.
+
+**Price math (example: 2.25× open, with antes):** 2,000 BB, 4,500 open → the pot already holds 4,500 (open) + 2,000 (your BB) + 1,000 (SB) + ~2,000 (antes) ≈ 9,500. You need to add 2,500. → 2,500 / 12,000 ≈ **~21% equity is enough.** Almost any two cards clear this raw threshold.
+
+| Decision (vs a 2.25× open) | Hands |
+|---|---|
+| **Call (defend)** | All suited (incl. T3s), connected/1-gap offsuit (86o, 97o, J8o), all Ax, most Kx, 22+ — roughly 55–60% of hands |
+| **Fold** | J3o, Q4o, K2o–K5o, 92o — both disconnected and dominated junk. Price rescues equity, not playability |
+| **3-bet instead of call** | The bluff side from 4.3 (A5s–A2s, K8s–K6s type) + value. Keep this aggression vs late opens; ante pots are worth stealing |
+
+**Two critical nuances:**
+
+1. **Getting in cheap ≠ continuing cheap.** Calling 2,500 and then flipping to "I'm already in the pot" mode after flopping second pair is the BB version of your root mistake. The entry price does not affect postflop decisions — every street is a fresh decision.
+2. **Tighten multiway.** With an open + one caller the price is still good, but dominated hands (A7o, K9o) lose value; keep the suited/connected side, fold the weak offsuit Ax.
+
+Once the stack drops below 40bb (Mode C/D) this wide defend narrows — the stack can't afford to see cheap flops and fold, so the "call-to-jam" transition begins. This table applies at the 56bb restart.
+
 ---
 
 ## Chapter 5 — The 25–30bb Band: Battle Plan
