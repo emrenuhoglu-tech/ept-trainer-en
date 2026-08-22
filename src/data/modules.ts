@@ -387,6 +387,18 @@ export const modules: Module[] = [
         narration:
           "Finally, sizing. In position, the 4-bet is two point two times the 3-bet. Out of position, go a bit bigger: two point five times the 3-bet. Bigger out of position, so you don't give weak hands a good price and keep them in. Make these two numbers reflexes. If you think about sizing, you lose tempo and leak reads through your sizes.",
       },
+      {
+        title: "5-bet — answering the 4-bet",
+        bullets: [
+          "5-bet = re-raising the 4-bet; at this depth, practically all-in (a jam).",
+          "Value: KK+ always. QQ/AK depends on villain — jam vs an aggressor, fold vs a nit.",
+          "The 5-bet bluff barely exists live — whoever 4-bets you is usually ahead.",
+        ],
+        ruleBox:
+          "Every hand you 4-bet must have a pre-decided plan against a 5-bet jam. No '4-bet and see'.",
+        narration:
+          "The last side of the coin: you 4-bet and the opponent re-raised — a 5-bet. At this depth a 5-bet is practically all-in. The rule comes from the live reality again: since the 4-bet bluff barely exists, whoever 4-bets or 5-bets you is usually genuinely ahead. So the 5-bet is for value. Your value jam: kings and up, always. Queens and ace-king depend on the villain — you jam against an aggressive player, but if a tight nit made the 4-bet, whose range is aces and kings, you fold queens and ace-king. The 5-bet bluff barely exists live; if nobody folds, a bluff 5-bet burns your whole stack. The golden rule: every hand you 4-bet must have a pre-decided plan against a 5-bet jam. At fifty-six big blinds deep, a 4-bet is already around twenty big blinds — the commitment threshold; the moment you 4-bet, you must already know what you'll do against a 5-bet.",
+      },
     ],
   },
   {
@@ -651,6 +663,77 @@ export const modules: Module[] = [
         table: { section: "Chapter 12", sub: "12.2", caption: "Correct play depends on stack role, not the hand." },
         narration:
           "At the final table, your correct play is set by your stack role, not your hand. If you're short — below fifteen big blinds — and there's someone even shorter at the table, be the first jammer and watch the ladder; but if no one is shorter, don't stall — make the correct jam, because getting blinded into a lock-up is also a bust. If you're the medium stack — the most fragile role: know whose bust you're waiting for, and don't open a pot with someone who covers you. But if you're effectively the shortest, meaning everyone is deeper than you, chapter twelve's fifth rule kicks in: when everyone is locked up, widen your jam range, don't stall. If you're the covering deep stack — aggression is free: crush the short and medium stacks without penalty, but don't get into an ego war with another chip leader. In short: look at the stack distribution and your own role first, then play the hand. At the final table the hand is secondary.",
+      },
+    ],
+  },
+  {
+    id: "M12",
+    title: "Multiway pot doctrine",
+    chapter: "Chapter 13 ★",
+    minutes: 6,
+    slides: [
+      {
+        title: "The core — what each extra player changes",
+        bullets: [
+          "Each extra player MULTIPLIES the price of a bluff.",
+          "RAISES the bar for value (top pair drops a class).",
+          "INCREASES the value of the nuts.",
+        ],
+        ruleBox:
+          "Each extra player multiplies the price of a bluff, raises the bar for value, increases the value of the nuts.",
+        narration:
+          "The root error was defined as 'misclassifying one pair in a bloated or multiway pot'; this module gives the multiway half of that definition. In the rec-heavy Main most pots are multiway, so this is the texture you'll spend the most time in. One rule sums it up: each extra player multiplies the price of a bluff, raises the bar for value, and increases the value of the nuts. The reason is compound probability: as the number of opponents grows, the chance that someone has two pair or better, or a set, multiplies. That's why a multiway bloated pot makes one pair an even clearer bluff-catcher than a heads-up bloated pot. A hand that was value heads-up drops a class when three players see the flop. Carry one sentence: multiway, one pair is a class below what it is heads-up.",
+      },
+      {
+        title: "Heads-up → 3+ way transition",
+        table: { section: "Chapter 13", sub: "13.1", caption: "Same hand drops a class by player count." },
+        narration:
+          "Now look at what changes when you carry your hand from heads-up into a multiway pot. Your c-bet frequency collapses: heads-up you fire high, three-plus-way you continue only with strong value and a real nut-draw. Top pair was value heads-up; multiway it drops a class, into check or pot control. An overpair was a big-pot candidate heads-up; multiway you take two streets of value and control, and count the stack-to-pot ratio. A bluff depended on the three criteria heads-up; multiway it's nearly gone — only a semi-bluff carrying a nut blocker. You keep betting the nut flush draw, because the price is good and it pays big when it completes. But a non-nut flush draw or a gutshot turns into a check or dies multiway. In short: as the count grows, your aggression narrows, and only the strongest value and nut-draws stay standing.",
+      },
+      {
+        title: "Bluffing multiway — the fourth criterion",
+        table: { section: "Chapter 13", sub: "13.3", caption: "Player count = doors a bluff must pass." },
+        ruleBox:
+          "Add to the 'whom not to bluff' list: a multiway pot (whoever they are). Even one station kills the bluff.",
+        narration:
+          "In module two we learned the three criteria for a bluff: blocker, connection, board ownership — but those were built for a single opponent. Multiway adds a fourth variable: the number of opponents, the number of doors your bluff must pass through. Each extra player adds a door, and even one lone station closes it and kills the bluff. Look at the table: heads-up the three criteria hold, three-way only a nut-blocker semi-bluff, four-plus-way no bluff at all. And who to fear matters: not all the preflop callers, but the tightest range still standing on the flop. A raise that comes over a bet after an intervening call is almost always the nuts; there's no continuing with one pair there. In short, add a new entry to module two's 'whom not to bluff' list: a multiway pot, whoever they are.",
+      },
+    ],
+  },
+  {
+    id: "M13",
+    title: "40–70bb bridge band",
+    chapter: "Chapter 14 ★",
+    minutes: 5,
+    slides: [
+      {
+        title: "Character of the band",
+        bullets: [
+          "The 3-bet gets closer to commit (full commit at 40bb).",
+          "The flat window narrows but isn't zero — a thin flat IP and in the BB.",
+          "Offsuit broadways / dominatable hands drop; playability comes first.",
+        ],
+        narration:
+          "Chapter four gave tables for a hundred to a hundred fifty big blinds, chapter five for twenty-five to thirty; the middle — forty to seventy big blinds — was left with one-line notes. But Main day two and the middle phase of every High Roller are played mostly in this band; it's the depth you'll be at most. The character of the band is this. One: the 3-bet gets closer to commit; not at sixty, but at forty you're fully committed. Two: the flat window narrows but, unlike chapter five, isn't zero — a thin flat survives in position and in the big blind. Three: offsuit broadways and dominatable hands drop relative to chapter four; here playability comes first. One sentence: mode comes first, then range — and this band is the bridge between the two extremes.",
+      },
+      {
+        title: "3-bet framework (40–70bb)",
+        table: { section: "Chapter 14", sub: "14.1", caption: "Not a new list — direction from B4." },
+        ruleBox:
+          "A hand you 3-bet must be able to continue against a 4-bet/jam — if it can't, flat (IP/BB) or fold.",
+        narration:
+          "In this band you don't memorize a new combo list; you take the direction in which chapter four's calibrated ranges narrow at this depth. Look at the table. Sixty to seventy big blinds: your value side is nearly the same as chapter four, but your bluff side is more polarized — narrow the bluffs to the best blocker and playability hands. Forty to sixty: cut the weak ends of value, drop the bluffs almost entirely because nobody folds live, and the 3-bet approaches commit. The golden rule: below about sixty big blinds the '3-bet then fold' structure weakens, and at forty it ends. So a hand you 3-bet must be able to continue against a 4-bet or a jam; if it can't, you either flat it or fold it — don't 3-bet for nothing and then fold.",
+      },
+      {
+        title: "60 → 40bb transition signals",
+        bullets: [
+          "First out of the table: a 3-bet bluff with a suited connector",
+          "Speculative flat with a small pair",
+          "Offsuit broadway cold-call",
+        ],
+        ruleBox: "Playing a 130bb range at 45bb is the most expensive habit.",
+        narration:
+          "Finally, know which hands should leave the table first as you drop through the band, because these turn into straight losses when depth shrinks. First, a 3-bet bluff with a suited connector: without depth it has neither fold equity nor implied odds. Second, a speculative flat with a small pair: you're hunting a set, but the payout depth isn't there. Third, an offsuit broadway cold-call: playing an already-dominated hand out of position. The zero-th sentence's warning becomes concrete here: playing a hundred-and-thirty-big-blind range at forty-five big blinds is the most expensive habit. The wrong-mode range is the number-one source of bloated pots — that is, the preflop source of the root error. Mode first, then range: this bridge band completes that backbone between the two extremes.",
       },
     ],
   },
