@@ -597,6 +597,18 @@ export const modules: Module[] = [
           "We diagnosed the root error in earlier modules: misclassifying one pair in a bloated pot. This module gives you what comes after the diagnosis — the execution. First question: what is a 'bloated pot', and how do you measure it? The answer isn't the bet count, it's the stack-to-pot ratio. Divide your remaining stack on the flop by the pot. A small ratio means the pot is bloated; a big one means it isn't. Below one, the decision was already made preflop — you're committed. One to four — say, a 3-bet pot a hundred big blinds deep — your one pair is a bluff-catcher; don't start a big pot here. Four to eight, take two streets of value and control, be careful on the third. Above eight you can take thin value, but if someone re-raises, the pot suddenly drops into the one-to-four band and one pair is a bluff-catcher again. One sentence: read the stack-to-pot ratio first, then give one pair its role. Dropping one pair to a bluff-catcher too early when deep, and missing value, is a mistake; so is stacking off with an old deep reflex when medium-shallow.",
       },
       {
+        title: "Count the SPR — worked example + committed math",
+        bullets: [
+          "SPR = smallest remaining stack ÷ pot (round it at the flop).",
+          "Single-raised pot ~SPR 8–10; 3-bet pot ~SPR 3.",
+          "Commitment isn't a feeling, it's a ratio.",
+        ],
+        ruleBox:
+          "Round the SPR every time you see a flop; if it's 3+, no big pot with one pair — your decision tree simplifies up front.",
+        narration:
+          "We learned the bands; now let's learn to count at a glance. The stack-to-pot ratio is the smallest remaining stack divided by the pot — the shorter of the two stacks, because that's the most that can go in. A concrete example: at two thousand, four thousand blinds you opened two and a half times, the big blind called, the pot is about twenty-four thousand. If you both have two hundred forty thousand behind, the ratio is ten — deep, no big pot with one pair. But if the same hand were played in a 3-bet pot, pot sixty thousand and a hundred eighty thousand behind, the ratio drops to three — and that's exactly why aces stacking off in a 3-bet pot is correct. And from here comes the mathematical definition of the root error: your feeling of 'the pot got big, I'm committed now' is actually a stack-to-pot-ratio misread. Say you have tens, on the flop the ratio was about seven or eight; at that depth even a pair plus a draw was marginal to jam, and one pair alone was a clear fold. The feeling says 'the pot is big,' but the ratio says 'no, the stack is still deep relative to the pot.' Burn this in: being committed isn't a feeling, it's a ratio. In practice, round the ratio roughly every time you see a flop; if it's above three you won't play a big pot with one pair, and your decision tree simplifies from the very start.",
+      },
+      {
         title: "Turn discipline — the second barrel",
         table: { section: "Chapter 11", sub: "11.1", caption: "Sizes calibrated; direction fixed." },
         ruleBox:
@@ -894,6 +906,63 @@ export const modules: Module[] = [
         visuals: [{ kind: "hand", cards: "AA", label: "Single pair in a bloated pot — alarm" }],
         narration:
           "Last slide: the phase plan, the ICM thresholds, and the root-error guardrails. There are four phases. While the bubble is far, stay in Mode A, keep your stack above fifty big blinds, don't fight the big stacks needlessly. As the bubble nears — this is your most profitable phase — the fifteen to twenty-five big blind stacks freeze up; 3-bet their opens, open into their blinds, float their c-bets. Your only brake: the players who cover you, one notch tighter against them. The moment the money hits, play three or four hands tight, the shorts fire kamikaze jams, meet them with premiums, then return to normal. Deep in the money and at the final table the ladder is huge: ICM outweighs chip-EV, crush the shorts, avoid the equals, premiums to the bigs. Now the numeric ICM threshold, memorize it: on the bubble, against a covering player's four-bet jam, even queens fold — because against kings and ace-king you have about forty percent equity, then the bubble ICM premium is added and the equity you need climbs to forty-eight percent. Practical rule: on the bubble, against a cover for your whole stack, your range is kings and up. Ace-king folds to a cover's tight jam but always calls a jam under twenty big blinds. And the unchanging guardrail: a single pair in a bloated pot, aces included, is an alarm — if the pot passed forty big blinds your default is pot control and bluff-catcher, not a stack race.",
+      },
+    ],
+  },
+  {
+    id: "M17",
+    title: "Preflop logic: sizing and role",
+    chapter: "Chapter 3 + Chapter 4",
+    minutes: 7,
+    slides: [
+      {
+        title: "Why open small (2.2–2.5x)",
+        bullets: [
+          "The ante inflates the pot's base — there's already big dead money in the pot.",
+          "A small open = buying cheap positional war; profit comes not from the preflop fold but from postflop position.",
+          "Size up (2.8–3.5x): a passive field that won't fold, isolating over limps, or at 25–35bb to collapse SPR to one decision.",
+        ],
+        ruleBox:
+          "A small open isn't to stop the BB from calling — it's to buy cheap positional war.",
+        narration:
+          "Preflop has two separate questions; this module separates them. The first is sizing. Why does everyone open small, like two point two to two point five times? The answer is the ante. The ante inflates the base of the pot from the start; at two thousand, four thousand blinds, with the ante there's already around eleven thousand of dead money sitting in the pot. Even a small open makes that pot worth taking — so you set the risk-reward ratio yourself: you risk ten thousand to chase an eleven-thousand pot. If you open three and a half times you chase the same pot risking fourteen thousand; if the blinds are going to defend anyway, every extra chip is an investment at a bad price. But if the big blind calls every hand, doesn't that break the open? It doesn't, because you have position. The big blind comes in with a wide range but plays every street out of position after the flop with a weak average hand; your profit comes not from the preflop fold but from the postflop positional edge. Thanks to the small size the big blind's call stops being a mistake, but your investment stays small too — nobody makes a big mistake, and the profit margin shifts to postflop skill. When do you size up? In three cases: when weak, passive players come to the flop a lot and don't fold, to grow the pot early with your value hands; when isolating in a limped pot; and when the stack drops to twenty-five, thirty-five big blinds, to collapse the stack-to-pot ratio to a single decision. Otherwise, especially at an elite table, stay fixed — at this level a big open is instantly read as value-heavy, and your sizing deviation leaks information.",
+      },
+      {
+        title: "Open range = linear",
+        table: { section: "Chapter 3", caption: "Opening: the threshold shifts by mode, structure always top-down." },
+        bullets: [
+          "The open question is one: 'is this hand profitable to open?' — linear, running down from the best.",
+          "Starts at AA, ends at edges like 87s / A9o depending on position.",
+        ],
+        ruleBox: "Open = 'is my hand enough?' Uninterrupted, top to bottom.",
+        narration:
+          "The second question is role; first let's clarify the open range. The open range is the question you ask when nobody's in front of you — 'is this hand profitable to play' — and it's linear: it starts at the best hand and runs down uninterrupted. It starts at ace-ace and ends, depending on position, at edges like eight-seven suited or ace-nine offsuit. Linear means you don't skip hands in the middle — you open everything above a certain threshold and fold everything below it. Look at the modes in the table: above eighty big blinds you open wide, and as depth decreases the threshold shifts up, but the structure is always the same, top to bottom without gaps. The open's only question is: is my hand enough? You don't care what the opponent is doing, because nobody has acted yet.",
+      },
+      {
+        title: "3-bet range = polarized",
+        table: { section: "Chapter 4", sub: "4.3", caption: "Value + bluff; the middle goes to a flat." },
+        bullets: [
+          "In most positions the 3-bet is polarized: value (queens+, AK) + bluff (A5s–A2s); the middle calls.",
+          "KQs, 99, AJs are the heart of the open range but are NOT in the 3-bet range — they flat (100bb+).",
+          "A5s is chosen as a bluff: A blocker + not worth folding + wheel/suited potential when called. A9o is stronger but plays worse → not a bluff.",
+        ],
+        ruleBox:
+          "3-bet = your hand's most profitable role against the opponent's range: value, bluff, call, or fold?",
+        narration:
+          "Now the critical difference. The 3-bet range is your answer to someone's open, and in most positions it's polarized: at the top you play value — queens and up and ace-king — at the bottom you play bluffs — hands like ace-five down to ace-two — and the middle you don't 3-bet, you flat call. Here's the crux: hands like king-queen suited, nines, ace-jack suited are right in the heart of the open range, but they're not in the 3-bet range; at a hundred big blinds deep they're a flat call. So why is ace-five suited in both the open and the 3-bet bluff? For different reasons. As an open it has enough equity and playability, it's profitable to open. As a 3-bet bluff it's chosen for three reasons: it blocks an ace, meaning it reduces the opponent's ace-ace and ace-king combos; your loss when you fold is small because the hand is already marginal; and if you get called it's playable with suited and wheel potential. So ace-five isn't chosen as a bluff because it's a good hand — it's chosen because it's a hand you can't bring yourself to fold but is unpleasant to flat, and it carries a blocker. By contrast ace-nine offsuit is stronger than it, but it doesn't go into the 3-bet bluff: same blocker, but its playability is bad and its domination risk is high. So the 3-bet's question is completely different from the open's: not 'is my hand enough' but 'against the opponent's range, what's this hand's most profitable role — value, bluff, call, or fold?'",
+      },
+      {
+        title: "Same hand, different role",
+        table: { section: "Chapter 4", sub: "4.7", caption: "Depth shifts the role: polarized → merged/linear." },
+        bullets: [
+          "Practical rule: open = 'is my hand enough', 3-bet = 'what's this hand's most profitable role'.",
+          "Exception: BB vs SB is built linear (AJs, KQs turn into value) — the SB range is wide.",
+          "Depth/opponent shift it: at 40–60bb it merges; vs a wide-opening aggressive reg, AQo/99–TT become value 3-bets.",
+        ],
+        ruleBox:
+          "The same hand changes role by position, depth, and opponent — don't memorize, think in roles.",
+        narration:
+          "Let's wrap up. The same hand plays a different role in the two lists because the questions are different. In the open the question is 'is my hand enough'; in the 3-bet it's 'what's this hand's most profitable role against this opponent'. The reverse example is illuminating too: you open seven-six suited from the button, but against an early-position open that same seven-six suited is usually a fold or a flat, not a 3-bet. Know the two exceptions. First, the big blind against the small blind builds its 3-bet linear rather than polarized — hands like ace-jack suited and king-queen suited also turn into value — because the small blind's range is very wide and the middling hands gain value against it. Second, depth and opponent shift the role: between forty and sixty big blinds the range turns merged and the flat almost disappears; and if there's a very wide-opening aggressive reg at the table, you linearize against them too — even ace-queen offsuit, nines, tens become value 3-bets. In short, don't memorize, think in roles: the same hand changes its role by position, depth, and opponent.",
       },
     ],
   },

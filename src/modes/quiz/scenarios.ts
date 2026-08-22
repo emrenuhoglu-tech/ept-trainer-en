@@ -570,6 +570,33 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 14.1",
     kavram: "3bet-aralik",
   },
+  {
+    q: "In an ante structure the BB defends every hand. Why do you still open small (2.2–2.5x)?",
+    options: ["Open big — force the BB to fold", "Open small — profit comes from postflop position, your investment stays small"],
+    correct: 1,
+    explain:
+      "A small open isn't to stop the BB's call; it buys cheap positional war. Because the ante inflates the pot, even a small open makes it worth taking; profit comes not from the preflop fold but from postflop position. Size up: passive field won't fold / isolate over limps / 25–35bb SPR.",
+    source: "Chapter 4.8 / 3",
+    kavram: "boyut",
+  },
+  {
+    q: "At 100bb, against someone's open you hold KQs — a hand in the heart of your open range. Do you 3-bet?",
+    options: ["3-bet — strong hand", "Flat call — KQs is the middle of the 3-bet range, neither value nor bluff"],
+    correct: 1,
+    explain:
+      "In most positions the 3-bet range is polarized: value (QQ+, AK) + bluff (A5s–A2s), the middle flats. KQs/99/AJs are the heart of the open range but not in the 3-bet range — at 100bb+ they flat. Exception: BB vs SB is linear, there KQs turns into value.",
+    source: "Chapter 4.3",
+    kavram: "3bet-aralik",
+  },
+  {
+    q: "You have TT in a single-raised pot, flop SPR ~8. The feeling says 'the pot got big, I'm committed.' Is it right?",
+    options: ["Yes — committed", "No — at SPR 8 no big pot with one pair; commitment isn't a feeling, it's a ratio"],
+    correct: 1,
+    explain:
+      "Being committed isn't a feeling, it's a ratio. SPR = smallest remaining stack ÷ pot. If SPR is 3+, no big pot with one pair; at 8 even a pair+draw is marginal to jam and one pair is a clear fold. In a 3-bet pot (SPR ~3) aces do stack off.",
+    source: "Chapter 11.0",
+    kavram: "kök-hata",
+  },
 ];
 
 export function randomScenario(): Scenario {
