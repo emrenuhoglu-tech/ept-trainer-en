@@ -566,6 +566,94 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M10",
+    title: "Bloated pot: SPR and execution",
+    chapter: "Chapter 11 ★",
+    minutes: 7,
+    slides: [
+      {
+        title: "SPR defines the bloated pot",
+        bullets: [
+          "SPR = stack ÷ pot. The ratio decides, not the bet count.",
+          "SPR 1–4 (100bb 3-bet pot): one pair is a bluff-catcher.",
+          "Read the SPR first, then assign one pair its role.",
+        ],
+        table: { section: "Chapter 11", sub: "11.0", caption: "SPR first, then role." },
+        ruleBox: "Deep, a bloated pot is defined by SPR, not the number of bets.",
+        narration:
+          "We diagnosed the root error in earlier modules: misclassifying one pair in a bloated pot. This module gives you what comes after the diagnosis — the execution. First question: what is a 'bloated pot', and how do you measure it? The answer isn't the bet count, it's the stack-to-pot ratio. Divide your remaining stack on the flop by the pot. A small ratio means the pot is bloated; a big one means it isn't. Below one, the decision was already made preflop — you're committed. One to four — say, a 3-bet pot a hundred big blinds deep — your one pair is a bluff-catcher; don't start a big pot here. Four to eight, take two streets of value and control, be careful on the third. Above eight you can take thin value, but if someone re-raises, the pot suddenly drops into the one-to-four band and one pair is a bluff-catcher again. One sentence: read the stack-to-pot ratio first, then give one pair its role. Dropping one pair to a bluff-catcher too early when deep, and missing value, is a mistake; so is stacking off with an old deep reflex when medium-shallow.",
+      },
+      {
+        title: "Turn discipline — the second barrel",
+        table: { section: "Chapter 11", sub: "11.1", caption: "Sizes calibrated; direction fixed." },
+        ruleBox:
+          "Before firing the second barrel, ask: can I state my river plan? Am I leaving a pot I can check-fold on a bad river?",
+        narration:
+          "The root error is usually born on the turn: you bloat the pot yourself with a second barrel and arrive on the river as a bluff-catcher. So the turn decision is critical. Look at the table. With an overpair, bet controlled on a blank or low turn, count the stack-to-pot ratio and be careful when an overcard comes, lean toward checking when the board pairs, check or size down when a draw completes. Top pair good kicker plays more passively: a thin bet or check-call, leaning check-fold on a bad card. Top pair weak kicker checks most turns. With air plus a blocker, blank turns are barrel candidates, but give up when the card arrives. The sizes get calibrated with your own execution data, but the direction is fixed: every time you grow the pot, you lose some of your power to buy a check-fold on the river. Before firing the second barrel, answer two questions — can I state my river plan, and am I leaving a pot size I can check-fold on a bad river? The size you fire on the turn is the price of the decision you make on the river.",
+      },
+      {
+        title: "River — bluff-catch: at what price to call",
+        table: { section: "Chapter 11", sub: "11.2", caption: "Size + which bluffs + blockers." },
+        narration:
+          "On the river the opponent bets and your hand is a bluff-catcher — a hand that beats only bluffs, not value. The decision is finer than 'call small pots, fold big ones'; it comes down to three variables. One: the opponent's size. A small size holds more bluffs and thin value; a big size is polarized — either very strong or a bluff. Two: which worse-than-you value would fire this size? If the answer is 'none', they're either the nuts or a bluff, and then their bluff frequency decides your call. Three: blockers. If your hand blocks their value combinations, you lean toward calling; if you block their bluffs, the opposite. Read all three together; don't look at pot size alone. When in doubt, your compass is: is this size trying to get paid by a worse hand, or trying to make me fold?",
+      },
+      {
+        title: "The bad-river catalog — never jam",
+        bullets: [
+          "The fourth low card / a card that completes the straight",
+          "The third flush card (when you don't hold the flush)",
+          "A board pair (opens set / full house)",
+          "An overcard on top (their top pair passes yours)",
+        ],
+        ruleBox:
+          "On these cards: check-call small pots, check-fold big ones. Never jam — jamming is value only if a worse hand pays.",
+        narration:
+          "Finally, an alarm list you hold with an overpair or strong one pair: the 'no value target' cards. The fourth low card, or a card that completes the straight — the aces bust in module three was exactly this: a six landed on two-four-five, and trips, the straight, and a set had all passed you. Second, the third flush card, when you don't hold a flush. Third, a board pair, which opens the door to a set or full house. Fourth, an overcard on the board, where their top pair can pass your overpair. When these cards come, the rule is clear: check-call small pots, check-fold big ones, and never jam. Jamming is value only if a worse hand will pay; on these cards there is no worse hand to pay. This whole module is the execution layer of the root error: the preflop range lowers the frequency of the error, and this chapter gives you the correct execution once you reach the moment of the error.",
+      },
+    ],
+  },
+  {
+    id: "M11",
+    title: "ICM thresholds and the final table",
+    chapter: "Chapter 12 ★",
+    minutes: 7,
+    slides: [
+      {
+        title: "When ICM turns on",
+        table: { section: "Chapter 12", sub: "12.0", caption: "By event — verify from the lobby." },
+        ruleBox: "Add step zero to your decision order: is ICM on in this event?",
+        narration:
+          "ICM, the Independent Chip Model, measures the real cash value of your chips — and in a tournament chips aren't cash; the chips you lose hurt more than the ones you win. But ICM isn't on with the same intensity at every table. The same twenty-eight big blinds, the same hand, the same position: in a small-field high roller it's an ICM decision, on day one of a big-field Main it's a pure chip decision. Look at the table: in events with a small field and a steep payout, ICM turns on early — nearly every day two decision is under ICM; in a big rec-heavy field like the Main it turns on late. Make this distinction in advance, not at the table. Don't invent the field size or the payout percentages — read them from the lobby by the entry count. And add a zero-th step to your decision order: is ICM on in this event? If no, play pure chips; if yes, apply the risk corrections that follow.",
+      },
+      {
+        title: "Risk premium — the real question: am I covered",
+        table: { section: "Chapter 12", sub: "12.1", caption: "Jam and call ranges diverge under ICM." },
+        ruleBox: "In a call spot the FIRST question isn't 'is it the bubble?' but 'am I covered?'",
+        narration:
+          "ICM's number-one asymmetry: jamming is far cheaper than calling. Because when you jam you have fold equity — they can fold; when you call you don't, you have to show your hand. So under ICM your jam range and your call range diverge; symmetry is only a chip assumption. From this comes the most critical question at the table. In a call decision the first question isn't 'is it the bubble?'; the first question is 'am I covered?' What squeezes you isn't the bubble, it's being covered — meaning you bust if you lose. Against a jam from a chip leader who covers you, your call range tightens hard. But against a jam from a short who does not cover you — you don't zero out even if you lose — you call wide, even on the bubble. That's your leak to calibrate: lumping the two together as 'bubble, so tight'. They aren't the same. The notch contents get precise in the drill with ICMIZER; no invented thresholds.",
+      },
+      {
+        title: "Your calibration — covered / not covered",
+        bullets: [
+          "COVERED (chip leader jam, 22bb, harsh bubble): CALL = 88+, AJs+, AQo. A9s and KQs FOLD.",
+          "Driver: losing means bust; A9s reverse-dominated, KQs a flip — not worth tournament life.",
+          "NOT COVERED (jammer shorter than you): much wider call — including A9s and KTo.",
+          "The sticky half of your leak: the fold reflex even when not covered.",
+        ],
+        ruleBox:
+          "Table cue: before folding to a jam, ask 'am I covered?' — if no, your call is much wider than you think.",
+        narration:
+          "Now your own calibrated thresholds — not general theory, your data. When you're covered, meaning a chip leader who has you covered jams into you around twenty-two big blinds on a harsh bubble: your call range is eighty-eight and up, ace-jack suited and up, and ace-queen offsuit. You fold ace-nine suited and king-queen suited. The reason is clear: if you lose you bust, zero euros; ace-nine suited is reverse-dominated, king-queen is a flip — a marginal edge isn't worth tournament life. But the real other side of the coin, the side where your leak lives: when you're not covered. If the jammer is shorter than you — you don't bust even if you lose — your line is much wider; even ace-nine suited and king-ten offsuit are calls. In your drill data you folded even these, saying 'not enough range'; but king-ten offsuit has about fifty-four percent equity against a wide thirteen-big-blind jam, and you only need forty-four percent for the price. So the mistake isn't the call, it's the fold reflex — and it persisted even after seeing covered and not-covered side by side. Memorize the table cue: before folding to a jam, stop for a second and ask, am I covered? If not, your call range is much wider than you think.",
+      },
+      {
+        title: "Final table — the role matrix",
+        table: { section: "Chapter 12", sub: "12.2", caption: "Correct play depends on stack role, not the hand." },
+        narration:
+          "At the final table, your correct play is set by your stack role, not your hand. If you're short — below fifteen big blinds — and there's someone even shorter at the table, be the first jammer and watch the ladder; but if no one is shorter, don't stall — make the correct jam, because getting blinded into a lock-up is also a bust. If you're the medium stack — the most fragile role: know whose bust you're waiting for, and don't open a pot with someone who covers you. But if you're effectively the shortest, meaning everyone is deeper than you, chapter twelve's fifth rule kicks in: when everyone is locked up, widen your jam range, don't stall. If you're the covering deep stack — aggression is free: crush the short and medium stacks without penalty, but don't get into an ego war with another chip leader. In short: look at the stack distribution and your own role first, then play the hand. At the final table the hand is secondary.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {
