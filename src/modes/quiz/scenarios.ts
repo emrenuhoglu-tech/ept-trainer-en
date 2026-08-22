@@ -507,6 +507,69 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 16.3",
     kavram: "kök-hata",
   },
+  {
+    q: "In PLO you hold naked AA (not double suited, didn't connect with the board). Do you commit your whole stack to a bloated pot?",
+    options: ["Yes — AA overpair, stack off", "No — naked AA is treated as one pair"],
+    correct: 1,
+    explain:
+      "Without nut potential, naked AA is just one pair in PLO; it doesn't play a big pot. Seeing AA through NLH eyes is the classic trap — even two pair is almost never the nuts.",
+    source: "Chapter 8.2 / 8.3",
+    kavram: "plo-aa",
+  },
+  {
+    q: "PLO hand selection: AA72 (a disconnected fourth card, a 'dangler'). How is it rated?",
+    options: ["Strong — a pair of aces", "Weak — a dangler, in practice a three-card hand"],
+    correct: 1,
+    explain:
+      "If the fourth card is disconnected the hand is in practice three cards; AA72 isn't played. Priority goes to rundowns and double-suited hands (JT98, wrap + flush draw).",
+    source: "Chapter 8.2",
+    kavram: "plo",
+  },
+  {
+    q: "In PLO you flop top two pair and the opponent pushes toward a bloated pot. Is stacking off right?",
+    options: ["Yes — top two is strong", "No — in PLO two pair is almost never the nuts"],
+    correct: 1,
+    explain:
+      "In PLO the second-best hand is expensive; two pair is almost never the nuts. Equities also run close (60%/40% is a good favorite) — don't carry over the NLH stack-off reflex.",
+    source: "Chapter 8.1 / 8.3",
+    kavram: "plo",
+  },
+  {
+    q: "Playing an OUT-of-position 3-bet pot is the toughest spot in PLO. Your hand is marginal and you're in doubt. What do you do?",
+    options: ["3-bet — seize the initiative", "Flat — the OOP 3-bet pot is the toughest spot"],
+    correct: 1,
+    explain:
+      "The OOP 3-bet pot is PLO's toughest spot; when in doubt, flat. Two pot bets = the stack is in the middle, and by the third street there's no way back — control the pot growth.",
+    source: "Chapter 8.3",
+    kavram: "plo",
+  },
+  {
+    q: "In the bridge band (40–70bb), when does the '3-bet then fold' structure end?",
+    options: ["It ends at 70bb", "It weakens below ≈60bb and turns into full commit at 40bb"],
+    correct: 1,
+    explain:
+      "Below ≈60bb '3-bet-fold' weakens and turns to commit at 40bb (exact threshold in calibration). A hand you 3-bet must be able to continue vs a 4-bet/jam — if not, flat (IP/BB) or fold.",
+    source: "Chapter 14.1",
+    kavram: "3bet-aralik",
+  },
+  {
+    q: "You've dropped to 45bb. What is the bridge band's number-one 'most expensive habit'?",
+    options: ["Folding too much", "Playing a 130bb range at 45bb"],
+    correct: 1,
+    explain:
+      "'Playing a 130bb range at 45bb is the most expensive habit.' Mode before range; wrong-mode ranges are the number-one source of bloated pots. First to leave: SC 3-bet bluffs, small-pair speculative flats, offsuit broadway cold-calls.",
+    source: "Chapter 14.2",
+    kavram: "stack-modu",
+  },
+  {
+    q: "In the bridge band, what is the single deciding rule when choosing whether to 3-bet or flat a hand?",
+    options: ["Always 3-bet — initiative", "The hand you 3-bet must be able to continue vs a 4-bet/jam"],
+    correct: 1,
+    explain:
+      "In the band the 3-bet increasingly approaches commit; a hand you 3-bet must be able to continue vs a 4-bet/jam. If it can't, narrow flat IP/BB or fold. Offsuit broadways and dominate-able hands drop in this band.",
+    source: "Chapter 14.1",
+    kavram: "3bet-aralik",
+  },
 ];
 
 export function randomScenario(): Scenario {

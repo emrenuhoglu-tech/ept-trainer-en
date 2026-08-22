@@ -809,6 +809,94 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M16",
+    title: "WSOP Day 2 — 56bb restart plan",
+    chapter: "Chapter 17",
+    minutes: 8,
+    slides: [
+      {
+        title: "Why this tournament gets its own module",
+        table: { section: "Chapter 17", sub: "17.1", caption: "Day 2 profile — 56bb, freezeout, no re-entry" },
+        bullets: [
+          "Freezeout + no re-entry — one bullet, bustout is final.",
+          "25-minute levels are fast: 56bb melts to 25bb on three hours of passive play.",
+          "Wide in number of hands, narrow in stack risk.",
+        ],
+        ruleBox: "Passivity isn't safe in this structure — it's slow elimination.",
+        narration:
+          "This is your tournament: the WSOP Online Main Event, day two restart, fifty-six big blinds. Why a separate module outside the general doctrine? Because three structural facts bend every decision. One: this is a freezeout with no re-entry — if you bust, you're done, there's no second bullet. Two: levels are twenty-five minutes, so very fast; blinds grow about two and a half times an hour, and fifty-six big blinds melts to twenty-five big blinds on just three hours of passive play. So in this structure doing nothing and waiting is not safe — it is a slow elimination. Three: the money isn't locked yet, you're sitting down as if at a table just before the bubble. The sum of these three gives a single profile: wide in the number of hands, narrow in stack risk. You will be constantly active in small pots — stealing, applying pressure — but you commit your whole stack only with a clear plan and a strong hand combination. In a bloated pot a single pair, aces included, is still a bluff-catcher; the root-error rule applies here one to one.",
+      },
+      {
+        title: "Opening ranges (8-handed, ~50bb)",
+        table: { section: "Chapter 17", sub: "17.3", caption: "Open by position — 2.1–2.3x, ante in play" },
+        bullets: [
+          "There's an ante, so stealing is still very profitable.",
+          "Early position is tight (13–15%); the button is wide (40–44%).",
+          "Drop below 35bb and this table no longer applies → stack modes.",
+        ],
+        visuals: [
+          {
+            kind: "range",
+            value: "22+, A2s+, K5s+, Q7s+, J7s+, T7s+, 96s+, 86s+, 75s+, 65s, 54s, A4o+, K9o+, Q9o+, J9o+, T9o",
+            valueLabel: "Button open",
+            caption: "Button ~40% open range",
+            compact: true,
+          },
+        ],
+        narration:
+          "Your opening ranges; sizing is two point one to two point three times, there's no point opening bigger at this depth. Read the table position by position. In early position, that is UTG and UTG plus one, you open tight: sevens and up, ace-ten suited and up, king-jack suited, queen-jack suited, ace-jack offsuit and up, king-queen offsuit. In middle and late position the range widens; on the button you open almost all the suited aces, wide suited kings, and connected hands, around forty percent. Online, opponents defend their blinds more correctly, so keep early position a touch tighter; but because the ante is sitting there, stealing is still very profitable. One table adjustment: if there's a tight player in the big blind who folds very often, widen your button and cutoff range by ten percent. And don't forget this threshold: if you drop below thirty-five big blinds this table loses its validity, and you move to the stack modes on the next slide.",
+      },
+      {
+        title: "3-bet: to whom yes, to whom never",
+        table: { section: "Chapter 17", sub: "17.4", caption: "3-bet value + bluff; size IP 3x, OOP 4x" },
+        bullets: [
+          "Who to 3-bet: 30–50bb middle stacks (they feel bubble pressure most) + regs who open a lot.",
+          "Who NOT to bluff 3-bet: big stacks that cover you + anyone under 20bb.",
+          "Value 3-bet is always allowed — only the bluff 3-bet is banned.",
+        ],
+        ruleBox: "What burns against a cover is the bluff 3-bet; the value 3-bet (queens+/AK) stays free.",
+        narration:
+          "Your 3-bet ranges. Sizing: three times the open when you're in position, four times out of position; at fifty-six big blinds a 3-bet pot already sees half your stack, so your range is polarized. The real question is who to 3-bet and to whom never. Aim your bluff 3-bet at two targets: the middle stacks between thirty and fifty big blinds, because they feel bubble pressure most and they fold; and the regs who open the table a lot. Who NOT to bluff 3-bet: one, the big stacks that cover you — as the bubble nears their only answer is a jam and your bluff burns; two, the short stacks under twenty big blinds, their only answer is also a jam. But note: what's banned here is the bluff 3-bet, not the value one. With queens and up and with ace-king you always value 3-bet; continuing against a covering player's jam is a separate decision, we'll cover it on the ICM thresholds slide. And don't change your sizing hand to hand: same size with aces and with ace-five suited, because a sizing tell is even more expensive online than live.",
+      },
+      {
+        title: "4-bet and the commit threshold",
+        table: { section: "Chapter 17", sub: "17.6", caption: "4-bet = ~2.2–2.4x the 3-bet; at 56bb ~20bb = commit" },
+        bullets: [
+          "At 56bb a 4-bet is ~20–22bb = the commit threshold; whoever continues can no longer fold.",
+          "4-bet value: KK+; AK mixed; QQ depends on the opponent.",
+          "If you get 3-bet: call QQ–99/AQs/AJs/KQs; fold offsuit edges like A9o.",
+        ],
+        ruleBox: "Every hand you 4-bet must have its plan against a 5-bet jam decided in advance. No \"4-bet and see.\"",
+        narration:
+          "The 4-bet and what to do when you get 3-bet. First the sizing: a 4-bet is about two point two to two point four times the 3-bet. At fifty-six big blinds that's about twenty to twenty-two big blinds — and that is a commit threshold; whoever continues to a 4-bet can no longer fold, so every hand you 4-bet must have its plan against a five-bet jam decided in advance, there's no four-bet and see. The value side: kings and up are clean value; ace-king is mixed, between a jam and a four-bet; queens depend on the opponent — you can fold queens to a nit, jam against an aggressive player. Now the reverse situation, you opened and a 3-bet came back. In position: four-bet kings and up for value; four-bet ace-five and ace-four suited as a low-frequency bluff, because you block an ace. The band you call: queens down to nines, ace-queen suited, ace-jack suited, king-queen suited. Fold: dominated offsuit edges like ace-nine offsuit, and low suited gappers. Out of position, tighten this whole band by one notch.",
+      },
+      {
+        title: "Stack modes A–E",
+        table: { section: "Chapter 17", sub: "17.8", caption: "Before every hand: which mode am I in?" },
+        bullets: [
+          "Mode A (45bb+): full ranges, postflop maneuver.",
+          "Mode B (30–45bb): flats narrow, commit approaches, value rises.",
+          "Mode C/D (12–30bb): most 3-bets are jams; A5s–A2s become jam ammo.",
+        ],
+        ruleBox: "Playing a 130bb range at 45bb is the most expensive habit — mode before range.",
+        narration:
+          "The first question before every hand isn't a hand question, it's a mode question: which stack mode am I in? You pick the range only after that. Mode A, forty-five big blinds and up: full ranges, postflop maneuver, suited connectors and small pairs at full value. Mode B, thirty to forty-five: the open holds but the flat call narrows because set-mining breaks down, the commit threshold approaches, the bluff 3-bet drops and value rises. Mode C, twenty to thirty: the open comes down to fifteen, twenty percent, the 3-bet is mostly a jam or a small commit, and ace-five down to ace-two suited turn into jam ammo. Mode D, twelve to twenty: from some positions you jam directly, if you opened it's jam or fold to a 3-bet, close to Nash. Mode E, under twelve: pure jam or fold. The most expensive mistake has its name right here: playing a hundred-thirty big blind range at forty-five big blinds. Memorize the transitions — going from fifty-six to thirty-five drop the flat-call habit, going from thirty-five to twenty the commit threshold shifts earlier.",
+      },
+      {
+        title: "Phase plan, ICM thresholds, guardrails",
+        bullets: [
+          "Phase 2 (bubble near) = the most profitable phase: shorts freeze up, you crush with 3-bet/float.",
+          "ICM threshold: on the bubble, your whole-stack range vs a cover's 4-bet jam = KK+.",
+          "AK: fold to a cover's tight jam; always call a ≤20bb jam.",
+        ],
+        ruleBox: "A single pair in a bloated pot = alarm — aces included. If the pot passed 40bb: pot control + bluff-catcher.",
+        visuals: [{ kind: "hand", cards: "AA", label: "Single pair in a bloated pot — alarm" }],
+        narration:
+          "Last slide: the phase plan, the ICM thresholds, and the root-error guardrails. There are four phases. While the bubble is far, stay in Mode A, keep your stack above fifty big blinds, don't fight the big stacks needlessly. As the bubble nears — this is your most profitable phase — the fifteen to twenty-five big blind stacks freeze up; 3-bet their opens, open into their blinds, float their c-bets. Your only brake: the players who cover you, one notch tighter against them. The moment the money hits, play three or four hands tight, the shorts fire kamikaze jams, meet them with premiums, then return to normal. Deep in the money and at the final table the ladder is huge: ICM outweighs chip-EV, crush the shorts, avoid the equals, premiums to the bigs. Now the numeric ICM threshold, memorize it: on the bubble, against a covering player's four-bet jam, even queens fold — because against kings and ace-king you have about forty percent equity, then the bubble ICM premium is added and the equity you need climbs to forty-eight percent. Practical rule: on the bubble, against a cover for your whole stack, your range is kings and up. Ace-king folds to a cover's tight jam but always calls a jam under twenty big blinds. And the unchanging guardrail: a single pair in a bloated pot, aces included, is an alarm — if the pot passed forty big blinds your default is pot control and bluff-catcher, not a stack race.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {
