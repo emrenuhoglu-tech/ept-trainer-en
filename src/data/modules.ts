@@ -1044,6 +1044,7 @@ export const modules: Module[] = [
           "HJ ~20%: 55+, A8s+, A4s–A5s, K9s+, Q9s+, J9s+, T8s+, 98s, 87s, ATo+, KJo+, QJo",
           "CO ~26%: 44+, A2s+, K8s+, Q9s+, J8s+, T8s+, 97s+, 87s, 76s, A9o+, KTo+, QTo+, JTo",
           "BTN ~40%: 22+, suited Ax, K5s+, Q7s+, J7s+, T7s+, 96s+, 86s+, 75s+, 65s, 54s, A4o+, K9o+, Q9o+, J9o+, T9o · SB 35% raise-only",
+          "Exploit: vs a competent field, trim offsuit broadways (AJo, KQo) from EP — they get dominated, hard to realize. SB: if folded to, ~40% 3x; widen vs a tight BB, tighten to ~30% vs a maniac BB.",
         ],
         ruleBox: "Early tight-strong, late widens. Drop below 35bb and this table no longer applies (→ M18 stack triggers).",
         narration:
@@ -1096,6 +1097,129 @@ export const modules: Module[] = [
         ruleBox: "The price rescues equity, not playability — fold the weak offsuit even when the price tempts.",
         narration:
           "The last card: big blind defense, and this is the most generous spot in the math. Because of the ante there's already a lot of money in the pot and you add little; against a two-point-two-five-times open about twenty-one percent equity is enough, which almost any two cards clear. So your defend range from the big blind is very wide: all suited hands, all pairs, connected and one-gap offsuits, all the aces, most of the kings — roughly fifty-five to sixty percent of your hands call. What do you fold? The both-disconnected-and-dominated trash: jack-three offsuit, queen-four offsuit, king-two through king-five offsuit, nine-two offsuit. The price rescues your equity but not your playability — so fold the weak offsuit even when the price is tempting. The top hands you raise to a 3-bet instead of calling; the grid shows nines and up, ace-ten suited and up for value, plus blocker bluffs. But the most critical warning: entering cheap is not continuing cheap. Coming in for twenty-five hundred and then, when you catch second pair on the flop, switching to 'I'm already in the pot' mode is the big-blind version of the root error; your entry price doesn't affect your post-flop decisions, every street is a new decision. And in multiway pots narrow this wide defend — dominated hands lose value in multiway pots.",
+      },
+    ],
+  },
+  {
+    id: "M20",
+    title: "20–30bb: jam or fold",
+    chapter: "Chapter 5",
+    minutes: 7,
+    slides: [
+      {
+        title: "The band's character: value comes from fold equity",
+        bullets: [
+          "Value comes not from completing cards but from FOLD EQUITY.",
+          "The hand you want isn't one that 'can develop' but one that's ALREADY GOOD: ace, broadway, pair.",
+          "Decision order in 2 seconds: MODE → POSITION → HAND. On a suited connector you don't even reach step 3.",
+        ],
+        ruleBox: "The question isn't 'is my hand good enough' — it's 'is this hand playable at this stack'.",
+        narration:
+          "This module is the twenty to thirty big blind band — the jam-or-fold zone — and it's the band you spend the most time in, so even as repetition we make it clear. The one-sentence character of the band: at this depth value comes not from completing cards but from fold equity. You win the money by making opponents fold preflop, not by hitting the flop. That changes hand selection from the start: the hand you want isn't one that can develop, it's one that's already good — an ace, a broadway, or a pair. The engine of speculative hands, implied odds, doesn't run at this depth; when you hit a set or a straight there's no stack left to get paid, and in the eighty-five percent you miss you're helpless. So your decision order runs in two seconds: mode first, then position, then hand. At twenty-eight big blinds, when you see a suited connector, you don't even reach the third step of looking at the hand — mode and position already gave the answer. In short, in this band the question isn't 'is my hand good enough,' it's 'is this hand playable at this stack.'",
+      },
+      {
+        title: "Opening ranges",
+        table: { section: "Chapter 5", sub: "5.1", caption: "Size 2–2.2x; no point opening bigger." },
+        visuals: [
+          { kind: "range", value: "77+, ATs+, AJo+, KQs", valueLabel: "UTG/UTG+1", caption: "Early: tight" },
+          { kind: "range", value: "22+, A2s+, A2o+, K7s+, K9o+, Q9s+, J9s+, T9s", valueLabel: "BTN", caption: "Button: wide steal" },
+        ],
+        bullets: [
+          "UTG/UTG+1: 77+, ATs+, AJo+, KQs",
+          "LJ/HJ: 55+, A8s+, ATo+, KTs+, QJs",
+          "CO: 33+, A5s+, A9o+, K9s+, QTs+, JTs",
+          "BTN: 22+, all A-x, K7s+, K9o+, Q9s+, J9s+, T9s",
+          "SB: 22+, A2s+, A7o+, K9s+, KTo+, QTs+",
+        ],
+        ruleBox: "The first-in advantage is yours — when you open, aim to collect the blinds.",
+        narration:
+          "Opening ranges, when nobody's in front of you. Size two to two-point-two times; there's no point opening bigger at this depth because you're already committing a big share of your stack. Read the table position by position, but the logic is one: early tight, late wide. In early position sevens and up, ace-ten suited and up, ace-jack offsuit and up, king-queen suited — tight and strong. In middle positions hands like ace-eight suited, ace-ten offsuit, king-ten suited get added. In the cutoff, threes and up, ace-five suited, ace-nine offsuit, king-nine suited. On the button the widest: twos and up all pairs, all the aces, king-seven suited and up, wide offsuit kings, and a few connected hands — because there are only two blinds behind you. From the small blind too, twenty-two and up, all suited aces, ace-seven offsuit and up, raising directly. In the grids, tight early on the left, wide button on the right. The first-in advantage is yours; when you open, your goal isn't showdown, it's collecting the blinds and the ante.",
+      },
+      {
+        title: "3-bet = JAM (no flatting)",
+        table: { section: "Chapter 5", sub: "5.2", caption: "A 3-bet means commit; straight all-in." },
+        visuals: [
+          { kind: "range", value: "88+, ATs+, AQo+, KQs", valueLabel: "3-bet JAM", caption: "vs a CO/BTN open" },
+        ],
+        bullets: [
+          "vs an EP open: TT+, AQs+, AKo jam.",
+          "vs a CO/BTN open: 88+, ATs+, AQo+, KQs jam.",
+          "vs a chip leader / a jam-folder: 77+, A9s+, AJo+, KQs (widened).",
+          "NO FLATTING — not from the SB, BB, or IP. Wide flatting is a 100bb+ world.",
+        ],
+        ruleBox: "In this band a 3-bet = commit = all-in. There's no '3-bet then fold' structure.",
+        narration:
+          "Now the most critical difference: in this band a 3-bet means commit. If you 3-bet someone's open, you go straight all-in; there's no '3-bet then fold' structure at this depth, because the chips you put into a 3-bet are already at commit level relative to your stack. Who do you jam? Against an early-position open, tight: tens and up, ace-queen suited and up, ace-king offsuit. Against a cutoff or button open, a bit wider: eights and up, ace-ten suited and up, ace-queen offsuit and up, king-queen suited. And against a chip leader or a tight player you've seen fold to a jam, widen the range: sevens and up, ace-nine suited and up, ace-jack offsuit and up. The most important rule: in this band there's no flatting — not from the small blind, not from the big blind, not in position. Chapter four's wide flat tables belong to the hundred big blind and up world; here they're void. It's jam, fold, or open if you're the one opening.",
+      },
+      {
+        title: "Calling a jam + auto-fold + below 20bb",
+        visuals: [
+          { kind: "range", value: "99+, AJs+, AQo+", valueLabel: "call a jam", caption: "Below this it's not a call at 28bb" },
+        ],
+        bullets: [
+          "If the opponent jams, call: 99+, AJs+, AQo+. Below that: either you jam, or you fold.",
+          "Auto-fold: all suited connectors (T9s–54s), suited gappers, weak offsuit broadways (KJo, QJo, JTo), flatting a small pair.",
+          "Below 20bb (Mode D): jam-first tree — part of your opens are direct jams, no flats except BB.",
+          "Below 12bb (Mode E): pure jam/fold; first-in advantage, isolate-jam over limps.",
+        ],
+        ruleBox: "Folding the speculative hand preserves the ammo you'll jam with a real hand.",
+        narration:
+          "Finally, calling a jam and the auto-fold list. If the opponent jams on you, your calling range is tight: nines and up, ace-jack suited and up, ace-queen offsuit and up. Below that it's not a call at twenty-eight big blinds — you'll either jam that hand yourself or fold it; jam and call are separate decisions, because in a jam you have fold equity and in a call you don't. The unconditional fold list: all suited connectors, from ten-nine suited down to five-four suited; all suited gappers; weak offsuit broadways, king-jack offsuit, queen-jack offsuit, jack-ten offsuit; and flatting a small pair — jamming a pair is a separate matter, but no flatting. When you drop below twenty big blinds you move to Mode D: the jam-first tree, meaning part of your opens are direct jams and there are no flats except the big blind. Below twelve big blinds it's pure jam or fold, first-in advantage and isolate-jamming over limps. One sentence: folding the speculative hand preserves the ammo you'll jam with a real hand.",
+      },
+    ],
+  },
+  {
+    id: "M21",
+    title: "Final table: how to play 4/3/HU",
+    chapter: "Chapter 12",
+    minutes: 8,
+    slides: [
+      {
+        title: "The FT spine: role, not hand",
+        table: { section: "Chapter 12", sub: "12.2", caption: "Correct behavior depends on STACK ROLE, not the hand." },
+        bullets: [
+          "Short (<15bb): be the first jammer, watch the ladder; freezing up is also a bust.",
+          "Medium: the most fragile — know whose bust you're waiting on, don't open a pot vs a cover.",
+          "Covering deep: aggression free, crush uncontested; but no ego war with the chip leader.",
+        ],
+        ruleBox: "At the FT the question isn't 'what's my hand' but 'what's my stack role'. With ICM open, jam ≠ call.",
+        narration:
+          "The tournament's final stage: the final table, and a table that keeps shrinking — four players, three players, and heads-up. First the unchanging spine: at the final table correct behavior is determined not by your hand but by your stack role. The same hand is one thing on a short stack and something else on a covering deep stack. Look at the table, there are three roles. If you're short, under fifteen big blinds: be the first jammer, take the mover's advantage, and watch the ladder, the payout steps; but don't forget, freezing up and melting into the blinds is also a bust — folding isn't always right. If you're a medium stack: you're in the table's most fragile position — you can't jam comfortably like a short nor apply pressure like a big; know whose bust you're waiting on and don't open a needless pot with someone who covers you. If you're a covering deep stack: your aggression is free, crush the shorts and mediums uncontested; the only ban is getting into an ego war with an equally deep chip leader. And with ICM open, the critical asymmetry: jamming is much cheaper than calling, because in a jam you have fold equity and in a call you don't — so your jam and call ranges diverge.",
+      },
+      {
+        title: "4-handed: role + ICM still bites",
+        table: { section: "Chapter 12", sub: "12.4", caption: "The frozen medium stack = the most profitable target." },
+        bullets: [
+          "Table shrank, blinds hit more often → opening range widens.",
+          "But ICM still bites: pay-jumps are close, a marginal flip while covered = fold.",
+          "Target: the frozen medium stack (harvest); no ego war with a cover.",
+        ],
+        ruleBox: "Widen but role-gated: if you're covered, tighten; if you cover, crush.",
+        narration:
+          "What changes four-handed? Two things at once. One: because the table is smaller, the blinds and ante hit you far more often, you pay a bigger share of your stack each orbit; so to survive you have to widen your opening range, you melt by waiting. Two: despite that, ICM still bites, because the pay-jumps, the payout leaps, are now very close and large. You manage these two together: you widen but role-gated, meaning according to your role. If someone covers you, you tighten the marginal spots, because if you lose you bust; if you cover, you crush. The most profitable target is constant: the frozen medium stack — the one tightening up to protect a pay jump — you harvest it. And you don't get into an ego war with equally deep big stacks; four-handed one wrong flip sends you out in fourth.",
+      },
+      {
+        title: "3-handed: position explodes",
+        bullets: [
+          "Position value explodes — the button is very strong, blind battles intensify.",
+          "Ranges get very wide: open aggressively from the button, press the SB/BB.",
+          "ICM softens but with a live pay-jump it's still role-gated; if short, be the first jammer.",
+        ],
+        ruleBox: "3-handed the button = your profit center; open wide, but respect a cover if the pay-jump bites.",
+        narration:
+          "Three-handed the game speeds up once more and the value of position explodes. Now every hand you're either on the button, the small blind, or the big blind; the button is extremely strong because you act with position on both opponents and you have postflop position. Your ranges get very wide: you open aggressively from the button, blind battles intensify, and you're the one applying pressure. ICM starts to soften at this point because fewer players remain and everyone has locked up good money; but if a big pay-jump still exists — say first place is far above second — the decision stays role-gated. If you're short, your first-jammer principle continues; if you're deep, you press both opponents. In summary: three-handed the button is your profit center, play wide and aggressive, but if the pay-jump bites, respect the one who covers you.",
+      },
+      {
+        title: "Heads-up: ICM ends, chipEV begins",
+        bullets: [
+          "Button = small blind: first action + postflop position are yours.",
+          "Two prizes locked → ICM resolved, play pure chipEV.",
+          "Open very wide from the button (~80%+), defend the BB very wide; aggression + postflop skill decide.",
+          "Exact ranges are drill/calibration (the book's 12.5 philosophy: Nash is checked on break).",
+        ],
+        ruleBox: "Heads-up ICM ends, chipEV begins; button = SB, initiative + position are yours.",
+        narration:
+          "And the final act: heads-up, two players. Here the mechanics change entirely. First, the button is now the small blind; you both take the first preflop action and have postflop position — the button is a huge advantage. Second and most important: because only two prizes remain, ICM is practically resolved; second place is guaranteed, you're playing for first, so you now play pure chipEV, the ICM tightening ends. The result is an aggressive game: you open very wide from the button, about eighty percent and up; you defend very wide from the big blind; and the winner is not the one waiting for the best hand but the one who plays best postflop and constantly applies pressure. I'm not writing exact numeric ranges here, because the book's philosophy at this depth is clear: heads-up and short-handed Nash ranges are calibrated on break, in drills, not a memorized table. The one sentence to keep: heads-up ICM ends, chipEV begins; the button is the small blind, initiative and position are yours.",
       },
     ],
   },
