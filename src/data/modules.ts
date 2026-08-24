@@ -1312,6 +1312,108 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M23",
+    title: "Initiative lines: donk, probe, stab, float, blocker",
+    chapter: "Chapter 19 ★",
+    minutes: 11,
+    slides: [
+      {
+        title: "Initiative: who bets when the lead is unclear",
+        bullets: [
+          "Six related lines: donk, delayed c-bet, probe, stab, turn float, river blocker.",
+          "All arise when the lead is unclear: take the pot, or realize my hand for free?",
+          "Initiative needs 3 conditions: (a) someone showed weakness + (b) the board is yours + (c) a check isn't more profitable.",
+          "Shared trap: inflating a marginal made hand in the name of initiative = the root error.",
+        ],
+        ruleBox: "Guard: who showed weakness + whose board is it + should I realize my hand — if all three aren't there, check.",
+        narration:
+          "This module gathers six scattered but related lines under one roof: donk, delayed c-bet, probe, stab, turn float, and river blocker-bet. What they share: all arise when the lead, the initiative, is unclear — nobody has clearly claimed the pot and the question is, do I take it or carry my hand to showdown for free? In your rec-heavy field the default answer is clear: no invented aggression. Initiative is taken only when three conditions hold at once. One: someone showed weakness. Two: the board favors your range. Three: realizing your hand with a check isn't more profitable. If all three aren't there, you check. And each line's 'when not' column matters more than its 'when,' because the shared trap is always the same: shoving a marginal made hand you should take to showdown with a check into a bet in the name of initiative. That turns float, probe, and stab into the root error. The guard sentence is this module's spine: who showed weakness, whose board is it, should I realize my hand — if all three aren't there, check.",
+      },
+      {
+        title: "Donk bet — OOP, leading into the PFR",
+        table: { section: "Chapter 19", sub: "19.1", caption: "Only on YOUR board; forbidden on a high board." },
+        visuals: [
+          { kind: "board", cards: "7h 6s 4d", label: "Your board (7-6-4) — donk candidate" },
+          { kind: "board", cards: "As Kd 8c", label: "PFR's board (A-K-8) — don't donk" },
+        ],
+        bullets: [
+          "Default: do NOT donk — checking to the raiser is standard; a donk telegraphs + inflates OOP.",
+          "Window: low-connected BB board (7-6-4, 5-5-2) → your range hits it.",
+          "A small donk denies the PFR a free check-back and charges its equity.",
+          "Not: high board / station / multiway / a big donk with one pair (root error).",
+        ],
+        ruleBox: "Donk only on your board + small; a high board is the raiser's turf.",
+        narration:
+          "First line: the donk bet. A donk is betting out into the preflop raiser instead of checking when you're OOP; it breaks the 'the PFR bets' convention. The default is clear: don't donk, checking to the raiser is standard — a donk usually telegraphs your hand and drops you into a bloated pot out of position, root-error terrain. So when does the window open? One thing only: if the board hits your range. Concretely, the low, connected boards you defended from the big blind, say seven-six-four or five-five-two. These boards hit your defense range far more than the raiser's high-card range; you have more two-pair, sets, straights. A small donk denies the raiser a free check-back and charges its equity. The visual shows two boards: seven-six-four is your board, a donk candidate; ace-king-eight is the raiser's board, where a donk is a bet into their turf — don't. When not: a high board, a station that never folds to a donk, multiway, and a big donk with one pair — that last one is the root error itself.",
+      },
+      {
+        title: "PFR showed weakness: delayed c-bet & probe",
+        table: { section: "Chapter 19", sub: "19.3", caption: "PFR gave up the flop = capped; take it on the turn." },
+        bullets: [
+          "Delayed c-bet (you're PFR): flop check-back → bet the turn if there's a REASON.",
+          "Reason: you improved / villain checked twice / the turn card favored you.",
+          "Probe (you're OOP): flop check-check → the raiser is capped → bet turn/river.",
+          "'Flop cc → can you steal' = YES, into the capped range. Not: trap / bad turn / SD value.",
+        ],
+        ruleBox: "The PFR would bet the flop with strength; a check-back = capped → take initiative into the cap.",
+        narration:
+          "The second and third lines share one theme: punishing the PFR's capped range when it shows weakness. There are two versions. One, the delayed c-bet: you're the raiser, you checked the flop back — pot control or you gave up — and now you bet the turn. This is the disciplined opposite of the automatic flop c-bet reflex: you skip the wide c-bet and bet the turn only when a reason appears. There are three reasons: you improved on the turn, or the villain checked a second time and showed weakness, or the turn card favored your range. If there's no reason, don't turn a flop give-up into a turn bloat. Two, the probe bet: this is the spot you asked about — the flop went check-check. You're OOP, the raiser checked back the flop; what does that mean? Most strong hands would have bet the flop, so the raiser's range is capped. So on the turn you bet into that capped range OOP and take the initiative. The answer is clear: yes, after a flop check-check you can steal the turn and the river, against a capped range. When not: if the raiser check-backs strong to trap, if the turn missed your range, or if you hold a marginal made hand you'd realize with a check-call — don't inflate it.",
+      },
+      {
+        title: "Stab — IP, take the pot when it's checked to you",
+        table: { section: "Chapter 19", sub: "19.4", caption: "Lowest-risk initiative; checked to you = everyone weak." },
+        bullets: [
+          "You're IP, everyone checked to you (flop/turn) → take it with a small bet.",
+          "Any equity/fold equity is enough; if it's checked to you everyone showed weakness.",
+          "Not: multiway (trap) / a check-raise-happy villain.",
+          "Not: board hits the checkers / an SD-value hand wants the free showdown.",
+        ],
+        ruleBox: "A stab is small; scoop up the unclaimed pot cheaply, free HU.",
+        narration:
+          "Fourth line: the stab. The most fundamental and lowest-risk initiative tool. You're IP and everyone checked to you, on the flop or the turn. If it's checked to you everyone already showed weakness; you take the pot nobody wants with a small bet. Any equity or fold equity is enough. When not: multiway, because someone may be trapping; if there's a check-raise-happy villain; if the board hits the checkers' range hard; or if you hold a showdown-value hand and a free showdown is in your favor. Size is small — a stab doesn't have to be expensive, the point is to scoop up the unclaimed pot cheaply.",
+      },
+      {
+        title: "Turn float — positional delayed aggression",
+        table: { section: "Chapter 19", sub: "19.5", caption: "IP + a plan; a float ends on the turn." },
+        bullets: [
+          "Call the flop c-bet IP → take it when villain checks the turn (delayed bluff).",
+          "IP + backdoor/overcard/blocker (a plan) + a villain who gives up the turn + a dry-ish flop.",
+          "Execution: bet if the turn is checked to you; GIVE UP if the villain fires a 2nd barrel.",
+          "Not: OOP / a barreling villain / wet board / multiway.",
+        ],
+        ruleBox: "A float ends on the turn: you either bet and take it or give up; drifting on and paying is the root error.",
+        narration:
+          "Fifth line: the turn float. A float is calling the flop c-bet in position, then taking the pot when the villain checks the turn — the goal isn't showdown, it's a delayed bluff. The conditions are narrow. Position: IP only, because only in position do you take the pot cleanly; never float OOP. Villain: the type who c-bets the flop wide and gives up the turn; don't float against a station or an aggressive reg who fires the second barrel. Your hand: not pure air, but a plan — a backdoor draw, an overcard, or a blocker. Board: a dry-ish flop the villain range-bet; on a wet board the villain barrels and the float dies. And the golden rule of execution: a float ends on the turn. If the turn is checked to you, you bet and take it; if the villain fires the second barrel, you give up. You floated for the check, not to pay two barrels. If you drag a float into call-call-call, it's no longer a float, it's the root error.",
+      },
+      {
+        title: "River blocker-bet — the exception, default 11.2",
+        table: { section: "Chapter 19", sub: "19.6", caption: "Default is check-call/check-fold; blocker is a narrow deviation." },
+        bullets: [
+          "Default = 11.2 (check-call/check-fold). The blocker is a NARROW deviation.",
+          "vs a station check-call is better: no discount, pays with value, and if it raises you're sunk.",
+          "Window: capped+aggressive villain + thin bluff-catcher + dry/static river + small size.",
+          "If all aren't there, no blocker → 11.2. A big blocker is a contradiction.",
+        ],
+        ruleBox: "A blocker only vs a capped+aggressive villain; NEVER a station — default 11.2.",
+        narration:
+          "Sixth line: the river blocker-bet, and we enter it with the sharpest warning. The default for this spot isn't this module, it's eleven point two: check-call or check-fold. A blocker-bet is a small OOP river bet with a thin bluff-catcher to deny the villain's big polarized bet and buy a cheap showdown. But against a station check-call is almost always better; a station doesn't discount to a small bet, it still pays you with value, and if it raises you're sunk. The window opens only in this narrow case: the villain is capped and aggressive, meaning it would have bet a polarized range if checked to; your hand is a thin bluff-catcher, one that beats bluffs but loses to value; the river is dry and static, the villain's range well-defined; and the size is small, twenty to thirty-three percent. If all of those aren't there, no blocker — go back to eleven point two, check-call or check-fold. A big blocker is already a contradiction.",
+      },
+      {
+        title: "Summary: six lines on one card",
+        table: { section: "Chapter 19", sub: "19.8", caption: "Who showed weakness → open → close (default)." },
+        bullets: [
+          "Donk: your board + small. Delayed c-bet: a reason on the turn.",
+          "Probe: bet the turn into the cap. Stab: everyone checked → take it small.",
+          "Turn float: IP + a plan. River blocker: capped+aggressive, else 11.2.",
+          "One guard runs them all: who's weak + whose board + should I realize.",
+        ],
+        ruleBox: "Initiative isn't a right, it's an earned opportunity; taken right it's anti-bloat, taken wrong it's the root error.",
+        narration:
+          "Finally we gather the six lines onto one card. Each row shows first 'who showed weakness,' then 'when to open,' then 'when to close.' Donk: the board edge is yours — open small on your board, close on a high board or against a station. Delayed c-bet: you gave up the flop — open on the turn if there's a reason. Probe: the raiser checked the flop back — bet the turn into the capped range. Stab: everyone checked — take it with a small bet. Turn float: the villain checked the turn — take it if you're IP with a plan. River blocker: the villain would bet if checked to — if capped and aggressive, with a thin bluff-catcher, small; otherwise eleven point two. One guard sentence runs them all: who showed weakness, whose board is it, should I realize my hand — if all three aren't there, check. Initiative isn't a right, it's an earned opportunity; taken right it ends the pot cheaply, taken wrong it's a new door into the root error.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

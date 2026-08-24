@@ -1281,3 +1281,124 @@ In a 3+ way pot this chapter is suspended: **flop c-bet frequency COLLAPSES** (B
 4. **F4.** 3-way pot, IP, top pair good kicker, board J-9-4 two-tone. How do frequency and size change (B13)?
 
 *Root-error tie-in: this chapter disciplines the street where the error is BORN. B4 lowers the error's frequency preflop; B18 cuts the seed of the bloated pot with the flop c-bet decision; B11 delivers the execution once the error moment arrives. The three are one chain.*
+
+
+---
+
+## Chapter 19 — Initiative Lines: Who Bets When the Lead Is Unclear
+
+*★ v6. B18 gave the "lead is yours" case of the flop c-bet. This chapter gathers the six lines where the lead is UNCLEAR: donk, delayed c-bet, probe, stab, turn float, river blocker-bet. All of them are the advanced-aggression zone the book deliberately keeps light; so all are given with a NARROW frame, a shared diagnostic, and a hard "when NOT." Correct initiative ends the pot cheaply (anti-bloat); wrong initiative is a new door into the root error.*
+
+### 19.0 The shared diagnostic
+
+All six lines come down to one question: with the lead unclear, do I take the pot, or realize my hand for free?
+
+> **In the rec field the default = NO invented aggression. Initiative is taken only if (a) someone showed weakness AND (b) the board favors your range AND (c) realizing your hand with a check isn't more profitable. If all three aren't there: check.**
+
+Each line's "when NOT" column matters more than its "when." The shared trap: shoving a marginal made hand (one you should take to showdown with a check) into a bet in the name of initiative — that turns float/probe/stab into the root error.
+
+### 19.1 Donk bet — OOP, leading into the PFR
+
+Donk: OOP, betting out into the preflop raiser instead of checking. It breaks the "the PFR bets" convention.
+
+> **Default: do NOT donk — checking to the PFR is standard. A donk usually telegraphs and inflates a pot OOP (root-error terrain).**
+
+| Variable | Donk OPEN | Donk CLOSED (→ check) |
+|---|---|---|
+| **Board** | Hits YOUR range: low, connected, low-paired (7-6-4, 5-5-2 you defended in the BB) | High-card board (the PFR's range) |
+| **Villain** | Check-folds when it misses the board | A station that never folds to a donk |
+| **My hand** | Two-pair/set/straight edge + small size | One pair (a big donk = the root error) |
+| **Player count** | HU | Multiway |
+
+**Logic:** a low-connected board hits your BB-defense range far more than the PFR's high-card range; a small donk denies the PFR a free check-back and charges its equity. On a high board a donk is a bet into the PFR's turf — don't.
+
+### 19.2 Delayed c-bet — PFR checks flop, bets turn
+
+Delayed c-bet: you're the PFR, you checked the flop back (pot control / gave up / trap), then bet the turn. This is the DISCIPLINED opposite of B18's automatic c-bet reflex: you skipped the wide flop c-bet and bet the turn only when a REASON appears.
+
+| Bet the turn — reason | Don't bet |
+|---|---|
+| You improved on the turn (pair/draw) | No reason — don't turn a flop give-up into a turn bloat |
+| Villain checked a second time (weakness) | Villain leads/check-raises the turn a lot |
+| The turn card favored your range | No equity + no fold equity |
+
+With a marginal made hand: check flop → thin value bet the turn (if checked to). Small size.
+
+### 19.3 Probe bet — OOP bet after the flop checks through
+
+Probe: the flop went check-check (you're OOP, the PFR checked back = showed weakness, range capped). On the turn (or river) you bet.
+
+> **If the PFR gave up the flop, most strong hands would have bet it → its range is capped. On the turn, take the initiative into that capped range with an OOP bet.**
+
+| Probe OPEN | CLOSED (→ check) |
+|---|---|
+| PFR's check-back is weakness (rec norm) | PFR check-backs strong to trap (rare, tricky reg) |
+| The turn card favored your range | Bad turn, missed your range |
+| Your hand has no showdown value (a bet is its best use) | Marginal made hand → realize it with a check-call |
+
+Size: small-medium. This is the answer to "flop check-check → can you steal turn/river": yes, against a capped range.
+
+### 19.4 Stab — IP, take the pot when it's checked to you
+
+Stab: you're IP, everyone checks to you (flop or turn). Take the pot nobody wants with a small bet. The most fundamental, lowest-risk initiative tool — if it's checked to you, everyone already showed weakness.
+
+| Stab OPEN | CLOSED |
+|---|---|
+| HU, checked to you, any equity/fold equity | Multiway (someone's trapping) |
+| A board the checkers missed | A board that hits the checkers' range |
+| Small size | Check-raise-happy villain / an SD-value hand wants the free showdown |
+
+### 19.5 Turn float — positional delayed aggression
+
+Float: call the flop c-bet in position, then take the pot when the villain checks the turn. The goal isn't showdown, it's a delayed bluff.
+
+| Variable | Float | Don't float |
+|---|---|---|
+| **Position** | IP (clean takeaway) | OOP — never |
+| **Villain** | C-bets the flop wide and gives up the turn | Fires the second barrel (station/aggressive reg) |
+| **My hand** | Backdoor draw / overcard / blocker — with a plan | Pure air, no plan |
+| **Board** | A dry-ish flop the villain range-bet | Wet — the villain barrels |
+| **Player count** | HU | Multiway |
+
+**Execution:** if the turn is checked to you, bet and take it; if the villain fires a second barrel, GIVE UP.
+
+> **A float ends on the turn: you either bet and take it or give up. Drifting on and paying isn't a float, it's the root error.**
+
+### 19.6 River blocker-bet — the exception, not the default
+
+Blocker-bet: OOP on the river, a SMALL bet with a thin bluff-catcher — deny the villain's big polarized bet, buy a cheap showdown.
+
+> **WARNING: the default for this spot is 11.2 — check-call / check-fold. The blocker-bet is a narrow deviation. Against a station check-call is better; a station doesn't "discount" to a small bet, it still pays you with value, and if it raises you're sunk.**
+
+| Variable | Window OPEN | CLOSED (→ 11.2) |
+|---|---|---|
+| **Villain** | Capped + aggressive/bluffy | Station |
+| **My hand** | Thin bluff-catcher (beats bluffs, loses to value) | Clearly strong or clearly trash |
+| **River** | Dry/static, range well-defined | Wet/dynamic, villain uncapped |
+| **Size** | Small (~20–33%) | A big blocker is a contradiction |
+
+### 19.7 Calibration
+
+*(calibrate: each line hinges on a villain label. Donk & probe & float: open them against villains whose "show weakness then give up" rate is high. Blocker-bet: only against a capped+aggressive labeled villain, NEVER a station. Stab & delayed c-bet: low risk, free HU. No label → default to the passive line / 11.2 on all.)*
+
+### 19.8 Cheat card
+
+| Line | Who showed weakness | Open | Close (default) |
+|---|---|---|---|
+| **Donk** | — (board edge) | Your board + small | High board / station / multiway |
+| **Delayed c-bet** | PFR gave up the flop (you) | A reason on the turn + small | No reason / a villain who leads |
+| **Probe** | PFR checked the flop back | Bet the turn into the capped range | PFR trap / bad turn / SD value |
+| **Stab** | Everyone checked | Take it with a small bet | Multiway / check-raise / SD value |
+| **Turn float** | Villain checked the turn | IP + a plan | OOP / barrel / multiway |
+| **River blocker** | Villain would bet if checked to | Capped+aggressive + thin BC + small | Station / uncapped → 11.2 |
+
+### 19.9 Drill (6 questions)
+
+1. **F5.** You defended the BB, flop 7-6-4 two-tone, you're not the PFR. Donk or check? Why does the board matter?
+2. **F6.** IP PFR, flop A-9-4, you have KJ, you checked back. Turn K. Bet? What's it called, which reason column?
+3. **F7.** OOP, flop check-check, on the turn the PFR is still capped, you hold QJ (turned a gutshot). Do you steal, and what size?
+4. **F8.** IP, everyone checked the flop, the turn is checked to you again, you hold ace-high. Stab or check?
+5. **F9.** IP, dry flop, villain c-bets, you have a backdoor flush + overcard. Float; state your turn plan separately for a check and for a second barrel?
+6. **F10.** OOP river, thin bluff-catcher, villain an aggressive reg + dry/capped board. Blocker or check-call? What changes if the villain is a station?
+
+*Root-error tie-in: all six lines are initiative tools — used right they end the pot cheaply or punish a capped range (anti-bloat). Used wrong they all lead to the same door: inflating with a marginal hand in the name of initiative and staying a bluff-catcher. Guard: who showed weakness + whose board is it + should I realize my hand instead. If all three aren't there, check.*

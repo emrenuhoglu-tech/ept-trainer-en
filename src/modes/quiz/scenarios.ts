@@ -660,6 +660,60 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 18.6 / 13.1",
     kavram: "c-bet",
   },
+  {
+    q: "You defended the BB, flop 7-6-4 two-tone, the PFR is across from you. Donk bet or check?",
+    options: ["Check — a donk always telegraphs", "Small donk: this board (7-6-4) hits your BB range far more than the PFR's high-card range"],
+    correct: 1,
+    explain:
+      "The donk default is check BUT the exception is board advantage: a low-connected 7-6-4 hits your defense range (two-pair/set/straight) far more than the PFR's high-card range → a small donk charges its equity. On a high board (A-K-x) don't donk.",
+    source: "Chapter 19.1",
+    kavram: "donk",
+  },
+  {
+    q: "IP PFR, flop A-9-4, you checked back with KJ. Turn K (top pair). Bet? What's it called?",
+    options: ["Check again — initiative is risky", "Delayed c-bet: you improved on the turn (a reason) → thin value bet"],
+    correct: 1,
+    explain:
+      "Delayed c-bet: check the flop back and bet the turn when a REASON appears. Turn K improved you to top pair (reason = you improved). A reasonless turn bet turns a flop give-up into a bloat; a reasoned bet takes the initiative.",
+    source: "Chapter 19.2",
+    kavram: "gecikmis-cbet",
+  },
+  {
+    q: "OOP, flop went check-check (PFR capped), the turn card turned your QJ into a gutshot. Probe bet?",
+    options: ["Check — an OOP bet is risky", "Yes, probe: PFR check-back = capped; bet the turn into the cap + you have equity"],
+    correct: 1,
+    explain:
+      "Flop check-check → the PFR would bet with strength, a check-back = capped range. Take the initiative into the cap with an OOP turn probe; you have gutshot + fold equity. Not: a PFR trap / bad turn / a made hand to realize with a check-call.",
+    source: "Chapter 19.3",
+    kavram: "probe",
+  },
+  {
+    q: "IP, everyone checked the flop, the turn is checked to you again, you hold ace-high (low SD value). Stab or check?",
+    options: ["Check — let ace-high go to showdown", "Stab: checked to you = everyone weak; take the pot with a small bet (high fold equity)"],
+    correct: 1,
+    explain:
+      "The stab is the lowest-risk initiative: if it's checked to you everyone showed weakness. Ace-high has weak showdown value, its best use is fold equity → small stab. Not: multiway / check-raise villain / a board that hits the checkers.",
+    source: "Chapter 19.4",
+    kavram: "stab",
+  },
+  {
+    q: "IP, dry flop, villain c-bets, you have a backdoor flush + overcard. You float-called. Your turn plan?",
+    options: ["Keep calling whatever the turn is", "If the turn is checked to you, bet and take it; if the villain fires a 2nd barrel, GIVE UP"],
+    correct: 1,
+    explain:
+      "A float ends on the turn: if it's checked bet and take it (villain gave up the turn = capped), if a 2nd barrel comes give up — you floated for the check, not to pay two barrels. Dragging into call-call is not a float, it's the root error.",
+    source: "Chapter 19.5",
+    kavram: "float",
+  },
+  {
+    q: "OOP river, thin bluff-catcher, villain an aggressive reg + dry/capped board. Blocker-bet or check-call?",
+    options: ["Check-call in all cases (11.2)", "In this narrow window a small blocker is OK; but if the villain is a station → check-call (11.2)"],
+    correct: 1,
+    explain:
+      "Default is 11.2 (check-call/check-fold). A blocker opens only with a capped+aggressive villain + a thin bluff-catcher + a dry river + a small size (villain would bet a polarized range if checked to). If the villain is a STATION the window closes → check-call; a station doesn't discount, and if it raises you're sunk.",
+    source: "Chapter 19.6",
+    kavram: "blocker-bet",
+  },
 ];
 
 export function randomScenario(): Scenario {
