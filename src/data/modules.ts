@@ -1025,6 +1025,80 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M19",
+    title: "50bb range card: open / flat / 3-bet / defend BB",
+    chapter: "Chapter 17 + Chapter 4",
+    minutes: 8,
+    slides: [
+      {
+        title: "Opening: by position (tight → wide)",
+        table: { section: "Chapter 17", sub: "17.3", caption: "8-handed ~50bb open, 2.1–2.3x." },
+        visuals: [
+          { kind: "range", value: "77+, ATs+, KJs+, QJs, JTs, T9s, AJo+, KQo", valueLabel: "UTG/UTG+1", caption: "Early ~13%: tight + strong" },
+          { kind: "range", value: "22+, A2s+, K5s+, Q7s+, J7s+, T7s+, 96s+, 86s+, 75s+, 65s, 54s, A4o+, K9o+, Q9o+, J9o+, T9o", valueLabel: "BTN", caption: "Button ~40%: wide steal" },
+        ],
+        bullets: [
+          "UTG/UTG+1 ~13%: 77+, ATs+, KJs+, QJs, JTs, T9s, AJo+, KQo",
+          "LJ/MP ~17%: 66+, A9s+, A5s, KTs+, QTs+, J9s+, T9s, 98s, ATo+, KJo+",
+          "HJ ~20%: 55+, A8s+, A4s–A5s, K9s+, Q9s+, J9s+, T8s+, 98s, 87s, ATo+, KJo+, QJo",
+          "CO ~26%: 44+, A2s+, K8s+, Q9s+, J8s+, T8s+, 97s+, 87s, 76s, A9o+, KTo+, QTo+, JTo",
+          "BTN ~40%: 22+, suited Ax, K5s+, Q7s+, J7s+, T7s+, 96s+, 86s+, 75s+, 65s, 54s, A4o+, K9o+, Q9o+, J9o+, T9o · SB 35% raise-only",
+        ],
+        ruleBox: "Early tight-strong, late widens. Drop below 35bb and this table no longer applies (→ M18 stack triggers).",
+        narration:
+          "This is a repetition and reference module: we gather the opening, flat, 3-bet, and big-blind-defense ranges for fifty big blind day two, position by position, laid out separately — because seeing the same range in a different frame turns it from memorization into intuition. First, opening. One principle: early position is tight and strong, and the range widens as position gets later. In early position, that is UTG and UTG plus one, about thirteen percent: sevens and up, ace-ten suited and up, king-jack suited and up, a few connected suited hands, and the top offsuit broadways. Every hand here can continue to a 3-bet or to flop pressure — nothing you open should leave you in a tough spot. In middle positions the range opens step by step; ace-five suited, suited connectors, and lower offsuit broadways get added in turn. On the button, about forty percent: all the suited aces, wide suited kings and jacks, connected hands — because there are only two blinds behind you and you have position. If it folds to the small blind, thirty-five percent raise only, no limping. Look at the grids: on the left the tight early range, on the right the wide button — the difference between them sums up the whole opening logic. And don't forget this threshold: drop below thirty-five big blinds and this table no longer applies, you move to the stack triggers.",
+      },
+      {
+        title: "3-bet: to whom, how (value + bluff)",
+        table: { section: "Chapter 4", sub: "4.3", caption: "Position matchups: value + bluff." },
+        visuals: [
+          { kind: "range", value: "TT+, AJs+, AQo+, KQs", blof: "A5s-A2s, KTs, QTs, J9s, T8s", valueLabel: "value", blofLabel: "bluff", caption: "vs a CO open (from BTN)" },
+          { kind: "range", value: "99+, ATs+, AQo+, KQs, KJs", blof: "A5s-A3s, K9s-K7s, QTs, J9s, T8s, 76s", valueLabel: "value", blofLabel: "bluff", caption: "vs a BTN open (from BB) — fight hard" },
+        ],
+        bullets: [
+          "Sizing: IP 3x the open (~7bb), OOP 4x (~8.5bb).",
+          "vs EP: QQ+/AK value; A5s occasional bluff. That's it.",
+          "vs LJ/HJ: TT+/AQs+/AKo value; bluff A5s–A3s, KJs, QJs.",
+          "vs SB (from BB) linear+wide: 88+, A9s+, ATo+, KTs+, QTs+, JTs value; K7s+, Q8s+, J8s+ bluff.",
+        ],
+        ruleBox: "A hand you 3-bet must continue vs a 4-bet/jam; if it can't, flat (IP/BB) or fold.",
+        narration:
+          "Now the 3-bet: to whom and how. Sizing first: in position three times the open, about seven big blinds; out of position four times, about eight and a half. Who to 3-bet depends on whose range you're facing. Against an early-position open you're in the discipline zone: queens and up and ace-king for value, and only occasionally ace-five suited as a bluff — that's all, you don't force bluff 3-bets from early position. As the opening position gets later, both value and bluff widen. Against a cutoff open from the button: tens and up, ace-jack suited and up, ace-queen offsuit and up, king-queen suited for value; the bluff side is ace-five down to ace-two, king-ten suited, queen-ten suited, jack-nine suited, ten-eight suited. Against a button open from the big blind: here you fight the button hard, because that's where the day-two stealers live — nines and up, ace-ten suited and up for value, wide suited blocker bluffs. And against a small-blind open from the big blind the range goes linear and wide, because their range is very wide. See the green value and orange bluff split in the grids. The golden rule is constant: a hand you 3-bet must be able to continue to a 4-bet or a jam; if it can't, flat it or fold it.",
+      },
+      {
+        title: "Flat call: in position only, set-mine math",
+        visuals: [
+          { kind: "range", flat: "99-22, AJs, ATs, KQs, KJs, KTs, QJs, QTs, JTs, T9s, 98s, 87s, 76s", caption: "IP flat (CO/BTN) — vs an LJ/HJ open" },
+        ],
+        bullets: [
+          "IP (CO/BTN) flat: 99-22 set-mine (implied odds return at 50bb) + AJs, ATs, KQs, KJs, KTs, QJs, QTs, JTs, T9s, 98s, 87s, 76s.",
+          "NEVER cold-call from the SB — 3-bet or fold (flat is a losing position at 100bb).",
+          "The 3 conditions for a cold-call (Chapter 4.4): position (IP/BB) + depth (15x the call behind) + a paying opponent. Missing one → don't flat.",
+          "No cold-calling dominated offsuit broadways (AJo, KQo, KJo) vs a UTG open — 3-bet or fold.",
+        ],
+        ruleBox: "Flat only in position; OOP one pair in a 3-bet pot is already a bluff-catcher.",
+        narration:
+          "The third card: flat calling, meaning just calling without 3-betting. Two basic rules. One: flat only when in position. In the cutoff or on the button, against someone who opened earlier than you, you set-mine with pairs from two-two up to tens — and fifty big blinds brings this math back, because when you hit a set there's enough depth to get paid; not as deep as a hundred big blinds, but the implied odds work again. On top of that you can add playable suited hands like ace-jack suited, ace-ten suited, king-queen suited, especially against loose openers. Two: never cold-call from the small blind — from there it's 3-bet or fold, because flatting leaves you permanently out of position. Remember the three conditions for a cold-call: position, depth, and a paying opponent; if all three aren't there at once, don't flat. And don't cold-call dominated offsuit broadways — ace-jack offsuit, king-queen offsuit, king-jack offsuit — against an early open; these are 3-bet-or-fold hands, and their played-in-the-middle versions are exactly what causes the root error.",
+      },
+      {
+        title: "BB defense: the ante price",
+        table: { section: "Chapter 4", sub: "4.8", caption: "Ante inflates the pot → wide defend, ~21% equity suffices." },
+        visuals: [
+          { kind: "range", value: "99+, ATs+, AQo+, KQs, KJs", blof: "A5s-A3s, K9s-K7s, QTs, J9s, T8s, 76s", valueLabel: "3-bet value", blofLabel: "3-bet bluff", caption: "3-bet from BB vs BTN (the top); the rest calls" },
+        ],
+        bullets: [
+          "Price: ~21% equity suffices vs a 2.25x open (2500/12000) — almost any two clear it.",
+          "Call (defend): all suited (incl. T3s), connected/1-gap offsuit (86o, 97o, J8o), all Ax, most Kx, 22+ → ~55-60%.",
+          "Fold: J3o, Q4o, K2o–K5o, 92o — both disconnected and dominated trash.",
+          "Entering cheap ≠ continuing cheap: second pair 'I'm already in' = the BB version of the root error. Narrow in multiway.",
+        ],
+        ruleBox: "The price rescues equity, not playability — fold the weak offsuit even when the price tempts.",
+        narration:
+          "The last card: big blind defense, and this is the most generous spot in the math. Because of the ante there's already a lot of money in the pot and you add little; against a two-point-two-five-times open about twenty-one percent equity is enough, which almost any two cards clear. So your defend range from the big blind is very wide: all suited hands, all pairs, connected and one-gap offsuits, all the aces, most of the kings — roughly fifty-five to sixty percent of your hands call. What do you fold? The both-disconnected-and-dominated trash: jack-three offsuit, queen-four offsuit, king-two through king-five offsuit, nine-two offsuit. The price rescues your equity but not your playability — so fold the weak offsuit even when the price is tempting. The top hands you raise to a 3-bet instead of calling; the grid shows nines and up, ace-ten suited and up for value, plus blocker bluffs. But the most critical warning: entering cheap is not continuing cheap. Coming in for twenty-five hundred and then, when you catch second pair on the flop, switching to 'I'm already in the pot' mode is the big-blind version of the root error; your entry price doesn't affect your post-flop decisions, every street is a new decision. And in multiway pots narrow this wide defend — dominated hands lose value in multiway pots.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {
