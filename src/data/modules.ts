@@ -966,6 +966,65 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M18",
+    title: "Day 2 execution: 50bb dynamics",
+    chapter: "Chapter 14 + Chapter 17",
+    minutes: 8,
+    slides: [
+      {
+        title: "50bb = the B/C border: what reopens, what stays closed",
+        table: { section: "Chapter 14", sub: "14.1", caption: "40–60bb bridge: 3-bets reopen, commit approaches." },
+        bullets: [
+          "REOPENS: normal 3-bets (~7bb, not jams) value + A5s bluff; IP flats/set-mine; real SPR postflop.",
+          "STAYS CLOSED: single-pair stack-off in a bloated pot NEVER (reopens at no depth).",
+          "At 50bb a 4-bet ≈ commit — careful with 4-bet bluffs.",
+        ],
+        ruleBox:
+          "50bb is the most flexible zone: 3-bets and set-mining return; but one-pair stack-offs and reckless 4-bet bluffs stay closed.",
+        narration:
+          "This module focuses on the second stage — day two — and play around fifty big blinds. First your stack mode: fifty big blinds puts you back on the border of Mode B and C, the forty to sixty big blind band. This is actually the most flexible zone in tournament poker, because the short-stack constraints aren't here yet but neither is the deep-stack luxury. What reopens? One: normal 3-bets. Not everything is a jam anymore; with your value hands and ace-five type bluffs you can 3-bet to about seven big blinds again. Two: flat calls in position; with pairs and suited broadways the set-mining math works again at this depth. Three: postflop play with real stack-to-pot-ratio decisions. And what stays closed? First and most important: stacking off with one pair in a bloated pot. This reopens at no depth, not at fifty big blinds either — the root-error rule is constant. Second: be careful with 4-bet bluffs. At fifty big blinds a 4-bet basically commits you; if you continue, there's no turning back. So fifty big blinds is a liberating depth, but two doors are still locked.",
+      },
+      {
+        title: "Day 2's three phases + fighters vs survivors",
+        bullets: [
+          "Early: tables re-drawn, nobody has reads. Solid ABC for the first hour; in the first 30 min sort the table into fighters and survivors.",
+          "Approaching the money: middle stacks freeze up — open almost any two against them; don't fight the bigs, avoid the captain.",
+          "ITM: the field loosens instantly post-bubble, min-cashers punt — switch back to value-heavy, call down lighter.",
+        ],
+        ruleBox:
+          "Steal from survivors; only show up against fighters with the goods. Bag-protectors are your steal targets.",
+        narration:
+          "Day two is played in three phases, and each phase has a different mode. The early phase — right now: tables have been re-drawn, nobody has reads yet. Play solid, standard ABC for the first hour and, while you do, do your real job — in the first thirty minutes sort your table into two groups: fighters and survivors. Survivors are the ones playing to protect their bag, the stack they closed the day with, tightening up; they are your steal targets, attack their blinds relentlessly. Fighters are the ones who fight back; against them you only show up with a real hand, with the goods. The second phase, approaching the money: here is where fifty big blinds becomes a weapon. Middle stacks tighten dramatically near the bubble; against them you can open with almost any two cards. But the big stacks fight back — pick your fights with the middle stacks, stay away from the table captain. The third phase, in the money: once the bubble bursts the field loosens instantly, only those waiting for a min-cash start punting. At that moment switch back to value-heavy play and call down with lighter hands. The one meta rule: steal from survivors, show up against fighters with the goods.",
+      },
+      {
+        title: "Postflop 50bb: texture + the SPR contrast",
+        table: { section: "Chapter 11", sub: "11.0", caption: "SPR decides: commit in a 3-bet pot, deep in an SRP." },
+        bullets: [
+          "Single-raised as PFR: on dry boards c-bet 33% almost always; on wet middling boards (T87, 976) check back air, bet big (66–75%) with value+draws.",
+          "3-bet pot SPR ~2.5–3: TPTK is now a stack-off hand — low-SPR commit, NOT an exception to the root error.",
+          "SRP SPR 8+: the old rule holds — one pair never stacks off.",
+        ],
+        ruleBox:
+          "The only difference is depth: in a 3-bet pot (SPR ~3) TPTK commits; in an SRP (SPR 8+) one pair is a bluff-catcher.",
+        narration:
+          "Postflop execution at fifty big blinds. First the single-raised pot, you as the raiser. On dry boards, meaning disconnected cards, c-bet one-third pot almost every time; it's cheap and applies pressure for your whole range. On wet middling boards — like ten-eight-seven or nine-seven-six — check back with air, but bet big with your value and draws, between two-thirds and three-quarters pot. Now the critical part, the stack-to-pot-ratio contrast. In a 3-bet pot the stack-to-pot ratio is about two and a half to three; at this depth top pair good kicker is now a stack-off hand. Note: this is not an exception to the root error — it is exactly the low stack-to-pot-ratio commit math; because the pot is already big relative to the stack, getting it in with top pair is correct. By contrast, in a single-raised pot the stack-to-pot ratio is eight or more; there the old rule holds one to one, one pair never stacks off, it stays a bluff-catcher. So the only variable is depth: the same top pair commits in a 3-bet pot and brakes in a single-raised pot. And check-raises: if you get check-raised in a single-raised pot, fold one pair with no draw, continue with a pair plus a draw, and drop top pair good kicker to a bluff-catcher — call the flop, re-evaluate the turn, fold to big rivers. And scare cards: if your c-bet gets called, barrel turn overcards like an ace or a king about seventy-five percent against survivors, and shut down against fighters.",
+      },
+      {
+        title: "Stack trigger points (memorize)",
+        table: { section: "Chapter 17", sub: "17.8", caption: "As depth drops, the decision tree simplifies." },
+        bullets: [
+          "60bb+ full playbook · 40bb: kill the 4-bet bluffs, tighten EP two notches.",
+          "30bb: back to yesterday's Mode C — resteal jams (77+/AT+/KQ vs late opens) · 20bb: jam-first, no flats except BB.",
+          "12bb and below: push/fold only.",
+        ],
+        ruleBox:
+          "Before every hand check the trigger: which band is the stack in — the decision tree shortens accordingly.",
+        narration:
+          "Finally, the stack trigger points — memorize these, because which band you're in determines the whole decision tree. Above sixty big blinds the full playbook above applies. When you drop to forty big blinds: kill the 4-bet bluffs entirely and tighten your early-position range two notches, because at this depth a 4-bet already commits. Thirty big blinds: back to yesterday's Mode C — resteal jams are live, meaning re-jamming over late opens with hands like sevens and up, ace-ten and up, king-queen. Twenty big blinds: switch to the jam-first tree, no flats except the big blind. Twelve big blinds and below: push-fold charts only, no other move. A practical target: early on day two the average will probably be around sixty to eighty big blinds; you're near average, no need to rush or panic. One double puts you in the top twenty percent. Play your own game, read the phase first and the stack second.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

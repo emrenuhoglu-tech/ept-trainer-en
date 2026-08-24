@@ -597,6 +597,33 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 11.0",
     kavram: "kök-hata",
   },
+  {
+    q: "In the first 30 minutes of Day 2, how do you use the table?",
+    options: ["Pressure everyone equally", "Sort into fighters/survivors: steal from survivors, show up vs fighters with the goods"],
+    correct: 1,
+    explain:
+      "In the first 30 min sort the table in two. Survivors (protecting their bag, tightening) are your steal targets — attack their blinds. Show up against fighters only with a real hand. Approaching the money, 50bb becomes a weapon: open almost any two vs middle stacks, avoid the captain.",
+    source: "Chapter 17.9",
+    kavram: "rakip-okuma",
+  },
+  {
+    q: "In a 3-bet pot at SPR ~3 you have top pair good kicker. Is stacking off correct? And in a single-raised pot (SPR 8+)?",
+    options: ["Fold in both — one pair never", "Stack-off is CORRECT in the 3-bet pot (low-SPR commit); in an SRP (SPR 8+) one pair never"],
+    correct: 1,
+    explain:
+      "The only difference is depth. 3-bet pot SPR ~2.5–3 → TPTK is a stack-off hand; this isn't an exception to the root error, it's the low-SPR commit math. Single-raised pot SPR 8+ → the old rule holds, one pair is a bluff-catcher, never stacks off.",
+    source: "Chapter 11.0",
+    kavram: "kök-hata",
+  },
+  {
+    q: "At 50bb you have A5s as your 4-bet bluff ammo. What changes when you drop to 40bb?",
+    options: ["Stays the same", "At 40bb kill the 4-bet bluff + tighten EP two notches (4-bet = commit)"],
+    correct: 1,
+    explain:
+      "Stack triggers: 60bb+ full playbook; at 40bb kill 4-bet bluffs and tighten EP two notches because a 4-bet already commits; 30bb Mode C resteal jams; 20bb jam-first (no flats except BB); 12bb and below push/fold.",
+    source: "Chapter 17.8",
+    kavram: "stack-modu",
+  },
 ];
 
 export function randomScenario(): Scenario {
