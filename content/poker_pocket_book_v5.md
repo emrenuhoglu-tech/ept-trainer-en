@@ -1189,3 +1189,95 @@ When you say "prep me" during restart week, we'll work from this set. The answer
 | 11–18 September | 3 drills/week | Derivatives of this set; mistakes return 1–2 days later in a different form |
 | 19–20 September | Light review | Range tables + guardrails; no new concepts |
 | 21 September 20:00 | RESTART | Table draw analysis when posted; sit rested — it can run 14+ hours |
+
+
+---
+
+## Chapter 18 — Flop C-bet: Frequency, Board Texture, Size
+
+*★ v6. The street where the root error is BORN. B4.2 gave preflop sizing, B11 gave turn/river execution, B13 gave multiway; but the flop c-bet decision itself — which board, at what frequency, at what size — was scattered (only the 17.11 seed "1/3 flop = range-bet" existed). This chapter opens that seed. The flop c-bet is where the seed of the bloated pot is planted: a wrong c-bet → a pot you inflated yourself → a bluff-catcher on turn/river (B11). The right c-bet cuts the error on the flop.*
+
+### 18.0 The one-sentence thesis
+
+> **In a rec-heavy field the default c-bet frequency is BELOW GTO. A c-bet is fired for a REASON — value or real fold equity — not as an automatic "range-bet" reflex.**
+
+A GTO solver c-bets at high frequency on many boards because a balanced opponent folds. In the Main/EPT field the opponent is a station — fold equity drops. C-betting air into a station burns money; worse, once called you enter a pot you inflated yourself as a bluff-catcher — the root error. Compass: **do they pay (value), or do they actually fold (fold equity)?** If both are "no," check.
+
+### 18.1 Two reasons — why a c-bet is fired
+
+| Reason | When it holds | In the rec field |
+|---|---|---|
+| **Value** | A weaker hand will pay | Strong — the station pays, even thin value is collected |
+| **Fold equity** | A better hand folds / a draw gives up the call | WEAK — the station doesn't fold |
+
+In the rec field the c-bet's center of gravity shifts toward value. Save the "for fold equity" c-bet only for genuinely foldable opponents (an aggressive reg, a dry board, a tight BB).
+
+### 18.2 Board texture → frequency and size
+
+You're the preflop raiser (PFR), IP. "Range advantage" decides whom the board favors: a high-card dry board favors your opening range; a low-connected board favors the BB who called.
+
+| Board type | Example | Range advantage | Frequency | Size |
+|---|---|---|---|---|
+| **Dry, high-card, disconnected** | A-7-2 r, K-8-3 r, Q-9-4 r | Yours | High — range-bet | **1/3** |
+| **Dry paired** | 8-8-3 r, K-K-4 | Yours | High (cheap fold eq) | **1/3** |
+| **Middling, one draw** | J-9-6 r, T-8-5 one-tone | Mixed | Selective | 1/3–1/2 |
+| **Wet, connected** | 9-8-7, T-9-6 two-tone, 7-6-5 | NOT yours | Low, polarized | **2/3** (value+nut-draw), rest check |
+| **Monotone** | K-8-3 one-tone | Ambiguous | Low, careful | small / check |
+| **Low-connected (BB's board)** | 7-6-4, 6-5-3 | BB's | Check-leaning | most hands check |
+
+> **Dry board = small size, wide range. Wet board = big size, narrow range. The board sets the size, not your hand.**
+
+### 18.3 Which hand c-bets — four classes
+
+| Hand class | Dry board | Wet board |
+|---|---|---|
+| **Value (top pair+, overpair, set, two pair)** | Bet (1/3, thin value included) | Bet (2/3, the hand you WANT to bloat with) |
+| **Real/nut draw (nut FD, OESD+overcard)** | Bet (semi-bluff, 1/3) | Bet (2/3, paid heavily when it completes) |
+| **Air + backdoor/blocker** | Small range-bet (part of the range) | GIVE UP — check-fold; the board favored villain |
+| **Marginal showdown (2nd pair, weak top pair)** | Small bet if paid, else check-back | Check-back — pot control |
+
+Barreling air into a wet board = the flop seed of the root error. If the board favors villain's range, your air has no fold equity; check everything except thin value and real draws.
+
+### 18.4 Sizing logic — 1/3, 2/3, check-back
+
+- **1/3 (small):** dry-board range-bet; cheap fold equity + thin value; **preserves the check-fold luxury on the river** (B11: every time you grow the pot your buying power for that luxury shrinks — this B11 rule starts on the flop).
+- **2/3+ (big):** wet-board polarized; only the hands you WANT to bloat with — strong value + nut-draws.
+- **Check-back:** marginal showdown value; wet/multiway board; pot control + a free card.
+
+> **Size = the price of your river plan. If you fired 2/3 on the flop you've narrowed the SPR for the turn second barrel and the river; don't walk that road with air (B11.1).**
+
+### 18.5 IP vs OOP
+
+| Situation | IP (position yours) | OOP (position villain's) |
+|---|---|---|
+| **C-bet freedom** | Freer — control + realize equity | More selective |
+| **Preferred line** | Range-bet dry, polarize wet | Prefer check-call / check-raise; OOP range-betting air is a TRAP |
+| **Root-error risk** | Low | High — an OOP bloated pot is the worst bluff-catcher spot |
+
+An OOP c-bet cuts value against a station but doesn't shut the door on an aggressor; so check-call with marginal hands and check-raise with strong ones is sturdier. C-betting air OOP drops you into a bloated pot out of position — the root error itself.
+
+### 18.6 The multiway exception
+
+In a 3+ way pot this chapter is suspended: **flop c-bet frequency COLLAPSES** (B13.1). No range-betting multiway; only strong value + a real nut-draw. Detail in Chapter 13.
+
+### 18.7 Calibration
+
+*(calibrate: split your last 20 hands into three board textures — dry/middling/wet — and derive your own c-bet frequency in each. At a rec-heavy table target ~10–15% below the GTO baseline; fold equity is low.)*
+
+### 18.8 Cheat card
+
+| Board | Frequency | Size | What happens to air |
+|---|---|---|---|
+| **Dry high/paired** | High | 1/3 | part of the range-bet |
+| **Middling one-draw** | Selective | 1/3–1/2 | give up most |
+| **Wet connected** | Low polarized | 2/3 | check-fold |
+| **Multiway (any board)** | Collapses | value/nut | none |
+
+### 18.9 Drill — flop c-bet (4 questions)
+
+1. **F1.** IP, single-raised pot, board A-7-2 rainbow. What do you do with your whole range, what size, why?
+2. **F2.** IP, 3-bet pot, KK, board 9-8-7 two-tone. C-bet or check? Size and rationale (count the SPR — B11).
+3. **F3.** OOP (3-bet from the SB, BTN calls), AK, board Q-6-3 rainbow — you caught nothing. Line?
+4. **F4.** 3-way pot, IP, top pair good kicker, board J-9-4 two-tone. How do frequency and size change (B13)?
+
+*Root-error tie-in: this chapter disciplines the street where the error is BORN. B4 lowers the error's frequency preflop; B18 cuts the seed of the bloated pot with the flop c-bet decision; B11 delivers the execution once the error moment arrives. The three are one chain.*

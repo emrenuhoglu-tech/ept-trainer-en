@@ -41,6 +41,7 @@ export const CONCEPT_LABEL: Record<string, string> = {
   draw: "Draw",
   plo: "PLO",
   boyut: "Sizing",
+  "c-bet": "C-bet",
   icm: "ICM",
   "icm-cover": "ICM cover",
   multiway: "Multiway",

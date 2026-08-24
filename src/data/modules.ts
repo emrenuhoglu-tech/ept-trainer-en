@@ -1235,6 +1235,83 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M22",
+    title: "C-bet & barreling: flop → turn → river",
+    chapter: "Chapter 18 ★",
+    minutes: 9,
+    slides: [
+      {
+        title: "Thesis: a c-bet is for a reason — value or fold equity",
+        table: { section: "Chapter 18", sub: "18.1", caption: "In the rec field the weight shifts to value." },
+        bullets: [
+          "Preflop sizing (B4.2): IP 3-bet 3×, OOP 4×, +1× per coldcaller, squeeze 4.5–5×.",
+          "A c-bet is fired for two reasons: value (they pay) OR fold equity (they fold).",
+          "In the rec field fold equity is low → default c-bet ~10–15% below GTO.",
+          "If both are 'no,' check. The range-bet-air reflex burns money.",
+        ],
+        ruleBox: "In the rec field a c-bet is fired for a REASON — not as an automatic range-bet reflex.",
+        narration:
+          "This module gathers a scattered topic into one place: bet sizing and the c-bet, the continuation bet. First the sizing map. The preflop side is clean and memorized in the book: in position a 3-bet is three times the open, out of position four times, add one open size per coldcaller, squeeze four and a half to five times. Now the truly confusing side: the flop c-bet. The only question here is, why is a c-bet fired? There are two reasons. One: value, a weaker hand will pay. Two: fold equity, a better hand folds or a draw gives up the call. Look at the table. In your field, the rec-heavy Main and EPT tables, the opponent is usually a station and doesn't fold easily. That lowers fold equity. The result: your default c-bet frequency should sit about ten to fifteen percent below what the solver recommends; the solver talks to a balanced opponent, and yours isn't balanced. The compass in one sentence: a c-bet is fired for a reason, do they pay, or do they actually fold? If both answers are no, check. The automatic range-bet-air reflex burns money against a station; worse, once called you enter a pot you inflated yourself as a bluff-catcher, the root error itself.",
+      },
+      {
+        title: "Flop: board texture sets the frequency and the size",
+        table: { section: "Chapter 18", sub: "18.2", caption: "The board sets the size, not your hand." },
+        visuals: [
+          { kind: "board", cards: "As 7d 2c", label: "Dry — one-third, range-bet" },
+          { kind: "board", cards: "9s 8s 7d", label: "Wet — two-thirds polarized / rest check" },
+        ],
+        bullets: [
+          "Dry high-card (A-7-2): range advantage yours → 1/3 high-frequency range-bet.",
+          "Wet connected (9-8-7): range advantage the BB's → 2/3 polarized, rest check.",
+          "Dry paired (8-8-3): cheap fold equity → small bet.",
+          "Multiway on any board: frequency collapses (B13).",
+        ],
+        ruleBox: "Dry = small size, wide range. Wet = big size, narrow range.",
+        narration:
+          "The first driver of the flop c-bet is board texture, not your hand, the board. Because the board sets the size and the frequency. The key idea is range advantage: you're the preflop raiser, so a high-card dry board favors your range, while a low connected board favors the big blind who called. Separate three main cases. One: a dry, high-card, disconnected board, say ace-seven-two or king-eight-three. The range advantage is yours, so you fire a small c-bet with your whole range, one-third pot, high frequency; this is called a range-bet, it's cheap and carries no information about your hand. Two: a wet, connected board, say nine-eight-seven or seven-six-five. Here the range advantage is not yours, everyone hits something; so be selective, play polarized, bet two-thirds pot with strong value and real nut-draws, check the rest, and don't barrel air. Three: a dry paired board, say eight-eight-three. Nobody holds the pair often, fold equity is cheap, a small high-frequency bet works. And don't forget the exception: in a three-or-more-way pot this chapter is suspended, c-bet frequency collapses, we covered that in Chapter thirteen. One sentence: dry board small size wide range, wet board big size narrow range.",
+      },
+      {
+        title: "Which hand c-bets — four classes, three sizes",
+        table: { section: "Chapter 18", sub: "18.3", caption: "Value / draw / air / marginal × dry / wet." },
+        bullets: [
+          "Value (top pair+/overpair/set): dry 1/3, wet 2/3 — the hand you want to bloat with.",
+          "Real/nut draw: semi-bluff bet, big on wet (paid when it completes).",
+          "Air + blocker: ONLY dry board, part of the range-bet; check-fold on wet.",
+          "Marginal showdown (2nd pair): check-back on wet, pot control.",
+        ],
+        ruleBox: "Size = the price of your river plan. If you fired 2/3, don't walk that road with air (B11.1).",
+        narration:
+          "After reading the board the second question is: which hand do I c-bet, and at what size? Split into four classes. First class, value: top pair and up, overpair, set, two pair. You bet these; one-third on a dry board, thin value included; two-thirds on a wet board, because these are the hands you want to bloat with. Second class, a real or nut draw: nut flush draw, open-ended straight draw plus an overcard. You semi-bluff bet these; big on a wet board, because they get paid heavily when they complete. Third class, air plus a blocker: you bet this only on a dry board, small, as part of the range-bet; on a wet board give it up, check-fold, because the board favored villain and your air has no fold equity. Fourth class, marginal showdown value: second pair, weak top pair. You check these back on a wet board for pot control; on a dry board a small value bet if it gets paid, otherwise check. And the bridge rule here connects to Chapter eleven: the size you fire is the price of your river plan. If you fired two-thirds on the flop you've narrowed the stack-to-pot ratio for the turn and river; don't walk that road with air.",
+      },
+      {
+        title: "2nd barrel (turn): do I have a river plan?",
+        table: { section: "Chapter 11", sub: "11.1", caption: "My hand × the turn card — direction fixed, size calibrated." },
+        bullets: [
+          "Overpair: blank turn controlled bet; overcard count SPR; board pairs/draw completes → check.",
+          "Top pair good kicker: thin bet / check-call; check-fold on a bad card.",
+          "Air + blocker: blank turn barrel candidate; GIVE UP when a scare card hits.",
+          "Every time you grow the pot, your river check-fold luxury shrinks.",
+        ],
+        ruleBox: "Before the second barrel ask: can I state my river plan?",
+        narration:
+          "The c-bet went in, the call came. Now the second barrel, the turn. The root error is often born right here: you inflate the pot yourself with the second barrel and stay a bluff-catcher on the river. Look at the table, by your hand and the turn card that came. If you have an overpair: a controlled bet on a blank or low turn; if an overcard came, count the stack-to-pot ratio and be careful; if the board paired or a draw completed, lean toward a check. Top pair good kicker: a thin bet or check-call, check-fold on a bad card. Air plus a blocker: blank turns are barrel candidates, but give up when a scare card comes. Sizes are calibrated to your execution data; but the direction is fixed, every time you grow the pot your buying power for the river check-fold luxury shrinks. Before the second barrel answer two questions: can I already state my river plan, and when a bad river comes am I leaving a pot size I can check-fold? The size you fire on the turn is the price of the decision you'll make on the river.",
+      },
+      {
+        title: "3rd barrel (river): value, or give up",
+        table: { section: "Chapter 11", sub: "11.2", caption: "As the size grows, villain's range shifts to value." },
+        bullets: [
+          "Bluff-catch: ≤50% call direction; overbet polarized → one pair folds.",
+          "Thin value (11.3): if a weaker hand pays, bet even thin.",
+          "Bad river (11.4): 4th low card / 3rd flush / board pairs → NEVER jam.",
+          "Multiway (13.1): no bluffs, one pair a class lower — value/nut only.",
+        ],
+        ruleBox: "On the river a jam is value only if a weaker hand will pay.",
+        narration:
+          "And the third barrel, the river. There are two different seats here. First, villain bet and your hand is a bluff-catcher: the decision hinges on villain's size. Sizes of fifty percent and under contain more bluffs and thin value, a call direction; an overbet is polarized, either nut or air, and there one pair turns toward a fold, not a panic hero-call. Second, it's on you and should you bet for value? The rule: if a weaker hand will pay, bet even thin; in a rec-heavy field missed thin value is a direct chip loss. But there's an alarm list, the bad-river catalog: the fourth of the low cards or the card that completes a straight, the third flush card, the board pairing, or an overcard that comes on top. On these cards you have no value target; small pot check-call, big pot check-fold, and never jam, because a jam is value only if a weaker hand will pay. Finally multiway: in a three-or-more-way pot there are no bluffs, one pair is a class lower than heads-up, bet only for strong value and a real nut. These three streets are one chain: the flop c-bet decision either cuts or plants the seed of the bloated pot, the turn grows it or brakes it, the river delivers the execution.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

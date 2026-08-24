@@ -624,6 +624,42 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 17.8",
     kavram: "stack-modu",
   },
+  {
+    q: "IP, single-raised pot, dry board A-7-2 rainbow. Your flop plan with your whole range?",
+    options: ["2/3-pot polarized c-bet", "1/3-pot high-frequency range-bet (most of your range)"],
+    correct: 1,
+    explain:
+      "Dry high-card board = range advantage yours (PFR). A small size (1/3) at high frequency is a range-bet; cheap, carries no information, preserves the river check-fold luxury. The 2/3 polarized size is for wet boards.",
+    source: "Chapter 18.2",
+    kavram: "c-bet",
+  },
+  {
+    q: "IP, 3-bet pot, KK, wet board 9-8-7 two-tone (SPR ~3). C-bet or check, and what size?",
+    options: ["Check — the board is too dangerous", "2/3 value bet: wet board + strong value + low SPR = bloat, commit"],
+    correct: 1,
+    explain:
+      "A wet connected board is played polarized: strong value (an overpair) bloats at 2/3. SPR ~3 is already the commit zone (B11.0). Checking plays passive and misses value; but brake on a turn scare card that completes a straight/flush (B11.1).",
+    source: "Chapter 18.2 / 18.3",
+    kavram: "c-bet",
+  },
+  {
+    q: "OOP (3-bet from the SB, BTN calls), AK, dry board Q-6-3 rainbow — you caught nothing. Line?",
+    options: ["Range c-bet 1/3 with air", "Check — range-betting air OOP is a trap; check-call/check-fold, two overcards as showdown value"],
+    correct: 1,
+    explain:
+      "Range-betting air OOP is a TRAP (B18.5): it drops you into a bloated pot out of position. AK has two overcards + backdoor equity; a check-call or check-fold line doesn't cut value against a station but doesn't self-inflate a bloated pot either.",
+    source: "Chapter 18.5",
+    kavram: "c-bet",
+  },
+  {
+    q: "3-way pot, IP, top pair good kicker (AJ), board J-9-4 two-tone. How do frequency/size change?",
+    options: ["2/3 value bet like heads-up", "Frequency collapses (B13): one pair a class lower; small value/control, no bloating"],
+    correct: 1,
+    explain:
+      "In multiway the flop c-bet frequency collapses (B13.1). Top pair is value heads-up; three-way it drops a class → pot control, a small value bet or a check. The value bar it must clear against two players rises; no range-betting air.",
+    source: "Chapter 18.6 / 13.1",
+    kavram: "c-bet",
+  },
 ];
 
 export function randomScenario(): Scenario {

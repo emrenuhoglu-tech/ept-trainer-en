@@ -107,7 +107,7 @@ check("BTN→SB fold geçerli", poolsFor("BTN", "SB").flatWide === false);
 
 // The new v5 chapters (B11–B16) are rendered by ChapterView via sectionBlock.
 // If one comes back empty or a table vanishes, the new Reference view silently goes blank → stop the build.
-for (const n of [11, 12, 13, 14, 15, 16, 17]) {
+for (const n of [11, 12, 13, 14, 15, 16, 17, 18]) {
   const body = sectionBlock("Chapter " + n);
   check(`C${n} sectionBlock non-empty`, body.trim().length > 0, String(body.length));
   check(`C${n} contains at least one table`, body.includes("|"));
@@ -195,7 +195,7 @@ check("D6-63 postflop PLO Q generates", !!postflopQuestion("plo"));
   const badCorrect = SCENARIOS.filter((s) => !(s.correct >= 0 && s.correct < s.options.length));
   const badSource = SCENARIOS.filter((s) => !s.source || !s.source.trim());
   const badKavram = SCENARIOS.filter((s) => typeof s.kavram !== "string" || !s.kavram);
-  check("D4-38 scenario count 70 (TR=EN parity)", SCENARIOS.length === 70, String(SCENARIOS.length));
+  check("D4-38 scenario count 74 (TR=EN parity)", SCENARIOS.length === 74, String(SCENARIOS.length));
   check("D4-38 all correct within options", badCorrect.length === 0, badCorrect.map((s) => s.q.slice(0, 24)).join("|"));
   check("D4-38 all source filled", badSource.length === 0, String(badSource.length));
   check("D4-38 all kavram filled", badKavram.length === 0, String(badKavram.length));
