@@ -1189,37 +1189,49 @@ export const modules: Module[] = [
       {
         title: "4-handed: role + ICM still bites",
         table: { section: "Chapter 12", sub: "12.4", caption: "The frozen medium stack = the most profitable target." },
+        visuals: [
+          { kind: "range", value: "22+, A2s+, K4s+, Q7s+, J7s+, T7s+, 96s+, 86s+, 75s+, 65s, 54s, A2o+, K8o+, Q9o+, J9o+, T9o", valueLabel: "4-handed BTN ~45%", caption: "Baseline — exact Nash calibrated on break" },
+        ],
         bullets: [
+          "Baseline open: 4-handed BTN ~45%, first position (CO) ~25%.",
           "Table shrank, blinds hit more often → opening range widens.",
           "But ICM still bites: pay-jumps are close, a marginal flip while covered = fold.",
           "Target: the frozen medium stack (harvest); no ego war with a cover.",
         ],
         ruleBox: "Widen but role-gated: if you're covered, tighten; if you cover, crush.",
         narration:
-          "What changes four-handed? Two things at once. One: because the table is smaller, the blinds and ante hit you far more often, you pay a bigger share of your stack each orbit; so to survive you have to widen your opening range, you melt by waiting. Two: despite that, ICM still bites, because the pay-jumps, the payout leaps, are now very close and large. You manage these two together: you widen but role-gated, meaning according to your role. If someone covers you, you tighten the marginal spots, because if you lose you bust; if you cover, you crush. The most profitable target is constant: the frozen medium stack — the one tightening up to protect a pay jump — you harvest it. And you don't get into an ego war with equally deep big stacks; four-handed one wrong flip sends you out in fourth.",
+          "What changes four-handed? Two things at once. One: because the table is smaller, the blinds and ante hit you far more often, you pay a bigger share of your stack each orbit; so to survive you have to widen your opening range, you melt by waiting. Two: despite that, ICM still bites, because the pay-jumps, the payout leaps, are now very close and large. You manage these two together: you widen but role-gated, meaning according to your role. If someone covers you, you tighten the marginal spots, because if you lose you bust; if you cover, you crush. The most profitable target is constant: the frozen medium stack — the one tightening up to protect a pay jump — you harvest it. And you don't get into an ego war with equally deep big stacks; four-handed one wrong flip sends you out in fourth. A concrete baseline: four-handed your button open is about forty-five percent, first position about twenty-five percent; the grid shows the button range. At this depth exact Nash is calibrated on break, in drills — this is a starting line.",
       },
       {
         title: "3-handed: position explodes",
+        visuals: [
+          { kind: "range", value: "22+, A2s+, K2s+, Q6s+, J7s+, T7s+, 96s+, 85s+, 75s+, 64s+, 54s, A2o+, K7o+, Q8o+, J8o+, T8o+, 98o", valueLabel: "3-handed BTN ~50%", caption: "Baseline — SB ~45% raise" },
+        ],
         bullets: [
+          "Baseline: 3-handed BTN ~50%, SB ~45% (raise).",
           "Position value explodes — the button is very strong, blind battles intensify.",
           "Ranges get very wide: open aggressively from the button, press the SB/BB.",
           "ICM softens but with a live pay-jump it's still role-gated; if short, be the first jammer.",
         ],
         ruleBox: "3-handed the button = your profit center; open wide, but respect a cover if the pay-jump bites.",
         narration:
-          "Three-handed the game speeds up once more and the value of position explodes. Now every hand you're either on the button, the small blind, or the big blind; the button is extremely strong because you act with position on both opponents and you have postflop position. Your ranges get very wide: you open aggressively from the button, blind battles intensify, and you're the one applying pressure. ICM starts to soften at this point because fewer players remain and everyone has locked up good money; but if a big pay-jump still exists — say first place is far above second — the decision stays role-gated. If you're short, your first-jammer principle continues; if you're deep, you press both opponents. In summary: three-handed the button is your profit center, play wide and aggressive, but if the pay-jump bites, respect the one who covers you.",
+          "Three-handed the game speeds up once more and the value of position explodes. Now every hand you're either on the button, the small blind, or the big blind; the button is extremely strong because you act with position on both opponents and you have postflop position. Your ranges get very wide: you open aggressively from the button, blind battles intensify, and you're the one applying pressure. ICM starts to soften at this point because fewer players remain and everyone has locked up good money; but if a big pay-jump still exists — say first place is far above second — the decision stays role-gated. If you're short, your first-jammer principle continues; if you're deep, you press both opponents. In summary: three-handed the button is your profit center, play wide and aggressive, but if the pay-jump bites, respect the one who covers you. A concrete baseline: three-handed the button is about fifty percent, the small blind about forty-five percent raising; the grid shows the button. Again the exact range is calibrated in drills.",
       },
       {
         title: "Heads-up: ICM ends, chipEV begins",
+        visuals: [
+          { kind: "range", value: "22+, A2s+, K2s+, Q2s+, J2s+, T3s+, 94s+, 84s+, 74s+, 63s+, 53s+, 43s, A2o+, K2o+, Q4o+, J6o+, T6o+, 96o+, 85o+, 75o+, 64o+, 54o", valueLabel: "HU button open ~82%", caption: "Almost any hand" },
+          { kind: "range", value: "77+, A9s+, KTs+, QTs+, JTs, ATo+, KJo+", valueLabel: "HU BB 3-bet value", caption: "re-steal core ~15%" },
+        ],
         bullets: [
           "Button = small blind: first action + postflop position are yours.",
           "Two prizes locked → ICM resolved, play pure chipEV.",
-          "Open very wide from the button (~80%+), defend the BB very wide; aggression + postflop skill decide.",
-          "Exact ranges are drill/calibration (the book's 12.5 philosophy: Nash is checked on break).",
+          "Open very wide from the button (~82%), defend BB ~65% (call+3-bet), 3-bet value 77+/A9s+/KTs+/ATo+.",
+          "These are a baseline — exact Nash at this depth is calibrated on break/in drills (book 12.5).",
         ],
         ruleBox: "Heads-up ICM ends, chipEV begins; button = SB, initiative + position are yours.",
         narration:
-          "And the final act: heads-up, two players. Here the mechanics change entirely. First, the button is now the small blind; you both take the first preflop action and have postflop position — the button is a huge advantage. Second and most important: because only two prizes remain, ICM is practically resolved; second place is guaranteed, you're playing for first, so you now play pure chipEV, the ICM tightening ends. The result is an aggressive game: you open very wide from the button, about eighty percent and up; you defend very wide from the big blind; and the winner is not the one waiting for the best hand but the one who plays best postflop and constantly applies pressure. I'm not writing exact numeric ranges here, because the book's philosophy at this depth is clear: heads-up and short-handed Nash ranges are calibrated on break, in drills, not a memorized table. The one sentence to keep: heads-up ICM ends, chipEV begins; the button is the small blind, initiative and position are yours.",
+          "And the final act: heads-up, two players. Here the mechanics change entirely. First, the button is now the small blind; you both take the first preflop action and have postflop position — the button is a huge advantage. Second and most important: because only two prizes remain, ICM is practically resolved; second place is guaranteed, you're playing for first, so you now play pure chipEV, the ICM tightening ends. The result is an aggressive game: you open very wide from the button, about eighty percent and up; you defend very wide from the big blind; and the winner is not the one waiting for the best hand but the one who plays best postflop and constantly applies pressure. Let me give you a concrete baseline: from the button you open about eighty-two percent, meaning almost any hand; from the big blind you defend about sixty-five percent, a mix of calls and 3-bets; and your 3-bet value core is sevens and up, ace-nine suited and up, king-ten suited and up, ace-ten offsuit and up. The grids show the button open and the big-blind 3-bet value. But keep this note: these are a starting line; at this depth exact Nash ranges are calibrated on break, in drills — that's the book's twelve point five philosophy, not a memorized table. The one sentence to keep: heads-up ICM ends, chipEV begins; the button is the small blind, initiative and position are yours.",
       },
     ],
   },
