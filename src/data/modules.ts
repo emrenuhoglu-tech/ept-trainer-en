@@ -1414,6 +1414,77 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M24",
+    title: "Risk Premium: the number behind ICM",
+    chapter: "Chapter 20 ★",
+    minutes: 8,
+    slides: [
+      {
+        title: "ICM's price is a number",
+        bullets: [
+          "Risk premium = the extra required equity ICM adds to the chipEV threshold.",
+          "'Tighten when covered' = 'add the risk premium to the equity you need.'",
+          "B12 tells you what to do; B20 measures why and how much.",
+          "A comfortable chipEV call can turn into a fold under ICM pressure.",
+        ],
+        ruleBox: "ICM's price is a number: the extra required equity added to the chipEV threshold.",
+        narration:
+          "This module ties the book's most abstract discipline to a concrete number: the risk premium. So far we gave ICM by feel: tighten when covered, on the bubble even queens can fold. But 'how much do I tighten' has a numeric answer. ICM's price is a number: the extra percentage ICM adds on top of the equity chipEV requires. So the mathematical version of 'tighten when covered' is this: add the risk premium to the equity you need. Chapter twelve told you what to do; this chapter measures why and how much. Because a hand that's a comfortable call in chipEV can turn into a fold under ICM pressure, and that gap is the hidden price of every fold you make.",
+      },
+      {
+        title: "Two definitions + worked example",
+        table: { section: "Chapter 20", sub: "20.1", caption: "Bubble factor and risk premium." },
+        bullets: [
+          "Bubble factor = cost of losing chips ÷ value of gaining (1.0 in chipEV).",
+          "chipEV: pot odds of 37.5% to call → 37.5% equity is enough.",
+          "Same call on the bubble (loss=bust): ~47% needed (representative) → premium ~9–10%.",
+          "Result: A9s (a not-covered call in B12.4) folds vs a COVERING villain on the bubble.",
+        ],
+        ruleBox: "Equity that's enough in chipEV isn't enough under ICM; the gap is the risk premium (exact number calibrated).",
+        narration:
+          "Let's start with two definitions. First, bubble factor: the ratio of the cost of losing chips to the value of gaining chips. In chipEV, that is cash play, this ratio is one — the chip you lose is worth the same as the one you win. Second, risk premium: the extra required equity ICM adds on top of the chipEV threshold; it's zero in cash. Now the concrete example. In chipEV, calling a jam needs pot odds of, say, thirty-seven and a half percent, so thirty-seven and a half percent equity is enough. Now picture the same call on the bubble, where losing means busting: the required equity rises to about forty-seven percent. That's a representative number, the exact value gets calibrated. The gap, about nine to ten percent, is the risk premium. See the result: a hand that's a comfortable chipEV call, say ace-nine suited, which in chapter twelve point four was a wide call when not covered, turns into a fold against someone who covers you on the bubble. At the highest premium even queens get marginal.",
+      },
+      {
+        title: "When the premium grows",
+        table: { section: "Chapter 20", sub: "20.3", caption: "The asymmetry IS the risk premium." },
+        bullets: [
+          "A payout jump is near (bubble/FT rung) → it grows.",
+          "The villain COVERS you (you bust if you lose) → HIGHEST.",
+          "The villain does NOT cover you (short jam, you don't zero out) → small → call wide.",
+          "This is B12.4's cover/not-cover asymmetry itself.",
+        ],
+        ruleBox: "Covering villain → high premium → tighten; non-covering → premium ~0 → widen.",
+        narration:
+          "The premium isn't fixed; what makes it grow? Look at the table. One: if a payout jump is near, the bubble or a final-table rung, the premium grows because busting is so costly. Two, and most important: if the villain covers you, meaning you bust when you lose, the premium is at its highest. Three: if the villain does not cover you, say a short stack jams into you and you don't zero out even if you lose, the premium is small or negligible and you call wide. Four: few players and shallow money sharpen the premium. Notice this: that table is actually the cover, not-cover asymmetry from chapter twelve point four itself. The asymmetry is the risk premium. Against someone who covers you the premium is high, you tighten; against someone who doesn't the premium is near zero, you widen.",
+      },
+      {
+        title: "How to use it at the table",
+        bullets: [
+          "1) How much equity did chipEV require (pot odds).",
+          "2) Add the risk premium (covered? bubble? → high).",
+          "3) Does my hand clear the ICM threshold? If not, fold.",
+          "JAMMING is less affected (fold equity) → jam stays, call narrows.",
+        ],
+        ruleBox: "Your jam range STAYS wide, your call range NARROWS (B17); the risk premium is the basis of that asymmetry.",
+        narration:
+          "At the table, apply it in three steps. One: how much equity did chipEV require, read the pot odds. Two: add the risk premium on top; based on whether I'm covered and whether it's the bubble, if the premium is high pull the threshold up. Three: does my hand clear this ICM threshold? If not, fold. And a critical asymmetry: jamming is far less affected by the premium than calling, because when you jam you have fold equity, the villain can fold. That's why your jam range stays wide but your call range narrows. The 'jam stays, call narrows' rule you saw in chapter seventeen has exactly this as its numeric basis. The risk premium is the math underneath that asymmetry.",
+      },
+      {
+        title: "The two-way leak + cheat",
+        table: { section: "Chapter 20", sub: "20.7", caption: "Situation → premium → action." },
+        bullets: [
+          "Mistaking not-covered for covered = over-folding (B12.4 A9s/KTo leak).",
+          "Mistaking covered for not-covered = skip the premium = over-call → bust.",
+          "The right question: am I covered + how near is the payout jump?",
+          "B12 gives the direction, B20 measures the price — qualitative + quantitative.",
+        ],
+        ruleBox: "Am I covered? The answer sets the premium, the premium sets the threshold, the threshold sets the decision.",
+        narration:
+          "Finally the two-way trap, because the premium makes you err in both directions. First direction: mistaking not-covered for covered — you add a premium that isn't there and over-fold. The ace-nine suited and king-ten offsuit leak in chapter twelve point four was exactly this, needlessly folding to a short jam. Second direction: mistaking covered for not-covered — you skip the premium, over-call, and bust. The right question is always the same: am I covered, and how near is the payout jump? Keep the cheat card in mind: money far off, premium zero, normal pot odds. A non-covering short jam, premium zero, call wide. Bubble neutral, medium premium, trim the marginals. A covering villain plus the bubble or a final table, high premium, tighten hard, even queens can be marginal. In summary: chapter twelve gives ICM's direction, chapter twenty measures its price; the two are the qualitative and quantitative halves of the same discipline.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

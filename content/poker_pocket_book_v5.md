@@ -1402,3 +1402,77 @@ Blocker-bet: OOP on the river, a SMALL bet with a thin bluff-catcher — deny th
 6. **F10.** OOP river, thin bluff-catcher, villain an aggressive reg + dry/capped board. Blocker or check-call? What changes if the villain is a station?
 
 *Root-error tie-in: all six lines are initiative tools — used right they end the pot cheaply or punish a capped range (anti-bloat). Used wrong they all lead to the same door: inflating with a marginal hand in the name of initiative and staying a bluff-catcher. Guard: who showed weakness + whose board is it + should I realize my hand instead. If all three aren't there, check.*
+
+
+---
+
+## Chapter 20 — Risk Premium: The Number Behind ICM
+
+*★ v6. B12 gave ICM QUALITATIVELY ("tighten when covered", "on the bubble even QQ can fold"). This chapter gives that discipline its NUMBER: the risk premium. B12 tells you "what to do"; B20 measures "why and how much." A hand that's enough in chipEV isn't enough under ICM — the gap is the hidden price of every fold.*
+
+### 20.0 Thesis
+
+> **ICM's price is a number: the risk premium — the extra equity ICM adds on top of what chipEV requires. "Tighten when covered" = "add the risk premium to the equity you need."**
+
+The book has given ICM by feel and direction so far. But "how much do I tighten?" has a numeric answer, estimable at the table in tiers.
+
+### 20.1 Two definitions
+
+| Concept | Definition | In chipEV |
+|---|---|---|
+| **Bubble factor** | Cost of losing chips ÷ value of gaining them | 1.0 |
+| **Risk premium** | Extra required equity ICM adds to the chipEV threshold | 0 |
+
+As the bubble factor rises above 1.0 (bubble, FT ladder, a villain who covers you) the risk premium grows. Both say the same thing: under ICM, losing chips costs more than gaining them.
+
+### 20.2 Worked example — see the premium
+
+- **chipEV (cash-like):** to call a jam, pot odds of 37.5% → **37.5% equity** is enough.
+- **The same call on the bubble** (a loss = bust): required equity rises to ~**47%** *(representative — the exact number is 20.6 / calibrate)* → **risk premium ~9–10%.**
+
+Result: a hand that's a comfortable chipEV call — say A9s (in B12.4 it was a wide call when NOT covered) — turns into a **fold** on the bubble against someone who COVERS you; at the highest premium even QQ gets marginal. This is the numeric example behind B12.4 and 17.10.
+
+### 20.3 When the premium grows
+
+| Factor | Premium |
+|---|---|
+| **A payout jump is near** (bubble, FT rung) | Grows |
+| **The villain COVERS you** (you bust if you lose) | **Highest** |
+| **The villain does NOT cover you** (short jam, you don't zero out) | Small/negligible → **call wide** |
+| **Few players, shallow money** | Sharpens |
+
+This table is B12.4's cover/not-cover asymmetry itself: **the asymmetry IS the risk premium.** Against someone who covers you the premium is high (tighten); against someone who doesn't the premium is ~0 (widen).
+
+### 20.4 How to use it at the table
+
+1. How much equity did chipEV require? (pot odds)
+2. Add the risk premium on top (covered? bubble? → high).
+3. Does my hand clear this ICM threshold? If not, fold.
+
+> **JAMMING is less affected by the premium — you have fold equity. That's why your jam range STAYS wide and your call range NARROWS (the B17 asymmetry). The risk premium is the numeric basis of that asymmetry.**
+
+### 20.5 The two-way leak (root-error tie-in)
+
+- **Mistaking not-covered for covered** = adding a premium that isn't there = **over-folding** (the A9s/KTo leak in the B12.4 drill).
+- **Mistaking covered for not-covered** = skipping the premium = **over-calling → bust.**
+
+### 20.6 Calibration
+
+*(calibrate: the exact risk premium comes from ICMIZER/HRC — by stack distribution, payout, players left. In the app this slot fills from the solver pipeline's ICM mode; at the table estimate "high/medium/low premium" in three tiers and confirm the exact number at the break.)*
+
+### 20.7 Cheat card
+
+| Situation | Premium | Action |
+|---|---|---|
+| **chipEV / money far off** | ~0 | Normal pot odds |
+| **Non-covering short jam** | ~0 / negative | Call wide |
+| **Bubble, neutral** | Medium | Add to the threshold, trim marginals |
+| **Covering villain + bubble/FT** | High | Tighten hard; even QQ can be marginal |
+
+### 20.8 Drill (3 questions)
+
+1. **R1.** A call needs 37.5% in chipEV; on the bubble a stack that covers you jams. How does your threshold change — is A9s a call?
+2. **R2.** Same bubble, but the jammer does NOT cover you (you're deeper). What happens to the premium, how does your range change?
+3. **R3.** At the FT you're the chip leader, a short stack jams into you. What's your premium (you stay leader even if you lose)? Does your call range widen or narrow?
+
+*Root-error tie-in: the risk premium is the numeric engine of the "am I covered?" leak (B12.4). B12 gives the direction, B20 measures the price. The two are the qualitative and quantitative halves of ICM discipline.*

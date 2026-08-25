@@ -714,6 +714,33 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 19.6",
     kavram: "blocker-bet",
   },
+  {
+    q: "A call needs 37.5% in chipEV; on the bubble a stack that COVERS you jams. Is A9s a call?",
+    options: ["Yes, it beats 37.5% → call", "Fold: the risk premium pulls the threshold to ~47%; a covering villain = highest premium, A9s is marginal → fold"],
+    correct: 1,
+    explain:
+      "Against a covering villain the risk premium is highest: the chipEV 37.5% threshold rises to ~47% under ICM (representative). A9s doesn't clear it → fold. The premium is the number behind 'tighten when covered.'",
+    source: "Chapter 20.2",
+    kavram: "risk-premium",
+  },
+  {
+    q: "Same bubble, but the jammer does NOT cover you (you're deeper, you don't zero out if you lose). Premium and range?",
+    options: ["Still tighten, bubble = tight", "Premium ~0 → call wide; against a non-covering jam widen even on the bubble"],
+    correct: 1,
+    explain:
+      "If you're not covered you don't bust even if you lose → the risk premium is ~0/negligible → call WIDE. Assuming the bubble is automatically 'tight' is the B12.4 leak; the real question is whether you're covered.",
+    source: "Chapter 20.3",
+    kavram: "risk-premium",
+  },
+  {
+    q: "At the FT you're the chip leader, a short stack jams into you (you stay leader even if you lose). Your premium and call range?",
+    options: ["High premium, tighten", "Premium low (no bust) → your call range WIDENS; as the leader, crush the short jams"],
+    correct: 1,
+    explain:
+      "You don't get eliminated even if you lose (you're the leader) → your risk premium is low → call wide. YOU are the one covering; the premium pressure is on the short stack. Leader = the covering deep stack, aggression is free.",
+    source: "Chapter 20.3",
+    kavram: "risk-premium",
+  },
 ];
 
 export function randomScenario(): Scenario {
