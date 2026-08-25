@@ -1485,6 +1485,77 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M25",
+    title: "Postflop under ICM: downgrade one notch",
+    chapter: "Chapter 21 ★",
+    minutes: 8,
+    slides: [
+      {
+        title: "Thesis: if you're covered, downgrade one notch",
+        bullets: [
+          "Under ICM pressure (when covered) downgrade every aggressive line one notch.",
+          "bet→check, raise→call, big→small, thin-value→check-back, hero-call→fold.",
+          "If you're COVERING (leader) the reverse: upgrade one notch (barrel, pressure).",
+          "Direction = the sign of the cover map; the risk premium (B20) carries to postflop.",
+        ],
+        ruleBox: "If you're covered, downgrade one notch; if you're covering, upgrade one notch.",
+        narration:
+          "This module fuses two disciplines: the postflop initiative of chapters eighteen and nineteen with the ICM of chapters twelve and twenty. The intersection is one sentence: under ICM pressure, that is against someone who covers you, downgrade every aggressive postflop line one notch. Check instead of bet, call instead of raise, small instead of big, check-back instead of thin value, fold instead of hero-call. But careful, this headline is the covered player's rule. If you're the one covering, that is you're the chip leader and you survive even if you lose, you do the opposite: upgrade one notch, more barrels, more pressure. The direction is always the sign of the cover map. In chapter twenty we showed the risk premium at the preflop call and jam; this chapter carries it onto the flop, turn and river, because the premium re-accrues on every street.",
+      },
+      {
+        title: "Why the call-off is most expensive — rule table",
+        table: { section: "Chapter 21", sub: "21.2", caption: "chipEV line → under ICM pressure (when covered)." },
+        bullets: [
+          "The line that risks the most chips: call/hero-call to a big bet/raise.",
+          "A bet/barrel has fold equity → the premium punishes it less.",
+          "A call-off has no fold equity → all chips tied to showdown, full ICM tax.",
+          "Result: your bluff-catch range NARROWS; value betting stays the same.",
+        ],
+        ruleBox: "The call-off is the most ICM-taxed action: no fold equity → don't tie chips in a bloated pot.",
+        narration:
+          "Why is the call-off the most expensive postflop action? Because the line that risks the most chips is a call or hero-call to a big bet or raise — where the pot bloats and a loss approaches a bust. The premium hits here hardest. Compare: a bet or barrel has fold equity, the villain can fold, so the premium punishes it less. But a call-off has no fold equity; you tie all your chips to showdown and the full ICM tax lands. The result is this: under ICM pressure your bluff-catching range narrows, you fold the extra pair, but betting for value stays the same. The 'one pair equals a bluff-catcher' rule from chapter eleven point two is even more fold-leaning under ICM. Every row in the table says the same direction: shrink the pot, don't tie chips to showdown, cut the marginals. That notch is the risk premium itself.",
+      },
+      {
+        title: "Two seats — the cover asymmetry",
+        table: { section: "Chapter 21", sub: "21.3", caption: "You're covered → downgrade; you're covering → upgrade." },
+        bullets: [
+          "You're COVERED (bust if you lose) → premium high → downgrade one notch.",
+          "You're COVERING (leader, you survive) → premium low/negative → upgrade one notch.",
+          "The chip leader SELLS pressure; the short/mid stack EATS it.",
+          "The 'downgrade' headline is the COVERED player's rule; the coverer does the opposite.",
+        ],
+        ruleBox: "The same spot gives two players opposite instructions; the sign = the cover map.",
+        narration:
+          "The critical point: the direction isn't absolute, it depends on the sign of the cover map, and the same spot gives two players exactly opposite instructions. If you're covered, that is you bust when you lose, your premium is high and you downgrade one notch: check, call, small, fold. But if you're covering, that is you're the chip leader and you survive even a loss, your premium is low, even negative, and you upgrade one notch: barrel, pressure, big size. This is the postflop face of the twenty point three table. The chip leader sells pressure, because for the opponent every pot is a bust risk; the short or mid stack eats that pressure and tightens. So the 'downgrade one notch' line in the headline is the covered player's rule; the coverer does the exact opposite. At the table the first question is always: in this pot, am I the one covering or the one being covered?",
+      },
+      {
+        title: "MDF collapses under ICM + protection",
+        bullets: [
+          "MDF is a chipEV concept; holds in cash + ICM-free MTT, collapses near a payout jump.",
+          "chipEV: ⅔ pot bet → defend MDF ~60%; under ICM your defense rate can be far lower.",
+          "Near a payout jump, folding below MDF is NOT a leak, it's correct.",
+          "Protection-first: give up thin value (check); PROTECT fragile value (bet).",
+        ],
+        ruleBox: "Under ICM MDF collapses: near a payout, folding below MDF is correct; fragile value still bets.",
+        narration:
+          "Now an important nuance: minimum defense frequency, MDF, collapses under ICM. MDF is a chipEV concept; it holds in cash play and in ICM-free MTT spots, but it collapses when a payout jump is near. Example: if the villain bets two thirds pot, in chipEV MDF is about sixty percent, you need to defend sixty percent of your range or you're exploitable to bluffs. But in a covered ICM spot, your defense rate to the same bet can be far lower; the over-folding here isn't an exploit, it's correct play. So the 'fold below MDF equals a leak' rule inverts under ICM: when a payout jump is near, folding below MDF is correct, because the villain stealing with bluffs doesn't repay your ICM premium. The second reflex: protection first. Under ICM you give up thin value, you check-back; but fragile value, that is a hand where you're ahead but the board threatens you, you still bet to protect. Separate thin from fragile: thin, you're already ahead and indifferent to the card, check; fragile, you're ahead but the board threatens, bet — to deny a cheap card, not to tie yourself to showdown.",
+      },
+      {
+        title: "Cheat card + drill",
+        table: { section: "Chapter 21", sub: "21.7", caption: "Spot → you're covered / you're covering." },
+        bullets: [
+          "Thin value: covered → check-back, covering → bet.",
+          "Marginal bluff-catch: covered → fold, covering → call.",
+          "Size: covered → small, covering → big/polarized.",
+          "Fragile value is a bet on BOTH sides — protection is independent of the premium.",
+        ],
+        ruleBox: "One guard: am I covered? If yes, downgrade + cut the call-off hardest; if no, upgrade.",
+        narration:
+          "Finally the cheat card and drill. Read the card row by row: thin value, if you're covered check-back, if you're covering bet to take the thin value. Marginal bluff-catch, if you're covered fold, if you're covering call, because you can eat the pressure. Barrel decision, if you're covered one barrel or give up, if you're covering two or three barrels of pressure. Size, if you're covered small, if you're covering big or polarized. And the one exception: fragile value is a bet on both sides, because protection is independent of the premium. One guard rules them all: am I covered? If yes, downgrade every aggressive line one notch and cut the call-off hardest. If no, if I'm the one covering, upgrade one notch. For the drill, three spots: first, on the bubble against a villain who covers you, a thin bluff-catcher on the river, it was a call in chipEV, what do you do under ICM? Second, at the final table you're the chip leader, the turn checks to you, a good but non-nut hand, which way is the notch? Third, in a spot where you're covered the villain bets two thirds pot, MDF says sixty percent but the payout jump is very near, is folding a leak or correct?",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

@@ -741,6 +741,33 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 20.3",
     kavram: "risk-premium",
   },
+  {
+    q: "Bubble, river against a villain who COVERS you; you hold a thin bluff-catcher, villain bets small. In chipEV it was a call. Under ICM?",
+    options: ["It was a call in chipEV → call again", "Fold: you're covered → downgrade one notch; a call-off has no fold equity, the most expensive action"],
+    correct: 1,
+    explain:
+      "Under ICM pressure (when covered) downgrade every aggressive line one notch; the call-off is the most ICM-taxed action (no fold equity, all chips tied to showdown). A thin bluff-catcher drops from hero-call to fold. If the villain did NOT cover you it would revert to a call.",
+    source: "Chapter 21.1",
+    kavram: "postflop-icm",
+  },
+  {
+    q: "At the FT you're the chip leader; a mid stack check-called the flop, the turn checks to you, your hand is good but non-nut. Which way is the notch?",
+    options: ["Downgrade as if covered → check", "You're COVERING → upgrade one notch: bet for value/pressure (the leader sells pressure)"],
+    correct: 1,
+    explain:
+      "YOU are the coverer (you stay leader even if you lose) → your premium is low/negative → upgrade one notch. The chip leader sells pressure; for the opponent every pot is a bust risk. 'Downgrade one notch' is the covered player's rule; you do the opposite.",
+    source: "Chapter 21.3",
+    kavram: "postflop-icm",
+  },
+  {
+    q: "In a spot where you're covered the villain bets ⅔ pot; MDF says ~60% but the payout jump is very near and your hand is on the defense borderline. Is folding a leak?",
+    options: ["Yes, folding below MDF = exploitable to bluffs = leak", "Correct: MDF is a chipEV concept, it collapses near a payout → folding below MDF is right"],
+    correct: 1,
+    explain:
+      "MDF is a chipEV concept (cash + ICM-free MTT); it collapses when a payout jump is near. In a covered ICM spot over-folding isn't an exploit, it's correct play — the villain stealing with bluffs doesn't repay your ICM premium.",
+    source: "Chapter 21.4",
+    kavram: "postflop-icm",
+  },
 ];
 
 export function randomScenario(): Scenario {

@@ -1476,3 +1476,87 @@ This table is B12.4's cover/not-cover asymmetry itself: **the asymmetry IS the r
 3. **R3.** At the FT you're the chip leader, a short stack jams into you. What's your premium (you stay leader even if you lose)? Does your call range widen or narrow?
 
 *Root-error tie-in: the risk premium is the numeric engine of the "am I covered?" leak (B12.4). B12 gives the direction, B20 measures the price. The two are the qualitative and quantitative halves of ICM discipline.*
+
+
+---
+
+## Chapter 21 — Postflop Under ICM: Downgrade Every Aggressive Line One Notch
+
+*★ v6. B18/B19 gave postflop initiative (c-bet, barrel, bluff, bluff-catch) in chipEV; B12/B20 gave ICM. This chapter is the intersection: how those same postflop lines shift under ICM pressure. The risk premium (B20) was shown at the preflop call/jam; here it carries onto flop-turn-river — because the premium re-accrues on every street.*
+
+### 21.0 Thesis
+
+> **Under ICM pressure — that is, against someone who COVERS you — downgrade every aggressive postflop line one notch: bet→check, raise→call, big→small, thin-value→check-back, hero-call→fold. If you're COVERING (you're the chip leader) the reverse: upgrade one notch — more barrels, more pressure. The direction is the sign of the cover map; the headline is the COVERED player's rule.**
+
+B20 gave the risk premium as a number but showed it at the preflop call/jam. Postflop the premium re-accrues on every street: in a bloated pot the call-off is the most expensive action. This chapter carries the premium onto flop-turn-river.
+
+### 21.1 Why the call-off is the most ICM-taxed action
+
+Postflop the line that risks the most chips is a call/hero-call to a big bet or raise — where the pot bloats and a loss approaches a bust. The premium hits here hardest:
+
+- **A bet/barrel has fold equity** → the premium punishes it less (the B20.4 asymmetry holds postflop too).
+- **A call-off has no fold equity** → you tie all your chips to showdown, the full ICM tax lands.
+
+Result: under ICM pressure your bluff-catching range NARROWS (fold the extra pair), but betting for value stays the same. The "one pair = a bluff-catcher" rule (B11.2) is even more fold-leaning under ICM.
+
+### 21.2 Downgrade one notch — the rule table
+
+| chipEV line | Under ICM pressure (when covered) |
+|---|---|
+| **Thin value bet** | Check-back (don't cut thin value) |
+| **Second barrel bluff** | One barrel / give up |
+| **Big size** | Small size |
+| **Raise (value)** | Call (don't bloat the pot) |
+| **Hero-call / bluff-catch** | Fold |
+| **Check-raise bluff** | Flat call or fold |
+
+Every row says the same thing: shrink the pot, don't tie chips to showdown, cut the marginals. The notch = the risk premium.
+
+### 21.3 Two seats — the cover asymmetry
+
+The direction isn't absolute; it depends on the sign of the cover map. The same spot gives two players opposite instructions:
+
+| You | Premium | Postflop direction |
+|---|---|---|
+| **You're COVERED** (you bust if you lose) | High | Downgrade one notch — check, call, small, fold |
+| **You're COVERING** (chip leader, you survive a loss) | Low/negative | Upgrade one notch — barrel, pressure, big |
+
+This is the postflop face of the B20.3 table. The chip leader sells pressure (every pot is a bust risk for the opponent); the short/mid stack eats it (tightens). **The headline "downgrade one notch" is the COVERED player's rule; the COVERING player does the opposite.**
+
+### 21.4 MDF collapses under ICM
+
+Minimum defense frequency (MDF) is a **chipEV** concept — it holds in cash and in ICM-free MTT spots; but it collapses when a payout jump is near. Because losing chips costs more than gaining them, you fold BELOW the defense rate MDF names, blamelessly.
+
+- **chipEV:** if the villain bets ⅔ pot, MDF ~60% → defend 60% of your range (else you're exploitable to bluffs).
+- **A covered ICM spot:** your defense rate to the same bet can be far lower; over-folding here isn't an exploit, it's correct play.
+
+So the "fold below MDF = leak" rule inverts under ICM: when a payout jump is near, folding below MDF is correct. The villain stealing with bluffs doesn't repay your ICM premium.
+
+### 21.5 Protection-first + short-stack flop-jam
+
+- **Protection-first:** under ICM you give up thin value (check-back), but betting to protect real equity stays the same. Thin ≠ fragile: thin = already ahead, indifferent to cards → check; fragile = ahead but the board threatens → bet (to deny a cheap card, not to tie yourself to showdown).
+- **Short-stack flop-jam:** at shallow SPR (stack behind ≤ pot) there's no bluff-catch/float; either jam the flop or fold. A middling size ties chips and kills fold equity. When you're shallow under ICM the line collapses to two: jam or give up.
+
+### 21.6 Calibration
+
+*(calibrate: the size of the notch = the risk premium (B20.6); HRC/ICMIZER gives it by stack distribution/payout/players left. In the app this slot fills from the solver pipeline's ICM mode; at the table estimate "high/medium/low premium" in three tiers. MDF's exact collapse point also depends on payout proximity — confirm at the break.)*
+
+### 21.7 Cheat card
+
+| Spot | You're covered | You're covering (leader) |
+|---|---|---|
+| **Thin value** | Check-back | Bet (take the thin value) |
+| **Marginal bluff-catch** | Fold | Call (you can eat the pressure) |
+| **Barrel decision** | One barrel / give up | 2-3 barrels, pressure |
+| **Size** | Small | Big / polarized |
+| **Fragile value** | Bet (protection) | Bet (protection) |
+
+The fragile-value row is a bet on both sides — protection is independent of the premium.
+
+### 21.8 Drill (3 questions)
+
+1. **P1.** Bubble, river against a villain who covers you, you hold a thin bluff-catcher, villain bets small. In chipEV it was a call. What do you do under ICM, and why?
+2. **P2.** FT, you're the chip leader, a mid stack check-called the flop, the turn checks to you, you hold a good but non-nut hand. Which way is the notch, what do you do?
+3. **P3.** In a spot where you're covered the villain bets ⅔ pot, MDF says ~60% but the payout jump is very near and your hand is on the defense borderline. Is folding a leak or correct?
+
+*Root-error tie-in: this chapter fuses the B18/B19 postflop initiative with B12/B20 ICM. One guard: am I covered? If yes, downgrade every aggressive line one notch and cut the call-off hardest. If no / if I'm covering, upgrade one notch. The risk premium (B20) re-accrues on every postflop street; the most expensive action is a call-off in a bloated pot.*

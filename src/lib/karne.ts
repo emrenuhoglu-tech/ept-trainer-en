@@ -49,6 +49,7 @@ export const CONCEPT_LABEL: Record<string, string> = {
   float: "Turn float",
   "blocker-bet": "River blocker",
   "risk-premium": "Risk premium",
+  "postflop-icm": "Postflop under ICM",
   icm: "ICM",
   "icm-cover": "ICM cover",
   multiway: "Multiway",
