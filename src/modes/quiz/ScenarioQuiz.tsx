@@ -28,6 +28,21 @@ const CONF = [
 
 type SeenMap = Record<string, number>;
 
+// Topic focus — locks the pool to specific book chapters (focused drill on demand).
+// Empty id = all scenarios. Filter matches the source number; language-agnostic (Bölüm/Chapter alike).
+const FOCUS = [
+  { id: "", label: "All" },
+  { id: "17", label: "🎰 WSOP" },
+  { id: "18", label: "🎯 Flop" },
+  { id: "19", label: "🔀 Lines" },
+  { id: "icm", label: "💰 ICM" },
+];
+function focusMatch(s: Scenario, f: string): boolean {
+  const src = s.source || "";
+  if (f === "icm") return src.includes("20") || src.includes("21");
+  return src.includes(f);
+}
+
 // Concepts due + sure-but-wrong in the scorecard (let the spaced-review signal reach quiz selection).
 function dueKavramSet(): Set<string> {
   const set = new Set<string>();
@@ -36,11 +51,11 @@ function dueKavramSet(): Set<string> {
   return set;
 }
 
-function pickScenario(biasKavram?: string, excludeQ?: string, avoidKavram?: string, wsopOnly?: boolean): Scenario {
+function pickScenario(biasKavram?: string, excludeQ?: string, avoidKavram?: string, focus?: string): Scenario {
   const seen = load<SeenMap>(SEEN_KEY, {});
   const count = (s: Scenario) => seen[s.q] ?? 0;
-  // WSOP Day-2 focus: lock the pool to Chapter 17 scenarios (focused grind for the Sep 21 restart).
-  const base = wsopOnly ? SCENARIOS.filter((s) => (s.source || "").includes("17")) : SCENARIOS;
+  // Topic focus: lock the pool to the selected book chapter (focused drill; full pool if empty).
+  const base = focus ? SCENARIOS.filter((s) => focusMatch(s, focus)) : SCENARIOS;
   let pool = biasKavram ? base.filter((s) => s.kavram === biasKavram) : base;
   if (!pool.length) pool = base.length ? base : SCENARIOS;
   // The Range Quiz weak-spot adaptation (Quiz.tsx 55% bias) ported to the scenario side:
@@ -79,7 +94,7 @@ export function ScenarioQuiz() {
   const [table, setTable] = useState(false);
   const [left, setLeft] = useState(SHOT_SECS);
   const [frameI, setFrameI] = useState(0);
-  const [wsop, setWsop] = useState(false);
+  const [focus, setFocus] = useState("");
 
   const answered = chosen !== null;
   const correct = chosen === s.correct;
@@ -135,18 +150,17 @@ export function ScenarioQuiz() {
 
   function again() {
     // if sure-but-wrong, re-ask the same concept in a different guise; exclude the same question (hypercorrection)
-    const next = pickScenario(confWrong ? s.kavram : undefined, s.q, confWrong ? undefined : s.kavram, wsop);
+    const next = pickScenario(confWrong ? s.kavram : undefined, s.q, confWrong ? undefined : s.kavram, focus);
     setChosen(null);
     setS(next);
     setFrameI((x) => (x + 1) % FRAMES.length);
   }
 
-  // WSOP Day-2 focus mode: lock the pool to Chapter 17 (prep for the Sep 21 restart).
-  function toggleWsop() {
-    const nw = !wsop;
-    setWsop(nw);
+  // Topic focus: lock the pool to the selected chapter (WSOP / Flop c-bet / Lines / ICM; empty = all).
+  function setFocusTo(id: string) {
+    setFocus(id);
     setChosen(null);
-    setS(pickScenario(undefined, undefined, undefined, nw));
+    setS(pickScenario(undefined, undefined, undefined, id));
     setFrameI((x) => (x + 1) % FRAMES.length);
   }
 
@@ -155,15 +169,6 @@ export function ScenarioQuiz() {
       <div className="flex items-center justify-between text-sm">
         <span className="text-neutral-500">{s.source}</span>
         <div className="flex items-center gap-2">
-          <button
-            onClick={toggleWsop}
-            className={
-              "rounded-full px-2.5 py-1 text-xs " +
-              (wsop ? "bg-accent text-black font-semibold" : "bg-surface-2 text-neutral-400")
-            }
-          >
-            🎰 WSOP
-          </button>
           <button
             onClick={() => setTable((t) => !t)}
             className={
@@ -177,6 +182,21 @@ export function ScenarioQuiz() {
             {score.ok}/{score.total}
           </span>
         </div>
+      </div>
+
+      <div className="flex flex-wrap gap-1.5">
+        {FOCUS.map((f) => (
+          <button
+            key={f.id}
+            onClick={() => setFocusTo(f.id)}
+            className={
+              "rounded-full px-2.5 py-1 text-xs " +
+              (focus === f.id ? "bg-accent text-black font-semibold" : "bg-surface-2 text-neutral-400")
+            }
+          >
+            {f.label}
+          </button>
+        ))}
       </div>
 
       {table && !answered && (
