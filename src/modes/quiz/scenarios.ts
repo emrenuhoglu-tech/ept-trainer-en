@@ -881,3 +881,10 @@ export const SCENARIOS: Scenario[] = [
 export function randomScenario(): Scenario {
   return SCENARIOS[Math.floor(Math.random() * SCENARIOS.length)];
 }
+
+// Map a weak concept to its book chapter (re-read list) — derived from the scenario's source.
+export function kavramChapter(kavram: string): number | null {
+  const s = SCENARIOS.find((x) => x.kavram === kavram);
+  const m = s ? /(?:B[öo]l[üu]m|Chapter)\s*(\d+)/i.exec(s.source || "") : null;
+  return m ? Number(m[1]) : null;
+}
