@@ -50,6 +50,8 @@ export const CONCEPT_LABEL: Record<string, string> = {
   "blocker-bet": "River blocker",
   "risk-premium": "Risk premium",
   "postflop-icm": "Postflop under ICM",
+  "icm-zaman": "ICM timeline",
+  "saha-okuma": "Field reading",
   icm: "ICM",
   "icm-cover": "ICM cover",
   multiway: "Multiway",

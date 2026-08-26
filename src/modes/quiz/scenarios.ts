@@ -768,6 +768,60 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 21.4",
     kavram: "postflop-icm",
   },
+  {
+    q: "The bubble just burst, you're a mid stack. Which phase in the cycle is closest to chipEV (premium lowest) and what do you do?",
+    options: ["FT approach — tighten", "Bubble burst / early ITM: premium lowest in the cycle → gas, build chips"],
+    correct: 1,
+    explain:
+      "After the bubble bursts min-cash is secured and the next jumps are small relative to stack value → the premium is lowest in the cycle, the window closest to chipEV. Gas, build. The FT approach is the opposite (second brake).",
+    source: "Chapter 22.1",
+    kavram: "icm-zaman",
+  },
+  {
+    q: "Bubble: a stack shorter than you (NOT covering you) jams; a leader who covers you is also at the table. Your call threshold vs the short jam?",
+    options: ["Bubble = tight, narrow vs both", "Vs the short jam premium ~0 → call wide; vs the leader premium ceiling → tighten"],
+    correct: 1,
+    explain:
+      "Precedence rule: the phase premium applies only to those who COVER you. Vs a non-covering short jam the premium is ~0 in every phase → call wide even on the bubble (B20). Vs the leader who covers you the premium is at the ceiling → respect, tighten. The phase sets the ceiling, the cover map sets whom.",
+    source: "Chapter 22.2",
+    kavram: "icm-zaman",
+  },
+  {
+    q: "You're a short stack on the bubble under cover pressure. Does your jam range or call range narrow; which is 'enter with your best hands' correct for?",
+    options: ["Jam narrows — only shove premiums", "CALL narrows, JAM STAYS (B17, fold equity); 'best hands' is for the CALL"],
+    correct: 1,
+    explain:
+      "B17: the short stack's unopened JAM range stays wide via fold equity (tightens only a notch vs coverers); what narrows hard is the CALL range. Folding a hand you should jam = the short-nit leak (blind-out). 'Don't enter the money by folding' applies only in an extreme spot (another micro busting).",
+    source: "Chapter 22.4",
+    kavram: "icm-zaman",
+  },
+  {
+    q: "A station called every flop/turn, then took a SMALL lead on the river; you hold a good top pair. Call or fold? What if they'd raised?",
+    options: ["A small lead ≈ nuts → fold", "Call the small lead (station merged/weak donk); if they'd RAISED ≈ nuts → fold"],
+    correct: 1,
+    explain:
+      "Stations donk the river often with weak/merged hands → to a small lead a good top pair is usually a call. But a passive station's RAISE ≈ nuts → there you fold the thin value. Lead ≠ raise; the size/action distinction is critical.",
+    source: "Chapter 23.5",
+    kavram: "saha-okuma",
+  },
+  {
+    q: "Bubble, the opponent is a clear rec/whale who doesn't care about ICM. Steal-bluff or value — and does your call-off change if you're covered?",
+    options: ["Sell pressure, they fold on the bubble", "Take value (pressure is wasted); BUT your own call-off threshold stays high while covered"],
+    correct: 1,
+    explain:
+      "An ICM-blind rec won't fold → don't sell pressure, take wide value. But your own risk premium (B17/B20/B21) holds even if they're ICM-blind: the deviation is widening value BETS, NOT loosening the call-off/stack-off while covered. Even vs a whale there's no light stack-off while covered.",
+    source: "Chapter 23.3",
+    kavram: "saha-okuma",
+  },
+  {
+    q: "A nit opened UTG, you hold a middling hand (KJo). What's the exploit direction — and why do you steal their pots?",
+    options: ["Call/3-bet, their range is wide", "Fold (a nit's open is near the nuts); but steal their later pots often — they fold"],
+    correct: 1,
+    explain:
+      "A nit's open/aggression is rarely a bluff, near the nuts → respect it with a middling hand, fold (drop the bluff-catch). The exploit is in their fold tendency: steal their pots often, they over-fold to steals. Error direction (over-folds) → steal.",
+    source: "Chapter 23.1",
+    kavram: "saha-okuma",
+  },
 ];
 
 export function randomScenario(): Scenario {

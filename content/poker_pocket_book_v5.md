@@ -1560,3 +1560,154 @@ The fragile-value row is a bet on both sides — protection is independent of th
 3. **P3.** In a spot where you're covered the villain bets ⅔ pot, MDF says ~60% but the payout jump is very near and your hand is on the defense borderline. Is folding a leak or correct?
 
 *Root-error tie-in: this chapter fuses the B18/B19 postflop initiative with B12/B20 ICM. One guard: am I covered? If yes, downgrade every aggressive line one notch and cut the call-off hardest. If no / if I'm covering, upgrade one notch. The risk premium (B20) re-accrues on every postflop street; the most expensive action is a call-off in a bloated pot.*
+
+
+---
+
+## Chapter 22 — ICM: When and Against Whom — Timeline + Laddering
+
+*★ v6. B20 gave the risk premium's DEFINITION and direction (highest vs a coverer, ~0 vs a non-covering short; exact value calibrated/HRC). But the premium isn't constant: it opens and closes across the tournament (timeline) and which players it applies to shifts with the stack distribution (laddering). B22 gives when and against whom that premium changes.*
+
+### 22.0 Thesis
+
+> **The risk premium isn't a constant, it's a curve. In time: it peaks approaching the bubble, releases once the money is made, rises again approaching the FT, drops a notch after every pay jump. By person: high against a deep stack that covers you, ~0 against a lower stack that does NOT cover you. The person axis comes BEFORE the phase axis: the phase sets the premium's ceiling, the cover map sets whom it applies to.**
+
+### 22.1 Timeline — the premium's four phases
+
+Before ICM is felt (deep in the tournament, money far off) the premium is already ~0; the cycle starts at the bubble approach. Rough onset: when **players left ≈ ~3× the number of paid places**, ICM starts to be felt *(calibrate — depends on structure and payout curve)*.
+
+1. **Bubble approach** — premium at the ceiling. The shorts' CALL range locks up (their JAM range STAYS — B17); big stacks (who cover everyone) sell the most pressure, mid stacks EAT the most. Call tightest against whoever covers you; the most aggressive stealing is sold by big stacks to the shorts they COVER.
+2. **Bubble burst / early ITM** — the premium at its lowest within the cycle. Min-cash secured, the next jumps are small relative to stack value; in this window you play closest to chipEV. Gas: build chips.
+3. **FT approach** — the premium rises again (2-3 tables left, then the FT bubble). Every elimination is big money. Second brake.
+4. **Loosen after every jump** — when someone busts (a rung is passed) the premium drops a notch; as the table shortens and money locks in, gas again.
+
+### 22.2 Phase table
+
+| Phase | Premium (vs a coverer) | Mode |
+|---|---|---|
+| **Bubble approach** | Ceiling | Tight call (vs whoever covers you); aggressive steal (vs non-coverers) |
+| **Bubble burst / early ITM** | Lowest in cycle | Gas — build |
+| **FT approach** | High | Second brake — tighten |
+| **After each elimination** | Drops a notch | Loosen briefly, then gas |
+
+> **Precedence rule (B12.4): the phase premium applies ONLY to those who cover you. Against a non-covering short jam the premium is ~0 in every phase (B20) → call wide even on the bubble. The phase sets the ceiling, the cover map sets whom it applies to.**
+
+### 22.3 What laddering is
+
+Laddering is climbing a pay rung purely by surviving, when every elimination is a pay jump. It's a **mid-stack discipline**: for the leader the premium is low (free, sells pressure), the mid stack is covered (its ladder equity is highest). Two leaks:
+
+- **Over-ladder:** nitting a healthy stack purely to ladder — you miss the chance to build and blind down.
+- **Under-ladder:** ignoring the ladder and flipping needlessly with a mega that covers you — busting while covered.
+
+### 22.4 Stack scan: whom to pressure, whom to respect
+
+- **Attack a lower stack that does NOT cover you, not the leader.** A stack shorter than you doesn't cover you → pressure is cheap (premium ~0). The leader covers you → premium high, respect.
+- **Short stack: its CALL narrows, its JAM STAYS (B17).** Being short isn't "shove everything" but it isn't nitting either: under cover pressure the thing that narrows hard is the CALL range; your unopened JAM range stays wide thanks to fold equity, tightening only a notch against coverers. "Don't enter the money by folding" (cutting the jam) is right only in an extreme spot: when another micro is about to bust (a direct ladder) *(calibrate)*.
+- **An outlier sharpens ICM and creates asymmetry** (a mega crushes some, a micro makes the ladder clear). **In homogeneous stacks the asymmetry vanishes but the premium does not:** because everyone covers everyone, the conflict premium is mutually high → a homogeneous bubble table plays tight for everyone (the classic equal-stack "fold even AA" satellite spot).
+
+### 22.5 The two-way leak table
+
+| Leak | What you do | Why it's wrong | Fix |
+|---|---|---|---|
+| **Over-ladder** | Nit a healthy stack | Miss building, blind down | Gas where there's no premium |
+| **Under-ladder** | Flip with a mega that covers you | Bust while covered | Read the cover map, add the premium |
+| **Short-panic** | Inflate the jam range uncalibrated | Waste fold equity, bust | KEEP the jam, narrow the CALL (B17) |
+| **Short-nit** | Fold a hand you should jam | Blind out, burn the ladder | Keep the jam range wide |
+
+### 22.6 Day 2 / bubble application
+
+Concrete: if you restart with ~12-15 left (e.g. WSOP Online Main Day 2 — online structures collapse the field to a few tables), players left are far below the paid places → you're squarely in the FT-approach phase, premium high. Against non-covering shorts/mids your ladder value is big and the premium ~0 (call/steal wide); against a leader who covers you the premium is at the ceiling (respect, tighten). Loosen a notch after each jump. Your steal target: players who do NOT cover you.
+
+### 22.7 Calibration
+
+*(calibrate: the onset threshold (~3× paid places), each phase's exact premium and the ladder boundary depend on structure/payout curve/players left; HRC/ICMIZER gives them. In the app this slot fills from the solver pipeline's ICM mode + tournament structure. At the table estimate phase + stack map in three tiers (ceiling/medium/low); re-read the cover map every hand.)*
+
+### 22.8 Cheat card
+
+| Signal | Read | Action |
+|---|---|---|
+| **Bubble near + covers you** | Premium ceiling | Tight call, respect |
+| **Bubble near + non-covering short jam** | Premium ~0 | Call wide (B20) |
+| **New ITM** | Premium dip | Gas, build |
+| **FT approach** | Premium high | Tighten, protect ladder |
+| **You as leader vs a lower stack** | Premium low | Sell pressure |
+
+### 22.9 Drill (3 questions)
+
+1. **T1.** The bubble just burst, you're a mid stack; which phase in the cycle is closest to chipEV and what do you do?
+2. **T2.** Bubble: a stack shorter than you (NOT covering you) jams into you; a leader who covers you is also at the table. What's your call threshold vs the short jam, and vs the leader?
+3. **T3.** You're a short stack on the bubble. Does your jam range or your call range narrow; which one is "enter with your best hands" correct for?
+
+*Root-error tie-in: B20 gave the premium's DEFINITION and direction; B22 gives how that premium changes in time (phase) and by person (stack map). The phase sets the ceiling, the cover map sets whom it applies to. Over-ladder and under-ladder are the time/stack faces of the cover-reading leak (B12.4); short-panic and short-nit are the two faces of the B17 jam/call split.*
+
+
+---
+
+## Chapter 23 — Field Reading: Opponent Types and Exploits
+
+*★ v6. So far the book has given a balanced/GTO-near default (B7-B21). But in a live field the real money comes not from balance but from the opponent's mistake. This chapter collects the exploit notes scattered through the book in one place: read the opponent's type, read their ICM-awareness, pick the direction to deviate from default.*
+
+### 23.0 Thesis
+
+> **GTO makes you unbeatable; exploit makes you profitable. At the table, three questions: (1) What type is this opponent? (2) Do they feel ICM? (3) Which way do they err — too loose, too tight, too passive? The deviation comes from these three reads. No read → return to default (balanced).**
+
+### 23.1 Five opponent types
+
+- **Nit (over-tight):** if they open/raise it's near the nuts. Exploit: respect their bet/raise (rarely a bluff), drop the bluff-catch, but steal their pots often (they fold).
+- **Station (caller):** calls with everything, doesn't fold. Exploit: NEVER bluff; break strong value with a BIG size/overbet (they're size-insensitive, they pay with everything); only shrink the size on your thinnest value.
+- **LAG (loose-aggressive):** opens a lot, barrels a lot. Exploit: call/bluff-catch more (their range is weak), fatten your value, don't fold to their bluffs.
+- **TAG / reg:** balanced, thinking. Little to exploit; play balanced, they feel ICM, sell them pressure.
+- **Whale / rec (fun):** unpredictable, pays big with big hands. Exploit: value-heavy, few thin bluffs, show your hand and get paid.
+
+### 23.2 Taxonomy table
+
+| Type | Their error | Exploit direction |
+|---|---|---|
+| **Nit** | Over-folds | Steal + respect their aggression |
+| **Station** | Over-calls | No bluffs + size value up/overbet |
+| **LAG** | Over-aggressive | Bluff-catch + fatten value |
+| **TAG/reg** | Few errors | Balanced + sell pressure |
+| **Whale** | Uncontrolled | Value-heavy, show and get paid |
+
+### 23.3 Does the villain feel ICM?
+
+SELLING ICM pressure works only if the opponent FEELS ICM. A reg tightens correctly on the bubble — you can sell them pressure. But a rec/whale doesn't know ICM; they won't fold even on the bubble. Against them: don't sell pressure (they won't fold) → take value. Steal/3-bet bluffs are wasted on an ICM-blind opponent; take wide value instead.
+
+But careful — **your own risk premium (B17/B20/B21) holds even if the opponent is ICM-blind.** The deviation is "don't sell pressure → widen your value BETS", NOT loosening your call-off/stack-off while covered. Even against a whale, there's no light stack-off while covered on the bubble. Against a reg the reverse: they feel ICM → the steal/pressure premium works.
+
+### 23.4 Pool-read deviation (showdown-first)
+
+The majority of the pool goes to showdown too much (curiosity + not folding). This too is a read — at the pool level; it reverts to balance as the reg share rises (see 23.6). Deviation: lower your bluff frequency (they call); raise your thin value (they pay with worse). The single most profitable deviation in a low/mid-stakes rec pool *(calibrate — by pool)*.
+
+### 23.5 Station playbook
+
+- **No bluffs, zero** (a bluff is giving a station money).
+- **Grind thin value:** bet hands you'd normally check.
+- **Size:** strong value BIG/overbet (a station is size-insensitive, it won't squeeze the call); only shrink on your thinnest value.
+- **Passive-river distinction:** a station's river RAISE ≈ nuts → fold your thin value. But a river LEAD is size-dependent: to a small lead a good top pair is usually a call (stations donk merged/weak); to a big/odd lead, tighten.
+
+### 23.6 Against a reg / TAG
+
+Balance is the shield here: a reg punishes imbalance. Play a balanced range, sell ICM pressure to THEM (they feel it), hide the thin exploits. As the reg share rises (higher stakes) exploit shrinks and GTO-near grows.
+
+### 23.7 Calibration
+
+*(calibrate: each type's exact deviation size (bluff %, value threshold, value size) depends on the pool and stakes. In the app the type tag + notes field carries this deviation; at the table tag it in three tiers (very loose/balanced/very tight). The solver gives the default, you add the exploit deviation.)*
+
+### 23.8 Cheat card
+
+| Read | Deviation from default |
+|---|---|
+| **Station** | Cut the bluffs, size value up/overbet |
+| **Nit** | Steal, drop the hero-call |
+| **LAG** | Open the bluff-catch, fatten value |
+| **ICM-blind rec** | Don't sell pressure, take value (but your call-off threshold stays high while covered) |
+| **Reg** | Return to balance, sell pressure |
+
+### 23.9 Drill (3 questions)
+
+1. **E1.** A station called every flop/turn, then took a SMALL lead on the river, you hold a good top pair. What type, what do you do — call or fold? What if they'd raised instead?
+2. **E2.** Bubble, the opponent is a clear rec/whale who doesn't care about ICM. Steal-bluff or value? Does your call-off change if you're covered?
+3. **E3.** A nit opened UTG, you hold a middling hand. What's the exploit direction — call or fold, and why do you steal their pots?
+
+*Root-error tie-in: default (balance) protects you from losses; deviation (exploit) generates profit but backfires on a wrong read. Guard: type + ICM-awareness + error direction — if all three are clear, deviate; if not, stay balanced. Bluffing a station (and betting it small), and selling a rec pressure, are the classic faces of the field-reading leak.*
