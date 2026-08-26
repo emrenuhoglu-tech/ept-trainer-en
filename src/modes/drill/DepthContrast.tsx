@@ -36,9 +36,9 @@ const PAIRS: DepthPair[] = [
   {
     spot: "55, BTN. UTG (early) opens 2.2bb, folds to you.",
     shallow: { bb: "15bb", tag: "shallow", options: ["Call (set-mine)", "Jam or fold"], correct: 1, action: "JAM/FOLD" },
-    deep: { bb: "80bb", tag: "deep", options: ["Call (set-mine)", "Jam or fold"], correct: 0, action: "CALL" },
-    flip: "Small pairs need implied odds: deep, set-mine call; shallow, no implied odds → jam/fold (depth filter, C24.2).",
-    chapter: 24,
+    deep: { bb: "150bb", tag: "deep", options: ["Call (set-mine)", "Jam or fold"], correct: 0, action: "CALL" },
+    flip: "Small pairs need implied odds: deep (150bb) set-mine call — flatting a UTG open opens up only at 150bb+ (C4); shallow (15bb) no implied odds → jam/fold.",
+    chapter: 4,
   },
 ];
 

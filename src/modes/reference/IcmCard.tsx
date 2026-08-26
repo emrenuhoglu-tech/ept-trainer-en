@@ -111,7 +111,7 @@ export function IcmCard({ onDone }: { onDone: () => void }) {
                   "px-1 text-xs tabular-nums " + (jump == null ? "text-neutral-600" : "text-neutral-300")
                 }
               >
-                {jump == null ? "—" : `+${fmtMoney(jump)} (+${pct}%)`}
+                {jump == null ? "—" : `+${fmtMoney(jump)}${pct != null ? ` (+${pct}%)` : ""}`}
               </span>
               <button
                 aria-label="Delete row"

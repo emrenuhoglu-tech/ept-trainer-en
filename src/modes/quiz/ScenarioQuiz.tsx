@@ -39,7 +39,7 @@ const FOCUS = [
 ];
 function focusMatch(s: Scenario, f: string): boolean {
   const src = s.source || "";
-  if (f === "icm") return src.includes("20") || src.includes("21");
+  if (f === "icm") return ["12.", "20.", "21.", "22."].some((c) => src.includes(c));
   return src.includes(f);
 }
 

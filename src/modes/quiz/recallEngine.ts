@@ -103,9 +103,13 @@ function q3bet(sel: RecallSel): RecallQuestion | null {
   const f = parseRange(ft);
   const setFlat = new Set<string>([...f.cells].filter((c) => !set3.has(c)));
   // A wide-prose flat (e.g. "…and all 65s+ suited connectors") can't be gridded and is stripped
-  // by flatText → its hands would wrongly fall into the fold pool. Test the RAW flat text for a
-  // wide marker and suppress fold regardless of what parsed (fidelity).
-  const flatWide = /\b(wide|all|most|every)\b/i.test(applicableFlats.join(" "));
+  // by flatText → its hands would wrongly fall into the fold pool. Suppress fold when the raw flat
+  // text carries a wide marker. Also, for opens where the BB has no separate flat list (UTG/LJ-HJ/CO→BB)
+  // the book says "BB flat is very wide" → suppress fold (don't tag JJ/TT/AQs as 'fold').
+  // Same guard as quizEngine.buildPools — fidelity.
+  const flatWide =
+    (position === "BB" && applicableFlats.length === 0) ||
+    /\b(wide|all|most|every)\b/i.test(applicableFlats.join(" "));
   const poolFold = flatWide ? [] : ALL.filter((c) => !set3.has(c) && !setFlat.has(c));
 
   const kavram = `recall:derin:${g.opener}→${position}`;

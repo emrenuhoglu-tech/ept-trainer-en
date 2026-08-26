@@ -241,7 +241,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["All-in — AA + SPR 1.3, you're already committed; don't give the draws a free card", "Fold — the pot is past 40 BB, one-pair alarm; no stack race with AA against a raising range on T♠ 9♠ 8♣", "Call, and continue against every barrel on the turn — your pot odds force the call", "Small re-raise — get information, put your opponent to the test"],
     correct: 1,
     explain:
-      "MW.9 root error: once the pot is past 40 BB, one pair (even AA) = alarm; the default is pot control + bluff-catcher, not a stack race. MW.6: 'the pot got big, I'm committed' is a root error — a low SPR is NOT a reason to be committed. On a wet board like T♠ 9♠ 8♣ the raising range is weighted toward sets/straights/combo draws; AA is just one pair here.",
+      "17.10 root error: once the pot is past 40 BB, one pair (even AA) = alarm; the default is pot control + bluff-catcher, not a stack race. 17.7: 'the pot got big, I'm committed' is a root error — a low SPR is NOT a reason to be committed. On a wet board like T♠ 9♠ 8♣ the raising range is weighted toward sets/straights/combo draws; AA is just one pair here.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -250,7 +250,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Check-raise all-in — you have the K-high straight, take back the initiative", "Big bet — protect your straight, don't give a free card", "Check-fold — a tight-passive player definitely has AK", "Check-call, re-evaluate on the river — every K chops with you, AK beats you; the tight-passive player's continuing range is exactly this zone"],
     correct: 3,
     explain:
-      "MW.9 root-error guardrail: the check-raise all-in impulse (the KTo lesson) — the correct line is check-call-then-evaluate. On Q-J-T-9 you have the K-high straight with KK, but every bare K chops and AK beats you with the broadway; an all-in only gets action from hands that beat you or chop. MW.9 chop mechanics: re-read the board on the turn/river.",
+      "17.10 root-error guardrail: the check-raise all-in impulse (the KTo lesson) — the correct line is check-call-then-evaluate. On Q-J-T-9 you have the K-high straight with KK, but every bare K chops and AK beats you with the broadway; an all-in only gets action from hands that beat you or chop. 17.10 chop mechanics: re-read the board on the turn/river.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -259,7 +259,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["3-bet (value); if a jam comes, FOLD — on the bubble against a covering stack the full-stack range is ~KK+; QQ doesn't meet the ICM-adjusted threshold against a {KK+, AK} jam", "3-bet and call the jam — QQ is never folded on the bubble, the guy is opening for the 3rd time in a row", "Just call — 3-betting against a cover is completely off-limits, keep the pot small", "Fold — play no pots with the chip leader, stay away from him"],
     correct: 0,
     explain:
-      "MW.9 ICM thresholds: QQ gets ~40% equity against the cover's {KK+, AK} jam; with a 6–10% bubble ICM premium the required ~48–50% → FOLD. MW.8: 'On the bubble against a cover, even QQ may not be a 4-bet-call'; the practical full-stack rule is KK+. QQ is still a value 3-bet (MW.4: 99+ from the BB, target the over-active reg); the mistake isn't the 3-bet, it's calling the jam. Completely avoiding the cover isn't a strategy either (MW.9B). (17.4 'don't 3-bet a cover' means BLUFF 3-bet; a value 3-bet — QQ, continue KK+ vs a jam — is free.)",
+      "17.10 ICM thresholds: QQ gets ~40% equity against the cover's {KK+, AK} jam; with a 6–10% bubble ICM premium the required ~48–50% → FOLD. 17.9: 'On the bubble against a cover, even QQ may not be a 4-bet-call'; the practical full-stack rule is KK+. QQ is still a value 3-bet (17.4: 99+ from the BB, target the over-active reg); the mistake isn't the 3-bet, it's calling the jam. Completely avoiding the cover isn't a strategy either (17.11). (17.4 'don't 3-bet a cover' means BLUFF 3-bet; a value 3-bet — QQ, continue KK+ vs a jam — is free.)",
     source: "Chapter 17 / 17.4",
     kavram: "icm-cover",
   },
@@ -268,7 +268,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Call — the A is a scare card, TT is still ahead of eights and below", "Raise all-in — punish the bluff, force weak Ax to fold", "Fold — overpair + bad river + BIG bet; a pot-sized donk is polarized and no hand worse than yours bets this size", "Call — your pot odds are ~33%, the opponent bluffs often enough"],
     correct: 2,
     explain:
-      "MW.6 river discipline: overpair + bad river → check-call a small bet, fold to a BIG bet. The A is the worst card for TT and a pot-sized donk is a polarized range (MW.9 online adjustment: overbet/pot polarized = bluff-catcher math); the 'scare card' rationalization is from the MW.9 root-error family. Deep ITM, per MW.8, ICM > chip-EV, which makes the fold even clearer.",
+      "17.7 river discipline: overpair + bad river → check-call a small bet, fold to a BIG bet. The A is the worst card for TT and a pot-sized donk is a polarized range (17.10 online adjustment: overbet/pot polarized = bluff-catcher math); the 'scare card' rationalization is from the 17.10 root-error family. Deep ITM, per 17.9, ICM > chip-EV, which makes the fold even clearer.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -277,7 +277,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["3-bet all-in — two pair is ahead, charge the draws", "Call the raise once — two pair is now just a bluff-catcher (+4 outs to a boat); if you don't improve on the river, fold to a big bet, no stack race", "Call, then call every river bet too — the pot got big, you're committed now", "Fold — once the flush completes, two pair is instantly trash"],
     correct: 1,
     explain:
-      "MW.6/MW.9: on the flush-completing 6♥ turn, a raise from an opponent who called your check-raise is weighted heavily toward a completed flush — two pair is not 'safe', it turns into a bluff-catcher. The correct line is call-then-evaluate, not escalation (the MW.9 check-raise all-in impulse lesson); a jam pays off made hands, not draws. And 'the pot got big, I'm committed' is the root error from MW.6.",
+      "17.7/17.10: on the flush-completing 6♥ turn, a raise from an opponent who called your check-raise is weighted heavily toward a completed flush — two pair is not 'safe', it turns into a bluff-catcher. The correct line is call-then-evaluate, not escalation (the 17.10 check-raise all-in impulse lesson); a jam pays off made hands, not draws. And 'the pot got big, I'm committed' is the root error from 17.7.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -286,7 +286,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Call — a suited ace, you take a flop even out of position", "4-bet bluff — you have the A blocker, test the reg", "Jam — break the reg's 3-bet", "Fold — the OOP continuing range vs a 3-bet is narrow: KK+ 4-bet, QQ/AK mixed, JJ–TT/AQs call; A9s is outside it"],
     correct: 3,
     explain:
-      "MW.5: when your open faces a 3-bet OOP, the range tightens — KK+ 4-bet, QQ/AK mixed, JJ–TT/AQs call, everything else folds; A9s is in 'everything else'. The 4-bet bluff arsenal is limited to A5s–A4s and low-frequency. Calling is exactly the danger MW.9B warns about: calling a 3-bet and entering a bloated pot with a weak hand.",
+      "17.6: when your open faces a 3-bet OOP, the range tightens — KK+ 4-bet, QQ/AK mixed, JJ–TT/AQs call, everything else folds; A9s is in 'everything else'. The 4-bet bluff arsenal is limited to A5s–A4s and low-frequency. Calling is exactly the danger 17.11 warns about: calling a 3-bet and entering a bloated pot with a weak hand.",
     source: "Chapter 17",
     kavram: "3bet-aralik",
   },
@@ -295,7 +295,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Open (the CO range is 44+, 66 is standard), fold to the 3-bet — in Mode B flat calls tighten, set-mine math breaks down", "Open, call the 3-bet — if you hit a set you win a stack", "Don't open — at 38 BB small pairs drop out of the opening range", "Open, jam over the 3-bet — at 38 BB the commit threshold is already crossed"],
     correct: 0,
     explain:
-      "MW.7 Mode B (30–45 BB): the open range holds (MW.3 CO 26% = includes 44+) but flat calls tighten — set-mining breaks down and the commit threshold in a 3-bet pot is close; calling with 66 creates a planless bloated pot. The correct plan: open, fold to the 3-bet. Jamming is a transition error that imports Mode C/D thresholds to 38 BB (MW.9B).",
+      "17.8 Mode B (30–45 BB): the open range holds (17.3 CO 26% = includes 44+) but flat calls tighten — set-mining breaks down and the commit threshold in a 3-bet pot is close; calling with 66 creates a planless bloated pot. The correct plan: open, fold to the 3-bet. Jamming is a transition error that imports Mode C/D thresholds to 38 BB (17.11).",
     source: "Chapter 17",
     kavram: "stack-modu",
   },
@@ -304,7 +304,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Fold — you don't open pots against a cover, stay away from him", "Open and call the 3-bet — KQo is too pretty a hand to let go", "Open (2.1–2.3x) — KQo opens even in a one-notch-tightened BTN range; but fold to the cover's 3-bet", "Limp — see a cheap flop, don't provoke the cover"],
     correct: 2,
     explain:
-      "MW.8 Phase 2: the only brake against covers is playing 'one notch tighter'; MW.9B: 'running away from the cover isn't a strategy'. KQo is a clear open even in the tightened version of the MW.3 BTN 40–44% range. The real discipline comes when the 3-bet arrives: MW.6 — offsuit broadways (KQo, AJo) are trash against a 3-bet, 'the most expensive pretty-looking hand'; against a cover's 3-bet you continue one notch tighter still. There is no limp in MW.3.",
+      "17.9 Phase 2: the only brake against covers is playing 'one notch tighter'; 17.11: 'running away from the cover isn't a strategy'. KQo is a clear open even in the tightened version of the 17.3 BTN 40–44% range. The real discipline comes when the 3-bet arrives: 17.7 — offsuit broadways (KQo, AJo) are trash against a 3-bet, 'the most expensive pretty-looking hand'; against a cover's 3-bet you continue one notch tighter still. There is no limp in 17.3.",
     source: "Chapter 17",
     kavram: "icm-cover",
   },
@@ -313,7 +313,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Call — play A5s cheaply with position", "Fold — a bluff 3-bet burns against a short stack", "Jam right away — force the 22 BB to fold instantly", "3-bet — the essence of Phase 2 is crushing the 15–25 BB stacks; A5s is the ideal pressure hand with its A blocker + playability; mostly fold if a jam comes"],
     correct: 3,
     explain:
-      "MW.8 Phase 2: the most profitable phase — 3-bet pressure on opens from 15–25 BB stacks is the main profit source, and 22 BB is right in the target zone (MW.4's 'bluffs burn' ban is for UNDER 20 BB). MW.9B: pressure bluffs are limited to blocker hands like A5s/K9s — A5s is the textbook candidate. If a jam comes, your 60 BB stack doesn't race; fold unless the price fits.",
+      "17.9 Phase 2: the most profitable phase — 3-bet pressure on opens from 15–25 BB stacks is the main profit source, and 22 BB is right in the target zone (17.4's 'bluffs burn' ban is for UNDER 20 BB). 17.11: pressure bluffs are limited to blocker hands like A5s/K9s — A5s is the textbook candidate. If a jam comes, your 60 BB stack doesn't race; fold unless the price fits.",
     source: "Chapter 17",
     kavram: "blof-secimi",
   },
@@ -322,7 +322,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Raise the flop — protect the overpair from draws, stack off if it comes to that", "Call the flop; fold if the turn completes a spade/straight and a big barrel comes; on the river call a small bet, fold to a big bet — turn the overpair into a bluff-catcher", "Call the flop, then call every street — QQ is premium, the pot's already big", "Fold the flop — an overpair isn't enough against a pot bet"],
     correct: 1,
     explain:
-      "MW.9: in a bloated pot past 40 BB, one pair (QQ) = alarm; the default is pot control + bluff-catcher, not a stack race. The street plan comes from MW.6: big turn barrel + a flush/straight-completing card → one pair is done; on the river check-call a small bet, check-fold to a big bet. Calling every street is the 'pot got big, I'm committed' root error.",
+      "17.10: in a bloated pot past 40 BB, one pair (QQ) = alarm; the default is pot control + bluff-catcher, not a stack race. The street plan comes from 17.7: big turn barrel + a flush/straight-completing card → one pair is done; on the river check-call a small bet, check-fold to a big bet. Calling every street is the 'pot got big, I'm committed' root error.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -331,7 +331,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Call — ATo is well ahead of a 9 BB kamikaze jam", "Isolation re-jam — shut out the players behind, get heads-up with the short stack", "Fold — the first 3–4 hands of Phase 3 are played tight; kamikaze jams are called with premiums, ATo is not a premium and you have 3 big stacks behind", "Call — the pot odds justify a call with almost any two cards"],
     correct: 2,
     explain:
-      "MW.8 Phase 3: play 3–4 hands tight when the money starts — short stacks fire kamikaze jams and these are called ONLY with premiums; ATo is not a premium. The 3 big stacks behind who might wake up make the equation even worse. A call that looks profitable in chip-EV is the typical mistake that breaks phase discipline (ICM > chip-EV).",
+      "17.9 Phase 3: play 3–4 hands tight when the money starts — short stacks fire kamikaze jams and these are called ONLY with premiums; ATo is not a premium. The 3 big stacks behind who might wake up make the equation even worse. A call that looks profitable in chip-EV is the typical mistake that breaks phase discipline (ICM > chip-EV).",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -340,7 +340,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Call — an overpair can take one more barrel, we'll see the river", "Raise — test the flush", "All-in — protect KK, push the draws out", "Fold — big turn barrel + flush-completing board means one pair is done; continuing is only considered with an exceptional reason like the K♣ blocker"],
     correct: 3,
     explain:
-      "MW.6 turn discipline: 'big turn barrel + board completing a four-straight/flush → one pair is done.' A 3/4-pot second barrel falls squarely inside this definition and KK is one pair on this board → default fold. Continuing is the birthplace of the MW.9 root error of 'a stack race with one pair in a bloated pot'; a raise/all-in pays off completed hands.",
+      "17.7 turn discipline: 'big turn barrel + board completing a four-straight/flush → one pair is done.' A 3/4-pot second barrel falls squarely inside this definition and KK is one pair on this board → default fold. Continuing is the birthplace of the 17.10 root error of 'a stack race with one pair in a bloated pot'; a raise/all-in pays off completed hands.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -349,7 +349,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Open 2.1x and fold to a 3-bet — preserve your stack", "Jam — in Mode D part of the BTN opening range goes in as a direct jam; A7o is in the near-Nash jam range, and if you open you're stuck in a jam-or-fold dilemma against a 3-bet", "Fold — A7o gets dominated, don't take risks with 17 BB", "Open 2.1x and call a 3-bet — we see a flop with the A blocker"],
     correct: 1,
     explain:
-      "MW.7 Mode D (12–20 BB): part of the opening from the SB/BTN is a DIRECT jam and the range is near Nash — A7o from the BTN at 17 BB is in this class. If you open, the rule is clear: jam or fold against a 3-bet — both are bad with A7o (a dominated race or burning equity). Folding is the passive face of the MW.9B '20 BB panic-jam/freeze' transition error.",
+      "17.8 Mode D (12–20 BB): part of the opening from the SB/BTN is a DIRECT jam and the range is near Nash — A7o from the BTN at 17 BB is in this class. If you open, the rule is clear: jam or fold against a 3-bet — both are bad with A7o (a dominated race or burning equity). Folding is the passive face of the 17.11 '20 BB panic-jam/freeze' transition error.",
     source: "Chapter 17",
     kavram: "stack-modu",
   },
@@ -358,7 +358,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Standard OOP 3.8–4.2x 3-bet; fold to a 4-bet — deep ITM there's no stack race with AQo against an equal stack ('run from the equals')", "Small 3x 3-bet — keep it cheap; call the 4-bet", "Flat call — keep the pot small from the SB", "4x 3-bet, jam over a 4-bet — accept the flip with AQo's blockers"],
     correct: 0,
     explain:
-      "MW.4B sizing rule: OOP (SB) 3-bet 3.8–4.2x — a small OOP 3-bet gives a cheap call and creates a planless bloated OOP pot (the birthplace of the root error). MW.4: NO flat from the SB, 3-bet or fold; AQo is a value 3-bet against a CO open. Continuing against a 4-bet is KK+-cored per MW.5, and MW.8 Phase 4 'run from the equals' + MW.6 'a flip against an equal stack = last resort' → fold AQo.",
+      "17.5 sizing rule: OOP (SB) 3-bet 3.8–4.2x — a small OOP 3-bet gives a cheap call and creates a planless bloated OOP pot (the birthplace of the root error). 17.4: NO flat from the SB, 3-bet or fold; AQo is a value 3-bet against a CO open. Continuing against a 4-bet is KK+-cored per 17.6, and 17.9 Phase 4 'run from the equals' + 17.7 'a flip against an equal stack = last resort' → fold AQo.",
     source: "Chapter 17",
     kavram: "boyut",
   },
@@ -367,7 +367,7 @@ export const SCENARIOS: Scenario[] = [
     options: ["Pot bet — get AA paid off; Ax and overpairs call", "Overbet jam — look polarized, get two pairs to pay off", "No bet, check back — the answer to 'which worse hand pays me off?' is empty; the hands that would call a bet (straights, sets, two pairs) beat you", "1/3-pot thin value — KK/QQ-type hands pay"],
     correct: 2,
     explain:
-      "MW.9 root-error guardrail: 'AA river jam: if no worse hand pays, the jam is worthless — check.' The MW.6 river rule asks the same single question. On 2-4-5-9-6 every 3 and every 7-8 makes a straight; in a bloated pot the range that gives your bet action is weighted toward the region that beats you, and worse hands just fold. MW.9: one pair in a bloated pot = pot control, not a place to generate value.",
+      "17.10 root-error guardrail: 'AA river jam: if no worse hand pays, the jam is worthless — check.' The 17.7 river rule asks the same single question. On 2-4-5-9-6 every 3 and every 7-8 makes a straight; in a bloated pot the range that gives your bet action is weighted toward the region that beats you, and worse hands just fold. 17.10: one pair in a bloated pot = pot control, not a place to generate value.",
     source: "Chapter 17",
     kavram: "kök-hata",
   },
@@ -593,26 +593,26 @@ export const SCENARIOS: Scenario[] = [
     options: ["Yes — committed", "No — at SPR 8 no big pot with one pair; commitment isn't a feeling, it's a ratio"],
     correct: 1,
     explain:
-      "Being committed isn't a feeling, it's a ratio. SPR = smallest remaining stack ÷ pot. If SPR is 3+, no big pot with one pair; at 8 even a pair+draw is marginal to jam and one pair is a clear fold. In a 3-bet pot (SPR ~3) aces do stack off.",
+      "Being committed isn't a feeling, it's a ratio. SPR = smallest remaining stack ÷ pot. If SPR is 3+, no big pot with one pair; at 8 even a pair+draw is marginal to jam and one pair is a clear fold. In a bloated 3-bet pot (SPR 1–4) one pair drops to a bluff-catcher — don't start a big pot (B11.0); commit only at SPR<1.",
     source: "Chapter 11.0",
     kavram: "kök-hata",
   },
   {
-    q: "In the first 30 minutes of Day 2, how do you use the table?",
-    options: ["Pressure everyone equally", "Sort into fighters/survivors: steal from survivors, show up vs fighters with the goods"],
+    q: "Day 2, the bubble is approaching. How do you use the table?",
+    options: ["Pressure everyone equally", "Phase-2 hunt: target the freezing 15–25 BB stacks (3-bet their opens, open their blinds, float their c-bets); the only brake is players who cover you"],
     correct: 1,
     explain:
-      "In the first 30 min sort the table in two. Survivors (protecting their bag, tightening) are your steal targets — attack their blinds. Show up against fighters only with a real hand. Approaching the money, 50bb becomes a weapon: open almost any two vs middle stacks, avoid the captain.",
-    source: "Chapter 17.9",
+      "B17.9 Phase 2 is the most profitable phase: as the bubble nears, 15–25 BB stacks freeze — 3-bet their opens, open their blinds, float their c-bets. The only exception is players who COVER you (a notch tighter; against a coverer even QQ may not be a 4-bet-call). Not 'open any two' — B17.11 caps opening wide at 60% into the 15–25 BB stacks' blinds and limits bluff 3-bets to blocker hands (A5s, K9s).",
+    source: "Chapter 17.9 / 17.11",
     kavram: "rakip-okuma",
   },
   {
     q: "In a 3-bet pot at SPR ~3 you have top pair good kicker. Is stacking off correct? And in a single-raised pot (SPR 8+)?",
-    options: ["Fold in both — one pair never", "Stack-off is CORRECT in the 3-bet pot (low-SPR commit); in an SRP (SPR 8+) one pair never"],
+    options: ["Stack-off is CORRECT in the 3-bet pot (low-SPR commit); in an SRP one pair never", "No stack-off: SPR 1–4 bluff-catcher (don't start a big pot), SPR 8+ thin value; commit only at SPR<1"],
     correct: 1,
     explain:
-      "The only difference is depth. 3-bet pot SPR ~2.5–3 → TPTK is a stack-off hand; this isn't an exception to the root error, it's the low-SPR commit math. Single-raised pot SPR 8+ → the old rule holds, one pair is a bluff-catcher, never stacks off.",
-    source: "Chapter 11.0",
+      "Book B11.0: at SPR 1–4 (100bb 3-bet pot, ~3 included) one pair is a BLUFF-CATCHER — don't START a big pot; stacking off at SPR 1–4 is exactly the root error (B17.10: in a bloated pot one pair, aces included, is a bluff-catcher). At SPR 8+ you can take thin value but don't stack off (demoting to bluff-catcher too early and missing value is also a mistake — B11.0 line 608); a re-raise drops the pot to the 1–4 band. One pair commits ONLY at SPR<1.",
+    source: "Chapter 11.0 / 17.10",
     kavram: "kök-hata",
   },
   {
@@ -635,10 +635,10 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     q: "IP, 3-bet pot, KK, wet board 9-8-7 two-tone (SPR ~3). C-bet or check, and what size?",
-    options: ["Check — the board is too dangerous", "2/3 value bet: wet board + strong value + low SPR = bloat, commit"],
+    options: ["Check — the board is too dangerous", "2/3 value bet: on a wet board an overpair's value wants it — charge the draws, get value (B18.3)"],
     correct: 1,
     explain:
-      "A wet connected board is played polarized: strong value (an overpair) bloats at 2/3. SPR ~3 is already the commit zone (B11.0). Checking plays passive and misses value; but brake on a turn scare card that completes a straight/flush (B11.1).",
+      "B18.3: on a wet board value (an overpair) bets 2/3 — charge the draws, get value. BUT low SPR is NOT a reason to commit: if raised, KK becomes a bluff-catcher (B11.0: at SPR 1–4 one pair, overpair included, does not start a big pot), no stack-off; build the river plan before betting (B11.1). Checking plays passive and misses value.",
     source: "Chapter 18.2 / 18.3",
     kavram: "c-bet",
   },
