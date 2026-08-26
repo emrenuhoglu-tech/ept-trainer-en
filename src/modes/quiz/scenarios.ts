@@ -849,6 +849,33 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 24.4",
     kavram: "edge-premium",
   },
+  {
+    q: "A big bet on the river; you feel 'this guy's a bluffer' but the action sequence (bet-bet-bet, polarized) fits value. Which reasoning?",
+    options: ["Gut → hero-call (feels like a bluffer)", "Evidence wins: the action sequence is value → fold; 'bluffer' is a STORY, return to default (B11.2)"],
+    correct: 1,
+    explain:
+      "Evidence (action sequence, polarized sizing) beats the story ('I feel he's bluffing'). If the evidence says value, fold; evidence, not gut. A story drags you into a needless hero-call — default is B11.2.",
+    source: "Chapter 25.1",
+    kavram: "kafamdaki-hikaye",
+  },
+  {
+    q: "You took a bad beat, hands are speeding up, you reached for your phone. On the next big hero-call, what do you do FIRST?",
+    options: ["Run the 'evidence or story' test right away", "FIRST a physical move (B16.2: breath/VPIP lock/water), THEN the evidence-story test"],
+    correct: 1,
+    explain:
+      "The sequence is B16's: on a tilt symptom (speeding up/phone/chasing) label the wound + a physical move first (B16.2), because while tilted you can't even run the test reliably. Once the wound settles, move to the evidence-or-story test.",
+    source: "Chapter 25.2",
+    kavram: "kafamdaki-hikaye",
+  },
+  {
+    q: "End-of-day autopsy: while COVERED you made a hero-call, caught the bluff, the pot's yours. How do you grade it?",
+    options: ["GOOD decision — I won, the read held", "LEAK: B21.2 says covered → hero-call should've been a fold; winning doesn't fix the process"],
+    correct: 1,
+    explain:
+      "Result-independent grading (B16.3): what was the rule + did I follow it. B21.2 → while covered a hero-call should be a fold, evidence or not. You broke the rule → LEAK; winning (a good result) hides the bad decision. The rule, not the result, sets the grade.",
+    source: "Chapter 25.3",
+    kavram: "kafamdaki-hikaye",
+  },
 ];
 
 export function randomScenario(): Scenario {

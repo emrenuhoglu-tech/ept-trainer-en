@@ -1767,6 +1767,75 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M29",
+    title: "The story in your head: evidence or narrative",
+    chapter: "Chapter 25 ★",
+    minutes: 7,
+    slides: [
+      {
+        title: "Thesis: evidence or story",
+        bullets: [
+          "Before a hero-call/big fold ask: is the read based on EVIDENCE or a STORY?",
+          "Evidence = action sequence, sizing, timing, position, type (B23).",
+          "Story = emotion, momentum, ego. If a story, return to default (B11.2).",
+          "The bridge from B23's read (evidence) to B16's autopsy.",
+        ],
+        ruleBox: "Before a hero-call: evidence or story? If a story, return to default (B11.2).",
+        narration:
+          "This chapter adds one concrete tool to the book's most abstract but most expensive layer, the mental game. Even when the technique is right, a mental leak gives the money back. The tool: before a hero-call or a big fold, pause for a second and ask, is this read based on evidence or on the story in my head? Evidence is concrete: the villain's action sequence, bet-bet-bet or check-call, the sizings, the timing, the position, the type, that is the reading tools of chapter twenty-three. A story is emotion: I feel like he's bluffing me, he just took a pot off me now I'll catch him, this hand always loses. If it's based on evidence, trust it; if it's based on a story, return to default, the chapter eleven point two bluff-catch discipline. This chapter is the bridge from chapter twenty-three's opponent reading, the evidence, to chapter sixteen's autopsy.",
+      },
+      {
+        title: "Test: evidence doesn't beat the cover",
+        bullets: [
+          "If it's based on evidence, trust it — BUT evidence doesn't beat the cover.",
+          "While covered, a hero-call is still a fold (B21.2), evidence or not.",
+          "A story drags you into BOTH a needless hero-call AND a needless fold.",
+          "Both are faces of the same root error: emotion > range.",
+        ],
+        ruleBox: "Evidence doesn't beat the cover: while covered a hero-call is still a fold (B21.2).",
+        narration:
+          "The test has a critical limit: if you're on evidence, trust it, but evidence doesn't beat the cover. That is, however solid your read, while covered a hero-call is still a fold, chapter twenty-one point two. The ICM premium works independently of evidence; in a bloated pot a call-off while covered is the most expensive action, and even a strong read doesn't justify it. Second point: a story drags you not one way but two. Into a needless hero-call, with the I'll-catch-the-bluff story, and into a needless fold, with the this-hand-always-loses story. Both are two faces of the same root error: emotion getting ahead of range. So the guard is single: evidence or story.",
+      },
+      {
+        title: "Story ↔ tilt: label the wound first",
+        bullets: [
+          "A story is usually a product of tilt (a bad-beat/ego trigger, B16.2).",
+          "The sequence is B16's: notice the symptom FIRST → physical move, then decide.",
+          "Physical move: deep breath / 1-orbit VPIP lock / drink water (B16.2).",
+          "While tilted you can't even run the 'evidence or story' test reliably.",
+        ],
+        ruleBox: "On a tilt symptom, a physical move first (B16.2), then decide — label the wound.",
+        narration:
+          "A story is usually a product of tilt. The sentence he just took a pot now I'll catch him comes from a bad-beat or ego trigger, the chapter sixteen point two tilt card. So the sequence is chapter sixteen's: first notice the symptom, are you speeding up, did you reach for the phone, are you chasing with bad hands, then apply the physical move, deep breath, a one-orbit VPIP lock, drink water or stand up, and only then decide. Because while tilted you can't even run the evidence-or-story test reliably; you label the wound first, then look at the evidence. The wound concept is chapter zero sentence fifteen, the application card is sixteen point two.",
+      },
+      {
+        title: "Grading = the B16.3 autopsy, through the story lens",
+        bullets: [
+          "When the hand ends, grading lives in B16.3: END OF DAY (at the table just note it).",
+          "Two questions: what was the rule + did I follow it. This adds 'evidence or story'.",
+          "Right rule + bad result = a GOOD decision — but only if you FOLLOWED the rule.",
+          "Winning on a story = a LEAK (the result rewarded you, the process was flawed).",
+        ],
+        ruleBox: "The GOOD-decision label holds only if you followed the rule (B16.3) — not a self-absolution door.",
+        narration:
+          "When the hand ends, how do you grade it? Not a new system, the chapter sixteen point three autopsy. The timing is critical: not the moment the hand ends, but after the day ends; at the table just note the hand. You ask two questions: what was the book's rule given what I knew at the moment, and did I follow it. This chapter adds one lens to that autopsy: was my decision based on evidence or a story? Right rule plus bad result equals a good decision, the range doesn't change; but careful, that label only holds if you actually followed the rule. Don't let it-was-right-it-was-variance become a self-absolution door. The reverse also holds: winning on a story is a leak, because the result rewarded you but the process was flawed, and if you repeat it you get burned.",
+      },
+      {
+        title: "The priciest decisions + cheat + drill",
+        table: { section: "Chapter 25", sub: "25.6", caption: "Situation → right reflex." },
+        bullets: [
+          "A story-error isn't equally expensive everywhere; at the FT/ICM one decision is many buy-ins.",
+          "Save your energy for the expensive spot: big bubble/FT pots, call-offs while covered (B21).",
+          "On a cheap decision don't chase perfection — play by rote.",
+          "Guard: evidence or story + did I follow the rule (B16.3).",
+        ],
+        ruleBox: "Guard: evidence or story + did I follow the rule — save your energy for the expensive spot.",
+        narration:
+          "Last slide: where to spend your energy. A story-error isn't equally expensive everywhere. At a final table or under ICM pressure a single decision is worth many buy-ins; in a bloated pot the call-off is the most expensive action, twenty-one point one, and the bluff-catch while covered is a fold, twenty-one point two. So save your mental energy for there: the big bubble and final-table pots, the call-offs while covered. On cheap decisions, small pot, money far off, don't chase perfection, play by rote and bank the energy for the expensive spot. A two-question guard rules it all: evidence or story, and did I follow the rule. Drill: a big bet on the river, you feel he's a bluffer but the action sequence fits value, which reasoning; you took a bad beat, hands are speeding up, you reached for the phone, on the next hero-call what do you do first then which test; and the end-of-day autopsy, while covered you made a hero-call and caught the bluff, grade it through the twenty-one point two plus sixteen point three lens.",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

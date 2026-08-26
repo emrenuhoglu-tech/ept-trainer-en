@@ -53,6 +53,7 @@ export const CONCEPT_LABEL: Record<string, string> = {
   "icm-zaman": "ICM timeline",
   "saha-okuma": "Field reading",
   "edge-premium": "Edge premium",
+  "kafamdaki-hikaye": "Evidence vs story",
   icm: "ICM",
   "icm-cover": "ICM cover",
   multiway: "Multiway",

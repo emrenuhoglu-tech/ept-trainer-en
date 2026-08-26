@@ -1775,3 +1775,62 @@ Concrete: in the €5.3K Main you have an edge (the field is wider/softer) → *
 3. **G3.** A mid-short stack: the big stacks cover you but you also cover the shorter stacks; no edge, fast structure. A passive call-flip or a fold-equity jam?
 
 *Root-error tie-in: the risk premium (B20) weighs "the loss", the edge premium weighs "the future gain". Both usually say "pass the marginal" — but when you have no edge and survival is at stake, the value of waiting drops. Guard: do I have an edge + am I covered? If both yes, pass; if no edge + forced, take the best fold-equity spot. Never -EV.*
+
+
+---
+
+## Chapter 25 — The Story in Your Head: Evidence or Narrative
+
+*★ v6. B16 gave tilt and the autopsy (the end-of-day case log). This chapter places an in-the-moment filter in front of them: before a big bluff-catch/fold, "is this read based on evidence or on a story?" The bridge from B23's opponent reading (evidence) to B16's autopsy (result-independent grading).*
+
+### 25.0 Thesis
+
+> **Before a hero-call or a big fold, ask: is this read based on EVIDENCE (action sequence, sizing, timing, position, type — B23) or on the STORY in your head (emotion, momentum, ego)? If it's a story, return to default (B11.2). This is an in-hand version of the B16 tilt card: tilt wounds the emotion, the story distorts the decision.**
+
+### 25.1 The "story in your head" test
+
+Before a big bluff-catch or a thin fold, pause for a second. Which of two kinds is your reasoning:
+
+- **Evidence:** the villain's action sequence (bet-bet-bet or check-call), sizings (polarized/blocky), timing, position, type (B23). Concrete, what you see at the table.
+- **Story:** "I feel like he's bluffing me", "he just took a pot off me, now I'll catch him", "this hand always loses". Emotion and narrative.
+
+If it's based on evidence, trust it — but evidence doesn't beat the cover: while covered, a hero-call is still a fold (B21.2). If it's based on a story, return to default: B11.2 (one pair = a bluff-catcher, respect the uncapped). A story drags you into both a needless hero-call and a needless fold; both are faces of the same root error (emotion > range).
+
+### 25.2 The story ↔ tilt link
+
+A story is usually a product of tilt: "he just took a pot, now I'll catch him" comes from a bad-beat/ego trigger (B16.2). The sequence is B16's: first NOTICE the symptom (B16.2 — speeding up, reaching for the phone, chasing → a physical move: deep breath / VPIP lock / drink water), then decide. While tilted you can't even run the "evidence or story" test reliably; label the wound first (the B16.2 card; the wound concept is B0 c.15), then look at the evidence.
+
+### 25.3 Result-independent grading = the B16.3 autopsy, through the story lens
+
+When the hand ends, grading lives in B16.3: at the **end of the day** (at the table just note the hand), two questions — what was the book's rule given what I knew at the moment, and did I follow it. This chapter adds one lens to that autopsy: **was my decision based on evidence or a story?**
+
+- Right rule + bad result = a GOOD decision — **but only if you truly followed the rule/range (B16.3); "it was right, it was variance" is not a self-absolution door.**
+- Winning on a story = a LEAK (the result rewarded you, the process was flawed; repeat it and you get burned).
+
+B25 doesn't open a new autopsy layer; it adds the "evidence or story" question to the B16.3 autopsy.
+
+### 25.4 Attention on the priciest decisions
+
+A story-error isn't equally expensive everywhere. At the FT/under ICM a single decision is worth many buy-ins: in a bloated pot the call-off is the most expensive action (B21.1), the bluff-catch while covered (B21.2 → fold). Save your mental energy for there: the big bubble/FT pots, the call-offs while covered. On cheap decisions (small pot, money far off) don't chase perfection — play them by rote, bank the energy for the expensive spot.
+
+### 25.5 Calibration
+
+*(calibrate: the "evidence or story" threshold is personal — review your own past hero-calls in the B16.3 autopsy, which were evidence and which were story. The app's report card grades result-independently: did you pick the right concept, not the result.)*
+
+### 25.6 Cheat card
+
+| Situation | Right reflex |
+|---|---|
+| **Before a hero-call** | Evidence or story? If a story, return to default (B11.2) |
+| **Before a big fold** | Same test — a story-driven fold is also a leak |
+| **Tilt symptom** | A physical move first (B16.2), then decide |
+| **End-of-day autopsy** | B16.3's two questions + "was it evidence or a story" |
+| **Expensive spot (FT/covered)** | Save your energy; don't chase perfection on a cheap decision |
+
+### 25.7 Drill (3 questions)
+
+1. **M1.** A big bet on the river; you feel "this guy's a bluffer" but the action sequence (bet-bet-bet, polarized) fits value. Which reasoning do you trust, call or fold?
+2. **M2.** You took a bad beat, hands are speeding up, you reached for your phone. On the next big hero-call decision, what do you do FIRST (B16.2), then which test?
+3. **M3.** End-of-day autopsy: while COVERED you made a hero-call, caught the bluff, the pot's yours. Through the B21.2 + B16.3 + story lens, how do you grade the decision?
+
+*Root-error tie-in: a story-based decision overrides the range discipline (B11.2/B12) with emotion — the decision-layer face of tilt (B16.2). Guard: evidence or story + did I follow the rule (B16.3). B25 places an in-hand filter in front of B16 and an autopsy lens behind it; not a new rule, a trigger for the existing discipline.*
