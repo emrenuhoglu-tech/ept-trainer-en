@@ -10,6 +10,9 @@ import { DecisionJournal } from "./modes/cornerman/DecisionJournal";
 // Heavy tabs are lazy-loaded → smaller initial bundle.
 const Quiz = lazy(() => import("./modes/quiz/Quiz").then((m) => ({ default: m.Quiz })));
 const Drill = lazy(() => import("./modes/drill/Drill").then((m) => ({ default: m.Drill })));
+const DepthContrast = lazy(() =>
+  import("./modes/drill/DepthContrast").then((m) => ({ default: m.DepthContrast })),
+);
 const Simulator = lazy(() => import("./modes/sim/Simulator").then((m) => ({ default: m.Simulator })));
 const Progress = lazy(() => import("./modes/progress/Progress").then((m) => ({ default: m.Progress })));
 const QuickReference = lazy(() =>
@@ -110,7 +113,7 @@ export default function App() {
                 onClick={() => nav("#/drill")}
                 className={
                   "btn px-3 py-2 text-sm " +
-                  (segs[1] !== "masa"
+                  (segs[1] !== "masa" && segs[1] !== "derinlik"
                     ? "bg-accent-soft text-accent border border-accent"
                     : "bg-surface-2 text-neutral-400 border border-surface-3")
                 }
@@ -128,8 +131,19 @@ export default function App() {
               >
                 🎲 Table (hand sim)
               </button>
+              <button
+                onClick={() => nav("#/drill/derinlik")}
+                className={
+                  "btn px-3 py-2 text-sm " +
+                  (segs[1] === "derinlik"
+                    ? "bg-accent-soft text-accent border border-accent"
+                    : "bg-surface-2 text-neutral-400 border border-surface-3")
+                }
+              >
+                🪜 Depth
+              </button>
             </div>
-            {segs[1] === "masa" ? <Simulator /> : <Drill />}
+            {segs[1] === "masa" ? <Simulator /> : segs[1] === "derinlik" ? <DepthContrast /> : <Drill />}
           </>
         )}
         {tab === "ilerleme" &&

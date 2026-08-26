@@ -8,6 +8,7 @@ import { ScenarioQuiz } from "./ScenarioQuiz";
 import { BustoutRun } from "./BustoutRun";
 import { RangeRecall } from "./RangeRecall";
 import { Postflop } from "./Postflop";
+import { Blitz } from "./Blitz";
 
 // Weak (opener, position) pairs: from 3-bet quiz records answered wrong.
 function weakPositions(): { opener: string; position: string }[] {
@@ -30,6 +31,7 @@ const MODES = [
   { id: "recall", label: "🧠 Recall" },
   { id: "postflop", label: "🃏 T/R" },
   { id: "run", label: "💥 Run" },
+  { id: "blitz", label: "⚡ Blitz" },
 ] as const;
 type QuizMode = (typeof MODES)[number]["id"];
 
@@ -37,7 +39,7 @@ export function Quiz() {
   const [mode, setMode] = useState<QuizMode>("range");
   return (
     <div className="flex flex-col gap-4 p-4">
-      <div className="grid grid-cols-5 gap-1 rounded-xl bg-surface-2 p-1">
+      <div className="grid grid-cols-6 gap-1 rounded-xl bg-surface-2 p-1">
         {MODES.map((m) => (
           <button
             key={m.id}
@@ -59,8 +61,10 @@ export function Quiz() {
         <RangeRecall />
       ) : mode === "postflop" ? (
         <Postflop />
-      ) : (
+      ) : mode === "run" ? (
         <BustoutRun />
+      ) : (
+        <Blitz />
       )}
     </div>
   );

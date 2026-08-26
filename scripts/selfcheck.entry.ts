@@ -26,6 +26,7 @@ import { parseRange } from "../src/lib/handgrid";
 import { buildPools } from "../src/modes/quiz/quizEngine";
 import { postflopQuestion, betType } from "../src/modes/quiz/postflopEngine";
 import { SCENARIOS } from "../src/modes/quiz/scenarios";
+import { WHY_WRONG } from "../src/modes/quiz/whyWrong";
 import { KARNE_SEED } from "../src/data/karne_seed";
 import { computeDue, capDue, migrate, computeMastery, CONCEPT_LABEL } from "../src/lib/karne";
 import { localIsoDay } from "../src/lib/date";
@@ -199,6 +200,25 @@ check("D6-63 postflop PLO Q generates", !!postflopQuestion("plo"));
   check("D4-38 all correct within options", badCorrect.length === 0, badCorrect.map((s) => s.q.slice(0, 24)).join("|"));
   check("D4-38 all source filled", badSource.length === 0, String(badSource.length));
   check("D4-38 all kavram filled", badKavram.length === 0, String(badKavram.length));
+}
+
+// WHY_WRONG distractor rationales: each key must be a real scenario q, and the array must align
+// with options (correct index "" empty, every wrong index filled). A mistyped key silently
+// swallows a rationale; misalignment prints one on the wrong option → build gate.
+{
+  const qSet = new Set(SCENARIOS.map((s) => s.q));
+  const badKey = Object.keys(WHY_WRONG).filter((q) => !qSet.has(q));
+  check("WHY_WRONG keys map to a scenario", badKey.length === 0, badKey.map((q) => q.slice(0, 24)).join("|"));
+  const misaligned: string[] = [];
+  for (const [q, arr] of Object.entries(WHY_WRONG)) {
+    const sc = SCENARIOS.find((s) => s.q === q);
+    if (!sc) continue;
+    const okLen = arr.length === sc.options.length;
+    const okCorrectEmpty = arr[sc.correct] === "";
+    const okWrongFilled = arr.every((v, i) => i === sc.correct || (typeof v === "string" && v.trim().length > 0));
+    if (!(okLen && okCorrectEmpty && okWrongFilled)) misaligned.push(q.slice(0, 24));
+  }
+  check("WHY_WRONG arrays align with options", misaligned.length === 0, misaligned.join("|"));
 }
 
 // D4-44 (EN-only): every scenario/seed concept slug has a CONCEPT_LABEL key (else EN chips show raw slug).

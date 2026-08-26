@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { SCENARIOS, type Scenario } from "./scenarios";
+import { WHY_WRONG } from "./whyWrong";
 import { recordResult, dueEntries, confidentWrong } from "../../lib/karne";
 import { recordQuiz } from "../../lib/progress";
 import { load, save } from "../../lib/storage";
@@ -35,7 +36,7 @@ function dueKavramSet(): Set<string> {
   return set;
 }
 
-function pickScenario(biasKavram?: string, excludeQ?: string): Scenario {
+function pickScenario(biasKavram?: string, excludeQ?: string, avoidKavram?: string): Scenario {
   const seen = load<SeenMap>(SEEN_KEY, {});
   const count = (s: Scenario) => seen[s.q] ?? 0;
   let pool = biasKavram ? SCENARIOS.filter((s) => s.kavram === biasKavram) : SCENARIOS;
@@ -51,6 +52,11 @@ function pickScenario(biasKavram?: string, excludeQ?: string): Scenario {
   if (excludeQ) {
     const ex = pool.filter((s) => s.q !== excludeQ);
     if (ex.length) pool = ex;
+  }
+  // Interleaving (desirable difficulty): don't ask the same kavram twice in a row (outside hypercorrection).
+  if (avoidKavram && !biasKavram) {
+    const mixed = pool.filter((s) => s.kavram !== avoidKavram);
+    if (mixed.length) pool = mixed;
   }
   const min = Math.min(...pool.map(count));
   const fresh = pool.filter((s) => count(s) === min);
@@ -126,7 +132,7 @@ export function ScenarioQuiz() {
 
   function again() {
     // if sure-but-wrong, re-ask the same concept in a different guise; exclude the same question (hypercorrection)
-    const next = pickScenario(confWrong ? s.kavram : undefined, s.q);
+    const next = pickScenario(confWrong ? s.kavram : undefined, s.q, confWrong ? undefined : s.kavram);
     setChosen(null);
     setS(next);
     setFrameI((x) => (x + 1) % FRAMES.length);
@@ -199,16 +205,20 @@ export function ScenarioQuiz() {
           if (answered && isCorrect) cls = "btn bg-emerald-500/20 text-emerald-200 ring-1 ring-emerald-500/50";
           else if (answered && isChosen && !isCorrect)
             cls = "btn bg-red-500/20 text-red-200 ring-1 ring-red-500/50";
+          // On reveal, a "why this loses" line under each WRONG option (if present).
+          const why = answered && !isCorrect ? WHY_WRONG[s.q]?.[idx] : undefined;
           return (
-            <button
-              key={idx}
-              onClick={() => answer(idx)}
-              disabled={answered}
-              className={cls + " justify-start py-3 text-left text-[15px]"}
-            >
-              {answered && isCorrect ? "✓ " : answered && isChosen ? "✗ " : ""}
-              {opt}
-            </button>
+            <div key={idx} className="flex flex-col gap-1">
+              <button
+                onClick={() => answer(idx)}
+                disabled={answered}
+                className={cls + " justify-start py-3 text-left text-[15px]"}
+              >
+                {answered && isCorrect ? "✓ " : answered && isChosen ? "✗ " : ""}
+                {opt}
+              </button>
+              {why && <p className="px-1 text-xs leading-snug text-red-300/80">✗ {why}</p>}
+            </div>
           );
         })}
       </div>
