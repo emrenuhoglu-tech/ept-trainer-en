@@ -36,11 +36,13 @@ function dueKavramSet(): Set<string> {
   return set;
 }
 
-function pickScenario(biasKavram?: string, excludeQ?: string, avoidKavram?: string): Scenario {
+function pickScenario(biasKavram?: string, excludeQ?: string, avoidKavram?: string, wsopOnly?: boolean): Scenario {
   const seen = load<SeenMap>(SEEN_KEY, {});
   const count = (s: Scenario) => seen[s.q] ?? 0;
-  let pool = biasKavram ? SCENARIOS.filter((s) => s.kavram === biasKavram) : SCENARIOS;
-  if (!pool.length) pool = SCENARIOS;
+  // WSOP Day-2 focus: lock the pool to Chapter 17 scenarios (focused grind for the Sep 21 restart).
+  const base = wsopOnly ? SCENARIOS.filter((s) => (s.source || "").includes("17")) : SCENARIOS;
+  let pool = biasKavram ? base.filter((s) => s.kavram === biasKavram) : base;
+  if (!pool.length) pool = base.length ? base : SCENARIOS;
   // The Range Quiz weak-spot adaptation (Quiz.tsx 55% bias) ported to the scenario side:
   // with 55% probability narrow the pool to due/sure-but-wrong concepts (full pool if empty).
   if (!biasKavram && Math.random() < 0.55) {
@@ -77,6 +79,7 @@ export function ScenarioQuiz() {
   const [table, setTable] = useState(false);
   const [left, setLeft] = useState(SHOT_SECS);
   const [frameI, setFrameI] = useState(0);
+  const [wsop, setWsop] = useState(false);
 
   const answered = chosen !== null;
   const correct = chosen === s.correct;
@@ -132,9 +135,18 @@ export function ScenarioQuiz() {
 
   function again() {
     // if sure-but-wrong, re-ask the same concept in a different guise; exclude the same question (hypercorrection)
-    const next = pickScenario(confWrong ? s.kavram : undefined, s.q, confWrong ? undefined : s.kavram);
+    const next = pickScenario(confWrong ? s.kavram : undefined, s.q, confWrong ? undefined : s.kavram, wsop);
     setChosen(null);
     setS(next);
+    setFrameI((x) => (x + 1) % FRAMES.length);
+  }
+
+  // WSOP Day-2 focus mode: lock the pool to Chapter 17 (prep for the Sep 21 restart).
+  function toggleWsop() {
+    const nw = !wsop;
+    setWsop(nw);
+    setChosen(null);
+    setS(pickScenario(undefined, undefined, undefined, nw));
     setFrameI((x) => (x + 1) % FRAMES.length);
   }
 
@@ -143,6 +155,15 @@ export function ScenarioQuiz() {
       <div className="flex items-center justify-between text-sm">
         <span className="text-neutral-500">{s.source}</span>
         <div className="flex items-center gap-2">
+          <button
+            onClick={toggleWsop}
+            className={
+              "rounded-full px-2.5 py-1 text-xs " +
+              (wsop ? "bg-accent text-black font-semibold" : "bg-surface-2 text-neutral-400")
+            }
+          >
+            🎰 WSOP
+          </button>
           <button
             onClick={() => setTable((t) => !t)}
             className={
