@@ -1697,6 +1697,76 @@ export const modules: Module[] = [
       },
     ],
   },
+  {
+    id: "M28",
+    title: "Edge premium: when NOT to gamble",
+    chapter: "Chapter 24 ★",
+    minutes: 7,
+    slides: [
+      {
+        title: "Two premiums: risk + edge",
+        bullets: [
+          "Risk premium: if I lose, what do I lose under ICM (B20).",
+          "Edge premium: if I don't risk it, will my edge earn more later?",
+          "Big edge (soft/deep/slow) → PASS the marginal flip.",
+          "No edge (tough/shallow/fast) → take the ICM-adjusted +EV — waiting doesn't help. Never -EV.",
+        ],
+        ruleBox: "Edge → pass the marginal; no edge → take ICM-adjusted +EV; never -EV.",
+        narration:
+          "Chapters twenty and twenty-two gave the risk premium: ICM's premium. This module adds a second premium: the edge premium, a skill premium. On a marginal gamble, a flip or a thin plus-EV spot, two premiums work at once. First, the risk premium: if I lose, what do I lose under ICM? Second, the edge premium: if I don't risk these chips now, will my skill edge earn me more later? The rule: if your edge is big, that is the field is soft, the stack deep, the structure slow, pass the marginal flip, because a better spot comes later. If you have no edge, that is you're the underdog in a tough field, shallow, fast structure, take the ICM-adjusted plus-EV gamble, because waiting doesn't help. But one absolute rule: never minus-EV. The edge premium only filters plus-EV and marginal spots; it never justifies a minus-EV gamble.",
+      },
+      {
+        title: "The four-question filter",
+        table: { section: "Chapter 24", sub: "24.3", caption: "Question → gamble PASS / TAKE." },
+        bullets: [
+          "Depth: deep=room to outplay=PASS; shallow=TAKE.",
+          "Structure: slow=edge spreads over time=PASS; fast/turbo=erodes=TAKE.",
+          "Edge: soft field=big edge=PASS; tough(underdog)=take the +EV.",
+          "ICM: you're covered=PASS (exception: the shortest stack covering no one ~0).",
+        ],
+        ruleBox: "Four questions: depth + structure speed + your edge + cover map.",
+        narration:
+          "Before a marginal gamble ask four questions. One, stack depth: are you deep? If deep you have room to outplay, your edge realizes, pass; if shallow there's no room, take. Two, structure speed: is the structure slow? If slow your edge spreads over time, pass; if fast or turbo the edge erodes, take. Three, your edge: is the field soft? In a soft field your edge is big, pass the marginal; in a tough field where you're the underdog your edge is gone, take the plus-EV. Four, the cover map, that is ICM: are you covered? If you are, the risk premium also says pass. But one exception: the shortest stack that covers no one has premium near zero, on that row take. If you're covering, be aggressive. Four questions: depth, structure, edge, and cover.",
+      },
+      {
+        title: "How the two premiums interact + survival",
+        bullets: [
+          "Usually same direction: soft + covered = a marginal flip is a double PASS.",
+          "Real conflict: mid-short (bigs cover you, you cover shorts), no edge, fast.",
+          "Resolution: best fold-equity spot (JAM, not call — B17); avoid a passive flip.",
+          "Shortest (covers no one) stack: premium ~0, no conflict — still pick the jam.",
+        ],
+        ruleBox: "Even in survival: pick the fold-equity jam, not a passive call-flip (B17); never -EV.",
+        narration:
+          "The two premiums usually push the same way: in a soft field and while covered, a marginal flip is a double pass. But they can conflict, and the real conflict is born in a narrow spot: you're a mid-short stack, the big stacks cover you, so the risk premium says pass; but you also cover the shorter stacks, you have no edge, and the structure is fast, so the edge premium says don't wait, you need chips. Resolution: pick the best fold-equity spot, that is a jam not a call, chapter seventeen; don't drift into a passive flip. And a subtle point: the shortest stack that covers no one already has a risk premium near zero, there's no conflict there, both premiums say take, but the lesson is still the same: pick the fold-equity jam. And the absolute limit: never enter a minus-EV gamble, not even to survive.",
+      },
+      {
+        title: "Your sidebar: Main vs SHR",
+        bullets: [
+          "€5.3K Main: you HAVE an edge (wide/soft field) → pass the marginal flips, patient.",
+          "€100K SHR: you have NO edge (the world's best) → don't shy from a +EV marginal.",
+          "Same hand, opposite decisions in the two events — the difference is your edge.",
+          "Even in the SHR the ICM layer is separate: it must be +$EV (after subtracting ICM).",
+        ],
+        ruleBox: "€5K Main: patient, pass the flip. €100K SHR: take the +$EV marginal — no edge.",
+        narration:
+          "Now tie this to your Barcelona schedule. In the five thousand three hundred euro Main event you have an edge, because the field is wider and softer; there, pass the marginal flips and play patiently, your edge will produce safer EV later. But in the hundred thousand euro super high roller your edge is gone or very small, because you're facing the world's best; there the premium on waiting is low, don't shy away from marginal spots that are still plus-dollar-EV after subtracting ICM. The same hand leads to exactly opposite decisions in the two tournaments, and the only difference is your edge. Of course, even in the super high roller the ICM layer works separately: a spot is only taken if it's still plus-EV after the risk premium is subtracted.",
+      },
+      {
+        title: "Cheat + drill",
+        table: { section: "Chapter 24", sub: "24.7", caption: "Situation → decision." },
+        bullets: [
+          "Soft+deep+covered → PASS the marginal flip (two premiums).",
+          "Tough+shallow+fast → TAKE the +EV (check the cover, $EV).",
+          "No edge+survival → take the best fold-equity jam.",
+          "Guard: do I have an edge + am I covered? Both yes → pass.",
+        ],
+        ruleBox: "Guard: edge + covered? Both yes → pass; no edge + forced → jam.",
+        narration:
+          "Let's close with the cheat card. Soft field, deep, and covered: pass the marginal flip, both premiums say pass. Tough field, shallow, and fast: take the plus-EV, but check the cover, the dollar-EV must be positive. No edge and survival at stake: take the best fold-equity jam. You have an edge but you're covering: be selectively aggressive. One guard rules them all: do I have an edge, and am I covered? If both yes, pass the marginal; if no edge and forced, take the best fold-equity spot; but never minus-EV. Drill: five thousand euro Main, deep, early, a marginal flip, take or pass and which two questions decide; hundred thousand super high roller, shallow-to-mid, the same flip, does the decision change and why; a mid-short stack where the big stacks cover you but you also cover the shorter stacks, no edge and a fast structure, a passive call-flip or a fold-equity jam?",
+      },
+    ],
+  },
 ];
 
 export function moduleById(id: string): Module | undefined {

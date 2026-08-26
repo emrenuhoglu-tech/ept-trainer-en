@@ -52,6 +52,7 @@ export const CONCEPT_LABEL: Record<string, string> = {
   "postflop-icm": "Postflop under ICM",
   "icm-zaman": "ICM timeline",
   "saha-okuma": "Field reading",
+  "edge-premium": "Edge premium",
   icm: "ICM",
   "icm-cover": "ICM cover",
   multiway: "Multiway",

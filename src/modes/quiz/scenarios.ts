@@ -822,6 +822,33 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 23.1",
     kavram: "saha-okuma",
   },
+  {
+    q: "€5K Main, deep stack, early levels; a marginal flip (thin +EV) in front of you. Take or pass, and what decides it?",
+    options: ["Take — every +EV spot is taken", "Pass: you have an edge (soft/deep) → pass the marginal flip, a better spot comes later"],
+    correct: 1,
+    explain:
+      "Edge premium: in a soft field + deep stack your edge is big → don't turn a marginal flip into variance, pass. Two questions decide: your edge (soft=big) + depth (deep=room to outplay). Later your edge produces safer EV.",
+    source: "Chapter 24.2",
+    kavram: "edge-premium",
+  },
+  {
+    q: "€100K SHR, the world's best, shallow-to-mid; the SAME marginal +EV flip. Does the decision change?",
+    options: ["Still pass — a flip is variance", "It changes → TAKE: no edge (underdog) → waiting has no value, take the ICM-adjusted +$EV"],
+    correct: 1,
+    explain:
+      "With no edge (tough field, underdog) the premium on waiting is low → take the marginal spot that's still +$EV after subtracting ICM, flips included. Same hand, opposite decisions in the two events; the difference is your edge. (-EV still never.)",
+    source: "Chapter 24.5",
+    kavram: "edge-premium",
+  },
+  {
+    q: "A mid-short stack: the big stacks cover you but you also cover the shorter stacks; no edge, fast structure. Passive call-flip or jam?",
+    options: ["Passive call-flip — you need chips", "Fold-equity JAM (B17): risk premium says 'pass' while edge premium says 'need chips' → best FE spot"],
+    correct: 1,
+    explain:
+      "The genuine premium conflict: you're covered (risk premium says pass) + no edge/fast (edge premium says don't wait). The resolution isn't a passive flip but a fold-equity JAM (B17: the jam stays, it has fold equity). Never -EV; take the +EV FE spot.",
+    source: "Chapter 24.4",
+    kavram: "edge-premium",
+  },
 ];
 
 export function randomScenario(): Scenario {

@@ -1711,3 +1711,67 @@ Balance is the shield here: a reg punishes imbalance. Play a balanced range, sel
 3. **E3.** A nit opened UTG, you hold a middling hand. What's the exploit direction — call or fold, and why do you steal their pots?
 
 *Root-error tie-in: default (balance) protects you from losses; deviation (exploit) generates profit but backfires on a wrong read. Guard: type + ICM-awareness + error direction — if all three are clear, deviate; if not, stay balanced. Bluffing a station (and betting it small), and selling a rec pressure, are the classic faces of the field-reading leak.*
+
+
+---
+
+## Chapter 24 — Edge Premium: When NOT to Gamble (and When You Must)
+
+*★ v6. B20/B22 gave the risk premium — ICM's premium. This chapter adds a second premium: the edge premium (a skill premium). If you have an edge, avoid marginal variance; if you don't, take the ICM-adjusted +EV gamble. The risk premium weighs the loss, the edge premium weighs the later gain.*
+
+### 24.0 Thesis
+
+> **On a marginal gamble (a flip, thin +EV) two premiums are at work. Risk premium: if I lose, what do I lose under ICM? Edge premium: if I don't risk these chips, will my edge earn more later? If your edge is big (soft field, deep, slow structure) PASS the marginal flip. If you have no edge (tough field, shallow, fast structure) TAKE the ICM-adjusted +EV gamble — waiting doesn't help. Never -EV; the edge premium only filters +EV/marginal spots.**
+
+### 24.1 What the edge premium is
+
+In a soft field, if your skill edge is big you're making money automatically every hand. A marginal coin-flip turns that edge into variance: you lose 50% of the time and leave the table, whereas playing on your edge would have produced safer EV. That's why an edged player passes the marginal flip — a better spot comes later. The reverse is also true: if you have no edge (you're the underdog, e.g. against the world's best) waiting has no value; take every +EV spot (the +EV that remains after subtracting the risk premium, i.e. ICM-adjusted $EV), flips included — time is against you.
+
+### 24.2 The four-question filter
+
+Before a marginal gamble, four questions:
+
+1. **Stack depth:** Are you deep? Deep = room to outplay = the edge realizes = PASS. Shallow = no room = TAKE.
+2. **Structure speed:** Is the structure slow? Slow = the edge spreads over time = PASS. Fast/turbo = the edge erodes = TAKE.
+3. **Your edge:** Is the field soft? Soft = big edge = PASS the marginal. Tough (underdog) = no edge = TAKE the +EV.
+4. **Cover map (ICM):** Are you covered (B20/B22)? Yes = the risk premium also says PASS (exception: the shortest stack that covers no one has premium ~0). If you're covering = aggressive.
+
+### 24.3 Filter table
+
+| Question | Gamble PASS | Gamble TAKE |
+|---|---|---|
+| **Depth** | Deep | Shallow |
+| **Structure** | Slow | Fast/turbo |
+| **Edge** | Soft field | Tough (underdog) |
+| **ICM** | You're covered | You're covering |
+
+*(ICM exception: the shortest stack that covers no one has premium ~0 → "take" on that row.)*
+
+### 24.4 How the two premiums interact
+
+The edge premium and the risk premium usually push the same way: soft field + being covered = a marginal flip is a double PASS. But they can conflict, in a narrow spot: **you're a mid-short stack — the big stacks cover you (the risk premium says "pass") but you also cover the shorter stacks, you have no edge, and the structure is fast (the edge premium says "don't wait, you need chips").** Resolution: pick the best fold-equity spot (jam, not call; B17), avoid a passive flip, take the necessary +EV risk. Note: the shortest stack that covers no one has risk premium ~0 (B20) — there's no conflict there, both premiums say "take", the only lesson is the B17 spot selection. **Never take a -EV gamble, not even to survive.**
+
+### 24.5 Your sidebar (Barcelona)
+
+Concrete: in the €5.3K Main you have an edge (the field is wider/softer) → **PASS the marginal flips, play patiently** (your edge will produce safer EV later). In the €100K SHR you have little/no edge (the world's best) → the premium on waiting is low, don't shy away from marginal +EV spots (if they're still +$EV after subtracting ICM). The same hand, opposite decisions in the two tournaments: the difference is your edge.
+
+### 24.6 Calibration
+
+*(calibrate: how big your edge is — field, stakes, your history — isn't a number, estimate it in three tiers (big/medium/none). The depth and structure-speed thresholds depend on the tournament. The ICM layer combines with the B20/B22 premium.)*
+
+### 24.7 Cheat card
+
+| Situation | Decision |
+|---|---|
+| **Soft + deep + you're covered** | PASS the marginal flip (two premiums) |
+| **Tough + shallow + fast** | TAKE the +EV (check the cover, $EV) |
+| **No edge + survival** | Take the best fold-equity jam |
+| **You have an edge but you're covering** | Selective aggression |
+
+### 24.8 Drill (3 questions)
+
+1. **G1.** €5K Main, deep stack, early; a marginal flip. Take or pass, and which two questions decide it?
+2. **G2.** €100K SHR, the world's best, shallow-to-mid; the same marginal +EV flip. Does the decision change, and why?
+3. **G3.** A mid-short stack: the big stacks cover you but you also cover the shorter stacks; no edge, fast structure. A passive call-flip or a fold-equity jam?
+
+*Root-error tie-in: the risk premium (B20) weighs "the loss", the edge premium weighs "the future gain". Both usually say "pass the marginal" — but when you have no edge and survival is at stake, the value of waiting drops. Guard: do I have an edge + am I covered? If both yes, pass; if no edge + forced, take the best fold-equity spot. Never -EV.*
