@@ -1487,6 +1487,39 @@ export const modules: Module[] = [
         "ruleBox": "The value threshold isn't fixed: ask in order which turn card hits whose range, how many streets the hand carries, and which out, when it arrives, actually lets you bet.",
         "narration": "The same hand takes different action on different turn cards. If the turn is an overcard that hits the range of the villain who checked the flop, your value threshold rises: the two-pair class you comfortably bet on a low turn drops to check-call on an overcard turn. If the turn hits your side — a low card not connected to villain's check-back range — the threshold drops and frequency rises. The same logic holds on defense: on overcard turns villain fires delayed c-bets more often and generally at a small size, so on those cards, after checking, you lower your strength threshold and defend with weaker hands. The range that calls your bet is stronger than the pre-bet range; after two big bets, the nut ratio in villain's continuing range sits many times above where it started. That's why on a board with straight possibilities a set can't go pot-pot; such hands either take two streets at a small size or stop at one street with a big size, and the exact placement of these thresholds is calibrated to the format. With a weak two pair, the raw out count is also misleading: the real question should be on which river cards you can actually fire the second bet; if you'll stay silent even when the out arrives, stay silent now too."
       },
+      {
+        "title": "EK: Round to a pure strategy at frequency extremes",
+        "bullets": [
+          "If a hand class's bet frequency on a board comes out borderline-high or borderline-low (roughly ~70/30, calibrate it), round that board's range to a pure bet or a pure check — don't try to execute the mixed middle percentage at the table.",
+          "The lost value is small; the real leak isn't a frequency error, it's building a mixed range unevenly at the table.",
+          "Simplifying pays off especially multi-tabling or deep into a long session — applying a few rules correctly beats applying many rules wrong with a tired head.",
+          "The rounding only applies at the extremes (15.7): if a board genuinely shows a middling frequency, that board already wants a mixed strategy."
+        ],
+        "ruleBox": "When a bet frequency sits at a clear extreme on a board (mostly ~70/30, calibrate it), round to a pure bet or a pure check; hovering in the middle produces more error.",
+        "narration": "Chapter 15.7's flop c-bet layer adds a rule new to the app: round to a pure strategy at frequency extremes. When a hand class's solver bet frequency on a board is clearly high or clearly low — roughly the 70/30 band, calibrate it — don't try to play the messy middle at the table; round that board to a pure bet or a pure check. A fine 80/20 split is nearly impossible to execute live; tracking which combos sit in the minority is where the real loss comes from. Rounding at an extreme costs little value, since the range already leaned that way; what you gain is removing the risk of splitting it wrong live. This pays off most multi-tabling or late in a session, since a tired head executes blunt rules better than fine ones. Caution: the rounding only holds at extremes — a middling frequency wants a mixed strategy, and you can't round there."
+      },
+      {
+        "title": "EK: In an unbalanceable spot, read villain at face value",
+        "bullets": [
+          "Some turn/river nodes are too complex even for a solver; in these spots a human villain almost never actually plays a real mix.",
+          "What actually drives that line is usually a single hand category — carry the same logic you use to round your own strategy to a pure category at the extremes into reading villain too.",
+          "In an unbalanceable spot, don't hedge villain's bet as 'maybe partly a bluff'; read it mostly as the single hand category it represents.",
+          "This read is strongest on unusual board-plus-action combinations the population rarely sees (15.7) — there the odds of a real, balanced mix drop even further."
+        ],
+        "ruleBox": "On nodes a human can't balance, villain's bet is mostly the single hand category it represents — sharpen your read accordingly.",
+        "narration": "Fifteen point seven's second untaught rule turns your own simplification logic into a villain read. Some turn/river nodes are too complex even for a solver, which recommends a wide, finely sliced mix. But a human villain can't build that mix — nobody can split dozens of combos into the right percentages live. So in an unbalanceable spot, villain almost never mixes; a single hand category put them on that line, and the rest got folded out. You already round your strategy to a pure category at extremes — apply that logic to villain too. Don't hedge the bet as 'maybe bluff, maybe value, the solver would mix' — ask which single hand category is reason enough for a human to take that line. The answer is usually clear: a human's range runs narrower and more representative than a solver's. This read is strongest on unusual board-and-action spots the population rarely sees, where a real balanced mix is less likely."
+      },
+      {
+        "title": "EK: The tier above you sets your eagerness to bet",
+        "bullets": [
+          "A hand's eagerness to bet the flop isn't set only by its own strength but by the tier sitting ABOVE it in your range — the same hand bets with different eagerness on different boards.",
+          "On a board where a flush is possible, a set/straight's eagerness to bet drops: villain's folding range is already dead against a flush, and the calling range that remains is bleeding equity to the flush.",
+          "On a dry board where a flush is impossible, that SAME set/straight bets far more eagerly — now it's the top tier of the range, with no category above to outrank it.",
+          "Practical test (15.7): before betting, ask — is there a category above me on this board that peels villain's calling range away from me? If yes, eagerness drops; if no, it rises."
+        ],
+        "ruleBox": "What sets your eagerness to bet isn't your hand's own strength but the tier sitting above it in your range — a tier above means LOWER eagerness, no tier above means HIGHER.",
+        "narration": "Fifteen point seven's third untaught rule is the easiest to misread — watch the direction. A hand's eagerness to bet the flop isn't set by its own strength, but by which tier stands ABOVE it in your range. On a wet board where a flush is possible, your set or straight loses eagerness: villain's folds are already dead against the flush, and the calling range left over is bleeding equity to the flush — your set/straight is now second-class, under the flush tier. On a dry board where a flush is impossible, that same hand bets far more eagerly, because it IS the top tier, with nothing above to outrank it. Same hand, same raw strength, opposite eagerness. The practical test: before betting, ask whether a tier above you on this board is peeling villain's calls away from you — yes means eagerness drops, no means it rises. Measure not your hand's strength, but where the board places it."
+      },
     ],
   },
   {
@@ -2650,17 +2683,6 @@ export const modules: Module[] = [
         "narration": "The flop-texture table is for the single-raised pot; in a 3-bet pot two more lines open up. First, A-high isn't one bucket: on a disconnected A-high board it's full-range small bet; on A plus a second broadway the bottom-pair compass decides between big and small; on a wheel-connected A-high board, deep, the check share rises. Second, the monotone board, split by nut-flush ownership. On an A-plus-two-low monotone board, check-heavy. On a no-A disconnected middling monotone board the 3-bettor holds the suited-Ace nut-flush and draw share, mostly small. On a connected middling monotone board the nut straight and flush share shifts to the caller: check-heavy. On a king-high monotone board the nut-flush share stays with you, but the caller's non-nut flush density and the overpair's loss of value still keep it check-heavy. The OOP 3-bettor fires full-range small on a disconnected A-high board — that's the baseline, not a trap; on a no-A disconnected middling monotone board it's mostly small, and as connectivity and the caller's flush density (non-nut included) rise, the check share grows. The mirror image: on a low connected board the OOP 3-bettor mostly checks, and the IP caller has the nut advantage; calibrate on your own solver."
       },
       {
-        "title": "EK: The two layers of frequency and the bottom of a wide range",
-        "bullets": [
-          "Layer 1 (theory-baseline): on a dry board, a single small full-range sizing is a legitimate simplification — raise frequency to keep the total money (frequency × sizing) close to the solver's.",
-          "Layer 2 (rec deviation): fold equity is low → trim your air c-bets to roughly 10–15% below the baseline. What's banned isn't the baseline, it's the REFLEX range-bet.",
-          "Exception 1 — 3-bet pot: when a tight caller misses the flop it mostly over-folds to a small bet (calibrate); the rationale is range advantage plus low SPR.",
-          "Exception 2 — the bottom of a wide range: the bottom of the BB's defending range folds more often than theory on dry/paired/monotone boards → small-bet frequency goes ABOVE GTO; except on a connected low board."
-        ],
-        "ruleBox": "As the range widens, small-bet frequency climbs above theory; as it narrows, it drops below — what's banned is the reflex range-bet fired without looking at the board.",
-        "narration": "The ban on the automatic range-bet reads in two layers. The first layer is theory-baseline: on solver-approved dry boards, a single small sizing with the full range is a legitimate simplification; if you collapse to one small sizing, raise the frequency so the total money you put in stays close to what the solver puts in. The second layer is the rec deviation: because fold equity is low, you pull your air c-bets below that baseline. Two exceptions flip the direction. In a 3-bet pot, when the tight caller misses the flop it mostly over-folds to a small bet; that's a population deviation — calibrate it on your own field. In a single-raised pot too, the bottom of a wide defending range — backdoor-less suited trash and weak offsuit hands — folds more than theory on a dry, paired, or monotone board; there, small-bet frequency climbs above theory. Except on a connected low board: there the wide range actually connects with the board, and checking rises."
-      },
-      {
         "title": "EK: Build order and the boundary of the protection paradox",
         "bullets": [
           "The order is fixed: value hands first → the sizing that value wants → coverage → bluffs LAST; bluffs never pick the sizing.",
@@ -2692,28 +2714,6 @@ export const modules: Module[] = [
         ],
         "ruleBox": "Small advantage + shared nuts = small-and-frequent; big advantage + nuts dense on your side = big-and-rare — the reflex is the reverse of this.",
         "narration": "On low and middling boards, two questions pick the sizing, not rote memory. On a low board the question is mass: which mass of the opponent's range is already folding, and which one wants an indifference price? On a 6-4-2 rainbow board, almost every one of the caller's hands carries a backdoor draw and two overcards; a small bet makes none of them indifferent, you need roughly a pot-sized bet. If the same board is two-tone, off-suit combos fold to any sizing; small is enough. On a middling board the question is connectivity: on a connected board like nine-eight-seven, sets, straights, and two-pair-plus-two live in both ranges; the nuts are shared, so you bet small with any hand that has some connection to the board and play a high frequency — overpair doesn't want a big pot. On a disconnected board like nine-five-two, overpairs are nut-like; big bet or check, no small sizing. The reflex is mostly the reverse of this. Calibrate."
-      },
-      {
-        "title": "EK: High-board families — triple-broadway and A-high",
-        "bullets": [
-          "Triple-broadway (K-Q-J type, single-raised pot): the BB's continuing range is pairs plus draws, none of it folds to small → one sizing around pot-size (a 2/3 simplification is fine); bluff with two-street low hands (5-4s), NOT medium pockets.",
-          "The answer to over-calling isn't the flop sizing, it's the TURN plan: fire a pot-sized turn with a big chunk of your range — the flop over-call pays off on the turn.",
-          "On an A-high board, the second card asks the question: wheel-A (A-4-2) → small and infrequent; middling-A (A-9-4) → small range-bet; A+broadway (A-K-x) → big, but weak Kx/bottom pair CHECK.",
-          "After a big flop bet gets called, a SMALL turn sizing is also in the mix — 'I fired big, so I keep firing big' isn't automatic (calibrate)."
-        ],
-        "ruleBox": "On a high-broadway board there is no small sizing; on A-high the second card picks the sizing — if bottom pair has something extra with it, small; if it's broadway, big.",
-        "narration": "The 'dry high equals a third' line is for a single-broadway board. On a triple-broadway board like king-queen-jack, the big blind's continuing range is pairs and draws; none of it folds to a small bet. The sizing is whatever pushes king-x to indifference, roughly around pot-size; build the bluff not from medium pockets but from two-street low hands. The answer to over-calling is the turn plan, not the flop sizing. On an A-high board, the second card asks the question: does the big blind's bottom pair have anything extra with it? With a wheel connection, small and less frequent; on a middling-Ace board it doesn't, so a small range-bet; if the second card is broadway, go big — but weak king-x and bottom pair check, and the big sizing is reserved for Ace-plus-gutshot bluffs. After a big flop bet gets called, a small turn sizing is also in the mix; calibrate."
-      },
-      {
-        "title": "EK: Monotone, trips, and 3-bet-pot lines",
-        "bullets": [
-          "Monotone flop: always a single SMALL sizing; the frequency question is 'did the board burn up the opponent's high suited combos (broadway+Ax)?' — K-T-8 monotone is the home of betting, low/connected monotone is check-heavy (calibrate).",
-          "Trips board: the kickers burned up on the board → the opponent's boat share is low; sizing shrinks, frequency rises. Exception: OOP low trips (7-7-7) against a tight range → leans 2/3 (calibrate).",
-          "In a 3-bet pot, A-high splits into three buckets: disconnected → full-range small; A+broadway → bottom-pair compass; wheel-connected → check share rises at 100bb.",
-          "In a 3-bet pot, NUT-flush ownership splits the monotone board: A+two low → check-heavy; no-A disconnected middling → mostly small; connected middling / K-high → check-heavy (calibrate)."
-        ],
-        "ruleBox": "On monotone, the single-raised-pot question is 'did the board burn up its suited combos', the 3-bet-pot question is 'who has the nut flush'; on trips, sizing shrinks and frequency rises.",
-        "narration": "Three special textures. On a monotone flop the sizing is always single and small; the frequency question is: how many of the opponent's high suited combos did the board itself burn up? On a board like king-ten-eight monotone, those combos are now just pairs, the flush count is low, so small bets come frequently; on a low or connected monotone board none of it burned up, check-heavy. On a trips board, the board has erased three kickers; the opponent's boat share is low, so the sizing mostly shrinks and frequency rises. The one exception is low trips out of position against a tight range: there you need a bigger sizing to make the offsuit-broadway mass indifferent. In a 3-bet pot, A-high isn't one bucket: disconnected A-high is full-range small, A plus broadway is the bottom-pair compass, and wheel-connected goes deep with a rising check share. Nut-flush ownership also splits the monotone board; as the caller's flush density rises, checking grows. Calibrate."
       },
       {
         "title": "EK: Which hand — the shape of the continuing range, side equity, the bluff pyramid",
@@ -4610,6 +4610,17 @@ export const modules: Module[] = [
         ],
         "ruleBox": "If both a tough table and a near-term break-up expectation hold at once, break the borderline decision toward low variance — the cost is a small chip-EV, the payoff is sitting at the next, probably weaker, table with a full stack.",
         "narration": "If your table is unusually tough, and by field or structure math it's about to break up and disperse soon, this alone produces a decision. At borderline or near-indifferent points, pick the low-variance side, accept a small chip-expected-value cost. The logic differs from the future game's stack-value axis you saw earlier; there, what you were buying was a bigger stack, here what you're buying is a weaker table. The table you'll sit at once this one breaks is statistically easier than this one, because consolidation mixes randomly and you don't have to stay at the same table with all of today's tough opponents. So right now, right before the break, it makes sense to skip a marginal gamble against tough opponents; the cost is small, the payoff is most likely sitting at a weaker table with a full stack. If there's no expectation of the table breaking, meaning this is your last or fixed table, this item doesn't apply; in that case, go back to your normal decision framework."
+      },
+      {
+        "title": "3-bet pot defense tracks the board",
+        "bullets": [
+          "The reflex 'always continue with a pair against a small bet in a 3-bet pot' is board-blind — write down villain's preflop bluff material (blind 3-bet bluffs are mostly Ax and high broadway).",
+          "On a board where those bluffs HIT (A-high, K-high), tighten your defense hard — villain's 'bluff' is now top pair, and your middle pairs and weak backdoors lose value.",
+          "On a board those bluffs genuinely MISS (mid/low, disconnected), the same pairs and backdoors continue sticky, and your float range widens too.",
+          "The question is the same on every street: did this card grow villain's value, hit their bluff, or multiply their air?"
+        ],
+        "ruleBox": "Tie your defense threshold not to the board itself but to this question: did villain's preflop bluffs connect with this board or miss it — connect means tighten, miss means stay sticky.",
+        "narration": "The reflex 'always continue with a pair against a small bet in a 3-bet pot' is board-blind. The right approach is to write down villain's preflop bluff material ahead of time — blind 3-bet bluffs are mostly Ax and high broadway hands. On a board where villain's bluffs connect — ace-high or king-high — tighten your defense hard: their 'bluff' has now become top pair, and on a king-high board it also overlaps with genuine king-ace value, so your middle pairs and weak backdoors lose value. On a board villain's bluffs genuinely miss — a mid or low, disconnected texture — the same pairs and backdoors continue sticky, and your float range widens too, because the air slice of their betting range has grown. Ask yourself the same question on every street: did this card grow villain's value, connect their bluff, or just multiply their air? The answer sets your defense threshold."
       },
       {
         title: "Cheat + drill",
