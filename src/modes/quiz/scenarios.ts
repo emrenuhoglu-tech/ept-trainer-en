@@ -3196,6 +3196,17 @@ export const SCENARIOS: Scenario[] = [
     source: "Chapter 23.33",
     kavram: "masa-kirilma-sabir-satin-al",
   },
+  {
+    "q": "Shallow BvB, against a short BB your premium is near single digits. You've clearly seen across a few hands that the SB's fold to the BB's small (3x) 3-bet is a few points higher than theory — weak offsuit nines and thin suited hands are now folding, no change on the value side. As the BB, what do you do?",
+    "options": [
+      "Open the bluff 3-bet slice up hard, leave the value side unchanged",
+      "Keep playing close to theoretical balance, since it's a small deviation"
+    ],
+    "correct": 0,
+    "explain": "In this class, a few extra points of folding explodes the bluff 3-bet slice from single digits to double digits while value stays fixed — once the signal is clearly seen across a few hands, loyalty to theory is a loss, not a profit; you preserve balance only while the signal is unclear.",
+    "source": "Chapter 12.4-EK-5",
+    "kavram": "sb-fazla-fold-blof-3bet-patlamasi"
+  },
 ];
 
 export function randomScenario(): Scenario {

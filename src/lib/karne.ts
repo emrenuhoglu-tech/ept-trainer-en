@@ -34,6 +34,7 @@ const CORRUPT_KEY = "karne:corrupt-backup"; // corrupt data is backed up here, n
 // stored/compared ids (recordResult, review, model prompt); this only prettifies the chips.
 // Unknown slugs fall back to a de-hyphenated form.
 export const CONCEPT_LABEL: Record<string, string> = {
+  "sb-fazla-fold-blof-3bet-patlamasi": "SB over-fold explodes the bluff 3-bet",
   "icm-kisayol-formulu": "ICM shortcut formula",
   "river-coverage-adimi-sifir": "River coverage step: zero",
   "range-yogunluk-testi": "Range density test",

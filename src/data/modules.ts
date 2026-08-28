@@ -2357,6 +2357,18 @@ export const modules: Module[] = [
         "ruleBox": "At short depth the strongest hand doesn't have to raise — the money goes in on its own; raising is the job of fragile value prying money from the tier below it, and its size is built off the pot, not the bet.",
         "narration": "At final-table depth, a postflop money book gets added alongside your preflop book. At twenty to forty big blinds of FT depth, check-raise value isn't built from your strongest hands. At low SPR the money already goes in across two streets and villain bets thin value through to the river, so sets and the strongest hands mostly shift over to the call book, meaning the trap. Check-raise material is strong-but-fragile hands — you could call it the good-top-pair type. The tier one pair below yours, a medium pair or a weak pair, goes passive on the turn, and you only pry money out of it with a raise; anything better than you stacks you regardless, that loss is fixed. As villain's bet gets smaller — meaning SPR effectively rises — the top-of-range hand goes back into the raise book; the book flags this threshold as still to be calibrated, it doesn't give a hard number. Scale the raise to the pot, not as a multiple of the bet: against the small c-bet that's fashionable at ICM tables, a high-multiple raise effectively hands out a free price — a raise against a small bet should be meaningful in pot terms. The pool mirror plays the exact opposite, raising its top excitedly and flatting the middle; a flop raise that comes in at low SPR is value-heavy relative to balance, so fold one tier down."
       },
+      {
+        "title": "EK: In shallow BvB, the SB folding a few points too much explodes the BB's bluff 3-bet",
+        "bullets": [
+          "Against a short BB, when the SB's premium is near single digits, the small (3x) 3-bet leaves the SB a cheap price — the theoretical continue is wide, the raise-fold slice is small.",
+          "If the SB folds a few points too much despite this price (weak offsuit nines + thin suited hands fold), the BB's bluff 3-bet slice leaps from single digits to double digits; the value side stays put.",
+          "The effect is disproportionate: a small rise in folding multiplies the bluff slice many times over — exploits in this class swing end-to-end on a one- or two-point adjustment.",
+          "If the signal isn't clear across a few hands, stay close to theory; once you've seen the extra fold again, loyalty to theory is no longer profit — it's a loss.",
+          "In the SB seat, the countermeasure runs in reverse: keep your fold to the small 3-bet narrow, continue with even an ordinary connected hand most of the time."
+        ],
+        "ruleBox": "The SB folding a few points too much to the small 3-bet explodes the BB's bluff slice — if the signal isn't clear, stay close to theory; if it is, play the profit.",
+        "narration": "In shallow BvB, against a short big blind, when the small blind's premium is near single digits, the small blind's continue against a small 3-bet is theoretically very wide: the price is cheap, connected and suited hands call, and the raise-fold slice stays small. But if the field drifts a few points off that theory and starts folding weak offsuit nines and thin suited hands, the effect grows out of proportion: the value side stays the same while the big blind's bluff 3-bet slice widens several times over. The lesson is that exploits in this class swing end to end on the tiniest adjustment. If the signal isn't clear, stay close to theory; if you have seen the extra fold across a few hands, staying loyal to theory is no longer profit. In the small blind seat, do the opposite: keep your fold to the small 3-bet narrow."
+      },
     ],
   },
   {
@@ -2435,7 +2447,7 @@ export const modules: Module[] = [
           "And the third barrel, the river. There are two different seats here. First, villain bet and your hand is a bluff-catcher: the decision hinges on villain's size. Sizes of fifty percent and under contain more bluffs and thin value, a call direction; an overbet is polarized, either nut or air, and there one pair turns toward a fold, not a panic hero-call. Second, it's on you and should you bet for value? The rule: if a weaker hand will pay, bet even thin; in a rec-heavy field missed thin value is a direct chip loss. But there's an alarm list, the bad-river catalog: the fourth of the low cards or the card that completes a straight, the third flush card, the board pairing, or an overcard that comes on top. On these cards you have no value target; small pot check-call, big pot check-fold, and never jam, because a jam is value only if a weaker hand will pay. Finally multiway: in a three-or-more-way pot there are no bluffs, one pair is a class lower than heads-up, bet only for strong value and a real nut. These three streets are one chain: the flop c-bet decision either cuts or plants the seed of the bloated pot, the turn grows it or brakes it, the river delivers the execution.",
       },
       {
-        "title": "Appendix: 3-bet pots — the caller over-folds, protection is the real reason",
+        "title": "EK: 3-bet pots — the caller over-folds, protection is the real reason",
         "bullets": [
           "'A station never folds' is the single-raised-pot rule; in a 3-bet pot a tight caller who misses usually over-folds (a population deviation).",
           "The rationale is range advantage plus a low SPR: even a small bet builds stack-off pressure, and the caller's raise becomes a commitment.",
@@ -2446,7 +2458,7 @@ export const modules: Module[] = [
         "narration": "The phrase a station never folds is the rule for a single-raised pot. In a 3-bet pot, theory wants wide defense against a small bet, because the price is cheap; but in the field the caller's tight and medium-strength range, once it misses the flop, usually over-folds. That's a population deviation, not theory. The theoretical rationale for the air-c-bet restriction loosening in a 3-bet pot is range advantage plus a low stack-to-pot ratio: at a low ratio even a small bet builds stack-off pressure, and punishing it with a raise becomes hard for the caller because it means committing. Now the second addendum, about protection. The protection paradox holds at a high ratio, meaning a single-raised pot, when commitment is far away; nut advantage is not the axis of this boundary, in a shallow 3-bet pot the stack-to-pot ratio draws the boundary. In the three-bettor's fragile overpair mass, range-advantaged but with the nut usually sitting with the caller, on a low disconnected board with pairs between seven and jack, protection-value is the real reason: getting the money in at a shallow ratio before it evaporates; its name is value taken before it evaporates. Underpairs set the ceiling of the size, not the floor: if the underpair wants a bet, go linear and small; if it doesn't, go polarized and big, with the underpair checking; the compass sets the size, range advantage sets the frequency; calibrate it on your own solver."
       },
       {
-        "title": "Appendix: A-high, monotone, and OOP range-bets in 3-bet pots",
+        "title": "EK: A-high, monotone, and OOP range-bets in 3-bet pots",
         "bullets": [
           "A-high splits into three buckets: disconnected → full-range small; A plus broadway → underpair compass; wheel-connected → check increases.",
           "Monotone: A plus two low cards → check; no-ace disconnected middle → small; T-9-8 (nut with the caller), K-high (dense with non-nut flushes) → check.",
@@ -2469,7 +2481,7 @@ export const modules: Module[] = [
         "narration": "The flop texture table is for a single-raised pot; the 3-bet pot opens two extra rows. First, ace-high, not one bucket: on a disconnected ace-high board, full-range small bet; with ace plus a second broadway card, the underpair compass decides between big and small; on a wheel-connected ace-high board, deep, the check share rises. Second, the monotone board, split by who owns the nut flush. On an ace plus two low cards monotone board, check-heavy. On a no-ace disconnected middle monotone board, the three-bettor holds a share of suited-ace nut flushes and draws, mostly small. On a connected middle monotone board, the nut straight and flush share shifts to the caller: check-heavy. On a king-high monotone board, the nut-flush share stays with you, but the caller's non-nut flush density and the overpair's loss of value still keep it check-heavy. The out-of-position three-bettor fires a full-range small bet on a disconnected ace-high board, a baseline, not a trap; on a no-ace disconnected middle monotone board, mostly small, and as connectivity and the caller's flush density, non-nut included, rise, the check share grows. The mirror side: on a low connected board the out-of-position three-bettor mostly checks, and the in-position caller holds the nut advantage; calibrate it on your own solver."
       },
       {
-        "title": "Appendix: The two layers of frequency and the bottom of a wide range",
+        "title": "EK: The two layers of frequency and the bottom of a wide range",
         "bullets": [
           "Layer 1 (theory baseline): on a dry board, a single small size with the full range is a legitimate simplification — raise the frequency to keep the total money (frequency × size) close to the solver.",
           "Layer 2 (rec deviation): fold equity is low → trim your air c-bets to ~10–15% below that baseline. What's forbidden isn't the baseline, it's the REFLEX range-bet.",
@@ -2480,7 +2492,7 @@ export const modules: Module[] = [
         "narration": "Read the automatic range-bet ban through two layers. The first layer is theory-baseline: on solver-approved dry boards, a single small size with the full range is a legitimate simplification; if you drop to one small size, raise the frequency so that the total money you put in stays close to what the solver puts in. The second layer is the rec deviation: because fold equity is low, you pull your air c-bets below that baseline. Two exceptions flip the direction. In a 3-bet pot, a tight caller who misses the flop usually over-folds to a small bet; that's a population deviation, calibrate it on your own field. And in a single-raised pot, the bottom of a wide defending range, suited trash with no backdoors and weak offsuit hands, folds more than theory on a dry, paired, or monotone board; there, small-bet frequency climbs above theory. Except on a connected low board: there the wide range connects with the board, and checking rises."
       },
       {
-        "title": "Appendix: Build order and the limit of the protection paradox",
+        "title": "EK: Build order and the limit of the protection paradox",
         "bullets": [
           "The order is fixed: value hands first → the size that value wants → coverage → bluffs LAST; the size is never chosen by bluffs.",
           "'Bet for protection' is a false third reason: if you bet everything that could be bet for protection, your check range is left unprotected — the root error is born right there.",
@@ -2491,7 +2503,7 @@ export const modules: Module[] = [
         "narration": "Build your range in the same order every time: first find which hands value-bet, then the size that value wants, then coverage, and bluffs last. Bluffs ride the size that value chose; the size is never chosen by bluffs. This order also filters out a false third reason: bet for protection. If you bet every hand that could be bet for protection, the range left unprotected is your check range; the root error is born right there. But the paradox has a limit: it holds at a high SPR, meaning when commitment is far away. In a shallow 3-bet pot, in the fragile overpair mass on a low disconnected board, protection is the real reason; the money goes in before it evaporates, its name is value taken before it evaporates. The underpair compass chooses the size: if the underpair wants a bet, go linear and small; if it doesn't, go polarized and big with the underpair checking; range advantage chooses the frequency. Calibrate it on your own solver."
       },
       {
-        "title": "Appendix: The home of the big size — rainbow, top card, dense range",
+        "title": "EK: The home of the big size — rainbow, top card, dense range",
         "bullets": [
           "'The board decides the size' is a proxy; the real drivers are how many streets value must travel, who holds the nut advantage, and who the board favors.",
           "The biggest c-bet sizes cluster on RAINBOW, static boards, not on flush-draw boards — in a wide-range pot, the memorized 'dry equals 1/3' rule leaves equity edge on the table.",
@@ -2502,7 +2514,7 @@ export const modules: Module[] = [
         "narration": "The sentence the board decides the size is a proxy; the real driver is how many streets the value range must travel and who holds the nut advantage. Two blind spots. One: the biggest c-bet sizes cluster not on flush-draw boards, but on rainbow, static boards. In wide-range pots, if your overpair advantage is large, a dry rainbow board is the home of a giant size; the memorized dry equals one-third rule leaves money on the table there. The home has a narrow border: the top card must be below the queen and the big blind must have no flopped straight; the border sits between jack and ten, calibrate it. Deal the bluff not from two high cards but from a single overcard plus a backdoor. Two: if villain's range is dense, full of pocket pairs and suited hands, with no automatic-folding trash, a small bet on a dry board leaves nobody indifferent; go half pot and up, or check. The test sentence: who does the small bet fold out?"
       },
       {
-        "title": "Appendix: Low and middle boards — mass and connectivity choose the size",
+        "title": "EK: Low and middle boards — mass and connectivity choose the size",
         "bullets": [
           "The low-board question is MASS: which mass of villain's range is already folding, and which one wants an indifference price?",
           "6-4-2 rainbow: almost every hand carries a backdoor plus an overcard → around pot size; 6-4-2 two-tone: the off-flush combos fold to any size → small (calibrate it).",
@@ -2513,7 +2525,7 @@ export const modules: Module[] = [
         "narration": "On a low or middle board, two questions choose the size, not memorization. On a low board the question is mass: which mass of villain's range is already folding, and which one wants an indifference price? On a six-four-two rainbow board almost every one of the caller's hands carries a backdoor draw and two overcards; a small bet makes none of them indifferent, you need something around pot size. If the same board is two-tone, the off-flush combos fold to any size; small is enough. On a middle board the question is connectivity: on a connected board like nine-eight-seven, sets, straights, and two pair exist in both ranges; the nut is shared, bet small with every hand that has any piece of the board, high frequency, and the overpair doesn't want a big pot. On a disconnected board like nine-five-two, overpairs are nut-like; big bet or check, no small size. The reflex is usually the opposite of this. Calibrate it."
       },
       {
-        "title": "Appendix: High-board families — triple-broadway and A-high",
+        "title": "EK: High-board families — triple-broadway and A-high",
         "bullets": [
           "Triple-broadway (K-Q-J type, single-raised): the BB's continuing range is pairs plus draws, none of it folds to a small bet → a single size around pot (a 2/3 simplification is fine); bluff with two-street low hands (5-4s), NOT with a middle pocket pair.",
           "The answer to too many calls is not the flop size, it's the TURN plan: fire a pot-size turn with most of your range — the excess flop calls turn a profit on the turn.",
@@ -2524,7 +2536,7 @@ export const modules: Module[] = [
         "narration": "The dry-high-equals-one-third line is for a single-broadway board. On a triple-broadway board like king-queen-jack, the big blind's continuing range is pairs and draws; none of it folds to a small bet. The size is the one that pushes queen-x to indifference, roughly around pot; build the bluff from two-street low hands, not from middle pocket pairs. The answer to too many calls is the turn plan, not the flop size. On an A-high board the second card asks the question: does the big blind's underpair carry anything extra? With a wheel connection, small and less frequent; on a middle-ace board there's none, so a small range-bet; if the second card is broadway, go big, but weak king-x and underpairs check, and the big size is reserved for ace-plus-gutshot bluffs. After a big flop bet gets called, a small size is also in the mix on the turn; calibrate it."
       },
       {
-        "title": "Appendix: Monotone, trips, and 3-bet-pot lines",
+        "title": "EK: Monotone, trips, and 3-bet-pot lines",
         "bullets": [
           "Monotone flop: a single SMALL size in every case; the frequency question is whether the board already burned villain's high suited combos (broadway + Ax) — K-T-8 monotone is the home of the bet, a low/connected monotone board is check-heavy (calibrate it).",
           "Trips board: the kickers are burned into the board → villain's full-house share is low; size shrinks, frequency rises. Exception: against a tight range, an OOP low trips board (7-7-7) → leans toward 2/3 (calibrate it).",
@@ -2535,7 +2547,7 @@ export const modules: Module[] = [
         "narration": "Three special textures. On a monotone flop the size is always single and small; the frequency question is: how many of villain's high suited combos did the board already burn? On a board like king-ten-eight monotone, those combos are now just a pair, the flush count is low, a small bet comes frequently; on a low or connected monotone board none of them are burned, check-heavy. On a trips board, the board has erased three kicker cards; villain's full-house share is low, size mostly shrinks and frequency rises. The one exception: out of position against a tight range on a low trips board, you need a bigger size that makes the offsuit broadway mass indifferent. In a 3-bet pot, A-high is not one bucket: disconnected A-high is full-range small, ace plus broadway is the underpair compass, and on a wheel-connected board the check share rises at depth. Monotone boards are also split by who owns the nut flush; as the caller's flush density rises, checking grows. Calibrate it."
       },
       {
-        "title": "Appendix: Which hand — the shape of the continue, side equity, the bluff pyramid",
+        "title": "EK: Which hand — the shape of the continue, side equity, the bluff pyramid",
         "bullets": [
           "Thin value is worked backward: write down the continuing percentage your size dictates, you need to beat better than half the calling range; look at the distribution WITHIN a class — a crowd of AXs combos can make even 'every flush pays' unbeatable (calibrate it).",
           "If the continuing range is RAISE-heavy (a paired K-K-x / Q-Q-x board) the bet polarizes: value that continues against a raise + air that gives up cheaply; a middling/raw-equity hand checks back. A low paired board or an ace-paired board has a calling block → the range-bet stays.",
@@ -2546,7 +2558,7 @@ export const modules: Module[] = [
         "narration": "Four filters for the which-hand-to-bet question. One: thin value is not a feeling, it's a backward calculation; write down the continuing percentage your size dictates, accept that you need to beat better than half of the final calling range, and count it within the class — even if villain pays with every flush, if the top end of the flush class is crowded you may not beat its average. Two: if villain's continuing range is raise-heavy, like on a high paired board, the bet polarizes; value that can continue against a raise plus air that gives up cheaply gets bet, a middling hand goes to check-back. Three: on a wet middle board, the license to bet is side equity, not the kicker; a top pair plus a draw that can continue against a check-raise gets bet, a naked top pair takes a free turn by checking back. Four: on a low board, the bluff candidate is not the best air, it's a middle-to-high card that folds out better air; the strongest overcard hands realize their equity by checking. Mostly; calibrate it."
       },
       {
-        "title": "Appendix: Size families, the polar big bet, and the direction of depth",
+        "title": "EK: Size families, the polar big bet, and the direction of depth",
         "bullets": [
           "A size family is not free: if you move your nuts onto the overbet line, the small bet is left unprotected, and villain opens thin value + bluff raises right there; the hidden benefit of a single size is deterring the raise (calibrate it).",
           "A polar big bet freezes the action — a raise into a big c-bet is mostly VALUE, and continuing with an overpair is marginal.",
@@ -2557,7 +2569,7 @@ export const modules: Module[] = [
         "narration": "Three advanced rules about size. One: adding a size family is not free; when you move your strongest hands onto the overbet line, your small bet is left unprotected, and villain opens thin value plus bluff raises right on that line. The hidden benefit of the single-size simplification is deterring the raise. Two: a polar big bet freezes the action; villain gets squeezed between call and fold, and a raise into a big c-bet is mostly value. If villain never raises the big bet, the reason for going polar disappears: bet everything, grow the size with your nuts, put middling hands at a small or medium size — if villain won't put the money in for you, put it in yourself. Three: the direction of depth depends on texture. On a dry or paired board, as it gets shallower, raise-fold candidates shrink, so the size grows; on a wet connected board, as it gets shallower, the turn-jam geometry after a check-raise crushes you, so shrink the size. Calibrate it."
       },
       {
-        "title": "Appendix: The OOP c-bet license — who opened, the whiff ratio, A-high",
+        "title": "EK: The OOP c-bet license — who opened, the whiff ratio, A-high",
         "bullets": [
           "'OOP range-bet is a trap' applies to single-raised pots; in a 3-bet pot, the OOP 3-bettor firing full-range small on a disconnected A-high board is the baseline. Mirror: on 7-6-5 it's mostly check, and the IP caller's stab increases.",
           "If the caller is the button, the flat range is tight and structured → the license question: is my opening range stronger than the button's flatting range? Mostly yes for EP; mostly no for CO → check-heavy (calibrate it).",
@@ -2568,7 +2580,7 @@ export const modules: Module[] = [
         "narration": "Four corrections for the out-of-position c-bet. One: the air range-bet trap applies to single-raised pots; in a 3-bet pot the range-advantaged three-bettor fires full-range small on a disconnected ace-high board, a baseline, not a trap. The mirror side: on a low connected board it mostly checks, and the in-position caller's stab increases. Two: if villain is the button, the flat range is tight and structured; the license question is, is my opening range stronger than their flatting range? Mostly yes from early position, mostly no from the cutoff. Three: the mechanism is the whiff ratio in your own range; if the share of hands that don't want to bet is high, frequency collapses — early position range-bets, the cutoff checks and takes the overpair's return from a check-raise instead. Four: on an ace-high board as the out-of-position opener, ace-low is check-heavy, ace plus broadway is full-range small, ace-middle plus a flush draw is two-thirds. Calibrate it."
       },
       {
-        "title": "Appendix: The causality of size — value decides, not the board",
+        "title": "EK: The causality of size — value decides, not the board",
         "bullets": [
           "The size table is usually read off board texture; the real driver is how many streets the value range must travel and who holds the nut advantage.",
           "Board texture is only a proxy for these two questions — reading the table directly skips the actual cause.",
@@ -2580,7 +2592,7 @@ export const modules: Module[] = [
         "narration": "In the sizing table you'd say dry board, small size, wet board, big size, but that's a shortcut, not the real reason. There are really two questions: how many streets does your value range need to travel, and who does the board favor. Board texture is only the visible face of those two. For a tight early-position opener, dry-board-small-size works correctly because their range sits fully on top on that board. Put that same dry board at a node played in favor of the big blind's wide defending range, and that small size becomes an over-firing c-bet, because the other side no longer folds most of the time. Before memorizing the table, build the order: first ask how many streets value must travel, then ask who the board favors, and derive the size from those two last."
       },
       {
-        "title": "Appendix: The third seat on an A-high board — the OOP opener",
+        "title": "EK: The third seat on an A-high board — the OOP opener",
         "bullets": [
           "The third seat: 18.2 covers the IP opener, 32.3 covers the 3-bet pot; this is the OOP opener vs IP caller, single-raised pot, ~30bb.",
           "A-low (A-5-2 / A-6-2 r): the opener's non-Ax range is dead, the caller's pocket-heavy range connects with the board; result is check-heavy (~2/3).",
@@ -2592,7 +2604,7 @@ export const modules: Module[] = [
         "narration": "The A-high logic in Chapter eighteen was for the in-position opener; the 3-bet pot is a separate item. Here's a third seat: the out-of-position opener, the in-position caller, a single-raised pot, roughly thirty big blinds deep. The answer splits three ways by board. On an A-low board the opener's non-ace range is dead, no pair, no draw; the caller's pocket-pair-heavy range connects with the low cards and doesn't fold, so the result is mostly check. On an ace-plus-broadway board it's the exact opposite: nearly the opener's whole range picks up a pair or a gutshot, the caller's pocket pairs lose their value, and the result is a small bet with nearly the full range. On an ace-middle-plus-flush-draw board the size climbs to two-thirds, because a small bet always keeps backdoor flush-draw combos in the hand. The question you should ask isn't do I have an ace, it's whether my non-ace range is still alive on this board."
       },
       {
-        "title": "Appendix: The thin-value threshold — working backward and within-class distribution",
+        "title": "EK: The thin-value threshold — working backward and within-class distribution",
         "bullets": [
           "Thin value is not a feeling, it's worked backward: write down the continuing percentage your size dictates, you need to beat better than half of the final calling range.",
           "Turn that back into a turn threshold — figure out from there which hand meets the condition (calibrate it).",
@@ -2922,7 +2934,7 @@ export const modules: Module[] = [
           "Finally we gather the six lines onto one card. Each row shows first 'who showed weakness,' then 'when to open,' then 'when to close.' Donk: the board edge is yours — open small on your board, close on a high board or against a station. Delayed c-bet: you gave up the flop — open on the turn if there's a reason. Probe: the raiser checked the flop back — bet the turn into the capped range. Stab: everyone checked — take it with a small bet. Turn float: the villain checked the turn — take it if you're IP with a plan. River blocker: the villain would bet if checked to — if capped and aggressive, with a thin bluff-catcher, small; otherwise eleven point two. One guard sentence runs them all: who showed weakness, whose board is it, should I realize my hand — if all three aren't there, check. Initiative isn't a right, it's an earned opportunity; taken right it ends the pot cheaply, taken wrong it's a new door into the root error.",
       },
       {
-        "title": "Appendix: second-street stab in a 3-bet pot — the turn size shrinks, not a jam",
+        "title": "EK: second-street stab in a 3-bet pot — the turn size shrinks, not a jam",
         "bullets": [
           "The flop small stab targets the medium-weak hands that skip the range-bet, king-jack, king-ten, ace-five type; ace-high mostly check-calls, pairs check-raise.",
           "A brick turn and a second check get a VERY small, near-minimum bet — calibrate the size.",
@@ -2934,7 +2946,7 @@ export const modules: Module[] = [
         "narration": "Nineteen point four appendix gave the flop stab, but the line doesn't end there. If the out-of-position three-bettor checks a low-to-mid board when they'd normally range-bet, you target the medium-weak hands that skip the range-bet with a small stab on the flop, king-jack, king-ten type hands, a missed ace-jack or ace-queen. The opponent check-raises with pairs and stays in check-call with ace-high. If the opponent checks again on the turn, the size keeps shrinking, and you come down to a near-minimum bet, calibrate. The instinct to jam right away because SPR is one is wrong here; you'd fold out that same ace-high block more expensively and grow your risk against pairs that haven't check-raised yet. If you got check-raised on the flop and don't have a pair, fold — your pair-less bluffs end here. This line works at forty big blinds, and is even more profitable deeper, because there's still fold equity left on the river."
       },
       {
-        "title": "Appendix: what a second check means — does the opponent have a lead range",
+        "title": "EK: what a second check means — does the opponent have a lead range",
         "bullets": [
           "19.3's reading of 'checked the flop back means capped' is specific to the preflop raiser's flop; it doesn't automatically carry over to the out-of-position player's turn check.",
           "If a reg who HAS a lead range checks, they're capped — go with thin value plus bluffs, the 19.2 table.",
@@ -2945,7 +2957,7 @@ export const modules: Module[] = [
         "narration": "Nineteen point three said if the preflop raiser checks the flop back they're capped — true, because they'd bet the flop with strength. But don't automatically carry that logic to the out-of-position player's turn check, because most of the pool has no real lead range on the turn. If a reg who leads checks, yes, capped — go with thin value and bluffs. But if a pool player with no lead range checks, that's their whole range, trips included, calibrate; against that, the opponent's correct answer is a near-full-range check-back, pocket aces included. Why: the small flop bet already folded the weak blockers, the remaining range is board-dependent; betting with a middle card opens you to a check-raise; the payoff from a check-back comes on the river. The exploit is this: the pool bets thin on this turn and over-bluffs — so on a turn where the board pairs, increase your check-raise and river bluff volume."
       },
       {
-        "title": "Appendix: the covering SB's lead map, and nudge homes",
+        "title": "EK: the covering SB's lead map, and nudge homes",
         "bullets": [
           "A near-zero-premium big-stack SB flatted wide, against a covered tight opener: the total lead share approaches about forty percent, calibrate — the lead is the LICENSE for the wide flat, not decoration.",
           "Three regimes: ace-low, queen-low, or jack-low boards call for big polar, low sets plus out-clearing; low and connected mid boards call for a small range-lead; ace-plus-broadway or king-high boards get no lead.",
@@ -2956,7 +2968,7 @@ export const modules: Module[] = [
         "narration": "Under ICM, the license for aggression belongs to whoever covers; here's the map. When a big stack with a premium close to zero flats the small blind wide, against a covered tight opener the total lead share approaches roughly forty percent; if you play without a lead, the bottom half of your flat range loses value — the lead is the license for the wide flat, not decoration. There are three regimes: ace-low, queen-low, and jack-low boards are big polar lead territory, since you hold the low sets and bluffs fold out better air and clear outs; low and connected mid boards call for a small range-lead; ace-plus-broadway and king-high boards get no lead at all. The map is a function of your own flat range. The nudge, meanwhile, isn't one line but the meeting of three conditions: your range is strong-weak, the opponent's is polarized, the turn-raise incentive is close to zero; big blind defense, the caller of a three-bet pot, a small blind flat, and multiway are all nudge homes. Calibrate."
       },
       {
-        "title": "Appendix: two limits of the flop-3-bet node",
+        "title": "EK: two limits of the flop-3-bet node",
         "bullets": [
           "The 'raise is cheap' line applies against the opponent's SMALL bet; the IP's raise range against a big polar c-bet is theoretically close to nonexistent, since draws call and sets play slow → if it comes it's VALUE-heavy, and continuing with an overpair is borderline (calibrate).",
           "Against a raise-happy opponent it's not 'bet big': carry aces or queens into a SMALL size, let the opponent build the pot → then flop-3-bet or jam, standard at forty big blinds and below.",
@@ -2967,7 +2979,7 @@ export const modules: Module[] = [
         "narration": "The flop c-bet raise node has two limits. First: the raise-is-cheap line applies against the opponent's small bet. A tight in-position caller's raise range against a big polar c-bet is theoretically almost empty; it carries enough equity to call for the draw, and strong hands play slow against a barrel. That's why a raise against a big c-bet is value-heavy, and continuing with an overpair is borderline. Second: against an opponent who raises small bets like crazy, the right move isn't to bet big, it's to give them the node to raise into; carry your strongest hands into a small size, let the opponent build the pot, then flop-3-bet or jam. Split the diagnosis in two: if they also raise thin value, checking increases, the bet stays small, and the call range on the turn is capped, so a big turn bet works with most of the range; if they only raise bluffs, use a small bet with full range plus a 3-bet jam with a pair or a draw. Calibrate."
       },
       {
-        "title": "Appendix: stab expansion — the 3-bet pot and the ace-low node",
+        "title": "EK: stab expansion — the 3-bet pot and the ace-low node",
         "bullets": [
           "3-bet pot, IP caller, low board, seven-six-five, 3-bettor checks: a small stab is near full range; the borderline question is whether the 3-bettor's broadway cut picks up a straight draw — nine-eight-two is selective, nine-five-two is free (calibrate).",
           "On a K-Q-x connected board a SMALL stab into an OOP check is inefficient → half pot plus low suited or gutshot bluffs that don't carry an ace.",
@@ -2978,7 +2990,7 @@ export const modules: Module[] = [
         "narration": "Three expansions to the stab table. One: in a three-bet pot, with the caller in position on a low board, once the three-bettor checks, a small stab is almost full range; the borderline question is whether the opponent's broadway cut picks up a straight draw. If it does, be selective; if it's truly disconnected, it's free. On a king-queen-x type connected high board, a small stab is inefficient; you need about half pot and bluffs that don't carry an ace. Two: the line extends to the second street; a small stab on the flop, and if a brick turn comes and it's checked to you again, a very small, near-minimum bet. The jam reflex folds out the opponent's ace-high block more expensively. If you get check-raised on the flop and don't have a pair, fold. Three: on an ace-low board, fire a small stab at close to full frequency in position into the out-of-position opener's check, since the pool folds more than theory predicts; at that same node the opener's best answer isn't widening bluff-catching, it's a thin value check-raise. Calibrate."
       },
       {
-        "title": "Appendix: diagnosing capped, and probe size",
+        "title": "EK: diagnosing capped, and probe size",
         "bullets": [
           "'A second check equals weakness' only applies to an opponent who HAS a lead range; a pool player with no lead range checks their WHOLE range → the IP's answer is a near-full-range check-back, aces included (calibrate).",
           "The probe size is picked by the class the turn gives YOU: a medium-value holding, six-six-three-queen → small merged; targeting the overcard block, seven-six-four-nine → half pot; nuts plus air, seven-six-four-four → big polar, one point two to one point five times pot; the nuts passed to them, seven-six-four-ace → range check.",
@@ -2989,7 +3001,7 @@ export const modules: Module[] = [
         "narration": "First, the diagnosis: the second-check-equals-weakness rule only works against an opponent who has a lead range. Most of the pool has no real turn lead range; their check is their whole range, and against it the in-position opener's correct answer is a near-full-range check-back, even with the biggest pair. As for probe size, the class the turn gives you picks the size. If you picked up a medium-value holding, go small merged; if the target is the overcard block, go half pot; if you picked up the nuts plus plenty of bluff candidates, go big polar, above pot; if the nuts passed to the opponent, range check. The opponent's c-bet frequency also moves the size: the check of an opponent who doesn't know range-betting is a third layer, ace-high and underpairs; that layer folds to big and pays off to small, so the probe should be bigger. On a river probe, a strong class wants roughly twice pot, a jam is borderline; against a tight range use one size, against a wide range use a block bet plus a big one. Calibrate."
       },
       {
-        "title": "Appendix: turn after a lead, and the second trigger",
+        "title": "EK: turn after a lead, and the second trigger",
         "bullets": [
           "The lead got called, turn: the target is the IP's continuing offsuit broadway block — a high turn (Q/K/J) → a SMALL size but a high frequency; a low or paired turn → BIG, around two-thirds pot (calibrate).",
           "Bluff candidates are low cards that don't block the block, nine-two or five-two type; river geometry is the real selector: how many value jams will I have on the river. Small-small-jam works shallow, at around fifty big blinds and above scale it up geometrically.",
@@ -3000,7 +3012,7 @@ export const modules: Module[] = [
         "narration": "After the lead gets called, the target is always the same: the opponent's continuing offsuit broadway block from the flop. The turn card's height picks the size in reverse. On a high turn, part of the block already paired, and the rest folds to a small bet too; a small size is efficient, and while the pool range-checks a scary card, you bet with more than half frequency. On a low turn, the block didn't pair but continues with a small bet using overcards; you need a bigger size, around two-thirds pot. The real selector is river geometry: the question of how many value jams I'll have on the river decides the turn size. The lead's second trigger also isn't board ownership: if the texture discourages most of the opponent's range from betting, like on a dynamic mid board, a check costs both sides a free turn card; there, you lead with almost full range and an overpair is the most frequent lead hand — carrying it into check-call is the weakest use of it. Calibrate."
       },
       {
-        "title": "Appendix: donk and lead — shallow and mid-band rules",
+        "title": "EK: donk and lead — shallow and mid-band rules",
         "bullets": [
           "≤15bb BB, a high DRY board (K-9-4 r): not jam but a SMALL donk — let the IP's check-back layer (second pair, ace-high) pay off to K-x; this doesn't carry over to a connected K-Q-9 (calibrate).",
           "≤15bb low/mid board: leading is mostly JAM or CHECK, a small lead is borderline (calibrate).",
@@ -3011,7 +3023,7 @@ export const modules: Module[] = [
         "narration": "The donk default is for thirty big blinds and above; the two bands below it carry their own rule. At fifteen big blinds and below on a high-card dry board, like king-nine-four, it's not a jam but a small donk: the opponent's second-pair and ace-high check-back layer pays off to the king; a jam folds it out, a small lead keeps it in. On a low or mid board, leading is mostly jam or check, with a small lead borderline. In the twenty-to-thirty big blind band, on a seven-high connected board, leading approaches range width; it erodes fast on an eight or nine high, and drops to zero on an ace or king high. The size is picked by the second card's future: a pair plus a live kicker wants big, borderline jam — the money is now; a pair plus a high kicker wants small — let king-queen type hands stay in and pair up on the turn. Calibrate."
       },
       {
-        "title": "Appendix: turn lead — the type of edge picks the size",
+        "title": "EK: turn lead — the type of edge picks the size",
         "bullets": [
           "Turn lead AFTER a flop bet-call: an equity edge and a nut edge call for different sizes.",
           "A low-to-mid turn adds pairs/draws to the BB's range → equity swings to you; the nuts belong to THEM: overpairs/sets are still there, top pair went partly into the raise.",
@@ -3029,7 +3041,7 @@ export const modules: Module[] = [
         "narration": "The difference from the probe is this: on the flop the opponent bet, you called, and on the turn you're considering a lead out of position. An equity edge and a nut edge call for different sizes. You called a big bet on the flop; the bottom of your range folded, the opponent still carries their bluffs. A low-to-mid turn falls into the zone where the big blind's range is concentrated and adds you a new pair or draw, not their overcard bluffs; equity shifts to you. But the nuts belong to them: their overpairs and sets are still intact, since a portion of your strongest hands already went into a check-raise on the flop; your range is partly capped, theirs isn't. A big bet is wrong here: the air folds and the ones who pay outrun you. The tool is a very small lead and a wide range: medium pair, weak top pair, an improving draw. Your lead range is what you didn't raise on the flop. If you defended call-heavy against a big flop bet, your range is intact, and the small-wide lead zone is wide. If you raised a lot against a small flop bet, the range got thinned, and the lead narrows. What's left is the class that turns into the nuts on the turn, typically the bottom or middle card pairing up; there, a bigger size, a narrower range. If neither is there, check; calibrate on your own solver."
       },
       {
-        "title": "Appendix: donk and stab — shallow and 3-bet-pot exceptions",
+        "title": "EK: donk and stab — shallow and 3-bet-pot exceptions",
         "bullets": [
           "≤15bb BB, a high DRY board (K-9-4): not jam but a SMALL donk — the IP's check-back layer pays off to K-x.",
           "≤15bb low/mid board: leading is mostly JAM or CHECK, a small lead is borderline (see M35). At 30bb+, 19.1 applies as is.",
@@ -5589,7 +5601,7 @@ export const modules: Module[] = [
         "narration": "The root error is finding the bounty's dollar value and assuming its chip value is fixed too. The pool shrinks as it pays out with every elimination, while the chips in play stay constant; a chip's dollar value drops, so a bounty with a fixed dollar amount is worth more chips. The driver is not the number of players remaining, it's the percentage of the field remaining: every time the field halves, the envelope's chip value jumps a notch; calibrate the thresholds and multipliers. In a live draw, the increase slows if big envelopes get drawn and speeds up if small ones get swept away. In a large field, at the final table the envelope is worth many multiples of a starting stack; the big-blind figure is a separate question, and in a fast structure a warning of only a few big blinds remains. The procedure on a break is four steps. One: bounty dollars, the remaining bounty pool divided by remaining players, subtracting the ones already drawn. Two: remaining total prize, the normal pool plus the bounty pool. Three: chip dollars, the remaining total divided by the chips in play. Four: bounty chips, divide the bounty dollars from step one by the chip dollars from step three, then divide by the big blind. At the table: ask what percentage of the field is left, read it off the starting-stack table. The rule of doing the math once applies to the dollar value; that is the mechanism behind the principle that the same bounty is worth more chips in the late phase."
       },
       {
-        "title": "APPENDIX: The Structural PKO Discount — the Premium Drops for Everyone",
+        "title": "EK: The Structural PKO Discount — the Premium Drops for Everyone",
         "bullets": [
           "Structural discount: the bounty pool isn't ICM-weighted (it's chip-linear) → the PREMIUM above chipEV is born only from the ICM-weighted share.",
           "At the same stack distribution, the premium drops noticeably compared to a bounty-less tournament — for the COVERED player too, even if they eliminate no one.",
@@ -5600,7 +5612,7 @@ export const modules: Module[] = [
         "narration": "The bounty discount belongs only to the covering player, correct; but there is a second discount, coming from the structure. Part of the pool is the bounty pool and it isn't distributed by ICM. The premium above chip value is born only from the ICM-weighted share of the pool; since the bounty share is roughly chip-linear, it adds no premium. At the same stack distribution, the premium drops noticeably compared to a bounty-less tournament, for the covered player too, even if they eliminate no one. The direction is preserved: the covered player still pays a premium but a smaller one, and the covering player stacks two discounts on top of each other. The net premium is the ICM premium times a structural multiplier minus the bounty discount; calibrate the multiplier in your own solver. At a deep-stacked PKO final table, preflop range shapes mostly stay close to their chip-cent versions; there is no I'm at the final table, let me tighten up reflex. The deviation opens up only around a short, bounty-laden stack; open the ICM reflex once your own bounty approaches your stack. If a blind who covers you is flatting instead of 3-betting, widen your opening; the reason the covered player is tight is 3-bet pressure. Future-game runs in two directions: at the margin, be a notch looser on covering-player calls; but pass on a marginal gamble that would extinguish your cover while a bounty-laden short stack is at the table."
       },
       {
-        "title": "APPENDIX: The Covering SB — Toughening Up, Not Widening",
+        "title": "EK: The Covering SB — Toughening Up, Not Widening",
         "bullets": [
           "The root error: carrying 'the covering player widens VPIP' over to an out-of-position spot — the covering SB doesn't flat fringe hands, it opens a LINEAR 3-bet.",
           "The mechanism: the button opens narrow against the cover; an out-of-position fringe flat stacks no one — the bounty demands a big hand plus collection.",
@@ -5612,7 +5624,7 @@ export const modules: Module[] = [
         "narration": "Don't carry the covering player widens rule out of position. From the small blind, flatting weak suited hands against a button you cover is a root error: the button already opens narrow against a blind that covers it, and an out-of-position fringe flat stacks no one — the bounty wants a big hand made and collected, and a fringe flat doesn't produce that. The right play is to cut the flat share and open a linear 3-bet instead; polar low-suited bluffs have no place here, because the button calls wide in position and a pot bloated with trash that later folds pays off no bounty. In heads-up against a shallow blind, a second correction comes in: the bounty erases the limp trap. Roughly in the twelve-to-twenty big blind band, raw equity plus the bounty pays for the jam; every playable hand goes to a jam, the range is tight but jam-heavy. The field assumes no one jams a limp and widens from the bottom; that limping stack folds to a small isolation raise, which is free money. Calibrate the band in your own solver."
       },
       {
-        "title": "APPENDIX: Nut-Protection Is Cover-Conditional — Flat AK or 3-Bet",
+        "title": "EK: Nut-Protection Is Cover-Conditional — Flat AK or 3-Bet",
         "bullets": [
           "A wide flat against a wide-opening covering player in position is correct — the issue isn't the bounty, it's range-versus-range.",
           "The dream spot only exists if YOU cover the blind BEHIND you: the blind linear-jams, the opener folds, you collect the bounty → FLAT AK/AQs/QQ+.",
@@ -5624,7 +5636,7 @@ export const modules: Module[] = [
         "narration": "The rule protect the wide flat with nuts has a cover condition. A wide flat against a wide-opening covering player in position is correct; the issue isn't the bounty, it's range against range — against a wide opener your flat is still the tight side. The dream spot is this: if you cover the blind sitting behind your flat range, you protect that range with ace-king and big pairs; on seeing the wide open plus a wide flat, the blind linear-jams, the opener folds, and you collect the bounty. If the players behind you cover you, there is no dream: ace-king reverts to a 3-bet, the flat range narrows. Third piece: 3-betting ace-king against a wide opener is not pushing equity — their widening is made of suited trash, and the offsuit aces you dominate fold to a 3-bet; the hands you don't want to run away, run away, a flat keeps them in the pot. There is a brake too: even a protected range mostly folds to two jams — don't gamble with a suited connector just because there are three bounties on the line."
       },
       {
-        "title": "APPENDIX: The Covering Player's 3-Bet Widens Downward — Your 4-Bet Jam Threshold Drops",
+        "title": "EK: The Covering Player's 3-Bet Widens Downward — Your 4-Bet Jam Threshold Drops",
         "bullets": [
           "You opened as a bounty-laden short stack and got 3-bet: the read '3-bet equals QQ-plus / AK plus a polar bluff' is WRONG in PKO.",
           "A 3-bettor who covers you pulls the value threshold down: 88/99/AJs are now a value 3-bet, and they'll pay your jam off at bounty odds (calibrate it).",
@@ -5636,7 +5648,7 @@ export const modules: Module[] = [
         "narration": "You opened as a bounty-laden short stack, and someone who covers you 3-bet. The read the 3-bet is very strong is wrong in PKO: the covering player pulls the value threshold down for your bounty — middle pairs and ace-jack suited are now a value 3-bet, ready to pay your jam off at bounty odds; the hands that would be 3-bet as a merge bounty-less shift into a flat instead. The result for you is clean: jack-jack and ten-ten revert to the 4-bet jam class, not a folding hand; occasionally finding a call from nines is part of the price. There's exactly one exception profile: an ultra-wide leader entering with a very large slice of their opening range. Most of their range auto-folds to a 3-bet, their 4-bet jam is narrow and predictable; the jam itself is also poorly priced — the gain is a few big blinds, the risk is the whole stack and position. A small polar 3-bet forces them into one of two mistakes: folding too much or 4-bet bluffing too much. The material is offsuit trash holding an ace blocker that falls to a fold; when the jam comes, you fold. Calibrate the conditions in your own solver."
       },
       {
-        "title": "APPENDIX: The Cover-Map Procedure — Tiebreaker and the Re-Jam Gate",
+        "title": "EK: The Cover-Map Procedure — Tiebreaker and the Re-Jam Gate",
         "bullets": [
           "Losing cover is a TIEBREAKER: it only matters on a BORDERLINE decision; it's NOT a reason to fold a clearly +EV spot.",
           "Weight equals the real probability of stacking off with that player: a short stack in jamming range counts, a deep one doesn't.",
@@ -5648,7 +5660,7 @@ export const modules: Module[] = [
         "narration": "Two decision procedures. The first is weighting a loss of cover. Three steps: is the decision borderline — if not, forget about cover; if it is borderline, count the players you'd stop covering if you lost; weight each one by the real probability of actually stacking off with them — a short stack that has dropped into jamming range counts, a deep one doesn't. On a clearly plus expected-value spot, losing cover is not a reason to fold; it's a tiebreaker. The second is the re-jam gate: you opened, someone flatted, the short stack jammed. The decision isn't is my hand good enough against the short stack — the re-jam is calling the flatter, not the short stack. If the flatter covers you, they over-call wide for your bounty; the re-jam squeezes down to pairs and suited broadways, and a low suited ace is the worst material, because the short stack's linear jam range is full of aces and the flatter's pairs crush it. If you cover the flatter, they pay narrow or fold; the re-jam approaches most of your opening range, because your only risk is the short stack's stack. Calibrate the widths."
       },
       {
-        "title": "APPENDIX: The Direction Rule for Multiway All-Ins",
+        "title": "EK: The Direction Rule for Multiway All-Ins",
         "bullets": [
           "The root error: the reflex 'a third all-in showed up, let me narrow' — the direction depends on the cover relationship.",
           "Every extra jam from a player YOU COVER WIDENS your over-call: their bounty plus their stack is dead money in the pot; a jam from a player who COVERS YOU narrows it.",
@@ -5659,7 +5671,7 @@ export const modules: Module[] = [
         "narration": "In a multiway all-in, the reflex a third jam showed up, let me narrow is the wrong compass; the direction depends on the cover relationship. If the extra jammer is shorter than you, your over-call range widens: the short stack's equity threshold is low, their range is weak, and their bounty plus their stack is dead money in the pot. If that same jam is from someone who covers you, the opposite happens, your over-call narrows noticeably, because you'd be committing your stack against a range whose bounty you cannot win. The mirror rule for the middle player: when you re-jam over a short stack's jam, you're putting your own bounty and the short stack's bounty into one pot against an opener behind you who covers you; the calling threshold collapses under two bounties, fold equity is erased — as a covered middle stack, stay on the call-or-fold axis instead of re-jamming. The second layer is ICM, and it folds in sequence: in the same spot the first jammer's range barely changes, because they still have fold equity; the covered re-jammer narrows a little; the over-caller narrows the most, even far from the money. If your role is the over-caller, trim the chipEV range by one notch; calibrate it."
       },
       {
-        "title": "APPENDIX: The Covered Player's Postflop — River JAM or Check, the Bluff Changes Address",
+        "title": "EK: The Covered Player's Postflop — River JAM or Check, the Bluff Changes Address",
         "bullets": [
           "The covered player has no size games on a polar river: a big size is mostly JAM — your value gets paid wide for the bounty, and your bluff is forced into a jam for fold equity too.",
           "The threshold is depth: jam up to a medium stack, above that a big non-all-in (calibrate it); the trick of 'leaving a few big blinds behind' dies in PKO.",
@@ -5671,7 +5683,7 @@ export const modules: Module[] = [
         "narration": "There are two corrections to the covered player's postflop. One: there are no size games on a polar river. Since the bounty incentive works for the covering player, your value gets paid wide, one pair and above included — value goes to a jam; your bluff is forced into a jam for fold equity too. Size tricks die as well: jam it, adjust your bluff frequency to the bounty, not the size. Since the covering player c-bet the flop wide for the bounty, their range that arrives at the river through checks is weaker than the bounty-less baseline: jam the nuts at standard frequency, size strong-but-not-nut value one size smaller — you get called wider from that weak range. Two: as the covered player, what gets cut is the bluff, not the value; but the bluff isn't zeroed out, it changes address. The covering player's wide payoff only works when they actually have a hand; if a very wide-opening opponent is firing a range-bet on a locked dry board, most of their range auto-folds — the bounty motivation cannot hold trash with no hand against a check-raise. There, build a small check-raise wide; the material is trash that doesn't block the opponent's folding hands. The same line dies on a connected board; calibrate it."
       },
       {
-        "title": "APPENDIX: In Shallow HU-BvB the Bounty Erases the Limp Trap — the Covering SB Jams",
+        "title": "EK: In Shallow HU-BvB the Bounty Erases the Limp Trap — the Covering SB Jams",
         "bullets": [
           "ICM's limp-heavy texture in shallow BvB doesn't carry over to PKO — the bounty closes that equity gap.",
           "In ICM the shallow SB limps because the hands it would jam don't have enough equity; in PKO the bounty pays for the jam → every playable hand goes to a JAM.",
