@@ -1,6 +1,4 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
-import { LessonList } from "./modes/lessons/LessonList";
-import { LessonPlayer } from "./modes/lessons/LessonPlayer";
 import { Review } from "./modes/review/Review";
 import { ChapterView, NEW_CHAPTERS } from "./modes/reference/ChapterView";
 import { LeakCard } from "./modes/leak/LeakCard";
@@ -8,6 +6,10 @@ import { BustoutAutopsy } from "./modes/autopsy/BustoutAutopsy";
 import { DecisionJournal } from "./modes/cornerman/DecisionJournal";
 
 // Heavy tabs are lazy-loaded → smaller initial bundle.
+const LessonList = lazy(() => import("./modes/lessons/LessonList").then((m) => ({ default: m.LessonList })));
+const LessonPlayer = lazy(() =>
+  import("./modes/lessons/LessonPlayer").then((m) => ({ default: m.LessonPlayer })),
+);
 const Quiz = lazy(() => import("./modes/quiz/Quiz").then((m) => ({ default: m.Quiz })));
 const Drill = lazy(() => import("./modes/drill/Drill").then((m) => ({ default: m.Drill })));
 const DepthContrast = lazy(() =>

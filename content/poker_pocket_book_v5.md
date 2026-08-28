@@ -654,6 +654,41 @@ Condition: the node must genuinely be polar, and villain's layer heading toward 
 
 ---
 
+### 8.1-EK The Mistake Isn't in the Hand, It's in the Range
+
+
+A single hand's bet/check choice is usually a razor-thin margin in EV; the real money is lost in range construction. When you stack an entire hand class (say, all your strong draws) into the betting range, the only question that matters is: once those cards land, does the OTHER line still have coverage? In PLO the side cards usually hand you this coverage for free (8.1-EK-2) — if coverage holds, simplifying is cheap, and it even deters villain's raise since every class stands behind the same line. The cost is born only when coverage runs out: if your check range is left unprotected on those cards, villain opens up thin value and bluff bets on that line, and the leak doesn't stop at one street. A careful opponent reads this not from your hand but from your frequencies; you should hunt for the same gap in villain: which class does he settle into which line, and is that line's counterpart empty?
+
+**Rule:** Hunt for the mistake in the range, not the single hand — stacking a class into one line only costs you once the other line loses its coverage on those cards; if coverage holds, simplifying is cheap (8.1-EK-2).
+
+### 8.1-EK-2 Simplification Impunity — PLO's Hidden Difference from NLH
+
+
+In NLH, when you say "I never play this combo on this line," that hand is simply absent from that line and villain exploits it; you're forced to mix every combo. In PLO the side cards in your hand cover every runout naturally: even if you bet the draw-less sets and check-raise the drawing ones, both ranges still hold enough flush draws, straight draws and nuts. That's why simplifying a complex frequency strategy down to clean rules is, in PLO, safe enough that it's mostly unpunishable — and executing a simple strategy well usually pays more than executing a complex strategy badly. In six-card PLO, this side-card coverage becomes even more automatic.
+
+**Rule:** In PLO, build a simple strategy with clean rules: your card coverage frees you from the obligation to mix, and execution quality beats frequency precision.
+
+### 8.2-EK Balance the Two-Card Combo, Don't Slow-Play the Combo-Rich Hand
+
+
+At showdown, no matter how many cards you play, only two of your hand's cards count; so balance is built on two-card combos, not on the four-(or six-)card hand as a whole. A multi-component hand (set + wrap + flush draw, say) bets almost always — don't check it "for balance." The share you owe the check range comes from the weak carriers of that same two-card combo: bare top-two, a lone draw, hands with dead side cards. That way every line keeps the right combos, but your strongest hands don't lose value.
+
+**Rule:** Pick your slow-play allotment from the class's weakest carriers; the multi-component combo hand bets.
+
+### 8.3-EK The "Protection Instinct" Trap
+
+
+A reflex carried over from NLH: my hand is good, the board is draw-heavy, so bet and "protect." In PLO this logic mostly runs backwards — the moment you bet a hand purely for protection, that hand is usually NOT strong enough to deserve protecting; genuinely strong hands get bet because they already carry equity against villain's calling range, and "protecting" is unnecessary as a separate justification. Run the test on relative, not absolute, equity: is villain's CALLING range a favorite against my hand (>50%)? If it isn't, set the protection excuse aside — you're already betting for value. In PLO, 60/40 is a good favorite (8.1), so villain carrying "meaningful" equity is the normal state and not by itself a reason to check; checking top set against a wrap + FD is a straight loss (8.2: "Wrap + FD — played aggressively"). If villain's calling range IS the favorite against my hand, that means the hand simply isn't good enough to bet: check.
+
+**Rule:** The feeling "I have to bet for protection" is usually a sign the hand isn't good enough to bet, not the reverse — the measure isn't absolute equity but whether villain's calling range is a favorite against my hand.
+
+### 8.3-EK-2 In Thin Value Raises, the Blocker Comes Before Raw Strength
+
+
+When choosing a thin value raise, prefer a hand that's slightly weaker but blocks villain's nuts over a stronger hand with no blocker — because you hold the nut card, villain can't hold it: your risk of getting raised over the top and falling into domination, i.e. running into the top of the pot, goes down, and villain's continuing range shifts toward the second-best hands that pay you. Watch out: the payoff of thin value is weaker hands CALLING; getting villain to fold is this raise's cost, not its payoff — the "equity denial" justification belongs to bluff/semi-bluff raises, not here. The NLH reflex "my strongest hand raises" is also misleading; in PLO, thin-raise selection isn't made on absolute hand strength but on blocker logic — who's holding what.
+
+**Rule:** For a thin value raise, pick the weak-but-nut-blocking hand, not the strong-but-blockerless one — the payoff comes from weaker hands calling, not from folds; the blocker doesn't win folds, it thins out villain's over-the-top raising combos.
+
 ## Chapter 9 — Training Protocol
 
 > **Command: "prepare me" / "drill" / "quiz me"**
@@ -684,6 +719,41 @@ Condition: the node must genuinely be polar, and villain's layer heading toward 
 **Volume preflop, curiosity-cut postflop.** Run the preflop drill on volume — phone in hand, low energy, no questions asked. The rule reverses postflop: every wrong answer AND every surprising right answer STOPS the drill — open the class view, find the threshold where the action turns, write it up in the three-part format (27.4), then continue. "My combo played it correctly, I passed" is the drill's root error — you learned nothing.
 
 **A-game log.** Two lines at the end of every session through the series: how I played (a grade plus a number), and what I did that day (sleep, pre-session mental load, the hour). The point isn't health tracking, it's capturing the A-game's inputs — after a few days, two or three recurring variables remain *(calibrate: yours may come out different)*. Write the law you find into the series plan (B16.4) and don't violate it.
+
+### 9.3-EK The Range Recall Ritual — "Am I Playing This" First, Frequency Last
+
+
+The opening of both the preflop drill and every postflop session is a two-minute blind recall: state the position, close your eyes, read the range in grid order — offsuit Ax → Kx → Qx → Tx → pairs → suited — and for every hand let the FIRST question be "am I playing this hand?", not "3-bet what percent?" The second layer: "does this hand have a 3-bet premium, from which criterion?" Frequency precision is the last layer; if the layer order breaks, memorized percentages replace memorized decision classes and can't be recalled at the table. The same ritual applies to villain's side too: if you can't answer "CO opens — which hands is he playing?", you're not ready to drill that spot — go back to the chart first.
+
+**Rule:** In the drill, the order is fixed: am I playing it → what's its premium → frequency; someone who knows the first two without the third still makes few mistakes, someone who's memorized the third without knowing the first two collapses at the table.
+
+### 9.3-EK-2 The Offsuit-Floor Anchor — Remember Every Position in One Line, Pick Your Bluff One or Two Pips Below
+
+
+The shortcut to memorizing an entire opening range wholesale is to anchor on the range's lowest offsuit line: roughly, LJ bottoms out at offsuit Tx, HJ at offsuit 9x, CO at offsuit 8x; on the BTN the floor practically disappears — almost every offsuit Ax gets opened (down to an A2o–A5o mix) *(floor lines: calibrate; see 4.10)*. This one line also tells you postflop where villain's air/bluff block comes from — on a dry high-card board like K-2-6, CO c-bets his floor-line offsuit 8x at a high frequency *(frequency: calibrate)*; if your 8x blocks that block, your check-raise candidate slides one notch lower. The third use is preflop bluff selection: your 3-bet/squeeze bluff candidates mostly come from kickers one or two pips BELOW that floor (if HJ's floor is 9x, think A8s/A7s type), because the test is: "am I folding out the hand that would dominate me on a call?" — if yes, the bluff is profitable, not trash.
+
+**Rule:** Memorize one offsuit-floor line per position; derive villain's air, your own check-raise notch, and your 3-bet bluff candidates all from that same line.
+
+### 9.3-EK-3 Drill Score Isn't a Thermometer — Stop on Direction and Sizing-Class Errors, Not on RNG Noise
+
+
+9.3 says stop on every postflop surprise; this has a mirror-image leak too — a practice that stops because you picked the "wrong" side on the solver's mixed node, trying to push the score to 95, sells the forest for a tree. In the postflop pack, scores in the 80s are a healthy starting point *(calibrate)*; what you're chasing isn't the number but the picture: on this board, roughly how often does my range bet, at which sizing class, and what does its check hold. Let what stops you be direction errors (bet/check, call/raise) and sizing-CLASS errors; not the mix's percentage difference. What plays the turn/river well isn't memorized frequency either, it's memory of the flop picture — knowing "I bet half my range on this flop" tells you both ranges on the next street.
+
+**Rule:** In the drill, stop on direction and sizing-class errors; don't stop on mix/RNG noise — what matters isn't the score you've banked but the picture of "what is my range doing on this board."
+
+### 9.4 The Report-Reading Protocol — Start from the Extremes, Diff Against a Hypothesis, Run a Null Test
+
+
+Paging through thousands of boards in a solver report in sequence isn't study, it's sightseeing. Protocol: (1) PREDICT first — look at the preflop ranges, write down "which board class belongs to whom," then open the report. (2) Start from the extremes: the boards you "never check" and the ones you "check most" — the leak is almost always at the extremes; mid-frequency boards already play the way you feel they should. (3) When comparing two depths or positions, don't sweep every board: build a hypothesis ("A-high must have changed at 30bb"), filter to look only at that class, and also verify the class that should NOT have changed (null test) — two numbers side by side, the difference in one glance. (4) If the output doesn't confirm your prediction, don't throw the framework out; find the variable with the question "which single factor shifted the sizing/frequency?"
+
+**Rule:** Don't enter the report without a prediction, don't dawdle outside the extremes; when hunting for a difference, use hypothesis + counter-test, not a full sweep.
+
+### 9.5 Mass Priority in Range Comparison — Offsuit Blocks + Pairs; Ratio and Saturation
+
+
+When comparing two ranges, the eye drifts to the suited ladder; the mass isn't there. Offsuit combos come in 12s, pairs in 6s — the difference between two ranges is written almost always by offsuit blocks and pairs; suited differences are usually 1–4 combos and don't move the postflop needle. Two more corrections: (a) think in RATIO, not absolute combos — "6% versus 2.5%" looks small but means 2.5x; (b) saturation — a narrower range carries every shared hand at a bigger share: if neither player ever folds 66, the one playing at half the width holds it roughly twice as often. This trio tells you who the board works for: whose offsuit block connected, what the ratio is, and who holds it denser.
+
+**Rule:** Don't hunt for the range difference in the suited corner — the mass is in the offsuit blocks and pairs; read the difference by ratio and saturation.
 
 ## Chapter 10 — Question Bank
 
@@ -1196,6 +1266,20 @@ Root error: the same jam range in every structure at the same stack + same premi
 
 Root error: a single RFI chart at the FT; "suited connector is a good hand, I open." The mechanism, in three parts. (1) Texture: if the blinds behind are short/locked, a flop is almost never seen, the game is "raise → jam or fold"; an A/K blocker erases the jam combos of the players behind and reduces their bluffs → A5o/A7o/K9o open, JTs/T9s/Q8s fold. If behind sits a leader BB who covers you and defends wide, flops are seen often → suited/connected hands (T8s/Q8s/98s) open, A8o/QTo/A5o fold. Same seat, two opposite ranges — the decider is the BB's defense width. (2) Open-jam from EP: with the premium in the middle (11–12% *(calibrate)*) and many covering stacks behind, the medium hands (KTs/AQs) can't jam — crushed when called; and if the middle can't jam, the top doesn't jam either (an AQ jam folds out AJ while the pairs pay — the min-raise does the same job and induces bluff-jams) → open-jam 0%, the range narrow and blocker-weighted (suited Ax, offsuit broadway, A9o; no 66/T9s). The open-jam comes back: you're the middle stack, the shorts carry premium, and the leader carries premium against you too ("they can't pay me wide") → 55+/suited broadway/KJo jam. (3) The offsuit Ax "U": AJ+ jams (occasionally gets paid by worse) and A5o- jams (folds out better like A6–A9); A8–ATo does NOT JAM — it doesn't fold out better and doesn't get paid by worse → raise: raise-call against the BB, raise-fold to the SB's jam. Rule: before opening the RFI, look behind: "will I see a flop?" No → blocker, suited connector folds; Yes → suited, medium offsuit Ax folds. The open-jam is licensed by the medium hands being able to jam; in offsuit Ax the middle raises, the extremes jam.
 
+### 12.3-EK Read the Ladder as a CURVE, Not a Step — a Flat Ladder Plays for the Ladder, a Top-Steep Curve Plays a Stack That Reaches the Top for First
+
+
+12.3 asks about a single jump's ratio to your stack; at the break, take one more step and compare CONSECUTIVE jump ratios. Two typical profiles: a flat ladder where each step grows by roughly 30% of the previous one (mostly online structures), and a curve that moves through the middle in 20–25% steps and then steepens to 45–55% on the last two steps (mostly live structures) *(ratios: read from the lobby, calibrate)*. On a flat ladder, every step is real money — ladder discipline is profitable; on a top-steep curve, for a stack that can genuinely reach the last two steps, sacrificing the small step to take a shot at first is usually correct, because the real money sits in the last two jumps. Two players at the same FT can correctly play two different styles — but the curve is the same for both; what selects the difference is WHERE the stack sits on the curve: on that same top-steep curve, if the next step is still huge relative to your stack, you're short and you still ladder (12.3: wait while someone shorter than you is at the table); the covering leader who reaches the top prices in first place.
+
+**Rule:** At the FT break, ask two questions IN ORDER: (1) is the next jump big relative to my stack (12.3) — if yes, ladder regardless of the curve's shape; (2) if not, where does the curve steepen — if the steepening is at the top and your stack reaches it, price in first place, not the ladder.
+
+### 12.6 The Postflop Money Book at FT Depth — the Top of the Range Shifts to CALL, Raising Is the Middle-Fragile Tier's Job; Scale the Raise to the Pot
+
+
+B12 gives the preflop book; at 20–40bb FT depth, the postflop book also turns over. At deep stacks, check-raise value is built from the strongest hands; at low SPR, money already goes in over two streets and villain bets thin value all the way to the river → sets/the strongest hands mostly shift into the CALL book (trap), and check-raise material becomes strong-but-fragile (a good top-pair type): the slice one pair-class below you (middle pair, weak pair) turns passive on the turn, and raising is the only way to pry money out of it — hands better than you stack you regardless, that loss is fixed. As villain's bet shrinks (SPR effectively rises), the top of the range goes back to raising *(threshold: calibrate)*. And scale the raise to the POT, not as a multiple of the bet: against the 1bb micro c-bet that's in fashion at ICM tables, a "3x the bet" raise effectively gives away a free price — against a small bet, the raise has to be meaningful in pot terms. Pool mirror: the field plays exactly the opposite — it excitedly raises the top of its range, flats the middle — meaning at low SPR an INCOMING flop raise is value-heavy relative to balance → fold one notch tighter. *(The ICM premium stacks on top of these thresholds separately — B21; this entry gives the book's composition, not its threshold.)*
+
+**Rule:** At short depth, the strongest hand doesn't have to raise — the money already goes in; raising is the job of fragile value prying money from the tier below it, and its sizing is set relative to the pot, not the bet.
+
 ## Chapter 13 — Multiway Pot Doctrine
 
 *★ v5. B7 defines the root error as "misclassification in a bloated OR MULTIWAY pot" but the body had no multiway postflop rule. This chapter pays that debt. The Main (€5.3K) is rec-heavy: wide opens + lots of cold-calls = most pots are multiway. The texture you'll spend the longest time in across the 4 events.*
@@ -1242,6 +1326,127 @@ Live PLO's default state is multiway (limp/multi-call norm). The rule "the secon
 *Root-error link: direct reinforcement. Fills the unwritten half of B7's heading; touches no existing range.*
 
 ---
+
+### 13.0-EK When Multiway Money Piles In, the Bar Drops to Nuts + Redraw — the Flop Mostly Sees a Single Bet
+
+
+On a board everyone connects with often, the multiway norm is this: the flop mostly sees a single full-size bet go in, and every aggressive action stacked on top of that sharply narrows the continuing range. Once two aggressions stack on top of each other (raise + jam, or raise + call + pressure), the bar to continue jumps from "strong hand" to "nuts + redraw": even the second nuts without a redraw is a borderline fold, dropping into the same raise-then-fold class as an overpair or a naked top two. This is the execution form of 13.0's "the value of the nuts increases" sentence — what gains value isn't you a class below, it's the actual nuts plus the redraw attached to it.
+
+**Rule:** Multiway, after the second aggression the stack-off question isn't "how many points is my hand" but "is it the nuts, does it have a redraw" — if both answers are no, it doesn't matter which-numbered nuts it is.
+
+### 13.1-EK In Multiway, Your SEAT Grants the License to Aggress — Not Your Hand
+
+
+With the same hand, two opposite decisions come from a single axis: are you closing the action? Facing a bet (or even a bet+raise) with a player still to act behind you, even your strongest hands mostly just call — you see the turn cheap, carry the value of your position/information, and don't hand information to the player behind by splitting your range; even a continuing range heavy with two pair and open-enders reverts entirely to calling at this node. The player who closes the action does the exact opposite: he raises his best hands immediately, because folding out even one player meaningfully grows his equity, and there's little of the "wants to see the turn cheap" marginal hand left. Boundary case: on a highly connected board everyone hits often, even the nuts drops to roughly 70% equity, a set to 60% *(calibrate)* — there, even the player closing the action turns passive, waiting for the information the next card will bring.
+
+**Rule:** Before reaching for a raise multiway, count your seat: if you're closing the action, play the top of your range fast; if there's a player still behind you, even your strongest hand mostly calls — the exception is a board so hyper-connected that even the nuts erodes.
+
+### 13.1-EK-2 The Trap's Condition Is "the Remaining Opponent Is the Aggressor Who Will Bet in Your Place" — a Call in Between Ends the Trap
+
+
+If you're left HEADS-UP against the aggressor with the weakest range, pure slowplay of the top of your range dominates: the aggressor stacks the money into your weak-looking range himself on the turn/river, and by raising you'd only chase off his bluffs. But the moment a caller gets in between, this math breaks — the aggressor can no longer bet thin value, the trap's payoff drops — and that same two pair/good top pair class reverts to fast-play. So multiway, the answer to "trap or fast-play" isn't in your hand, it's in the combination of players left at the table.
+
+**Rule:** The trap only works at the node "the one remaining opponent = the aggressor who will bet" — the moment a caller mixes into the pot, play the top of your range fast.
+
+### 13.1-EK-3 The Defense Bar Is Drawn by Out Count, Not by Class Name
+
+
+13.1 gives the betting side; on the defense side, the bar looks at IMPROVEMENT outs. The HU reflex "you don't fold a pair to a small bet" breaks multiway: an underboard pocket pair is a 2-out hand — outside of hitting a set it can't get value on any turn, and every bluff has live equity against it; a 5-out bottom pair is clearly better than that, and a bottom pair with a backdoor continues comfortably. A gutshot building a straight from the bad end drops too: multiway, completing a non-nut straight doesn't make you money, it costs you your stack — combos holding the top end are plentiful in opponents' ranges.
+
+**Rule:** In multiway defense, weigh the hand by out count + whether those outs are to the NUTS; a 2-out pocket pair ranks below a 5-out bottom pair.
+
+### 13.2-EK The Limit of the "Raise After a Call in Between = Nuts" Rule: Gutshot-Heavy Boards
+
+
+13.2's read of "raise = nuts" is strongest on textures where the raiser has NO natural semi-bluff material. On a static board — three-gap type, rich in gutshots but with no open-ender — the weakest range's squeeze check-raise is forced to carry bluffs: value combos (a handful of sets + suited two pair) are so few that the range can't be built from nuts alone, it's forced to take in low-frequency bluffs from gutshots and bottom pair+backdoor. That's why on a board like this, good top pair isn't theoretically folded — you're in the defense zone against the raiser's polarized-but-bluff-containing range. The pool reality is a separate layer: if the opponent isn't finding these bluffs, 13.2's fold comes back as the exploit.
+
+**Rule:** The "nuts" stamp on a raise is pressed by looking at the board's bluff stock: on a board rich in natural semi-bluffs, theoretically defend good top pair; against a pool that can't find bluffs, fold.
+
+### 13.2-EK-2 The Continuation Bar Is Set by RANGE + Seat, Not by the Hand — the Flatter's Top Pair Isn't the Opener's Top Pair
+
+
+Facing the identical check-raise with the identical hand, there are two different correct plays: thanks to the umbrella of his strong range (plenty of overpairs/sets) and his position, the opener carries his marginal hands comfortably; the flatter, holding the weakest continuing range, folds that very same top pair as a borderline decision — the hand is the same, the range and the seat are not. In a weak range, a medium-strength hand is punished twice over: it has no umbrella, and the raiser knows it — a barrel comes at the capped flatter noticeably more often than at the strong opener *(calibrate)*. The attacking side obeys the same law: after a multiway check-raise, the one you fire at is the capped flatter, not the strong range still left behind.
+
+**Rule:** Answer "can I continue" with your range, not your hand: in a range with no umbrella every class drops one notch — and aim your barrel at the umbrella-less range too.
+
+### 13.2-EK-3 The Blocker Filter Against a Multiway Check-Raise: a Hand Holding the Raiser's Bluff Class Falls to a Fold
+
+
+In choosing whether to continue, raw hand-strength ranking misleads; the real filter is WHICH of the raiser's range your hand removes combos from. Middle pocket pairs (the TT–88-type underboard kind) are the worst class: they block the raiser's gutshot bluffs, almost never resolve into the nuts, and even when they turn a set they're frequently dominated — mostly a clean fold. Bottom pair + a low backdoor is a similar trap: that combo IS the raiser's OWN bluff class — you're blocking his bluffs while also being dominated when you run into the same hand, and the backdoor flush isn't the nuts either. The remaining continues are the ends that CAN resolve into the nuts: top-kicker pair, and the NUTS version of the backdoor draw — a backdoor flush's value is measured not by its mere existence but by whether it's the nuts against the raiser's pair+backdoor cluster.
+
+**Rule:** Filter your hand against a check-raise not by "how many points" but by "whose range am I removing combos from, and is it the nuts when it completes"; hands carrying the raiser's own bluff class fold.
+
+### 13.2-EK-4 Correct Your Pot Odds When a Player Is Still Behind You
+
+
+Multiway, don't read your price against a bet from the pot alone — read it against the raise frequency of the player still to act behind you: if that frequency is roughly p, your real call price is "price ÷ (1−p)" — if the raise frequency is roughly a third, a 25-unit call effectively costs ~37, because when the raise comes you'll burn that money and fold. Test sentence: "Does this continue win net against this same bet HU — and by enough to recover the extra I'm overpaying?" Against a range betting into two players, most borderline-looking calls flip to a fold once you apply this correction. If you know the player behind you doesn't raise (pools love the overcall), the borderline hands come back — most of all the ones carrying outs *(calibrate)*.
+
+**Rule:** With a player behind you who can still raise, divide your call price by (1 − raise frequency); set your bar above the HU threshold.
+
+### 13.3-EK Anchor multiway check-raise on VALUE COUNT — manage the bluff by frequency, not combo
+
+
+The number of value combos in your hand sets the ceiling on the multiway check-raise range: if the value share is a small slice of the range, your total raise frequency is chained to a multiple of that share; how plentiful the gutshot is in the range doesn't concern you *(value share and multiplier: calibrate)*. This is the theory layer of the 3-way check-RAISE node; 13.3's "only nut-blocker semi-bluffs / no 4+ way bluffs" table still holds against bluff-lacking pools and 4+ way pots. At that node the correct construction isn't "pick the best bluff combo" — it's drawing thin, low-frequency slices from MANY classes (gutshots, bottom pair + backdoor, second pair + kicker-connectivity); bottom pair, counterintuitively, raises at close to the same frequency as gutshots. If you draw your entire bluff range from a single class (gutshots only), you pay two costs: your range becomes readable, and when that class reaches the river, either it has all given up or you have no bluffs left.
+
+**Rule:** Value count governs frequency, variety governs the combo: in a 3-way check-raise node, build your raise-bluffs in thin slices from many classes rather than one natural class — against 4+ way pots and bluff-lacking pools, 13.3's table still holds.
+
+### 13.5 Who carries the 3-way balance — find the tension point, exploit from there
+
+
+On a flop with three ranges, balance is built along a single axis: the aggressor's bet frequency and the SECOND-strongest range's check-raise frequency constrain each other; the weakest range isn't a player in this game — its strategy is simple, passive, and unavoidable. The exploit map that follows is clean: if the opener c-bets too much, the answer comes from the second-strongest seat (turn its mixed combos into pure raises), not from the weakest seat — there's no lever to turn there. And if you're the opener, what you should fear isn't the caller, it's the range playing police: if its raise is too low, add your marginals to your bet range; if it's too high, narrow your bet range down to hands that hold up to a raise.
+
+**Rule:** On a multiway flop, first ask "who's carrying the balance" — both the deviation and the fix come from those two seats; the weakest range is just a spectator.
+
+### 13.5-EK On a static board, continue = raise; there's no such thing as a medium hand left
+
+
+In a 3-way pot the equity anchor is 33%; 50% equity isn't a coin-flip like it is HU — it's a very strong hand. The consequence: on a static board that has seen a bet + a call, the opener's range splits in two — hands strong enough to comfortably stand a raise, and nothing; since there's no medium hand left to crawl to showdown, nearly all continues become raises *(mostly — calibrate)*. This is the general principle: if your range has no medium hand left crawling toward showdown, turning your continues into aggression becomes correct. The limit: a board with a flush draw compresses equities — the bluff ratio a made hand can carry drops, draw-heavy continues multiply → the calling range comes back, and the "all-raise" simplicity breaks down.
+
+**Rule:** On a static multiway node, the continue is mostly a raise; as the board turns more dynamic, the calling range comes back.
+
+### 13.6 Multiway transparency freedom
+
+
+HU, you need to check occasionally with your strong hands so your checking range doesn't stay undefended; multiway, that need drops away. With two opponents, at every node there's SOMEONE who might be holding strength back — even if you play every hand along its most natural line, no one can attack on the assumption "neither of them has a strong hand"; your opponents' mere presence protects you. Fire your value bets, control your medium hands, and save your range-protection checks for HU pots.
+
+**Rule:** Multiway, do what's natural — the deception budget is for HU; here the other players protect your range for you.
+
+### 13.7 Multiway lead is a tax levied on the weakest range — and de facto collusion with the opener
+
+
+On a dynamic middling board, the coldcaller's lead isn't a "the board hit me" read; its real job is to stop the weakest range from seeing a free card and realizing cheaply. Part of this tax flows to the opener too: once you lead, your checking range weakens, and the opener — seeing two checks — becomes able to bet far more often; the leader and the opener squeeze the third player together. Two byproducts: (1) the set you slow-play with a check wins with a check-raise over the c-bet that your lead brought back to life; (2) in a 3-way pot, a skipped lead isn't automatically your gain — the EV you leave on the table by not leading goes almost entirely to the WEAKEST range (free realization); the opener doesn't profit from it either, since he also loses his licensed c-bet.
+
+**Rule:** The compass for a multiway lead isn't "whose board is it?" but "who's going to tax the weakest range's free card?" — and in a 3-way pot, the EV left behind by not leading mostly ends up addressed to the weakest range, not automatically to you.
+
+### 13.8 Turn-lead map after paying off the raiser: overcards are the CALLER's card
+
+
+If you called a flop check-raise, the roles on the turn distribute counterintuitively: the raiser's range is weighted toward board-pairs and gutshots, while your range is loaded with broadway top-pairs — that's why A and K turns are YOUR cards, and a lead opens up OOP into the raiser *(frequency: calibrate)*; on low turns and turns that connect with the board, the lead dies and you revert to a pure check. The reflex of "a scary overcard arrived, switch to check-fold mode" works exactly backwards here: that card hasn't improved a single one of the raiser's semi-bluffs. This is the mirror image of the against-the-c-bettor map in 19.12 (where mid-low cards belong to the leader) — change the node, and the map flips too.
+
+**Rule:** Against a check-raiser, look for your turn lead on overcards, forget it on connecting cards: it's not the rank but the composition difference between the two ranges that tells you whose card it is.
+
+### 13.9 A fold is a card
+
+
+An uncapped defender forced into passivity on a multiway flop gets repriced the moment one of the players folds: the situation has changed — you're HU now, your range is uncapped, and your obligation to stay passive is gone. Even without waiting for a good turn, a small protection-value lead opens up: it collects instant folds from your opponent's air mass and cuts the cost of the free card. On some cards, even a geometric-sized lead is playable with top-pair value: if the opponent's range is air-heavy, the sizing that sets up a river jam is marginal but real *(calibrate)*; the pool almost never does this, and it's hard to defend against when someone does.
+
+**Rule:** Read a player's fold like a good turn card — closed action hands you back your right to lead.
+
+### 13.10 Offsuit combo monopoly — bomb lead on the straight-completing turn
+
+
+Preflop, only the defender plays offsuit connectors; the other players either 3-bet those hands or folded them. As flop action tightens the ranges, this monopoly grows: on the turn that completes the straight, a huge slice of the defender's range collapses onto that single hand class, the straight *(share: calibrate)*. Don't check that card, bomb it: the other players' ranges are showdown-bound — no one bets in your place, and a check becomes a free card, not a trap. The count works in reverse too: straight cards you share with opponents' suited combos (the ones you don't monopolize) don't give you the same lead.
+
+**Rule:** Once the straight in the defender's offsuit monopoly completes, the lead is mandatory — multiway, no one else will grow that pot for you.
+
+### 13.10-EK Read the turn by counting combos — flop suit and kicker-connection shape your range
+
+
+Your multiway defending range doesn't distribute the way you'd assume. One: offsuit hands only continue when the kicker connects to a board card, while some of the suited top-pairs went to a preflop 3-bet — that's why second pair can arrive on the turn MORE crowded than top pair; this count tells you which board-pair actually helps you. Two: if you're only continuing a pair class on the condition of a backdoor flush draw, that suit's pairing turn kills your own trips combos — on a rainbow flop, trips are plentiful on the board-pair turn, while on a two-tone flop the same card arrives nearly empty *(calibrate)*. The rote rule "always a small lead OOP on a board-pair" breaks here as a result; against an opponent who leads every board-pair by that same rote rule, don't over-fold — open up your semi-bluff raises instead.
+
+**Rule:** It's not textural rote memory but the count of your own continuing combos that tells you which turn helps whom.
+
+*Root-error link: direct reinforcement. Fills the unwritten half of B7's heading; touches no existing range.*
 
 ## Chapter 14 — The 40–70bb Bridge Band
 
@@ -1383,6 +1588,431 @@ The common math of the seven leaks is 15.4: all of them come from freezing hand 
 Nine lines before you sit: (1) opening — UTG tight, CO = UTG + 10%, BTN wide, no dangler hand opens from UTG/CO; (2) calling a 3-bet only with AAxx / KK ds / connected rundown; (3) 5-betting a 4-bet only with AAxx; (4) BB: no call, 3-bet or fold; (5) a turn plan before a flop call — no answer to "which card do I continue on?" means fold; (6) a redraw-less nut on the turn = call, a redraw is required to raise; (7) non-nut vs. a river pot bet = fold; (8) a triple card in your hand = one class down; (9) stack > 300bb: AA drops to a call, no c-bet, preferably switch tables. Session rule: keep late-night closing time fixed, two big losses in a row = a fifteen-minute break (see B16.5).
 
 *Root-error link: the extension of B0 c.10 ("naked AA in PLO = one pair") to draws and depth — a pot bloated with a non-nut hand is the PLO form of the root error.*
+
+### 15.2-EK The value plan is built backward from the river — the street multiplier
+
+
+Villain continues against every pot-size bet with roughly half his range; so the hand you bet on the turn goes to the river against villain's strongest half. The multiplier is unforgiving: if you're firing pot on two streets, your beaten share on the turn should be roughly half the river threshold — a hand that "looks good" on the turn can fall below the line on the river after the multiplier. In PLO, a hand that can mostly get two streets of value bets the turn; one that can't checks and takes its value on the river — don't carry over NLH's thin-turn-bet habit. Like the commit decision, the value plan is also built backward, before the pot bloats.
+
+**Rule:** Do the multiplier before betting the turn: "once villain folds half, am I still clearly ahead on the river?" — if no, check the turn.
+
+### 15.2-EK-2 Equity picks frequency, polarity picks sizing, position picks shape
+
+
+Postflop aggression has three distinct sources, and each governs a different decision: an equity edge (your range being stronger than villain's) increases bet FREQUENCY — small size, wide range; a polarity edge (having more nut density than villain) increases SIZE — low frequency, big size. Equity dominates at low SPR (as streets run out, villain has no chance left to catch up); polarity dominates as SPR rises (as the opportunity to apply pressure across multiple streets grows). A positional edge, meanwhile, polarizes neither frequency nor size but the SHAPE of your range — on the river especially, the IP player bets either value or bluff, and mostly takes medium strength to showdown.
+
+**Rule:** At low SPR trust equity (frequent and small); at high SPR trust polarity (rare and big).
+
+### 15.3-EK Even when pot odds look sufficient, ask whether you can actually realize that equity
+
+
+15.3 draws the raw-vs-nut out distinction; there's an additional axis on top of it: even when your hand's equity looks like it covers the pot odds, whether you can actually realize that equity on later streets is a separate check. In spots where villain fires big on the flop and can strip you off your equity with a jam on most later streets (especially in deep/high-SPR single-raised pots; in a 3-bet pot SPR≤1 already makes the flop call a commit — the 15.2 Exception — and there the question isn't realization but whether 15.3's nut-out threshold is cleared), raw equity percentage loses its meaning — because your probability of seeing the river is low independent of your mathematical equity.
+
+**Rule:** Even when pot odds look sufficient, don't call in a deep/high-SPR pot without asking "how many streets from now can I actually realize this equity"; at SPR≤1 (a 3-bet pot) this question drops away — there the flop call already buys every street, but the threshold is still 15.3's nut-out count.
+
+### 15.3-EK-2 Two pair's value scales with how many straights are live on the board
+
+
+The value-bet quality of the same two pair hand differs sharply depending on how many distinct straight combinations are already possible on the board. On a board where only one straight line is open, villain rarely holds two pair, so two pair bets wide for value. On a board with multiple straight lines open (highly connected), villain's two pair and straight combination count explodes; the same two pair now only bets with the strongest-redraw combos, and checks the weak ones.
+
+**Rule:** Don't count two pair as the same quality on every board — count how many straight lines are open on the board, and raise your value threshold as the count grows.
+
+### 15.4-EK Build your value base from the hand you can actually reach
+
+
+Don't blindly apply the "ideal" hand template (nut + redraw) for a check-raise or bluff — first check which hand classes your preflop range can actually carry to this point. On some boards the "ideal" template is structurally absent from your range: if all the premium combinations already went into a preflop 3-bet/4-bet, your postflop check-raise value base drops one notch — but only WITHIN the nut classes: instead of nut+redraw, the best nut class your range can actually build on that board (a set, two pair with the nut flush draw, a combination carrying a nut redraw) becomes your value base, and your bluff base widens to match. The base does NOT drop below the nut class — down to top pair/overpair: per 15.4 there's no medium hand in PLO-6, and a check-raise is exactly the action that produces a bloated pot. If your range carries no nut class at all on that board, don't try to construct a value check-raise — give up the line. This is one layer above the root error (not updating hand strength street by street): read hand strength not just against the board, but against what your own range can actually carry to that board.
+
+**Rule:** Make your value base the best NUT class your range can actually carry to that point — not the "ideal" value hand; if the base would drop below nuts, there is no value check-raise.
+
+### 15.5-EK "Theoretically never a fold" is not a guarantee — especially on blocker-heavy rivers
+
+
+15.5 L6 says a non-nut river call requires villain to have a concrete bluffing range; there's a further layer beneath that. A hand being "never a fold" according to the solver rests on the assumption that villain bluffs at GTO frequency. Real opponents, especially on rivers where they depend on their own blockers (the tendency to bluff only when they hold a "clean" card themselves), systematically under-bluff — meaning the very spots labeled "never foldable," the ones most dependent on blockers, are in practice the spots most exploited from underneath (where calling loses money because villain bluffs too little).
+
+**Rule:** Don't treat "theoretically never a fold" as a guarantee — on blocker-heavy river spots, separately interrogate the real opponent's actual bluff frequency.
+
+### 15.5-EK-2 OOP overuses check-call with top pair/overpair
+
+
+On a board where a bet comes in, the OOP player reflexively continues with a hand that only carries top pair or overpair (no second dimension — no nut redraw, no two-pair/set potential) by check-calling; check-call is the overused, EV-losing middle path in this class. In PLO-6 the correct answer is fold: per 15.4, a hand that isn't a nut and carries no nut redraw doesn't put chips into a bloated pot, and check-raise is exactly the action that produces a bloated pot — a one-dimensional overpair can be neither a value check-raise base (see 15.4-EK) nor a good bluff (it burns its own showdown value while only folding out worse). A check-raise only comes onto the table once the hand gains a second dimension — carries a nut redraw, i.e. stops being a "one-dimensional top pair." This distinction also holds in four-card PLO, but it's sharper in six-card: in PLO-6 the two-pair/set density is much higher, so "top pair/overpair" falls to a lower class than the four-card intuition expects — hold the check-call threshold tighter accordingly.
+
+**Rule:** No reflex check-call with a one-dimensional top pair/overpair — the default in PLO-6 is fold; check-raise exists only if the hand carries a nut redraw.
+
+### 15.6-EK Read villain's leak on two axes, shift your range on that axis
+
+
+What to track once you sit down is which DIRECTION villain deviates in — not a closed list of profiles, but two independent axes. The first is villain's betting range: a player who reflexively fires thin value bets with certain hand categories just because they're easy to play has a weak betting range, so the call value of your marginal hands INCREASES — lower your call threshold. This loosening operates above the base, it doesn't punch through the base: per L6 / 15.6-(7), the requirement that villain have a concrete bluffing range for a non-nut call against a pot bet on the river doesn't go away. The second is villain's reaction to check-raises: against someone who doesn't believe check-raises / over-calls them, keep your own check-raise value-heavy and lower your bluff ratio; against someone who over-folds to check-raises, increase your bluff check-raise frequency. Don't mix the two axes — your call threshold looks at villain's BET range, your bluff check-raise frequency looks at villain's fold rate to a RAISE; don't carry a justification from one to the other.
+
+**Rule:** Don't slot villain into a ready-made profile list; lower your call threshold as his betting range weakens (the river non-nut base still applies), increase your bluff check-raise as his fold rate to a raise rises.
+
+### 15.6-EK-2 Being fast on a borderline hand beats being right
+
+
+A hand you sit stuck on for a long time deciding bet-or-check, by definition, carries similar EV on both lines — burning minutes on it doesn't pay, it just drains bandwidth. Standard opening sizes, c-bet sizes, and routine class decisions should be automatic before you even sit down; save your mind at the table for reading villain and counting frequencies. Automated routine has one more side benefit: it's the one thing that doesn't break down when you're tired or on tilt.
+
+**Rule:** Pick fast and move on for a borderline hand; save your thinking budget for decisions where the EV genuinely diverges.
+
+### 15.7 Flop c-bet: value, texture, and simplification
+
+
+Board texture and hand class are the two main axes of the flop c-bet decision; the nine principles below cover size selection, the value/bluff balance, and practical simplification.
+
+- **Size follows from value.** Start your flop c-bet plan from value, not bluffs: which hands want to put money in for how many streets on this board — their preference determines the size; bluffs adapt to the chosen size. Don't pick a size because "cheap for my bluffs" — if you have no hand that value-bets that size, you don't have a range at that size either. If the solver piles bet-or-check heavily onto one side in a spot (~80-90%, *calibrate*), round to the full range (shrinking the size a notch if needed); if it mixes two sizes at similar frequencies, mostly simplify to one big size. **Rule:** Build the value range first; the value hands pick the size — when in doubt, simplify to one big size.
+
+- **Board texture is the main axis.** The flop c-bet decision starts not from your hand's strength but from whether the board is static or dynamic. On dry, poorly-connected boards you can bet almost your entire range with a single size — since villain's range is weak too, your value threshold drops. As the board gets wetter, both your value-betting threshold and your bluff-betting threshold rise together: a "good but not nut" hand and a weak draw both fall to check. **Rule:** As the board gets wetter, your value AND bluff thresholds rise together — not just the value threshold.
+
+- **The three-street test.** Even if you're the best hand right now on the flop, if your probability of continuing to bet value on the turn and river is low (a redraw-less medium-strength hand), it goes into your check-back range — building a big pot and then getting stuck with a hand you can't bet is worse than realizing the same equity inside a small pot. Test question: "if my card comes, will I be happy or sorry that I bet the flop?" If the answer is "doesn't really matter, I can't bet anyway," the hand is a check-back candidate. **Rule:** Choose your flop bet by "can this hand keep betting across three streets" — not "am I winning right now."
+
+- **Sometimes check back the nuts, then represent them later.** If the board's nuts have a high probability of staying the nuts through the river (paired, monotone, dry ace-high), you need to check back the actual nuts on the flop as part of your range — otherwise your range becomes transparent and villain reads you and plays extra aggressively. There's a cost: you have to occasionally actually represent that checked-back nut hand by raising on the river, or you fall into a "never attacks after checking back" pattern and get read. **Rule:** The cost of checking back the nuts is sometimes actually representing them aggressively later — otherwise the balance stays fake.
+
+- **Polarize on a static board.** This point is the paired/monotone exception to the "board texture is the main axis" point above — that point targets a disconnected-rainbow dry board (like K-8-3r), this one targets a different kind of staticness. The more static the board (paired, monotone, flush/straight impossible), the less your top tier gets caught by villain compared to your lower tiers — your lower tier should be less willing to build the pot, your top tier should bet big without hesitation. The practical result: on a static (paired/monotone) board, polarizing your range as "mostly check, top tier bets big" instead of "almost everyone bets small" pays better. **Rule:** As the board gets more static, split your range into two — mostly check, your strongest bets big; don't wander in the middle.
+
+- **Which blocker, not "do I have one."** When picking a hand for a c-bet bluff, the question isn't just "do I have a blocker" but "which blocker." A card that blocks the top of villain's continuing range (nut draw, nut made hand) is worth far more than a low card that just blocks volume — blocking the top both reduces the hands villain calls/raises most often and eats less of your own hand's equity. **Rule:** When choosing a bluff, ask "which category of range does it block the top of" — not "do I have a blocker."
+
+- **Pure strategy at extreme frequencies.** If a hand class's betting frequency on a board is very high or very low (example threshold ~70/30, *calibrate*), in practice bet your whole range or check your whole range on that board — the lost value is small, but you eliminate the risk of splitting your range wrong. This simplification is especially valuable across multiple tables or a long session; the real loss doesn't come from a frequency error, it comes from building a mixed range unevenly. **Rule:** If the betting frequency on a board is clearly high or clearly low, round it to pure bet or pure check on that board — wandering in the middle produces more mistakes.
+
+- **In an unbalanceable spot, take villain at face value.** Some turn/river spots are excessively mixed even for a solver — in these kinds of spots, human opponents almost never actually play a mixed strategy; they're there with the single hand category that picks that line. Use the same logic on reading villain that you use to simplify your own strategy. **Rule:** In spots that are impossible for a human to balance, villain's bet is usually exactly the hand it represents — sharpen your read accordingly.
+
+- **Betting eagerness depends on the tier above it.** A hand's eagerness to bet depends not just on its own strength but on which tier sits ABOVE it in your range. On a board where a flush is possible, a set's and a straight's eagerness to bet drops, because villain's folding range is already dead against a flush, and the remaining calling range is losing equity against a flush; on a dry board where a flush is impossible, the same set/straight bets much more eagerly, because now they're the top tier. **Rule:** A hand's eagerness to bet the flop is determined not by its own strength, but by the tier sitting above it in your range.
+
+### 15.8 Defending against the c-bet: call, check-raise, float
+
+
+OOP's toolkit against a c-bet — the continuing threshold, check-raise width, and float — is shaped less by individual hand strength than by board texture and villain's continuing range.
+
+- **The defense threshold shifts with draw density.** Your continuing threshold against a c-bet depends not on your hand's absolute strength but on how many better continuing candidates your range has on that board. On a draw-rich board, since your range is full of open-enders and combo draws, scraps like pair + gutshot fold; on a draw-poor board, the same category is the backbone of your defense. The same logic applies to range advantage: the advantaged side plays the same categories more aggressively at the margin, the disadvantaged side gives up earlier. **Rule:** Don't ask "would I call with this hand," ask "how many continuing candidates better than me does this board give me"; the threshold shifts with the texture.
+
+- **Board determines check-raise width.** The width of your (OOP) check-raise range depends far more on the board's texture than on your hand. On monotone and high-card paired boards (like K-K-x, A-A-x), the correct check-raise range shrinks to nearly zero — whatever the nuts are on the flop is generally still the nuts on the river, and IP mostly holds the range/nut advantage. On dry, one-way straight boards the range stays narrow: almost only nuts plus a few sets. On dynamic, draw-heavy two-tone boards and on low/medium-card paired boards, the range legitimately widens to include both value and bluffs. **Rule:** Decide whether to build a check-raise range from board texture first — dry/high-paired/monotone → narrow or zero, dynamic/draw-heavy → wide.
+
+- **Slow-play your most invulnerable value.** Check-raising your most invulnerable, least-exploitable value hand is usually the wrong direction — these hands earn more via check-call, because a raise folds out the second-best hands that would pay you. The check-raise should come from medium-strength value that actually needs protection (second/third set) — but protection only works if the redraw is close to the nuts: the closer the redraw is to the nuts, the more legitimate the check-raise (i.e. the stack-off); if the redraw is weak or dominated, the same hand drops to check-call, and to fold if needed, because raising puts you into a bloated pot against exactly the villain holding the same hand with a better redraw. **Rule:** Slow-play your most invulnerable value hand; reserve the check-raise for medium-value hands that need protection but carry a near-nut redraw — don't raise with a dominated redraw, check-call instead.
+
+- **Don't raise a hand you couldn't call with.** *(PLO-6-adapted — because in six-card almost every hand carries some backup equity nearly all the time, a genuine zero-equity bluff candidate is even rarer than in four-card; the rule therefore becomes more binding in PLO-6.)* When deciding which weak hand to pick for a bluff check-raise, first ask: "Could I also have played this hand as a check-call?" If the answer is no, it usually isn't a raise either — a healthy raising range comes almost entirely from the same pool as the calling range. Since almost every combination in a six-card hand carries some redraw, a hand "too weak to call but good enough to raise" is even rarer than in four-card. **Rule:** Think twice before bluff-raising a hand you couldn't call with — this is a tighter boundary in PLO-6 than in four-card.
+
+- **Weigh the blocker against the continuing range.** When deciding which weak hand to pick for a check-raise bluff, ask not "which card blocks the hand villain would fold" but "which card blocks the hand villain would continue with (call/raise)." An extra suited card or extra combo in your hand is usually valuable not so much for raw equity as for narrowing villain's calling range. **Rule:** When choosing a bluff, weigh the blocker against villain's continuing range, not his folding range.
+
+- **The float opportunity depends on board texture.** In a 3-bet pot, how often OOP checks on the flop (creating a float opportunity) shifts sharply with board texture, and a single question decides the axis: does the board fit OOP's (the 3-bettor's) range? Dry, high-card, static boards are the center of the 3-bet range (AAxx/KKxx/broadway-heavy) — OOP bets there with almost his entire range, and IP's float area narrows. Connected, low/medium-card boards hit the caller's rundowns; OOP checks far more often there, and that's where the float area actually grows. A flush-completing board is an example of the same mechanism, not an exception: OOP also bets often there, because as the 3-bettor he has an equity ceiling coming from higher suited-combo density — the board still fits OOP's range, so the float area still stays narrow. **Rule:** Set your expectation for the float area by how BADLY the board fits OOP's 3-bet range — wide on connected/low-card boards; narrow on dry-high and flush-completing boards.
+
+### 15.8-EK The blocker picks value/bluff in a float, not raw strength
+
+
+**Value/bluff selection starts with the blocker question first.** Which hand you pick as value and which as bluff in a float bet revolves almost entirely around the blocker: between two hands of the same raw strength, the one that blocks villain's nut/second-nut combination bets, the one that doesn't checks. This holds even at strong hands (a blocking top pair bets, a non-blocking top pair mostly checks) — raw strength alone isn't a sufficient filter. **Rule:** When choosing which of two equal-raw-strength hands to float, first ask "am I blocking the combination villain continues with" — put raw strength second.
+
+### 15.8-EK-3 The bet-check-bet line has its own bluff budget
+
+
+**The bet-check-bet line has its own bluff budget.** The number of bluffs you put into a bet-flop, check-turn, then attack-again (bet-check-bet) line is naturally low, because this line reads as if it comes from a narrow set of real hands ("I bet the flop but gave up on the turn"). If you stuff too many bluffs into this line, it loses credibility and an experienced villain calls or raises you often. **Rule:** Cap the number of bluffs in the bet-check-bet line by the number of combinations you actually play that line with for value too — the line carries its own budget, think of it separately from your overall bluff frequency.
+
+### 15.8-EK-4 Spend the weak backdoor now, save the nut backdoor
+
+
+**Spend the weak backdoor now, save the nut backdoor.** If you have two comparable backdoors (flush draws) in your hand — one going to the nuts, the other weak — spend the weak one as bluff fuel on the flop, and check back the one going to the nuts. Reason: when a turn/river comes that completes the flush, having genuine nut combinations in your check-back range makes that range credible and keeps villain from stacking off wide; spending the weak backdoor on the flop doesn't break this protection, because even if that card had completed, it would have been a second-class hand anyway. **Rule:** Save the backdoor that goes to the nuts of the two, burn the weak one now — don't lump the two together and pick randomly.
+
+### 15.8-EK-5 On a paired board, trips: unblock first, then kicker
+
+
+**On a paired board, trips: "unblock" first, then kicker.** *(plo6-adapted)* On a high paired board (K-K-x, Q-Q-x), when choosing which trips to bet, look at what it blocks before you look at the kicker's raw strength: the hands that will pay off a value bet are villain's continuing overpairs (AA/KK), so a kicker that does NOT hold those cards — i.e., does NOT block villain's continuing range — is better; if the kicker takes their call away from them, the bet gets paid off less. This is the value side of 15.8's blocker rule: with a bluff you want to block villain's continuing range, with value it's the opposite. In PLO-6 ask this question but don't ignore the kicker entirely: because the number of combinations per player rises with six cards, villain hits trips matching the board pair noticeably more often than in four-card, so the kicker war is a real risk. The kicker threshold required to bet *(calibrate)*. **Rule:** When choosing which trips to bet, first ask "does my kicker block villain's continuing AA/KK overpairs" — pick the one that doesn't; in PLO-6 also factor in the chance of a kicker war, don't ignore the kicker entirely.
+
+### 15.8-EK-6 The rank of the board pair is inversely proportional to aggression
+
+
+**The rank of the board pair is inversely proportional to aggression.** On paired boards (like 6-6-x, Q-Q-x), IP's float aggression is inversely proportional to the rank of the pair on the board: the lower the pair, the lower the chance villain holds trips matching that pair and the weaker their range, so IP can be aggressive with almost their entire range. As the pair gets higher, the chance villain connects to that card (especially from the AA/KK range that always continues preflop) rises, IP's betting frequency drops and selectivity increases. **Rule:** The lower the rank of the board pair, the wider you go on the float; as the rank rises, tighten up.
+
+### 15.8-EK-7 Bet the hand under redraw threat, hold back when the threat is low
+
+
+**Bet the hand under redraw threat, hold back when the threat is low.** On flush and straight boards, sets and two pair mostly get bet because they're under redraw threat from a straight or flush draw arriving on the turn — if it hits, their risk of dropping to "second class" is high. Completed flushes get held back more often on these boards, because they rarely get worse; a hand with low future-deterioration risk gets little return from betting it immediately, so it can sometimes be held back and evaluated on a later street. **Rule:** Bet now the hand that carries future redraw-losing risk; sometimes hold back the low-risk hand.
+
+### 15.8-EK-8 Bet often against the population but don't go thin — the two don't go together
+
+
+**Bet often against the population, but don't go thin — the two don't go together.** In float spots (especially on flush and low straight boards), theory recommends a very thin value bet, but real opponents, after floating the flop, generally check-call with a thicker and less balanced range. This means you can't go as thin on the river as theory suggests, but you can bet more often than theory on the flop/turn, because most opponents don't defend enough in these spots. **Rule:** In these spots, bet often against theory, but don't go as thin as theory implies on the river — don't apply both at once.
+
+### 15.8-EK-9 With only a weak blocker, delay the bluff to a later street
+
+
+**With only a weak blocker, delay the bluff to a later street.** For hands carrying only a single weak blocker (like a low flush card) with no other equity, it's generally cheaper to check the flop and delay the first bluff to the turn or river rather than bet immediately: if you lack the strength to carry two streets on the flop, rather than firing a bluff on one street and getting folded on, it's more reliable to enter a one-shot bluff on a later street where villain's range has narrowed further. **Rule:** With only a weak blocker and no extra equity, make the bluff on a later street, not on the flop.
+
+### 15.9 The probe opportunity — when villain checks the flop, the pot is yours
+
+
+When villain in position checks the flop instead of c-betting, he's partly capped his range; this is where OOP earns the right to bet on the turn (the "probe"). On a dynamic board (no straight, no flush, no pair — top set is nuts), play the probe with a single big size (around pot): these boards have a lot of draws to chase, and both value and semi-bluffs want to keep continuing expensively; adding a small size doesn't add anything meaningful to EV but makes execution harder. As the board's nut structure locks up (as a straight/flush/pair arrives), frequency and size change — choose the board class first, then the hand.
+
+**Rule:** Start your probe strategy from the board class, not the hand: dynamic board = single big size; locked board = separate plan.
+
+### 15.9-EK Not the sizing scheme — the hands you put into it
+
+
+If you bet the same value-bluff range for a third-pot instead of a pot-size bet, the math collapses: the small bet gives villain massive pot odds, the same number of bluffs is now a huge overbluff, and villain punishes you by calling with everything. Different sizing schemes produce similar EV to each other; the real difference is putting the hand that size can carry into each size. Small size belongs to "combo" hands that dominate villain's folds; big size belongs to polarized value + bluffs.
+
+**Rule:** Which sizing scheme you pick is secondary — you must rebuild each size's value threshold and bluff ratio to match that size.
+
+### 15.9-EK-2 The probe threshold moves with the turn card
+
+
+The same hand takes different action on a different turn card. If the turn is an overcard that hits the range of villain who checked the flop, your value threshold rises: a two-pair class you comfortably bet on a low turn drops to check-call on an overcard turn. If the turn hits your side (a low card that doesn't connect to villain's check-back), the threshold drops and frequency rises. The same logic applies on defense too: on overcard turns villain fires a delayed c-bet more often and generally with a smaller size — on those cards, after your check, you also lower your absolute-strength threshold and defend with weaker hands. What widens defense is frequency, not size: as size grows, the defense percentage narrows.
+
+**Rule:** In a probe decision the first question isn't the hand: "whose range did this turn card strengthen?"
+
+### 15.9-EK-3 The two-street value test — pot-pot math
+
+
+The range that calls your bet is stronger than the range before the bet; after two big bets, the nut ratio in villain's continuing range is several times what it started at. This is why, on a board with straight potential, a set can't go pot-pot: once you've pot-bet the turn and pot-bet the river too, you're now mostly paying off a straight. Hands like this either take two streets with a small size or stop at one street with a big size. Before firing a bet, classify the hand by street: "how many streets of value can this hand get at what size?" The exact location of the thresholds moves with the format *(calibrate)*.
+
+**Rule:** Define the value threshold by street: a hand that can't go pot-pot either shrinks its size or goes quiet after one street.
+
+### 15.9-EK-4 The probe check-raise — dry nuts bet, nuts with a redraw check-raise
+
+
+In a probe spot, split your strong hands in two: a set/two pair with no extra equity mostly bets (take its value now; bad rivers will demote the hand), a set with a redraw or combo draw goes to check-raise. The invisible benefit of this is range protection: if your check-raise range has no hand that catches the board pairing, you're capped on pairing rivers and villain crushes you by pot-betting every pairing card. Build your check-raise bluffs with the same symmetry: add pair+draw and non-flush high-card bluffs so you have coverage on every river after a check-raise.
+
+**Rule:** Bet the dry nuts, check-raise the nuts with a redraw — and keep a hand in your check-raise range that catches pairing rivers.
+
+### 15.9-EK-5 An out's value is whether it's bettable when it arrives
+
+
+In a probe decision with a weak two pair, the raw out count misleads: most of your "improvement" outs are cards you can't bet even when they arrive — they lock up the board or hit villain's range better. The concrete question before betting: "on which river cards can I fire the second bet?" If the answer is roughly fewer than a handful of cards, the hand is a check-call, not a bet. This is the mirror image of 15.5 L1: there a turn plan was required for a call, here a river plan is required for a bet.
+
+**Rule:** Justify your probe value bet with the number of bettable rivers — if you'll go quiet when the out arrives, go quiet now too.
+
+### 15.9-EK-6 Flush + straight on the same board — play polar, the straight doesn't bet
+
+
+If the board has both a flush and more than one straight, the probe goes polar: the value range is essentially flushes, bluffs line up around them, a single big size is enough. The straight has no reason to bet — it draws dead against the flush, and it already crushes everything except the flush and a higher straight, so the hands that pay it off are almost only hands that beat it. Two pair has no reason either. Your frequency drops and you go passive; that's not weakness, it's the geometry the board imposes. The small size only comes back if the flush arrived fresh on the turn AND you have the set/two pair advantage — this is the field version of range advantage and nut advantage not being the same thing.
+
+**Rule:** On a flush + multi-straight board, probe = flushes + bluffs, single big size; the straight and two pair sit on check.
+
+### 15.9-EK-7 The number of straights that arrive picks the bluff
+
+
+If only one straight arrives on the turn, the board still plays dynamic: pick your bluffs by equity (draws), blocker is secondary — villain rarely holds that straight. If three straights arrive, the equation flips: your value range is straights, so your bluffs need to carry a straight blocker too. On rainbow and dry boards you have to dig for the bluff — a gutshot plus future river blockers is enough material; failing to find a bluff on these boards makes your range value-heavy and gives villain a free fold. Don't forget the single-street bluff either: betting the turn and giving up on a river where your blockers get worse is a legitimate line.
+
+**Rule:** One straight = equity bluff, three straights = blocker bluff; on a dry board, dig for the bluff — if you can't find one, you're value-heavy.
+
+### 15.9-EK-8 Your probe range is the mirror of your check range
+
+
+If you move every medium-strength hand into the probe, your check range stays trash + trap-free; villain crushes this with a delayed c-bet and you're forced to fold after every check. When choosing your probe, write both lists at the same time: the ones that go to bet and the ones that stay on check and defend. Deliberately leave strong hands in the check range — both check-call and check-raise material; without them you get read as "check = weak."
+
+**Rule:** When choosing your probe, look at what you're leaving on check: if no defensible hand remains in your check range, you're probing too much.
+
+### 15.9-EK-9 Continue with almost everything against a small probe
+
+
+When you're in position and face a small (around third-pot) probe, your fold threshold is very low: at the pot odds given, pair, gutshot, overcard — nearly all of it continues; the only hands that fold are the barest ones *(calibrate)*. Don't get uneasy asking "if I'm calling this wide, how will I ever punish a bluff" — a small bet is already an equity push, not a bluff, and you respond with almost all of your equity too. Against a big probe, though, it's normal to fold extra into OOP's polarized range — leave behind the blocker-poor bluff-catchers.
+
+**Rule:** As probe size shrinks, defense widens: against a small bet, folding is the exception; against a big bet, it's discipline.
+
+### 15.9-EK-10 Raising a probe narrows villain's range to the hands that beat you
+
+
+Raising a probe with a draw looks appealing — you fold out better draws — but the flip side of the coin: the calling range is now concentrated in hands that beat you, and you've pushed villain's dominated bluffs out of the pot. Plain call is usually superior: it keeps bluffs in and carries your position to the river. Reserve the raise for two classes: (1) value + strong redraw, (2) a semi-bluff with a key blocker that hits villain's value range. Raise-folding a medium draw without a blocker is the composite of two mistakes: you overpay, and even in the best case you've chased off a bluff.
+
+**Rule:** Against a probe, raise is the exception and call is the default: raise comes either with value plus a redraw, or with a key blocker.
+
+### 15.9-EK-11 Against a polarized bet, the blocker chooses the call, not hand strength
+
+
+When villain's line tells a polarized range (probe-pot, pot-pot and the like), most of what you hold is a bluff-catcher, and card selection — not absolute hand strength — decides which one you call with. The good call: a hand that blocks villain's value combos and doesn't block his bluff candidates. The worst call: a hand that blocks villain's bluffs — even though it feels like "I'm at the top of my range." A third condition on top of 15.5 L6's two: a bluff range exists, you beat it, AND you don't block it.
+
+**Rule:** When choosing a bluff-catcher, the question isn't "how strong is my hand" but "which cards am I holding."
+
+### 15.9-EK-12 A read that lowers the thin-value bar also widens the bluffs
+
+
+The read "villain has no nut, I can raise with the second/third nut" is a half-decision on its own: if you widen the value range while leaving the bluff range fixed, your line reads value-heavy and only the hands that beat you pay you off. The read applies symmetrically — if it licenses thin value, it should also raise your bluff count in the same spot. The reverse also holds: a single showdown doesn't overturn a read. If villain shows up bluffing with his best bluff combo, that doesn't mean "so he bluffs" — it means "so he bluffs with the right combos"; your underbluff read stands.
+
+**Rule:** Every read that lowers the value threshold should also raise the bluff count; don't change a read on a single showdown.
+
+### 15.9-EK-13 The over-fold insurance — not a hundred percent, roughly four-fifths
+
+
+Even when you read "villain can't have a bluff in this spot," don't fold your entire range; keep the top slice with the best blockers in the calling range and settle for folding roughly four-fifths *(calibrate)*. Two reasons: if the read is wrong, your loss stays capped; and the hands you call test the read by reaching showdown — a player who always folds never learns he was wrong. Over a long session, that information is itself EV.
+
+**Rule:** Even on an underbluff read, keep your range's best calls alive: cap the over-fold, and buy the information.
+
+### 15.9-EK-14 If you only lose to a check-raise, bet — but lower the size
+
+
+When villain checks on the river after a probe, two questions: am I beating his check-call range, or do I only lose to a check-raise? A hand that beats all of his check-calls is usually a bet — checking out of fear of "getting raised" is giving away free equity from the hands that would pay you. The second rule balances this: if the range you're value-betting is wider than the range that can call that same bet, you're inviting villain to slow-play and check-raise you; in these spots lower the size (half pot) — but not to deter him, for the cost: a small bet gets check-raised MORE OFTEN (bluff-raises get cheap, and a small size already announces a wide/capped range), but when the raise comes you pay less for it and can continue with more of your range.
+
+**Rule:** If you beat the check-calls, bet; but if your value range is wider than the calling range, shrink the size — a small bet gets raised more often, but the raise punishes you less when it comes.
+
+### 15.10 Resolve the mix with categories, not with a dice roll
+
+
+If the solver mixes a hand class 60% bet / 40% check on the turn, don't try to imitate that combo by combo — you won't hit the frequency and you'll burn bandwidth at the table. Split the class by side-equity instead: route the nut-redraw versions (nut flush draw, nut open-ender) to check and check-raise, and bet the naked or non-nut-draw versions. You'll land on roughly the right frequency on your own, the class is represented on both lines, and you'll know in one second at the table what each combo is doing. The same pattern works across probe, delayed c-bet, and check-raise ranges alike.
+
+**Rule:** Turn the frequency mix into a category: the nut-redraw slice checks (-raises), the rest bets — no dice, no memorization.
+
+### 15.10-EK Pick one size, don't try to balance two sizes at the table
+
+
+Even when there's theoretically a small EV difference between two different bet sizes in a turn/river spot (e.g. half pot + pot), executing both at once without confusing which hand goes to which size is hard in practice and carries the risk of accidentally exposing your hand. Picking one size costs a small theoretical EV loss but frees your mental capacity for hand reading and villain profiling. If the usage ratio of the two sizes in a spot is very lopsided (one is only a small slice of the other), dropping the minority size entirely and moving to one size is a reasonable simplification.
+
+**Rule:** Instead of trying to balance two sizes in real time at the moment of decision, assign the spot a single default size in advance.
+
+### 15.10-EK-2 A draw-heavy board raises the threshold, not the need for protection
+
+
+As a board gets more draw-heavy, the extra equity that hands like a weak two pair or a medium one pair need to bet goes up — not down. The common reflex is "the board is wet, I need to protect my hand, bet"; but as the board gets more draw-heavy, villain's range also polarizes toward the nuts or a strong draw, and your medium-quality hand's relative edge against a bet gets thinner. In six-card PLO this effect is more pronounced than in four-card, because more combinations reach a nut or a nut draw.
+
+**Rule:** As the board gets more draw-heavy, the "medium-good" hand's check range widens and its betting range narrows — notice that this moves opposite to the protection reflex.
+
+### 15.10-EK-3 The purpose of slow-play isn't catching a personal bluff, it's protecting your range
+
+
+The real function of leaving a portion of a hand class's strong combos to check-back isn't "catching a bluff on the river" — it's stopping villain from making a thin value-raise or value-bet on later streets with combos BELOW that hand class. The combo that checks back protects your entire range, not just itself. This is why, when splitting a class into bet/check, it's more correct to route to check not the STRONGEST combos, but the ones that GAIN THE LEAST from betting (that lose the least EV when checked) — this way the value density of the betting range is preserved.
+
+**Rule:** Choose the combo that checks back by the question "which one gains the least from betting," not "which one is strongest."
+
+### 15.10-EK-4 Find the thin-value threshold by counting, not by feel
+
+
+The practical way to tell whether a borderline hand (weak two pair, thin trips, etc.) can be value-bet for a given size is to roughly count how many combinations beat you in the range villain calls that size with — what matters is your relative ranking within villain's CALLING range, not absolute hand strength. As the size shrinks, villain calls wider, and this threshold gets more sensitive; the exact percentages vary by table *(calibrate)*, but the method is fixed: first list what villain calls that size with, then see where your own hand ranks in that list.
+
+**Rule:** Make the thin-value decision with the question "where do I rank in villain's range that calls this size," not "is my hand strong."
+
+### 15.10-EK-5 Range advantage changes with street order — a flop read doesn't carry over automatically
+
+
+When the same board texture completes in a different order (did the nut arrive on the turn, or the river), which side holds the range/nut advantage can change fundamentally — the read of who's ahead on the flop doesn't carry over automatically to the next street, it has to be recalculated on every street. In six-card PLO this swing is more violent than in four-card: a completing card spawns far more new nut combinations in both sides' ranges, because the number of two-card combinations selectable out of six cards is many times greater than out of four. This is why carrying the assumption "I was ahead on the flop" into the turn/river is a particularly risky habit in six-card.
+
+**Rule:** Ask "who holds the range advantage right now" from scratch on every new card — even the ranking itself can flip from one street to the next.
+
+### 15.10-EK-6 Choose the size by which tier you're ahead in, not your range's average strength
+
+
+The choice of bet size shouldn't rest only on "is my range strong overall" but on "in WHICH TIER of my range do I actually have the edge." If you're even with villain at the top, over the nuts, but you have a big edge in the middle tier (one pair, weak two pair), choosing a small-single size instead of a big/polarized size protects that middle tier and converts it into value; going to a big size only picks the size the nuts want and fails to put the middle tier's edge on the table. In six-card PLO the nut tier is already more crowded than in four-card, so skipping the question "which tier am I actually ahead in" and going straight to a big size is a mistake carried over from four-card habit.
+
+**Rule:** Choose the size by which tier you actually have the edge in, not your range's average strength.
+
+### 15.11 On an unexpected line, which hand is really there
+
+
+If villain takes an "unexpected" aggressive line (like a bet in a spot that theoretically has no lead/check-raise range), first set your own hand aside and ask "which hand class actually WANTS to take this line." The answer is almost always one of two extremes: either pure air (a hand that sees it can't win anything and says "let me try") or one narrow value combo; the middle tier (medium-strength hands that could check-raise but didn't) is nearly empty, because those hands already prefer the normal line (check-raise, bet value twice).
+
+**Rule:** When you see villain take a line he "shouldn't" take, don't count your own hand — count the hand classes that would actually choose that line; if the count is low, tighten your fold threshold.
+
+### 15.11-EK Value grows, bluffs don't — the river underbluff mechanism
+
+
+When a river card completes a large part of the board (multiple straights/flushes arrive), intuition says "now everyone bluffs," but the reality is usually the opposite. The reason: the value range grows proportionally off that card, but the number of BLUFF candidates doesn't grow at the same rate — being a bluff candidate requires both "my hand is now worthless" and "I must have plausibly arrived at this hand on earlier streets" at once, and that's a rare intersection. The result: the value:bluff ratio that pot odds demand can't be hit, and the spot is structurally underbluffed. In six-card the combination pool is richer, so this squeeze may ease somewhat, but the mechanism stays the same *(calibrate)*.
+
+**Rule:** Suppress the reflex to raise your bluffing frequency on a "lots completed" river — count separately whether the value range grew proportionally and whether the bluff candidate count ACTUALLY grew.
+
+### 15.11-EK-2 When linearity collapses, the blocker takes over
+
+
+There are two methods for choosing a river bluff: linearity ("I'm at the bottom of my range, I have no showdown value, so I bluff") and blocker selection ("which combo cuts villain's calling range the most"). Linearity only works if it's actually possible for villain to reach this river with a hand that has no showdown value; if villain almost always arrives with at least something like a pair/gutshot, linear logic collapses and the selection must shift entirely to the blocker. In six-card games even the bottom of the range carries showdown value more often, so blocker-first selection is needed more often than in four-card.
+
+**Rule:** Before choosing a bluff, ask: "Can villain actually arrive at this river with a hand that has zero showdown value?" If the answer is no, make the blocker the selection criterion instead of the bottom of the range.
+
+### 15.11-EK-3 Calling the turn while banking on a future blocker — the fallacy test
+
+
+On the flop, a blocker can justify a call because there are still multiple streets ahead and that blocker carries the value of a future bluffing opportunity. On the turn (with only one card left) this logic collapses: think of the hand as if it did NOT hold the blocker card — if the call is a clear fold without it, it's a fold with the blocker too. The blocker's "maybe I'll bluff with this on the river" potential is not big enough to make the turn call +EV on its own; this distinction is even sharper in the six-card game, because a single card's blocking power holds a smaller share of a fifteen-combo range than it does in the four-card game.
+
+**Rule:** On a call decision with only one street left, ask "would I still call without this blocker" — if no, fold with the blocker too.
+
+### 15.11-EK-4 Resisting the trap urge with a no-redraw nut
+
+
+When you catch the nuts with no redraw on the turn (e.g. a bare straight, no additional draw), the urge to "set a trap — play small and lure villain into an aggressive mistake" is tempting, but it's usually wrong. Reason: other parts of your range already hold check-raise/slowplay hands — this hand doesn't need to sacrifice itself to fill that gap — and since there's no redraw, there's nothing extra to win on a later street. But don't skip the PLO-6 note: the question here isn't "does villain pay now or later" — the real risk branch is a raise from a villain holding the same straight WITH a redraw, and the loss on that branch is asymmetric (a chop at best, the wrong side of a freeroll at worst). So don't trap — bet, but with a size that doesn't bloat the pot to stack-off dimensions; if a raise comes and you have no redraw, don't continue (15.5-L4: "in the six-card game, don't get stacks deep with a bare nut straight and no redraw on the turn"; 15.6-(6): "a no-redraw nut on the turn = call, a redraw is required to raise").
+
+**Rule:** With a no-redraw nut plus a check-raise range that's already stocked elsewhere, don't try to trap — bet, but not at stack-off size; if raised with no redraw, don't continue. Find your trapping inventory somewhere else in your range.
+
+### 15.11-EK-5 Sizing sets next street's blocker window
+
+
+Choosing a small size on the turn isn't just "take less risk today" — by keeping the SPR high, it keeps blocker-based maneuvering (thin value, selective bluffs) alive on the river. If you bet big on the turn and drop the SPR, the river is usually left with jam/fold as the only option, and the fine-tuning power of blockers is lost. The decision to "bet small with this hand across two streets" is often the strategic choice that "lets my range's nuts still maneuver on the river," not something explained only by the strength of the hand in front of you right now.
+
+**Rule:** When choosing your turn size, look not only at today's hand but also at the question "how much blocker-usable room does this size leave me on the river."
+
+### 15.11-EK-6 On the river, "what percent do I beat" picks the bet
+
+
+On the river against a pot bet, villain continues with roughly half his range; the arithmetic of this means a pot-size value bet needs, as a baseline, to beat roughly three-quarters of villain's range — in practice raise risk and blockers squeeze that threshold even tighter (calibrate). Work the count backwards: starting from the top class and counting down, ask "what percent, in total, are the hands that beat me?"; a rough estimate is enough, the point is not to fire pot far past the threshold. As you approach the threshold, a small size becomes higher-EV than pot; but if you never use a small size on this line, stay at pot so as not to give away your hand — if the hand can still bet at all, the size alone doesn't shrink. In the six-card game villain reaches the nuts far more often, so the same absolute hand strength loses more often; recalibrate the thresholds against PLO-6 frequencies.
+
+**Rule:** Bet big when comfortably ahead, shrink as you approach the threshold (if that size exists in your scheme), check once you've crossed it.
+
+### 15.11-EK-7 On a checked-down river, IP picks bluffs from the bottom of its range, OOP from blockers
+
+
+On the river after a checked-down hand or a missed turn c-bet, position changes the bluff-selection logic. The in-position player generally picks bluffs from the VERY BOTTOM of his range (the hand with the lowest absolute showdown value), because the OOP range facing him is wide and mostly air — folding out a wide range in bulk is the priority. OOP, on the other hand, picks bluffs by blocker quality, because real showdown value sits inside his check-call range, and pushing out villain's specific value combos requires the right blocker. When this distinction is missed, OOP also picks bluffs by IP logic (by absolute hand strength alone), and a hand that holds a blocker gets wasted.
+
+**Rule:** On an IP river bluff, ask "which is my weakest hand"; on an OOP river bluff, ask "which is my best blocker" — the two are not the same question.
+
+### 15.11-EK-8 "Never bluffs" is a warning for a bluff-raise, not a reason
+
+
+A check-raise bluff's profitability doesn't come from beating villain's bluffs — it comes from being able to fold villain's VALUE hand. The logic "villain never bluffs here, so I can't call, might as well turn it into a raise" backfires: if villain genuinely never bluffs, this is a WORSE spot for a bluff-raise — folding out hands that were already going to lose to you (his bluffs) contributes nothing to you, all of your gain depends on being able to break his real value hand, and a villain who "never bluffs" usually doesn't let go of his value either.
+
+**Rule:** Make the bluff-raise decision based on whether villain will fold his value hand, not on how often villain bluffs.
+
+### 15.11-EK-9 When splitting a hand class, write the blocker combo to check, the blocker-less combo to bet
+
+
+When splitting a borderline hand class in two (bet or check) — here "blocker" means a card that removes combos from villain's VALUE/calling range — putting the combos that carry that blocker into the CHECK (check-call) range and the ones without it into the BET range is a balancing shortcut. The logic looks backwards but works: the blocker-holding combo is a better bluff-catcher in a check-call, because you're the one holding villain's value combos — when he bets, the value share left in his range shrinks and the bluff share grows relatively. (The gain doesn't come from villain "playing wider" against your specific combo; villain doesn't know which combo you hold, the gain comes purely from the composition of his range.) The combo without the blocker gets paid more often, since it unblocks villain's calling range — write that one to bet; the rationale is calling frequency, not fold-inducing power. This split applies within a made-hand class where the distinction has already been made; bluff selection is governed by 15.11-EK-7 / EK-12.
+
+**Rule:** When splitting the same made-hand class, write the combo that blocks villain's value/calling range to check-call (a better bluff-catcher), and the one that doesn't to bet (gets paid more often) — not the intuitive opposite.
+
+### 15.11-EK-10 A value-bet blocker blocks villain's hand; a bluff-raise blocker unblocks villain's bluff
+
+
+When value betting, you want to block the combos in villain's range that beat/chop you. But when bluff-raising (a check-raise bluff), the logic reverses: block villain's VALUE combos, but where possible UNBLOCK villain's BLUFF combos — because blocking a bluff of his that was already going to fold gains you nothing, it only reduces the chance that more folding bluff combos remain in his hand. The real profit comes from getting him to fold the value combos he holds.
+
+**Rule:** On a value bet, block the hands that beat you; on a bluff-raise, block villain's value but leave his bluffs unblocked.
+
+### 15.11-EK-11 River donk architecture — a test of IP's value comfort
+
+
+The basic question that determines whether OOP (out of position) leads (donks) into the river isn't "is my hand strong" — it's "can IP (in position), on this river, still comfortably fire a value bet with his TYPICAL value hands (a set, top pair, etc.)?" If IP can still bet, OOP doesn't need to lead — check-call is enough, because value will come from the other side anyway. But if the river card DEVALUES IP's value hands (a third flush card arrives, or the board pairs and the set advantage shifts to OOP), IP becomes reluctant to fire his own value, and it's exactly in that gap that OOP's lead range gains EV.
+
+**Rule:** Build your river lead range not on your own hand strength, but on whether that river still lets IP fire his typical value hands — if IP is still comfortable, there's no need to lead.
+
+### 15.11-EK-12 The blocker-direction test carries over to a river bet/raise
+
+
+The test used for a preflop squeeze — "does this card remove combos from villain's CALL range or his FOLD range" — carries over identically to picking a river bet/raise. If the card in a bluff/raise candidate's hand removes hands that villain was already going to fold (his FOLD range), that card doesn't strengthen the bluff — it just grows the paying share left in his range. The card you actually want is one that removes combos from villain's PAYING/value range; ask this before asking "which flush/straight am I blocking."
+
+**Rule:** When picking a river bluff/raise, first ask "does this blocker remove combos from villain's FOLD or his CALL range" — removing from his call strengthens the bluff, removing from his fold weakens it.
+
+### 15.12 Why multiway betting frequency and size shrink
+
+
+In multiway pots, betting frequency and size both shrink because as the number of villains rises, the hand-strength threshold required for a "profitable bet" rises too — with more ranges simultaneously able to beat you, the odds that an average hand is good enough to bet drop. A small size partly solves this: as size shrinks, it becomes possible for weaker hands to fire the bet +EV too, and that raises betting FREQUENCY — high frequency, in turn, puts every villain in between into a "sandwich" at the same time and lets you collect cheap equity. Result: in multiway pots, a small-size + high-frequency combination generally collects more of the pot share than big-size + low-frequency.
+
+**Rule:** Lowering your bet size in multiway isn't weakness — it's the tool for raising frequency and squeezing every villain at once; think small-and-often instead of big-and-rare.
+
+### 15.12-EK The sandwich effect — individual folds rise, total fold equity falls
+
+
+In multiway pots, the first player to act's bet/raise forces every villain in between to fold under threat from both sides at once — the one BEHIND him (who hasn't decided yet) and the one IN FRONT of him (who has already acted but is still committed to the pot) — this is called the sandwich effect. That's why EACH VILLAIN INDIVIDUALLY folds more often: because two villains share the responsibility of folding each other out, even a hand that would call comfortably heads-up can fall below the fold threshold in a multiway pot. But this does NOT mean "bluff more in multiway": for the bluff to hold, ALL of them have to fold AT THE SAME TIME, so total fold equity is LOWER than it is heads-up (two villains × 60% individual fold ≈ 36% total). Because equities run close in PLO (15.0: "the fold-equity doctrine weakens in PLO"), the gap widens further. What the sandwich effect gives you isn't bluffing frequency, it's bluff SELECTIVITY: who (the most squeezed villain, with the narrowest continuing range) to pressure and with what size. Range advantage and nut advantage are separate things here too.
+
+**Rule:** When acting first in a multiway pot, calculate the PRODUCT of individual fold frequencies, not the frequencies themselves — total fold equity is lower than heads-up; the sandwich is a reason to choose who/what size to pressure, not to raise bluffing frequency.
+
+### 15.13 In a 3-bet multiway pot, the player in the middle bets least
+
+
+When a preflop 3-bet gets two (or more) callers, postflop the first player to act generally has a WIDE check range: donk-leads are close to nonexistent, medium-strength hands check without bloating the pot, and the nuts are held back there for a check-raise too. So that check isn't a weakness signal — it's nearly the entire range. Against this wide check, the player caught IN THE MIDDLE (the 3-bettor, with a caller still behind him) is structurally the one who bets least: the range in front of him is holding a check-raise inside it, the caller behind him is still live, and since a 3-bet pot already runs at a low SPR (15.2: "3-bet pot → SPR≤1"), bloating the pot with a medium hand commits him against his own interest — in PLO-6 a medium hand doesn't put chips into a bloated pot (15.4). The bet mostly comes from whoever acts last (in position).
+
+**Rule:** In a 3-bet multiway pot, if you're the player "in the middle," by default you're the one who bets least — the check in front of you isn't weakness (the whole range is in there, check-raise included); demand an extra reason to bet (blocker + equity), "I 3-bet" alone isn't enough.
+
+### 15.13-EK Sandwich-call danger — +EV heads-up, -EV multiway
+
+
+A call against a villain's shove that computes as +EV, even slim +EV, heads-up is a completely different decision while a third player is still to act. The reason is NOT chip asymmetry: the amount you're risking is the same call on either branch, and if the third player also comes in, his chips get added to the pot, so you win MORE when you win, not less. The reason is range: the villain who overcalls you has a range that is narrow, strong, and correlated with yours (in PLO you're often drawing to the same nuts, and on top of that your cards remove each other's outs), meaning your equity share in the three-way pot drops below even the ~1/3 threshold that's already lowered by dead money. "Minority equity" alone isn't disqualifying — roughly 33% with roughly equal contribution is enough in a three-way pot; what disqualifies it is the correlated-strong overcall range. In a tournament, bustout/ICM adds the real asymmetry on top of this: if you're eliminated, you lose the rest of your run too. That's why, while a third player is still to act, the call/shove threshold has to be held noticeably tighter than the heads-up threshold.
+
+**Rule:** When deciding whether to call a shove, ask "is a third player still going to act" before the equity math — if he's live, tighten the threshold noticeably from the heads-up one; the reason isn't the chips you're risking, it's that the overcall range is narrow/strong and correlated with yours, plus bustout/ICM.
+
+### 15.13-EK-2 In a dry side pot, don't hide the nuts — play big
+
+
+When a villain is all-in and a "dry" (no extra money added) side pot forms between the remaining two players, playing slow (setting a trap) with the nut hand at a low SPR generally doesn't work. Reason: for the side-pot villain to beat you with a bluff, he has to get past both the all-in player's hand and your hand at the same time — a double condition that rarely holds up on a single bluffing line. So in a dry side pot at low SPR, playing big generally brings more EV than hiding the nuts; a hiding plan only makes sense if the SPR is high and the side-pot villain genuinely has room to maneuver.
+
+**Rule:** In a dry side pot at low SPR, don't hide the nuts — since villain's hand has to get past two hands at once to beat you, playing big is almost always better.
+
+*Root-error link: B0 c.10 ("bare AA in PLO = one pair") extended to draws and depth — a pot bloated with a non-nut hand is the PLO form of the root error.*
 
 ## Chapter 16 — The Mental Spine: Bustout/Re-entry, Tilt, Autopsy, Series Plan
 
@@ -1784,6 +2414,87 @@ The B17 module itself doesn't change; this appendix only gives an address.
 
 *(Note: since B17 is the WSOP Online module, this appendix belongs there; it doesn't change the B0-B16 live doctrine.)*
 
+### 17.4-EK-2 The offsuit bluff 3-bet floor maps to the lowest value pair — depth gate first: at 56bb, 17.4's bluff stays SUITED
+
+
+**Depth gate (this first):** this floor rule applies only to nodes where the offsuit bluff 3-bet is genuinely in play — the band where the response to a shallow non-all-in 3-bet collapses to jam-or-fold, playability resets to zero and only the blocker counts (B31.13, roughly 25bb — HU-derived, but the mechanism is depth: the response collapsing to jam-or-fold), and the ICM seat of the covering BB (B12.2-EK-2: "bluff from the LOWEST offsuit"). 17.4's own node (~56bb) is NOT that band: 17.4 explicitly defines the bluff side as "good blocker + **playability**," and the table's bluff column is suited start to finish (A5s–A2s, K9s–KTs, QTs, J9s, T9s, 87s). The direction is fixed in the book: suited when deep, the same ranks' offsuit when shallow (B31.13; same direction in B4.7/B14.2 — as you drop out of the band, the first thing the table drops is the suited-connector 3-bet bluff). In the band in between, offsuit trash does NOT step in — the bluff slice narrows instead: B14.1's 40–60bb row says "nearly cut" for the bluff 3-bet, and 17.8 Mode B also says "bluff 3-bet drops, value rises." If the rule is applied to 17.4 literally, the lowest value pair is **99** vs CO/BTN and **TT** vs MP/HJ, so the floor would fall to 9x/Tx and K9o/Q9o/J9o bluff 3-bets would become legitimate — but 17.11 raises even the BTN **OPEN** off the same offsuit trash (Q9o, J9o). So at 56bb this entry doesn't select bluff material — it only gives an address.
+
+When you ARE inside the band (the shallow jam-or-fold node / the covering BB seat), the construction anchor: find the lowest value 3-bet pair in your range — offsuit trash stops at that card's rank. If value ends at JJ, the offsuit bluff ends at Jx; T9o/T8o don't make the list. On top of that, the ladder principle: use Ace-combos slightly more often than King-combos, King-combos slightly more often than Queen-combos — because the value side (AA/AK/AQs) is already Ace-heavy, so when the bluff side leans on the same cards, villain's 4-bet value never finds a "clean" combo *(exception: in the covering BB seat, the A-blocker is marginal — the A cuts both the fold range and the jam range, B12.2-EK-2)*. It won't hold exactly, but it's the one anchor memorizable at the table *(deviations: calibrate)*.
+
+**Rule:** The offsuit bluff 3-bet's lower bound is the rank of the lowest value pair; distribute with the Ace > King > Queen ladder *(roughly; in the covering BB seat the A-blocker is marginal)* — but ONLY in the band where the offsuit bluff is actually in play (the shallow jam-or-fold 3-bet node / the covering BB in ICM). At ~56bb, 17.4's bluff side stays suited: the floor doesn't drop to 99/TT, and K9o/Q9o/J9o don't open.
+
+### 17.4-EK-3 3-bet bluff — block the live players still behind you too, plus freedom to simplify
+
+
+At a full table (with many players still to act behind you), the sole yardstick for choosing a bluff 3-bet isn't the opener's fold — the hand you pick also blocking the players behind's likely 4-bet/jam menu (hands like KK, AK) multiplies its value; look not just for "a good blocker" but for "a blocker that blocks multiple future actors." Second point: trying to memorize hyper-sensitive combo-level mixes (which single suited-Ax combo is fully pure and which isn't) demands disproportionate effort for a marginal gain — picking a few clean combos and playing them pure gets you almost the same result. One exception: if you're playing the same opponents repeatedly, or you're on record (stream/final table), keep the frequency tighter.
+
+**Rule:** In an early-position bluff 3-bet, widen the blocker choice with the question "how many live players are behind, and am I blocking their 4-bet menu too?"; simplifying combo-level precision is cheap — except vs a repeat opponent or on record.
+
+### 17.7-EK The bluff's mirror test — if the fold list is short, there's no bluff
+
+
+17.7 tests river value with a single question ("which hand weaker than mine pays?"); the bluff's mirror question is missing from the book: before a big river bluff/jam, write out loud the list of "hands BETTER than mine that WILL FOLD." If the list amounts to only one or two hand classes (e.g. just a handful of QJ/QT-type combos), pass on the bluff — it means there's no fold mass to buy with the risk. Side note — the side that's missing is the CANDIDATE side, not the fold side: a low-preflop-aggression (nit) range doesn't naturally bring air/busted candidates to the river, so its bluff is forced to come from "higher up" in the range (expensive — you have to convert a hand with showdown value into a bluff). The fold-list, meanwhile, does NOT shrink with a nit image — it grows instead: a big river bet from a known-tight player gets credit, and villain folds good hands too *(calibrate)* — the same direction already exists in the book on villain's side, a range that defended very tight preflop is prone to over-folding on the river (B29.5's rationale for the delayed stab). In your normal range, though, there's a better natural candidate on nearly every runout — if you can't find a candidate, that's a message about your range, not your line.
+
+**Rule:** If the value test is "who pays with a bad hand," the bluff test is "who folds a good hand" — if the fold-list doesn't exceed one or two hand classes, pass on the bluff.
+
+### 17.10-EK The narrative guardrail — "accumulate without confrontation" and "double up or bust" are two faces of the same mistake
+
+
+Both narratives mortgage decision quality in advance. The "I'm staying out of big confrontations and accumulating" narrative pushes you to the passive side on every close decision — but you don't get to choose whether the next hand turns into a giant pot; the right play is sometimes a big bluff, sometimes a big call, and a player who sits down with that narrative is closed to both. The "I'm at 20bb, I need to double up" narrative, meanwhile, makes you stop taking your stack seriously — tournaments are won a few bb at a time, and a player with one foot out the door doesn't play 15–30bb with precision. The third trap is a reference point: neither your starting stack nor your peak stack is a scoreboard; whatever stack you have, the game is that stack's best decision.
+
+**Rule:** Play the hand, not the narrative: a tournament day is ~hundreds of decisions, and only the one in front of you is yours — the stack is a decision table, not a scoreboard.
+
+### 17.13-EK The personal-deviation compass — break a borderline decision against your own habit
+
+
+In drills, log the DIRECTION of your mistakes, not their shape: do you always skip the 3-bet bluff, always over-jam, always give up a street too early? For every decision that stays borderline at the table, the compass is a single question: "which direction do I typically miss in this spot?" — and break the tie AGAINST that direction. On decisions whose EV is already close, this files down a systematic leak at zero cost; since regs who know you have already priced in your deviation, occasionally playing against it on purpose also refreshes your image.
+
+**Rule:** On borderline decisions, break the tie against your own known deviation.
+
+### 17.11-EK-3 Manage your own timing — a snap action gives away free information
+
+
+17.11-EK gave you how to READ villain's timing+sizing chain; the other side of the coin is closing your own chain. A snap-check is an admission of "I have no value, my raise menu is empty"; a half-pause then check reads as "he thought about it and gave up" — take a fixed tempo even when the decision is obvious, and spend that time replaying the hand from the start (street sizes, villain's tempos). Give your easy folds the same tempo too; if tempo only stretches on hard hands, the hard hands give themselves away.
+
+**Rule:** Let every action have one tempo — information leaks through tempo VARIANCE before it leaks through frequency and sizing.
+
+### 17.11-EK-4 Bubble anxiety is the bill for an off-table mistake — don't pay it at the table
+
+
+If you notice that a min-cash on the bubble would genuinely relieve you, the mistake isn't at the table, it's in the registration: you played too big, or held too much of your own action — this is a professionalism problem, not a mental-game problem, and it doesn't get solved mid-hand. Protocol: note the signal, set it aside, return to the single decision in front of you; fix the buy-in/stake policy AFTER the tournament. The same frame applies to the fear of "looking stupid": if you're cutting an aggressive line you believe is correct just because people are watching, that's a signal you don't know the spot well enough — not a reason to fold at the table, but an item for your study list once you're home.
+
+**Rule:** Anxiety is a signal, not a decision input: note it, park it, return to the highest-EV play; cut its root outside the tournament.
+
+### 17.15 Eve of the FT — not a sleep expectation, but sleep hygiene + mental exit
+
+
+On the night before a final table, the expectation "I must get perfect sleep" generates anxiety on its own and usually doesn't hold up — focus on hygiene instead of the expectation: put the screen down, no stimulants/heavy alcohol late, and instead of forcing sleep, pick an activity that will get your mind OUT of the tournament (a familiar/already-watched show, an audiobook, chatting with someone who doesn't know poker, a short walk without electronics). The goal is first to stop thinking about the tournament, then to let sleep come without forcing it.
+
+**Rule:** Don't target sleep — target hygiene and mental exit; the expectation of "perfect sleep" is itself the source of anxiety.
+
+### 17.15-EK Eve of the FT — a blanket "I'm busy" boundary for people close to you, set up in advance
+
+
+Responding one-by-one and instantly to well-wishing messages in the hours before/during a final table is a waste of time and attention; don't spend your prep and rest time on it. Set up a single blanket message/expectation that applies to everyone (close or distant) — "I'm prepping for the final table right now, I'll get back to you after" — and turn this into a habit IN ADVANCE, before your first final table; once your circle learns the rhythm once, you won't even need to offer a justification.
+
+**Rule:** In the final-table window (prep + play), answer messages as a batch and with delay — set the boundary in advance, so you don't need to explain yourself in the moment.
+
+### 17.15-EK-2 No new concepts on the eve of the FT — the one exception: a rare stack distribution specific to your table
+
+
+Trying to learn a new concept, a new c-bet size, a new BvB idea in the hours/night before a final table doesn't make you better in that moment — it only adds noise and anxiety; the goal is to execute your existing skill at its best, not to improve yourself that night. One exception: if you know you're genuinely going to face a rare/unusual stack distribution at tomorrow's table (e.g. two big stacks massively covering the rest of the table, or 1-2 extremely short stacks at the table with the rest very deep) — reviewing that specific, known distribution a few times in advance is worthwhile, because you'll walk straight into that exact spot in the first few orbits.
+
+**Rule:** On the eve of the FT, general study is forbidden — do only execution refresh (light, familiar repetition); the only exception is a rare stack-distribution spot you're certain to face the next day.
+
+### 17.15-EK-3 Camera/nerves — don't suppress, reframe as excitement, everyone's in the same boat
+
+
+Final-table pressure, the camera, and a rising pulse are a normal reaction; trying to suppress it, or the expectation "I shouldn't be affected at all," makes the reaction snowball. Reframe it: frame it as something exciting, not as fear — and remember that even experienced players feel the same thing, and that this is not a sign of inexperience.
+
+**Rule:** Don't suppress your FT pulse, relabel it as "excitement"; everyone feels it, it's not a sign of weakness.
+
+*(Note: since B17 is the WSOP Online module, this addendum belongs there; it does not change the live doctrine of B0-B16.)*
+
 ## Chapter 18 — Flop C-bet: Frequency, Board Texture, Size
 
 *★ v6. The street where the root error is BORN. B4.2 gave preflop sizing, B11 gave turn/river execution, B13 gave multiway; but the flop c-bet decision itself — which board, at what frequency, at what size — was scattered (only the 17.11 seed "1/3 flop = range-bet" existed). This chapter opens that seed. The flop c-bet is where the seed of the bloated pot is planted: a wrong c-bet → a pot you inflated yourself → a bluff-catcher on turn/river (B11). The right c-bet cuts the error on the flop.*
@@ -2122,6 +2833,20 @@ This chapter's tables are for 30bb+. At 15-25bb, BB's answer is a flood of jams 
 **Three buckets on a dynamic board (Q-7-6 two-tone type):** hands that don't mind a bet-fold (backdoor air, a weak pair) go small; bet-call hands (top pair, a strong draw) go medium; A-high/a low pocket pair/JJ-type low-overpair check back — AK/AJ eating a jam after a small bet makes calling clearly minus-EV, and bet-fold is expensive too. Top pair's size SHRINKS: villain puts the money in; if villain is flatting Qx instead, the big size comes back — villain's raise frequency picks the size. Draw-vs-value flips: deep, bet the draw and slow-play top pair; shallow, the opposite — top pair is "the nut," fast-play it; if the draw can't call a jam, check it. The pool finds a jam more often than theory says, even shallow → push the check share up one more notch *(calibrate)*.
 
 > **Shallow, bet only with a hand that can continue into a jam. If the middle layer is marginal-ahead of villain's jamming range (low board), check drops; if it's behind (dynamic middling/high board), check rises. This triad doesn't carry over to 30bb+ — there, 18.3 stands as written.**
+
+### 18.6-EK The limit of the multiway-collapse rule: against two CAPPED blinds, the opener approaches a range-bet on a dry high board
+
+
+18.6's "c-bet collapses multiway" rule is at its strictest against coldcallers whose range is uncapped. If two BLINDS have flatted against the opener, the picture changes: since both of their best hands went to a preflop 3-bet, their flat ranges are capped at the top. On an A-high dry board they DO find the ace — 4.8 puts "all Ax" into the BB's defense, and with two blinds in it isn't rare for one of them to hold an Ax — but there's NO TOP to it: AA/AK/AQ went to a preflop 3-bet, the remaining Ax has a weak kicker and can't carry a second barrel (4.10: "on an A-high flop, low-kicker Ax is mostly a small-bet/check and pot-control hand"). The target here, therefore, isn't a fold but a PRICE: the opener fires at a very high frequency with a small size here despite being 3-way *(calibrate)* — and the turn plan is built not on the assumption "no ace" but on "there's an ace, no kicker" (see the turn row of 18.2-EK-8). As the board gets more connected (connected broadway/middling textures), the collapse rule returns — and it also returns if a fourth player enters: being capped doesn't cancel out the number of opponents (13.3). The second surprise of this same node: at a low SPR, sets aren't forced to bet — since two streets are enough and both opponents are weak, sets mix in some checking.
+
+**Rule:** While the number of opponents stays FIXED (3-way), what triggers the collapse is whether villains' ranges are capped: two capped blinds + a dry high board = small size, high frequency (they have the aces, not the kickers — they'll pay one street); uncapped coldcallers = collapse. The number remains the primary variable (13.3): 4+ way, the collapse returns even if villains are capped.
+
+### 18.6-EK-2 The third reason for a multiway c-bet — no free card for the weakest range
+
+
+18.6's "frequency collapses" rule stays correct for the bluff end; but when the pot is 3-WAY, the board favors the opener, and there is a SINGLE wide overcaller in the pot (the weakest range), the frequency still collapses — what changes is the SHAPE: a polar bet is an HU luxury, and the COLLAPSED betting range at this node is not polar but merged — the merged range's lower bound is not "medium strength" but **hands that beat the weak range's CALL range**; medium strength below that stays in 13.1 and checks. The boundary is this tight because cheaply realizing the weakest range's equity is a real cost (18.1-EK's "protection is a false reason" rule isn't unlimited — 18.1-EK-2 draws that boundary with SPR; the denial here is the multiway face of that same boundary, not a false one). The two aggressors are effectively dividing labor: if you check, IP bets in your place — this lowers the cost of your check and pulls the betting frequency in two opposite directions; the net result is a merged middle path, neither a range-bet nor a full check. The scope ends here: if a fourth player enters, 13.1 returns with no exception — top pair drops a class, check/pot control; 4+ way, the probability of the bet getting called eats up the denial gain, and the division of labor also falls apart. The bluff end is still dead: zero-equity air doesn't get bet multiway (13.3).
+
+**Rule:** Multiway, the reasons for a c-bet grow to three — value, fold equity, and denying the weakest range a free card. The frequency collapses per 13.1 regardless; 3-way plus a single wide overcaller changes the SHAPE — the collapsed range is merged, not polar, with its lower bound being "a hand that beats the weak range's CALL range." 4+ way, 13.1 returns with no exception: medium strength checks too. Air is off the table regardless.
 
 ## Chapter 19 — Initiative Lines: Who Bets When the Lead Is Unclear
 
@@ -2580,6 +3305,55 @@ Root error: filling in 20.6's "estimate in three tiers" with pure feel at the ta
 
 Root error: saying "premium high/medium/low" without being able to estimate HOW MUCH; or assuming "I'm holding 6 starting stacks, so the premium is fixed." Mechanism: as the bubble approaches, the premium scales roughly linearly with your stack's size measured in STARTING STACKS — a small percentage per starting stack early in the phase, closer to double that as the bubble nears *(coefficients: calibrate)*; 6 starting stacks + money nearby ≈ a medium-high premium. Four correctors: (1) **Min-cash size** — a min-cash at 2x+ the buy-in pushes the premium up, one at 1-1.5x pushes it down. (2) **Payout curve** — a linear payout (min-cash ~15% of first, 5th place half of first) pushes the premium noticeably up, a top-heavy one (first takes a large share of the pool, 5th place under a third of first) pushes it down; with the same starting-stack count, the premium can swing by a third between the two structures *(calibrate)*. (3) **A sudden rung** — if FT-type jumps begin right after the min-cash, even a small min-cash pulls the premium up to bubble level; read "the two rungs after min-cash" off the lobby. (4) **Cover margin** — the premium against you drops with how deep the villain covers you: someone covering you very deep carries a noticeably lower premium than someone covering you only slightly, at the same blinds. Post-bubble, in a giant field, the rule BREAKS DOWN: 40 starting stacks doesn't produce a 40% premium; there, the measure becomes "distance to the next big jump + stack relative to average + the stack distribution at the table." Rule: do this at the table, not on the break — count your starting stacks, multiply by the phase coefficient, adjust with the four correctors, add it to 20.4's threshold. Then measure your hand against a "realistic" jam range; look not at the flattering side (what you dominate) but at the slice that dominates you — if the required equity climbs to 58%, ATo can't get there against any realistic range, and the argument is over. This method ties 20.6's "estimate in three tiers" to an actual number; the 20.2 example doesn't change.
 
+### 20.1-EK Turn the bubble factor into a threshold with one division
+
+
+BF = $EV lost if you lose ÷ $EV gained if you win. Required raw equity ≈ BF/(BF+1): BF 1.5 → roughly 60%, BF 2 → roughly 67%; the risk premium is the portion above 50%. BF is mostly 1-point-something; above 2 shows up only in extreme distributions. At the table, estimate BF in tiers, convert it to a threshold with one division, then adjust DOWN for pot odds and dead money — calling a jam is never 1:1 in real life, the blind and ante are always already in.
+
+**Rule:** Required equity ≈ BF/(BF+1); convert first, then discount for dead money.
+
+### 20.4-EK-2 Calculate a 3-way all-in as side pot + main pot, separately
+
+
+In a 3-way all-in decision from third position, look at two separate pots, not one: in the side pot you're usually close to a flip — but a flip is neutral in chipEV, NEGATIVE in ICM (it costs you $EV whenever the premium is > 0, and it can bust you fast), so add the flip's premium cost ON TOP of the main-pot threshold; the real decision is the required equity for the MAIN pot — divide the slice you put into the main pot (= up to the shortest stack) by the main pot in full, not by your total call. Also, in a multiway all-in the risk premium runs a notch HIGHER than the heads-up calculation: for the same payoff you're entering a bigger, more loss-prone pot, and diminishing returns apply twice.
+
+**Rule:** if the table gives you 30-60 seconds to decide, split the side pot out as "neutral in chipEV, negative in ICM" (add its premium to the threshold), calculate the required equity for the main pot as your main-pot slice ÷ the main pot, then sum across the two live ranges.
+
+### 20.4-EK-3 The same opening percentage can come from two opposite forces at different absolute depths
+
+
+At a shallow and a deep final table with the same stack ratios (everyone's share relative to average is the same), the opening PERCENTAGE can come out surprisingly similar but doesn't come from the same mechanism. Shallow, the players behind CAN'T flat (widens the opening) but you get called cheaply, their thresholds are low (narrows); deep, the players behind CAN flat (narrows) but their thresholds are high, they play you passively (widens) — they cancel each other out in the percentage.
+
+**Rule:** when two outcomes give the same percentage, don't call it "the same spot"; check absolute depth separately and adjust hand selection to it (see 12.4-EK-3) — don't let the percentage staying the same mislead you.
+
+### 20.4-EK-4 Two equal-chip lines are not equal under ICM
+
+
+When the premium is POSITIVE (someone covers you), if two sizes produce the same chip gain, the smaller one is superior under ICM: the line that gets the same income with a smaller average pot gives less of a freeroll to the players not involved, and pays less of the diminishing return on every extra chip won. The bigger size is defensible only if it clearly wins more chips. The rule is NOT unconditional: when the premium drops to ~0/negative — a covering leader, a pot heading toward elimination (20.7's "Non-covering short jam → ~0 / negative" row) — this superiority disappears and 21.0/24.3's "if you're covering, go one notch UP / aggressive" direction takes over: there, of two lines equal in chipEV, the bigger/higher-variance one is defensible, even preferred *(calibrate)*.
+
+**Rule:** When the premium is positive (you're covered), of two sizes that look "equal" in chipEV, pick the one that risks fewer chips; when the premium is ~0/negative (a covering leader), the rule reverses — 20.7 and 21.0.
+
+### 20.4-EK-5 The "2% bigger bet, 1% more folds" trade doesn't exist under ICM
+
+
+In chipEV, sizing a bet a little bigger to pick up a bit MORE fold frequency can be a profitable trade — the gain line is the extra fold frequency, the cost line is the extra chips at risk when you get called. When your elimination risk is real, this trade is roughly never profitable, because every additional chip you put into the pot is more expensive than the one before it — the same nominal size is, effectively, a bigger bet under ICM. This is the logic behind the "big bet instead of jam" rule in 21.1-EK-2: even at very low SPR *(threshold: calibrate)* the largest non-all-in size is usually preferred, because the polar line's bluffs gain nothing from the stack's last few bb of chips, and value's gain doesn't pay for the rising price of chips either.
+
+**Rule:** When elimination risk is real, weigh the last slice you add to a bet not by the fold-frequency gain, but by the chip's rising price tag.
+
+### 20.4-EK-6 When the premium climbs a few points, the calling range closes in a block
+
+
+Hand equities aren't a continuous ladder, they're buckets: against a wide jam range a huge block of hands sits at similar equity, and climbing a few points above the threshold is combinatorially very hard — the drops from AA to KK, KK to QQ are large, with nothing in between. That's why, once the premium threshold clears a bucket, the range doesn't close gradually but in a block, and the call charts of two similar-looking spots look "conceptually totally different" — they aren't; it's the same logic's bucket that changed.
+
+**Rule:** If the premium threshold has crossed an equity bucket, don't weigh the borderline hands one by one — the block has dropped together.
+
+### 20.6-EK-3 Convert the risk premium into a tangible unit
+
+
+A raw risk-premium percentage means nothing at the table; there are two practical conversions. Pot-multiples: if a jam risks a certain multiple of the pot in chipEV, in a high-premium spot feel that same jam as REALLY risking more multiples of the pot — the jam's real cost is heavier than its nominal stack size. Cash-stake: pull a rough dollar equivalent of the average stack from the remaining player count and the prize pool (account for diminishing returns), and tie the EV difference to a unit that carries meaning at the table.
+
+**Rule:** don't leave the premium percentage abstract — converting it to pot-multiples or cash-stake gives you a truer feel for the size of the mistake.
+
 ## Chapter 21 — Postflop Under ICM: Downgrade Every Aggressive Line One Notch
 
 *★ v6. B18/B19 gave postflop initiative (c-bet, barrel, bluff, bluff-catch) in chipEV; B12/B20 gave ICM. This chapter is the intersection: how those same postflop lines shift under ICM pressure. The risk premium (B20) was shown at the preflop call/jam; here it carries onto flop-turn-river — because the premium re-accrues on every street.*
@@ -2874,6 +3648,41 @@ Root error: checking with two pair or a strong one pair as OOP and then facing t
 
 The "size big/polarized" cell in B21.7's leader column assumes villain reads price. A villain locked up by ICM doesn't read price: he folds his offsuit 8x/3x, his weak pairs, regardless of size → if the fold rate is size-independent, the cheapest size buys the same fold — a small c-bet, a small lead, a small ICM squeeze/3-bet (the leader-side face of 22.8-EK's "a small ICM 3-bet buys cheap fold equity" row). Pressure is sold by raising FREQUENCY, not size: open more hands, bet more often, each one small *(deviation: calibrate — at the margin)*. The exception runs two ways: (a) if a short BB in the jam-or-fold band is calling a min-raise by price, size GROWS to cut off that call (12.4-EK, 12.2-EK-5); (b) against a reg who isn't locked up and does read price, B21.7 applies as written — take value with a big size. Principle: against a rec/a locked-up villain, choose size with your HAND (whatever the hand wants, since villain isn't reading price); against a reg, choose it with your RANGE (27.12, 23.6-EK). B12.4 selects the locked-up target, this row selects its price.
 
+### 21.1-EK-3 The bluff stock runs out on the early street — the catch decision looks back at the flop
+
+
+The bluff-catch range is set by the villain's EARLY-street discipline as much as by combinatorics: a river bluff is born from the floats held on the flop. If the villain can't find the right floats on the flop (backdoor-equipped high cards, weak draws) and folds early, the bluff stock for river aggression is physically not there — even the catcher with the nicest blocker gets away with folding; against a type who plays sticky on the early streets the stock is full, the catch book stays open. ICM doubles this: while the call-off is already the most heavily taxed action (21.1), a hero-call against a stockless villain is premium-funded suicide. The same test works on the check-raise line too — the seat is flipped (the villain is the raiser, not the caller, side) but the read direction is the same: a type who holds bluffs on the x/r range (backdoor trash, protection raises) and check-raises the flop but almost never gives it up on the turn carries those bluffs forward to the turn as-is — his continuation is bluff-rich, the catch book stays open. The value read belongs to the type who gives up OFTEN on the turn: because his range concentrates, the continuation value he carries to the turn is purified.
+
+**Rule:** Don't ask "does he have a bluff" on the river — ask what bluff raw material he HELD on the flop; the late aggression of a type who folds early (and gives up often after his x/r) is mostly value, while the one who never gives up anything carries bluffs.
+
+### 21.2-EK-9 With no trash, the bluff comes from the TOP — the narrow-range exception
+
+
+The rule "pick the bluff from trash and the lowest card" assumes there IS trash in your range. The range ICM narrows mostly consists of pairs + high cards only: there are no missed suited connectors, so bluff material necessarily comes from up top — A-high, even K-high, which would count as insanity in chips. The same narrowing promotes middle pairs to value and collapses the villain's bluff-catch threshold: hands like AQ/AJ with good removal drop to the borderline even against a small bet. This effect grows as passive streets go by, because both sides' top has thinned.
+
+**Rule:** Pick the bluff from your range, not from your memorized list — with no trash slice, the bluff and the value come from the same neighborhood, and you have to find your fold from up top too.
+
+### 21.3-EK-7 Folded micro stacks inflate EVERYONE's premium in the pot
+
+
+The cover-asymmetry table misleads if it only looks at the two players in the hand: while 3 micro stacks sit on the rail waiting on the ladder, two big stacks close to each other carry a high premium in BOTH directions — a 1bb cover doesn't hand out a leader's whip. The result is cooperative passivity: the OOP opener reverts to near-global check on most boards *(calibrate)*, IP bets small, and both sides keep the pot small. Bonus: IP's small bets realize MORE than chipEV, because the check-raises coming back at them are both rarer and smaller.
+
+**Rule:** Don't write only the players in the hand into the premium calculation — also write in the folded short stacks on the rail waiting for a payout jump; they are everyone's brake in the pot.
+
+### 21.3-EK-8 The limp-check pot is ICM's main stage — don't write it off as a 3bb pot
+
+
+The most frequent knot of high-premium BvB is the limp-check pot, and nobody fights hard enough for these pots. With a super-wide range you check plenty even on a high-equity board — on an A-high board, even with an Ax edge, you don't have a c-bet license because most of the deck is in your range; making the bet 1bb is already everyone's move. Three things make the difference: folding only your deepest trash against the tiny bet *(calibrate)*, finding a TINY check-raise with value, and picking the bluff-raise from high-low combos that touch the board plus fake draw cards — so you have a bluff when the draws arrive.
+
+**Rule:** In a limp pot, a small bet is everyone's move; the edge is in wide continuing + a tiny check-raise.
+
+### 21.3-EK-9 In a wide-vs-wide pot, the imbalance reads from the "raise accomplished nothing" class
+
+
+In a limp-check pot, ranges are tracked by CLASS, not hand by hand: the middle offsuit class where iso-raising or raising accomplishes nothing (roughly offsuit 7x-9x and connectors like T9/J9 — only the better hands continue against a raise, the worse ones were folding already) piles up on the check line on both sides. If the board touches this class (something like 8-7-x), the pot plays passively and a small bet doesn't generate folds — if you're going to bet, pick a big size; if it doesn't touch, small sizes targeting the high-card class work.
+
+**Rule:** In a limp pot, scan the board for "did it touch the middle offsuit class?" — if it did, a small bet isn't productive.
+
 ## Chapter 22 — ICM: When and Against Whom — Timeline + Laddering
 
 *★ v6. B20 gave the risk premium's DEFINITION and direction (highest vs a coverer, ~0 vs a non-covering short; exact value calibrated/HRC). But the premium isn't constant: it opens and closes across the tournament (timeline) and which players it applies to shifts with the stack distribution (laddering). B22 gives when and against whom that premium changes.*
@@ -3093,6 +3902,34 @@ Context: FT/near the money, ICM on. "The open is profitable in chipEV → I open
 
 **The escape door:** at a collision table the 3-bettor's range is squeezed too → move the continue-vs-3-bet threshold up a notch *(at the margin)*. At a mid-short stack *(≈15–25bb, calibrate)*, when the raise is small enough to remain a small slice of the stack and there are two aggressive/short players behind you, with a strong-but-not-nut hand like AK: instead of the open-jam, a RAISE that buys the fold option — when one shoves and the other re-shoves, you fold and take the rung (12.4, 22.10). In the jam/fold band (≈≤12bb) this door is closed — shove AK or fold it.
 
+### 22.2-EK-7 The Second Half of the Arrival Role: Who Do I Become If I Lose?
+
+
+The mirror of the "who do I become if I win" test also works: if I lose this pot, whose stack do I fall BELOW at the table? If you risk half your stack and lose it but you're still many multiples above the micro stack, you can play close to chipEV despite that micro — even though colliding with it looks the most profitable, your relative position isn't shaken. But if the loss drops you among or below similarly sized stacks, size down: before the roles are settled, accumulating chips has low value — protecting relative position comes first. This is why a third stack's effect at the table isn't linear.
+
+**Rule:** When sizing a bet, ask "what happens to my ranking if I lose?" — if the answer is "nothing changes," move toward chipEV; if "I drop," size down a notch.
+
+### 22.2-EK-8 Post-Bubble, the Population Stays in the Old Mode for Hours
+
+
+In the first hour or two after the bubble bursts *(duration depends on the field and level length — calibrate)*, most of the field is still playing on high-premium reflexes: some stay overly tight to call-off even with a value hand (folding a good hand unnecessarily), others keep selling bubble pressure (overly wide opens/aggression). The two modes call for OPPOSITE deviations: against the over-folding post-bubble nit, the side you widen is the fold-equity side (steal, bluff-jam, 3-bet bluff) — CUT your thin value, because it folds and the range that pays you is stronger (23.1: nit → steal his pots; "punish with value" in 23.15/23.8-EK is tied to a field that OVER-PAYS, not one that over-folds); against someone still selling pressure, the side you widen is call/3-bet. Diagnostic trap: a small 4-bet ("click" — the OPENER's small 4-bet against a 3-bet, see 12.2-EK-11) is NOT by itself a signal of "still in bubble mode"; in 12.2-EK-11 the click's material is value QQ+/AK + offsuit Ax bluffs, i.e. by construction it's a value-weighted polarized line, and its existence condition isn't a high premium but that villain is FINDING 5-bet bluff-jams — reading the click as "mode leftover, not value" gets you overcontinuing into real QQ+/AK.
+
+**Rule:** use the first post-bubble hands to diagnose "who's still in the old mode" — against an overly tight folder, widen bluff/steal/jam (cut thin value); against someone still selling pressure, widen call/3-bet; don't count the click as evidence of mode, ask first "is this villain finding 5-bet bluff-jams?"
+
+### 22.10-EK-4 What the Model Can't See — a Short Stack's Proximity to the Blind at Another Table
+
+
+The ICM model counts all short stacks as equal regardless of position; in reality, a short stack at the same bb count that is CLOSE to the blind (whether at your own table or, in a multi-table view, at another table) has a higher probability of being forced all-in and busting within the next few hands. If you have this information (an online multi-table screen, or the next-to-act position at your own table), turning a marginal call into a fold increases your laddering value for free — a gain the model doesn't show.
+
+**Rule:** if you can know how close a short stack at another table is to the blind, add that information as a third party to 22.10's blind-geometry adjustment — calculate the laddering value the model can't see yourself.
+
+### 22.11-EK The Same Premium Ratio Gives a Different Collision Frequency at a Different ABSOLUTE Depth
+
+
+Even if the stack RATIOS (and therefore the risk premiums) are nearly identical at two tables, if the table's ABSOLUTE average depth differs, the probability of a collision comes out different too. If the average depth is SHALLOW (everyone low bb) players get into each other more often, busts happen more often around the short stack — the hidden EV of folding rises. But this waiting isn't free: with the ratios fixed, your own bb count is also low at a shallow table, your forced blind erosion runs fastest, and your jam's fold equity dies quickest — meaning absolute depth gives you the collision FREQUENCY, your own bb count gives you the waiting BUDGET (22.10 item 1: your own approaching blind kills the "wait" option — you widen on that hand; 22.4: under cover pressure the CALL narrows but the JAM STAYS). If the average depth is DEEPER (same ratios, higher bb) the other stacks can fold each other more comfortably, and collisions become sparser — the short stack can feel comfortable thinking "there are a few orbits left, something will happen," but no one may collide and it quietly erodes into the blinds.
+
+**Rule:** ask the two variables separately — the table's ABSOLUTE average depth gives you the collision FREQUENCY, "how many bb am I" gives you the waiting BUDGET. At a shallow table, fold and wait for a collision only as long as your jam still carries fold equity (widen per 22.10 on the hand where your own blind approaches); at a deep table, collisions are sparse, so you may need to create the hand yourself.
+
 ## Chapter 23 — Field Reading: Opponent Types and Exploits
 
 *★ v6. So far the book has given a balanced/GTO-near default (B7-B21). But in a live field the real money comes not from balance but from the opponent's mistake. This chapter collects the exploit notes scattered through the book in one place: read the opponent's type, read their ICM-awareness, pick the direction to deviate from default.*
@@ -3253,6 +4090,195 @@ Root error: the "good hand = jam" habit from BB against a late-position open. Th
 
 Answering every open the same way from a 20bb BB with a single fixed jam list is the root error. A jam's EV comes from "the better hand I fold out" plus "the worse hand I get called by." If the opener is in an EARLY position, his range is tight and strong → K-Qo / A-To fold to a jam → high suited hands like suited T-x / J-x gain value by jamming; if the opener is in a LATE position, those same hands no longer fold → the jam layer drops one notch (suited 9-x, then 8-x), and the upper layer shifts to call *(notch: calibrate)*. The same engine resolves the "A-Js calls / A-7s jams" paradox: when A-Js jams, A-Q never folds and A-T never calls; when it calls, it dominates K-J / Q-J / weak A-x and continues to a small flop bet → calling wins more. A-7s dominates no mass; jamming folds out A-8/A-9/A-T → jam. The question isn't "is this a good hand?": it's **"does the mass I dominate pay off on a call, or on a jam?"** The pool is reluctant to jam suited broadway → a late open's risk of running into this jam is lower than theory, so the open widens one notch *(calibrate)*. 5.3's call table doesn't change; this entry adds a position notch to BB's jam list.
 
+### 23.1-EK-2 Pair ladder against the whale — the value of aggression comes from dominated calls
+
+
+The response of pairs to the passive whale's open is not one action but a ladder: mid-to-top pair (the 99 class) — a committing non-all-in 3-bet (jam only when the stack is ≤20bb and there's no room left for a raise-sized bet) — draws its value not from protection but from the whale's DOMINATED calls (they pay with 88/77; jamming throws away exactly those calls, 23.1-EK); low pair (22-66) — call, since making them fold from a flip earns little during the chip-accumulation phase, the real profit is postflop as that hand tells you its story; the AJs class — 3-bet-call, which dominates their continuing range. A finer point: against a rec who plays "I saw an ace → jam or fold," a mid-pair 3-bet also hands you command of A-high boards — they fast-play the boards without an ace, and on a board with an ace their hand is telegraphed.
+
+**Rule:** If the whale pays the calls your aggression dominates, bet it — but keep the sizing NON-all-in, since a jam throws away exactly those dominated calls; if they don't pay, call with the low pair and listen postflop.
+
+### 23.1-EK-3 Opens wide and stabs the flop too, but dissolves under pressure — the check-raise bluff exception to LAG
+
+
+B23.1's LAG rule ("don't fold to their bluff, open up the bluff-catch") does not apply to every wide/aggressive-looking player. There's a subtype: opens wide preflop, stabs the flop often too — but dissolves when it meets YOUR counter-aggression (check-raise, 3-bet), and can't find the call. The tell: a wide open + a high c-bet frequency + low continuation against counter-aggression. Against this type the default "open up the bluff-catch against a LAG, don't bluff" rule reverses — a check-raise BLUFF with a marginal/medium-strength hand targets exactly their wide-but-foldable range. Don't label off one hand; watch their response to counter-aggression and decide.
+
+**Rule:** Don't treat LAG as one type — "opens wide + stabs often" and "holds up under pressure" are separate axes; if they're weak on the second axis, add the check-raise bluff — don't apply the standard LAG rule here.
+
+### 23.3-EK The half-ICM profile — chipEV preflop, locked-up postflop
+
+
+23.3 asks "do they feel ICM?" as a binary; on the felt, the most profitable type is a third option: the player who feels the pressure HALF. Profile: as the money approaches, at 15-20bb they still limp-enter with a min-raise, see the flop, then lock up — defending the BB and check-folding, or opening and folding to a c-bet. The exploit is two-pronged: no respect for their preflop entry (their range is chipEV-wide), postflop pressure at full throttle — the money comes from their flop-fold; a 3-bet against their open also works, because the lock kicks in on raise-fold too. Its symmetry: if the short stack has correctly tightened (if their bubble open drops to the 10% range *(calibrate)*) do the reverse — their open is a situationally-tight nit range, apply B23.1's nit line: cut the 3-bet/light call, show respect.
+
+**Rule:** Read ICM-feel street by street, not with one question — if you don't see the lock preflop but find it on the flop, move the pressure there; against a lock you do see preflop, move the respect for their range there too.
+
+### 23.3-EK-2 Read the opponent's ICM feel before you sit down — the buy-in profile
+
+
+The answer to "does villain feel ICM?" is usually ready before you ever see a hand. Results history: someone sitting down in a big tournament with a small-buy-in-heavy record locks up around a min-cash; someone whose record is always min-cash plays for cash — squeezes the bubble; a type with no min-cash at all, who always runs deep, doesn't care about the bubble. A high-roller chasing points/leaderboard plays chipEV at a low buy-in — you can't sell them ICM pressure. At the table: a player who stalls on the bubble or gets up and waits out the bubble away from the table labels themselves ICM-sensitive — note it, a pressure target for later phases. Verbal statements read in reverse: someone who SAYS "I don't care about the bubble" is usually the opposite; a vibe that leaks on its own is usually true.
+
+**Rule:** Attach the ICM-feel label without waiting for a hand: results profile + bubble behavior + (read in reverse) verbal statements.
+
+### 23.3-EK-3 Against an ICM-aware population that over-folds to c-bets — sometimes take the value with a CHECK
+
+
+B23.3's rule "don't sell pressure to an ICM-blind opponent, take value" is for an opponent who doesn't FEEL ICM at all. There's a separate population: they do feel ICM (which is exactly why they already over-fold) but for that very reason they also give up too easily against a c-bet — in this case a straight value bet often just gets an instant fold and earns nothing. Against a felt like this, sometimes play your premium hand by PULLING BACK (check-back): the opponent may read the check as weakness/lack of initiative and put their own bluff/thin value on the table on the next street — a check invites an action a bet couldn't have gotten.
+
+**Rule:** The rule "ICM-blind opponent → take value" is specific to one who doesn't feel ICM at all; against a population that feels ICM but over-folds to c-bets, sometimes wait with a check and let the opponent put in the bet for you.
+
+### 23.4-EK Against a pool with weak bluff material — from EQUITY, not the blocker
+
+
+23.4 lowered the bluff frequency; the SELECTION of the remaining bluffs also changes. A blocker bluff (a low-connectivity hand that minimizes card overlap with the opponent's folding range) draws its value from the opponent's disciplined fold; a showdown-first pool won't give you that fold → on the same line, pass the candidate with high equity instead: hands carrying real outs (a small pair, a live gutshot) are usually better than "clean" but outless combos, because your path to winning isn't making them fold, it's making your hand. Blocker selection comes back against a reg — fold discipline moves back to the front against an opponent you SEE it in *(calibrate)*.
+
+**Rule:** In a felt that doesn't fold, pick the bluff by "how many outs do I have if called," not by "who am I blocking" — the blocker bluff is a luxury of a fold-disciplined opponent.
+
+### 23.4-EK-2 Rewind the hand at showdown — extract the sizing repertoire, write the outlier in bold
+
+
+Showdown isn't one card's worth of information — it's the answer key for ALL streets of the hand: the moment the cards flip, rewind the hand from the start and match every sizing to the board type — are they using the same one-third-pot size on every texture (a one-size repertoire = they're sizing their memorized play, not their hand), or did it grow when the texture called for a big size (they're sizing their hand: the size-tell is live)? A small 3-bet's two opposite reads also split apart from here: an old-school/rec player keeps a premium hand small to keep it in, a thinking aggressor uses a small 3-bet to cheaply isolate a weak player to their right — which one it is is told by context, not by the size (from whom, to whom, is there an obvious target at the table). And the most valuable line: an observation that MATCHES the population tell is confirmation, an OUTLIER observation changes the category — if the guy you took for a quick-caller shows up with a war hero-call, the moment you see their first BB 3-bet bluff — move them to the "trickster/warrior" shelf on that single observation.
+
+**Rule:** Rewind the hand at every showdown and match the sizings to the board; a single observation that breaks the population tell is worth more than ten observations that match it.
+
+### 23.5-EK Inelasticity can also be a BOARD property, not the player's — "how much money would I want in the pot RIGHT NOW?" picks the size
+
+
+23.5 says "station is size-insensitive → go big"; the same insensitivity is also born in a balanced opponent on certain boards. On a dry K-high board, the opponent's continuing range is composed of pairs and continues with roughly the same list against a small bet as against a big one *(calibrate)* → take the value BIG: get the money in now, while they can't fold — later the board changes or they stop, and the window closes. As the board grows more elastic (as middle cards/draws enter the mix and the continuing range becomes size-sensitive) go back to a small size. The table question: "for my hand's class, how much money would I magically want in the pot RIGHT NOW?" — if the answer is more than a small bet and the opponent is inelastic on that board, fire the big one.
+
+**Rule:** The size is chosen by the opponent's fold curve, not by your hand's strength: if the continuing range is independent of size go big, if it melts with size go small — and this is sometimes a property of the board, not the player.
+
+### 23.6-EK-2 A one-time "advanced" move isn't a single sample — it's the sign of a crossed threshold
+
+
+When you see an opponent make an advanced/aggressive move of a kind you didn't expect (e.g. a rarely-seen bluff 3-bet from a short-to-medium stack), don't wave it off as "a single sample, doesn't say much." Moves like this usually aren't random — they're a sign of a crossed THRESHOLD — the player knows this move and will look for it again; permanently pull all your subsequent reads of them upward based on this information. The reverse also holds: if an opponent shows a hard fold or a disciplined line somewhere you didn't expect, permanently raise the likelihood that they're "studied" too.
+
+**Rule:** A single advanced/disciplined move is not a random data point — it's proof the opponent has "seen" that door; update your read permanently from that moment on, don't ignore it because the sample is small.
+
+### 23.7-EK Your first reaction is a calibration tool — "ridiculous" is working against you, "great" is your own leak
+
+
+When you see an opponent's line, your first reaction generates data in both directions. If you're thinking "what a ridiculous bet" — stop: that line is most likely working exactly against people who think the way you do — the reflex of dismissal is the smell of an unstudied knot; ask about that knot on the break. Conversely, if you instantly fall in love with a creative line ("yes, everyone folds this here!") you're most likely overusing that line — and what you're not noticing is that this enthusiasm leaks out at the table as tempo and demeanor: the aggression of a player who keeps seeing the spot is, by itself, a tell for an attentive opponent. Neither reaction gets written into a decision — both get written into the study list.
+
+**Rule:** If the opponent's line looks ridiculous to you, it's probably profitable against you; if your own line looks instantly perfect to you, you're probably overusing it — note both, and don't lean a table decision on either.
+
+### 23.10-EK Range-bet learned, check-raise defense unlearned — open up the flop x/r bluff, brake on the turn
+
+
+The typical profile of a mid/low felt has memorized the small range-c-bet (sometimes even on a board that isn't a range-bet spot) but has never studied that bet's continuation leg against a check-raise — they continue much narrower than they should against an x/r *(calibrate)*. The exploit has two parts and is deliberately UNBALANCED: widen the x/r bluff with draw/backdoor hands, and brake on the turn if a good card doesn't come (you got their fold on the flop, don't press further); keep the value x/r NARROW — this profile won't continue against your thin x/r with worse anyway, so x/r'ing a medium top pair is value-betting yourself. The turn leg of the same read: with x/r threat low on this felt, the worry "my hand is fragile, if I bet I'll get ripped off" also loosens — protection/draw bets can be fired more freely than their theoretical share *(calibrate)*.
+
+**Rule:** Against the automatic small bet — a wide x/r bluff plus a brake on the turn, a narrow x/r value — take your fold from the unlearned defense, don't wait for the payoff.
+
+### 23.12-EK The vacated preflop slice determines board ownership — at a short stack, jams flip high boards too
+
+
+23.12 gave you ICM erasing low cards; at short depth, JAMS do the same job, and the direction changes by board class. At ~20bb (the short band, 23.14), because the BB jams their small pairs and WEAK suited Ax preflop against a late open, and reserves AQs/AKs for a value jam/3-bet, their defense is stripped clean of these slices → an A-high board is overwhelmingly the OPENER'S: bet often and big; the BB's check-raise is almost shut off (their top of range left preflop), and their defense narrows down to holding their best remaining Ax (ATs/AJs — the class that stands on a call per 23.14) as a check-call *(calibrate)*. At ~30bb the same job is done not by a jam but by the vacated non-all-in 3-bet slice (the correct aggression in that band is a small 3-bet, not a jam) — same direction, thinner slice. The SB flat does the opposite: pairs go to a jam, good Ax to a 3-bet/jam — what's left in the flat concentrates on offsuit broadway/medium suited → broadway boards (the KQ8/AQJ type), despite appearances, belong to the FLATTER, while a board with three low cards belongs to the opener; against an EP open the same SB flat stays pair-heavy, so the table flips again (low boards belong to the flatter, high boards to the opener). The question at the table isn't the position label — it's "which slice did this seat vacate preflop at this depth?"
+
+**Rule:** It's the vacated preflop slice, not the label, that tells you who owns the board — the board matching the vacated (jammed or 3-bet) hand class turns against whoever vacated that slice.
+
+### 23.13-EK The squeeze double gap — the pool both under-squeezes and under-resists the squeeze
+
+
+B23.13's 3-bet gap has a double version in the squeeze: the pool finds a squeeze noticeably less often than balance when they see an open+call, AND their defense when squeezed (especially a mid-depth rejam, with the suited broadway/pair class) is noticeably lacking versus balance *(ratios: calibrate)*. Both gaps work in your favor at once: play your squeezes and squeeze-jams at full frequency — missing a comfy suited broadway into a flat because "I'll play it postflop" is leaving this income on the table; and when you get squeezed, keep your rejam NARROW and value-heavy: the squeeze a squeeze-averse pool actually fires is effectively nut-heavy, and a rejam bluff has no fold equity (B23.13's "range is nut-heavy when 3-bet → narrow continuation" mechanism) — the discipline to protect isn't frequency, it's not missing your value rejam. The third consequence is indirect: if the BB's squeeze is lacking, your flat FROM the SB (against a BTN/CO open) widens — with no squeeze-happy BB behind you to punish it, you over-realize; the moment you see them squeeze, reel that widening back in.
+
+**Rule:** When you see an open+call, let the default question be "is there a squeeze here?" not "is a flat comfy?" — in the pool's two-sided squeeze gap, every squeeze you pass on is money left behind; when you're the one squeezed, your rejam is narrow and value, not bluff.
+
+### 23.16 The penalty for an over-c-bettor is stickiness, not a raise — the float line buys the river
+
+
+A large slice of the pool range-bets nearly every board small in position, on the logic "I'm the opener/3-bettor"; this weakens their c-bet range below balance, but the penalty for it isn't inflating a check-raise — the same player also can't find the low-equity barrel on the turn. The correct line is FLOAT: continue sticky even off balance against the small bet (backdoor high cards, pair + backdoor), the turn gets checked often, and you pick up the river bluff and the thin value; on a dry board, deliberately put a few marginal hands into the check-call line, or you'll never have a river bluff in that line. Check-raise backfires in two ways: you run into their strong hands and fold their weak ones early — float, by contrast, hands them the job of announcing their hand to you first *(mostly)*. Boundary: the target is the ABC range-bettor; against a rec who won't fold on the river, cut the bluff arm and keep the thin-value arm (23.10); at a reg-heavy table the read shuts off, return to 23.6-EK.
+
+**Rule:** The money against an opponent who range-bets and then gives up on the turn is in the float, not the check-raise — stick on the flop, collect the profit after their turn/river check.
+
+### 23.17 Don't fix the opponent's mistake for them — aggression against someone keeping the pot small gives back the mistake's EV
+
+
+Root reflex: "they bet tiny on a board where they're crushing → they're weak, crush them with a check-raise." But their mistake may not be weakness — it may be NOT growing the pot: on a board where their range is crushing, balance calls for a big bet; if they're firing tiny, they're letting you in cheap — if you check-raise, you grow the pot FOR their value, fixing their mistake for free. The correct answer is a wide but PASSIVE defense: take the price, keep your good hands in the check-call line too so you can withstand turn pressure; save the aggression for an opponent whose mistake is "overfolding" or "overbluffing." The compass for the deviation: whichever line COLLECTS the money the opponent's mistake left on the table — not the one that neutralizes the mistake.
+
+**Rule:** Name the mistake before you deviate: if the opponent is keeping the pot small, stay passive and see it cheap; if they're overfolding or overattacking, open up the aggression.
+
+### 23.18 Stickiness in a 3-bet pot depends on the board's intersection with the opponent's bluff texture
+
+
+The rote rule "always continue with a pair against a small bet in a 3-bet pot" is board-blind. Write down the opponent's preflop bluff material — blind 3-bet bluffs are mostly Ax and high broadways *(calibrate)* — and on a board where their bluffs PAIR UP, tighten your defense hard: on an A-high AND a K-high board their "bluff" is now top pair (on a K-high board it also overlaps with their KK/AK value), and your medium pairs and weak backdoors lose value. On a board their bluffs genuinely miss (medium/low disconnected: 9-7-2, 8-6-3 type), those same pairs and backdoors continue sticky, and the float also widens — the air slice of their betting range has grown. The question is the same on every street: "did this card grow their value, pair their bluff, or multiply their air?"
+
+**Rule:** Tie your defense threshold not to the board but to this question: did the opponent's preflop bluffs pair on this board — if they connected, tighten; if they missed, stick.
+
+### 23.19 Half frequency → roughly half continue — a shortcut for scaling the exploit
+
+
+If an opponent plays a given aggression node (check-raise, 3-bet, etc.) at roughly HALF the balanced frequency (the value part stays fixed while only the bluff/marginal part is missing), your continue (call) range against that node should drop to roughly HALF; if the opponent plays at roughly DOUBLE the balanced frequency, your continue range should roughly DOUBLE. Don't tie the multiplier to the fold rate: at nodes like 3-bet the balanced fold is already around 55-65%, so "double the fold" is undefined — the quantity that scales and is always executable is the continue/call rate (when the bluff slice is halved, the number of bluff-catchers that continue halves, while the fold rate runs into its ceiling). This ties the at-the-table uncertainty of "should I fold a bit more/less often" to a concrete multiplier when you can't compute exact percentages — the exact coefficient varies by population, but the direction and rough scale are a solid starting point.
+
+**Rule:** Estimate the opponent's frequency at a node roughly relative to balance (half, or double); adjust your CONTINUE (call) rate in the same direction and by roughly the same scale — not the fold rate, which runs into a ceiling.
+
+### 23.20 A fast, unthinking fold is a signal of systemic overfold at that node
+
+
+If an opponent folds quickly without hesitation at a given node (e.g., BB defense against a min-raise), this isn't just a one-time decision for that hand — it's evidence that they play that node tight in general. When the same node comes up again (same opponent, similar spot), being more aggressive than what the solver says (opening smaller, iso-ing wider, c-betting more often) is usually profitable — a hesitant/long-thought fold does NOT carry the same signal, it's a decision for that hand alone.
+
+**Rule:** Watch the opponent's decision SPEED and hesitation — a fast, unthinking fold is a node-leak, apply it generally; a slow/hesitant fold is specific to that hand alone, don't generalize.
+
+### 23.21 Profile before you sit down — read the results list as a pattern, not a total
+
+
+Before the opponent has even played their first hand, their result history (tournament CV, online client profile) gives you an aggression map — as long as you read the pattern, not the total. One giant score with nothing small around it = most likely a rec, that score is a lottery ticket, not a sample. Many min-cashes, no deep runs = a cash-focused profile that will always fall on the fold side at the margin — the customer most exposed to bubble pressure. Firsts in small fields = chip-accumulating aggression. A modest total spread over many years = mediocrity explained by volume. A high online-volume signal means "whatever their live appearance, they have solid fundamentals." These labels are hypotheses only until the first showdown — keep them ready to update.
+
+**Rule:** In a result list, read the finishing pattern, not the total money: a pile of min-cashes is the passive's signature, small-field firsts are the aggressor's — all of it is a first hypothesis to be revised by showdown.
+
+### 23.22 Dominant-aggressor dynamics — a crusher who reads you as passive won't trap you
+
+
+Every matchup has an "aggressor hierarchy," and if the strong player reads you as passive, their strategy tilts accordingly: they don't expect you to put the money in, so against you they almost never check/slowplay a strong hand — their check is genuinely capped *(mostly)*, and against a raise on their thin value bet you can open up bet-call with discipline, reasoning "they wouldn't check something better than me." For the same reason their SB limp comes from the bottom of their range (their limp-reraise slice is thin; they're not pricing in that you'll iso wide) — attack their limp with a wider-than-normal iso, both with trash and with light value. The mirror: if you're the table's "crusher," the same law applies back to you — a passive opponent won't grow the pot in your place; take the thin value yourself, big and early, and throw out your bluff-induction plans.
+
+**Rule:** If the opponent reads you as passive, their check is capped, their limp is from the bottom, and their value always comes from their own hand — open up thin-value bet-call and wide iso against the limp; if the roles are reversed, apply the same read to yourself.
+
+### 23.23 The live tempo set — the tank pulse, the rehearsed line, the honesty window after a big pot
+
+
+Three live reads, all three conditional on committing to a repeating pattern, not a single data point: (1) On a big river decision, deliberately extend the tank and watch the pulse/breathing — a value-holding opponent's tension fades within roughly half a minute *(calibrate)* (the excitement peak passes); a bluffer's tension lasts until the tank ends, and often grows, because the decision is still open. (2) A line/jab delivered eagerly, with a rehearsed feel, exactly at the decision moment mostly comes from the bluff side — a value-holding mind is busy planning the next street, not the show. (3) The moment a big pot ends, people are at their most honest: the post-mortem analysis of the hand that just played out ("it was AA or nothing") gives away the opponent's decision framework — against someone who thinks in two boxes, medium-value and in-between-bluff classes are invisible. Guardrail: don't try to apply these reads to someone more experienced than you — at that level your chance of getting caught is higher than your chance of reading correctly.
+
+**Rule:** Tension that fades during the tank favors value, tension that persists/grows favors bluff *(commit to the pattern)*; a rehearsed line at the decision moment leans bluff, post-big-pot talk leans honest — and tell-reading doesn't work upward in the hierarchy.
+
+### 23.24 Process the sizing tell with a hypothesis loop — a weird medium size is rarely the nuts
+
+
+Live, a sizing-tell is processed with a hypothesis, not a single data point. Most players split their sizing without realizing it, but in two opposite directions: some grow with their value, some grow while thinking "fold your overcard" and play small with their real hand — only a SECOND example tells you the direction: if the same player has shown the nuts with a small size, the read locks in the REVERSE direction (for them small = strength, big = protection/bluff); if they've shown the nuts with a big size, the first direction is confirmed — either way, the split-sizing read starts printing money from that point on. The only thing that sends the read to autopilot-off is mixed, inconsistent examples: nuts and air at the same size. A reliable pool pattern on the river: a nutted hand either BLOCK-bets or FIRES BIG — a weird, medium-sized raise is the size at which the nuts is RAREST *(calibrate; a station's river raise is the exception, 23.5 stands)*.
+
+**Rule:** A sizing read earns its DIRECTION on the second example (nuts with a small size = reverse direction — don't scrap the sizes), and only mixed examples send it to the scrap heap; until the direction is clear it's a hypothesis — and fear the nuts less from a weird medium river size, and more from a block bet or an overbet.
+
+### 23.25 The bubble-bully profile — the auto-opening leader folds to resistance
+
+
+A sixth type: the bubble leader who opens every hand. Their opening isn't the mistake — their assumption is: "everyone's locked up, I'll bail if resistance comes" → they overfold to a 3-bet, and in practice they almost never find the theory's generous share of 4-bet bluffs *(calibrate)*. Once the evidence piles up (opening over and over + folding to the first resistance), the counter is a READ-gated exception to the book's default of "no bluff 3-bet while covering": a small, NON-all-in 3-bet — it risks a small slice of your stack, and collects without a showdown. Write the plan in advance: if a 4-bet comes, the default is to fold (their 4-bet is value-heavy); a 3-bet→5-bet only with evidence that they also fire the 4-bet on reflex.
+
+**Rule:** The weapon against a bubble bully isn't a call, it's a pre-planned small 3-bet — don't fight their 4-bet without evidence.
+
+### 23.26 A bullied rec explodes preflop — the social climate is a parameter of the exploit
+
+
+An emotional rec who feels bullied has their explosion PREFLOP, not postflop: a postflop bluff takes nerve, a preflop jam is just a dice roll — and its material is predictable: pairs (they'll even jam 44), not offsuit broadways. In a stretch where you've been bullying them, size up your 3-bet by one notch with a TT-class hand: you're inviting the explosion that collects pocket pairs. They make their call decision not from their own equity but from "how much do I have left if I lose" — they pay if roughly half their stack remains *(threshold: calibrate)*. The social climate opens and closes the window: an opponent who's in pleasant conversation with you won't jam 44 ("I don't want to bust you") — if you want the explosion, don't make peace; if you want their marginals to stay calm, chat with them.
+
+**Rule:** An emotional rec's bluff is the preflop jam, and its material is a pair — if you want the explosion, size up your 3-bet with your value; if you don't, soften the table.
+
+### 23.27 Image is priced with a delay — the nit's curse and the harvest window
+
+
+Your own image is also a read, and it's priced with a DELAY. A nit image (or genuinely overfolded past streets): your bluffs overperform for a while — turn your K-highs into pure bluffs on the river, and bluff even from the top layer that normally wouldn't bluff; the flip side is a curse: if your check-raise is only value + obvious draws, the moment the draw arrives you won't get paid and you'll take big folds — the antidote is putting the hard-to-find bluffs (backdoor "three-card" hands) into the repertoire IN ADVANCE, or your value will die. An aggressive/bully image works in reverse: when you shift down a gear, the opponent keeps reading your old image — close down your bluff mixes for a few orbits, your value gets paid extra. If you're undecided at a mixing node, let your last few orbits' image decide: if you looked aggressive, lean call/value; if you looked passive, lean bluff/raise.
+
+**Rule:** The opponent plays your LAST image, not your current strategy — shift your bluff and catch frequencies to account for the image delay.
+
+### 23.28 Labels belong to a phase — relabel everyone once the bubble bursts
+
+
+A nit on the bubble might not be a real nit — it was a situational nit. The instant the bubble bursts, reset your labels and watch for transition signals: has their posture loosened, has how they look at their cards and their timing changed? The real prey are the ones "left behind": a player who still plays the bubble line once the premium has dropped (a small ICM 3-bet at a chipEV node, excessive respect for opens, a still-locked-up calling book) has missed the transition — go after them until the gap closes. The meta-edge is this: the premium regime changes many times over the course of a tournament; the money belongs to whoever switches regimes faster than everyone else.
+
+**Rule:** At every phase change, update two lists — who was a situational nit, and who's still playing the old phase; the second list is your primary target.
+
+### 23.29 The price of a marginal preflop continue is hidden in the postflop scenario
+
+
+The chart's marginal defend assumes YOU will play the solver's postflop tree; two corrections are needed. (1) Your own capacity: if you're never going to fire the river with air, your marginal defends turn negative — either genuinely put the bluffs into your repertoire, or play tighter than the chart. (2) The opponent's barreling profile: against a type who keeps firing big, a marginal hand is resolved preflop with jam/fold (don't hand them the postflop tree); against a type who telegraphs their hand, bets small, single-barrels, the same hand turns into a call — the cheap street and clear information carry the realization. The test sentence has to be kept narrow — knowing you'll fold on a brick turn is not by itself disqualifying (in most profitable marginal defends, folding on a brick is already the CORRECT line; in B11.1's test "can I state my river plan NOW?", "call this size / fold that size" is a legitimate answer). The correct sentence is: "I can only continue with this hand if I hit the nuts — I'll fold on a brick AND on turns that HELP me; I have no bluff or bluff-catch plan on any runout" → that hand was a preflop fold.
+
+**Rule:** The postflop movie prices a marginal continue, not the hand — your own bluff capacity plus the opponent's barreling profile; if the movie is bad, end the pot preflop or never enter it.
+
 ## Chapter 24 — Edge Premium: When NOT to Gamble (and When You Must)
 
 *★ v6. B20/B22 gave the risk premium — ICM's premium. This chapter adds a second premium: the edge premium (a skill premium). If you have an edge, avoid marginal variance; if you don't, take the ICM-adjusted +EV gamble. The risk premium weighs the loss, the edge premium weighs the later gain.*
@@ -3325,6 +4351,13 @@ Concrete: in the €5.3K Main you have an edge (the field is wider/softer) → *
 **5. Arrival role:** the same double gives two stacks different things — 30→60bb is a leader dominating the table, 20→40bb is still a covered medium stack (22.2-EK-2). If the answer to "who do I become if I win?" is "the player who covers everyone," the marginal gamble moves a notch toward TAKE; if it's "still medium," it moves toward PASS. This notch grows if you believe you play a big stack well, and shrinks if opponents are ICM-insensitive (if pressure can't be sold) — this is the arrival-state form of the edge premium.
 
 **Field multiplier (feeds 24.6's calibration):** the edge tier thickens with field size. In a small field / at the FT, a spot with a few percent of $EV remaining AFTER subtracting ICM gets taken; on the bubble of a huge field, the same spot needs a noticeably bigger gain relative to stack size *(calibrate)*, because at the tables that remain, other players' error volume has grown — the pure-bubble call range tightens there accordingly (22.1-EK-2). Tough small field (SHR) ↔ soft huge field (Main) are opposite ends: 24.5's sidebar is read through this multiplier. The filter table doesn't change; these are two lines read as -EK.
+
+### 24.1-EK When Your Edge Is Big, Choose the Low-Variance Line Postflop Too
+
+
+The edge premium covers not just preflop flip decisions but also the choice between two postflop lines that are equal in EV (check-raise/barrel-off vs. float/call). In a soft field, with re-entry closed, or when your edge is big, if the two lines are theoretically equal in EV it's sensible to prefer the LOW-variance one (call/float) — this line earns you extra information (if villain checks back the turn, he mostly doesn't know how to fire a no-equity bluff, and he'll also make a mistaken fold/call on the river) and doesn't put you at risk of an early bust in a big pot. In a tough field, or without an edge, this distinction disappears — there, among lines equal in EV it doesn't matter, play balanced.
+
+**Rule:** Soft field + big edge + two lines equal in EV: choose the information-gathering low-variance line, not the aggressive line that risks a big pot/early bust — the gain comes from exploiting villain's weakness on later streets, not from the first street itself.
 
 ## Chapter 25 — The Story in Your Head: Evidence or Narrative
 
