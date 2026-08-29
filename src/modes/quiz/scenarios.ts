@@ -3207,6 +3207,94 @@ export const SCENARIOS: Scenario[] = [
     "source": "Chapter 12.4-EK-5",
     "kavram": "sb-fazla-fold-blof-3bet-patlamasi"
   },
+  {
+    "q": "PLO-6 cash, you opened from CO, the board runs out Qd 8c Jd 3d 7d — four diamonds are out there. You hold Ad Ah Qc 2s Tc 4h: you have a pair of aces and you're holding the ace of diamonds, but with only one diamond you can't complete the flush. Villain bets a size that would require you to stack off. What do you do?",
+    "options": [
+      "Fold — holding the nut flush blocker isn't a reason to commit with one pair on a four-diamond board",
+      "Call — you block the nut flush with the ace of diamonds, villain must be bluffing at this size"
+    ],
+    "correct": 0,
+    "explain": "Because you hold the ace of diamonds, you're blocking villain's nut flush, but with only one diamond you can't make the flush yourself, and the hand you actually have is still one pair. A blocker narrows villain's range; it doesn't upgrade your hand. On a four-diamond board villain also bets non-nut flushes, and one pair loses to all of them. In your own data, none of the five hands where you stacked off with one pair were ahead at showdown.",
+    "source": "Chapter 15.4",
+    "kavram": "plo6-tek-cift-yigin-esigi"
+  },
+  {
+    "q": "PLO-6 cash, you're on the BTN holding As Ac along with a T and a J. The flop comes Kc 4d 2c, and it looks dry. Villain bets pot, and stacking off would cost one hundred fifty big blinds. You have nothing besides the pair of aces. Decision?",
+    "options": [
+      "Raise all-in — on a dry board, an overpair is the strongest class in PLO-6 too",
+      "Fold or call — a bare pair of aces alone isn't enough for a one-hundred-fifty-bb commit"
+    ],
+    "correct": 1,
+    "explain": "The board looking dry makes an overpair feel strong, but in a six-card hand, the density of two pair and sets in villain's continuing range is much higher than in a four-card hand. The hand you have is still one pair, and it carries no nut redraw. This is exactly the bare-aces stack-off mistake covered in fifteen point four; in your own data it's among your most expensive hands.",
+    "source": "Chapter 15.4",
+    "kavram": "plo6-ciplak-aa-commit"
+  },
+  {
+    "q": "PLO-6 cash, the board reads 4h 2d 7h Kh 4c — three hearts are out and the board is paired with fours. You have a pair of aces, and one heart, but you can't complete the flush. Thanks to the board's pair of fours, you have two pair. Villain raises to a size that would require you to stack off. What do you do?",
+    "options": [
+      "Fold — on a paired, three-heart board, two pair without a redraw isn't a commit class",
+      "Call — you have two pair from your pair of aces plus the board's pair of fours, the raise could be a bluff"
+    ],
+    "correct": 0,
+    "explain": "You have two pair, but the board supplies the second pair, meaning villain can hold the same pair of fours too, and the split comes down purely to the kicker. On top of that, the board is both three hearts and paired: villain's range holds both flushes and trips, and you have no redraw to complete either. In your own data, of the seventeen hands where you stacked off with two pair, you were ahead at showdown in only a third.",
+    "source": "Chapter 15.4",
+    "kavram": "plo6-iki-cift-islak-board"
+  },
+  {
+    "q": "PLO-6 cash, you opened from UTG and it went to a 4-bet, you hold a pair of kings. The flop comes 6d 8h Ac — ace-high and connected. Your kings didn't connect with the board at all. You're considering putting the rest of your stack in on the flop. What's the correct decision?",
+    "options": [
+      "All-in — SPR is low in a 4-bet pot, you're forced to commit with a pair of kings",
+      "Check or fold — an ace-high, connected flop doesn't put a pair of kings in the commit class"
+    ],
+    "correct": 1,
+    "explain": "A low SPR in a 4-bet pot doesn't make commit automatic; the hand's class sets the commit threshold. On an ace-high, connected flop, a pair of kings carries neither the nuts nor a nut redraw, and with an ace on the board, villain's continuing range is ace-heavy on top of that. In your own data this spot went down as a one-pair, hundred-big-blind commit, and it ran into a straight.",
+    "source": "Chapter 15.4",
+    "kavram": "plo6-dusuk-spr-commit-yanilgisi"
+  },
+  {
+    "q": "PLO-6 cash, you're in the SB holding As Ac and a pair of queens. The board reads 6h 3c Qc 4s 9s — the queens made trips, so you have trip queens. Villain bets big, and a two-hundred-eighty-eight bb stack is on the line. Decision?",
+    "options": [
+      "Commit — trips and above stays above your stack-off threshold in your own data",
+      "Fold — two hundred eighty-eight bb is very deep, trips isn't enough at this depth"
+    ],
+    "correct": 0,
+    "explain": "The measured threshold starts exactly at trips: in your own data you stacked off with trips and above seventy times and you're net positive overall. Here trip queens come with the high trips and an ace kicker, and there's no completed flush on the board. For depth alone to push the threshold up, the board needs to carry a second threat; shifting the threshold just because the stack is big means running away from spots where you're on the right side.",
+    "source": "Chapter 15.5",
+    "kavram": "plo6-trips-esik-ustu-commit"
+  },
+  {
+    "q": "PLO-6 cash, you're on the BTN and the board runs out Ks 7d Qc 9d Jd — three diamonds are out and the king-queen-jack-nine straight structure is live. You have trip kings; with only one diamond you can't complete the flush, and you don't hold the ten that makes the straight either. Villain bets for the remaining sixty bb stack. What do you do?",
+    "options": [
+      "Commit — trips is above the threshold, by the rule you stack off",
+      "Fold or a cheap call — with both a flush and a straight live, trips without a redraw isn't a commit class"
+    ],
+    "correct": 1,
+    "explain": "Trips is the floor of the threshold, not the ceiling. On this board both a flush and a straight are already completed, and your hand shares in neither. In your own data, the hands you lost with trips and above share exactly this: two draws live at once and no redraw. The rule starts with the hand's class, but it ends with the redraw question.",
+    "source": "Chapter 15.5",
+    "kavram": "plo6-trips-cift-cekilis-istisnasi"
+  },
+  {
+    "q": "A PLO-6 cash night: you've been losing for three hours, your VPIP has gone from forty-two to forty-seven, and your 3-bet rate from five to nine. Your stack depth has also passed two hundred bb. In this picture, what's the correct move?",
+    "options": [
+      "Get up from the table — a range that widens on its own after a loss is a reaction, not a decision",
+      "Keep playing but tighten the threshold — the numbers already show you loosened, correcting it is enough"
+    ],
+    "correct": 0,
+    "explain": "If your range widened without a conscious plan, that's not a strategy change, it's a reaction to the loss. Because your stack depth is rising at the same time, every mistake costs more. Staying at the table and tightening the threshold sounds disciplined, but the mind that notices the loosening can't apply that correction consistently in the same session; that's why the correct move is to close out the session.",
+    "source": "Chapter 15.6",
+    "kavram": "plo6-gece-gevseme-imzasi"
+  },
+  {
+    "q": "In PLO-6, when deciding whether to stack off, which question comes first?",
+    "options": [
+      "Is the board wet, because on a dry board you can commit with a weaker hand",
+      "Do I have trips or better, and if not, am I carrying a nut redraw"
+    ],
+    "correct": 1,
+    "explain": "Across your own ninety-two stack-off spots, the variable with the highest discriminating power wasn't board texture, it was the class of hand you made. Two pair and below loses overall, trips and above wins; texture leaves only a secondary effect next to that. Committing with one pair on a dry board is the same mistake in a less noticeable form.",
+    "source": "Chapter 15.4",
+    "kavram": "plo6-commit-soru-sirasi"
+  },
 ];
 
 export function randomScenario(): Scenario {

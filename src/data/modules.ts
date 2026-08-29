@@ -7357,6 +7357,50 @@ export const modules: Module[] = [
         "narration": "When an opponent is all-in and a dry side pot forms between the remaining two players — meaning no extra money gets added — playing the nut hand slow at low SPR, that is, setting a trap, generally doesn't work. Here's why: for your side-pot opponent to beat you with a bluff, they need to get past both the all-in player's hand and yours at the same time; that's a double condition that rarely holds with a single bluff line. That's why, in a dry side pot at low SPR, playing big instead of hiding the nuts usually brings more EV. A hiding plan only makes sense if SPR is high and the side-pot opponent genuinely has room to maneuver. This finding ties back to the root error's PLO form: the 'bare nuts alone aren't enough' doctrine appears here in a form extended to draws and depth; a pot bloated with non-nut combos is the side-pot version of that same root error. In short, with an all-in opponent present, the double condition on the remaining two hands works in your favor — use it, don't hide it."
       },
       {
+        "title": "EK: Your stack-off threshold — measured from 3,009 hands",
+        "bullets": [
+          "92 stack-off spots: hands where you put in at least 50bb and went to showdown",
+          "Two pair and below: 22 spots, net -$24,483",
+          "Trips and above: 70 spots, net +$67,861",
+          "The line falls exactly at trips; board texture stays secondary"
+        ],
+        "ruleBox": "In PLO-6, don't stack off past fifty bb with two pair. The threshold is trips.",
+        "narration": "These numbers don't come from a book, they come from your own three thousand and nine hands. There are ninety-two hands where you put in at least fifty big blinds and went to showdown. When you sort these by the hand you made, the line shows up in exactly one place. With two pair and below you stacked off twenty-two times, and lost twenty-four thousand dollars total. With trips and above you stacked off seventy times, and won sixty-seven thousand dollars. There's no gradual transition, no step in between. Board texture's effect stays small next to this. So the question you should ask at the table isn't whether the board is wet, it's whether you have trips or better."
+      },
+      {
+        "title": "EK: With two pair, you weren't ahead at showdown when you stacked off",
+        "bullets": [
+          "One pair stack-off: five spots, zero percent ahead at showdown",
+          "Two pair stack-off: seventeen spots, thirty-one percent ahead at showdown",
+          "With trips and above, this rate climbs to between fifty and eighty-six percent",
+          "The sample is small, but the direction is one-sided: you're putting money in behind"
+        ],
+        "ruleBox": "Your losses aren't bad luck; you're mostly putting the money in behind.",
+        "narration": "It's easy to think of your losing hands as bad luck, but the data says something else. In none of the five hands where you stacked off with one pair were you ahead at showdown. Of the seventeen hands where you stacked off with two pair, you were ahead in only about a third. Once you get to trips and above, that rate passes fifty percent, and with a flush it reaches eighty-six percent. The sample is small, I'm not overstating it, but the direction is one-sided. You're not getting unlucky cards; you're putting the money in at a point where you're already behind. The drop in your showdown win rate isn't the cause, it's the result."
+      },
+      {
+        "title": "EK: Even the strong side breaks — a double-draw board",
+        "bullets": [
+          "You also lose hands with trips and above, and they all share one thing",
+          "With both a flush and a straight live on the board, trips is no longer a nut class",
+          "Even a full house loses to a bigger full house on a paired board",
+          "The rule starts at trips, but it doesn't end there: check the redraw"
+        ],
+        "ruleBox": "Trips is the floor of the threshold; when both a flush and a straight are live, the threshold shifts up.",
+        "narration": "We call the threshold trips, but trips isn't an automatic ticket. In your own data, the hands where you lost with trips and above share this: either both a flush and a straight are live on the board at the same time, or the board is paired and your full house isn't the biggest one. In that case the hand you made looks strong by class, but your opponent's continuing range still holds combinations that beat you. So trips is the floor, not the ceiling. When two draws are live at once, the question you need to ask is whether your hand carries a redraw that completes one of them, or whether you're just standing on your current strength. Without a redraw, trips is a call class too, not a raise class."
+      },
+      {
+        "title": "EK: Loosening at one thirty in the morning — your own signature",
+        "bullets": [
+          "On the night of August twenty-eighth, one session lasting five hours and seventeen minutes",
+          "After losing for three hours going into one in the morning, VPIP climbed to forty-seven",
+          "In that same hour, your 3-bet rate also jumped to nine percent",
+          "Your stack depth climbed from one hundred twenty-seven to four hundred thirty-nine big blinds over the course of the night"
+        ],
+        "ruleBox": "If your range widens on its own after a loss, take a break — don't change the threshold.",
+        "narration": "One night's data doesn't make a rule, but it's enough to recognize your own signature. On the night of August twenty-eighth you played five hours and seventeen minutes without a break. After losing for the first three hours, by one in the morning your VPIP had climbed from forty-two to forty-seven, and your three-bet rate from five to nine percent. That same night your stack depth climbed from one hundred twenty-seven to four hundred thirty-nine big blinds. Put the three together and that's exactly where your most expensive hours of losing show up. The lesson here is this: if your range widens on its own after a loss, that isn't a decision, it's a reaction. Instead of loosening the threshold, get up from the table."
+      },
+      {
         "title": "Cheat: nine lines before you sit down",
         "bullets": [
           "Opening: UTG tight, CO = UTG + ten percent, BTN wide; hands with a dangler don't open early.",

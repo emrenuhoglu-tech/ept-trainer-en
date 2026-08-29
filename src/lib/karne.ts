@@ -271,6 +271,14 @@ export const CONCEPT_LABEL: Record<string, string> = {
   "iki-kart-kombo-dengesi": "Two-card combo balance",
   "ince-value-raise-bloker": "Thin-value raise blocker",
   "aralik-karsilastirma-kutle-onceligi": "Range-comparison mass priority",
+  "plo6-tek-cift-yigin-esigi": "One pair is below the stack-off threshold",
+  "plo6-ciplak-aa-commit": "Bare aces aren't a commit class",
+  "plo6-iki-cift-islak-board": "Two pair on a wet board",
+  "plo6-dusuk-spr-commit-yanilgisi": "Low SPR doesn't force the commit",
+  "plo6-trips-esik-ustu-commit": "Trips and above clears the threshold",
+  "plo6-trips-cift-cekilis-istisnasi": "Trips without a redraw, two draws live",
+  "plo6-gece-gevseme-imzasi": "Late-night loosening signature",
+  "plo6-commit-soru-sirasi": "Commit question order: class before texture",
 };
 
 export function conceptLabel(kavram: string): string {
