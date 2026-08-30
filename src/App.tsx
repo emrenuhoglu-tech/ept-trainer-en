@@ -180,11 +180,11 @@ export default function App() {
                 <button onClick={() => nav("#/referans")} className="text-neutral-400">
                   ← Reference
                 </button>
-                <span className="font-semibold text-neutral-100">📖 New Chapters (v5)</span>
+                <span className="font-semibold text-neutral-100">📖 Book chapters</span>
                 <span className="w-16" />
               </div>
               <p className="text-[13px] leading-relaxed text-neutral-400">
-                Tournament-winning chapters — straight from the book. Check the table on your phone during breaks.
+                The whole book — straight from the MD source. Check a table on your phone during breaks.
               </p>
               {NEW_CHAPTERS.map((c) => (
                 <button
@@ -242,7 +242,7 @@ export default function App() {
                   onClick={() => nav("#/referans/bolum")}
                   className="btn-accent col-span-2 py-2.5"
                 >
-                  📖 New Chapters v5 (ICM · River · Multiway…) →
+                  📖 Book chapters ({NEW_CHAPTERS.length} chapters) →
                 </button>
               </div>
               <QuickReference />

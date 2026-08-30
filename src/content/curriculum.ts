@@ -34,6 +34,22 @@ function parseTableLines(lines: string[]): MdTable {
 
 /** Returns the raw body of the section whose heading starts with "## Heading" (not just up to
  *  the next ## or ###, but the whole ## block; sub ### headings included). */
+/** Every "## Chapter N — Title" H2 in the book (single source of truth: the MD). */
+export function chapterTitles(): { n: number; title: string; short: string }[] {
+  const out: { n: number; title: string; short: string }[] = [];
+  for (const line of raw.split("\n")) {
+    if (!line.startsWith("## ") || line.startsWith("### ")) continue;
+    const m = line.slice(3).trim().match(/^Chapter\s+(\d+)\s*(?:[—-]\s*(.*))?$/);
+    if (!m) continue;
+    const title = stripInline(m[2] || "");
+    // Short label: everything before the first ":", trimmed if long.
+    let short = title.split(":")[0].trim() || `Chapter ${m[1]}`;
+    if (short.length > 44) short = short.slice(0, 41).trimEnd() + "…";
+    out.push({ n: Number(m[1]), title, short });
+  }
+  return out.sort((a, b) => a.n - b.n);
+}
+
 export function sectionBlock(headingStartsWith: string): string {
   const lines = raw.split("\n");
   const out: string[] = [];

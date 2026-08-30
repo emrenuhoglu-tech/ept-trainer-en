@@ -100,8 +100,8 @@ check("BTN→SB fold geçerli", poolsFor("BTN", "SB").flatWide === false);
 // report-card context depend on this parse; if the count drops (parser/filter break), stop the build.
 {
   const s = tenSentences();
-  check("B0 15 cümle parse", s.length === 15, String(s.length));
-  check("B0 c.15 tilt cümlesi var", s.some((x) => x.n === 15 && /tilt/i.test(x.rule)));
+  check("B0 14 cümle parse", s.length === 14, String(s.length));
+  check("B0 c.14 tilt cümlesi var", s.some((x) => x.n === 14 && /tilt/i.test(x.rule)));
 }
 
 // The new v5 chapters (B11–B16) are rendered by ChapterView via sectionBlock.

@@ -1,20 +1,18 @@
 import { useMemo } from "react";
-import { sectionBlock, stripInline } from "../../content/curriculum";
+import { sectionBlock, stripInline, chapterTitles } from "../../content/curriculum";
 
 // Generic chapter viewer — parses any "## Chapter N" section from the raw MD and renders
 // it readably on mobile. Poker content is never HAND-written; it comes straight from
 // content/poker_pocket_book_v5.md (fidelity). B11–B16, added in v5, surface through this
 // view (they never appeared in the app before).
 
-// NAVIGATION labels only (not poker content) — the headings exist verbatim in the book.
-export const NEW_CHAPTERS: { n: number; short: string }[] = [
-  { n: 11, short: "Bloated Pot · Turn · River" },
-  { n: 12, short: "ICM & Final Table" },
-  { n: 13, short: "Multiway Pot" },
-  { n: 14, short: "40–70bb Bridge" },
-  { n: 16, short: "Mental Spine" },
-  { n: 17, short: "WSOP Online ME Day 2 ★" },
-];
+// The nav list is DERIVED from the book (a hand-written list silently drops chapters —
+// it still listed a removed chapter and was missing everything past 17). Label text comes
+// from the book's own H2; poker content is never hand-written here.
+export const NEW_CHAPTERS: { n: number; short: string }[] = chapterTitles().map((c) => ({
+  n: c.n,
+  short: c.short,
+}));
 
 type Block =
   | { k: "h3"; text: string }

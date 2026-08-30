@@ -6,3 +6,6 @@ dist
 .DS_Store
 video/out
 video/public/audio
+
+# selfcheck.entry.ts'ten uretilen derleme ciktisi (npm run selfcheck:build)
+scripts/selfcheck.mjs

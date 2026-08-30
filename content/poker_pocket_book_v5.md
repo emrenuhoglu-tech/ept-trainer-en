@@ -46,9 +46,9 @@ Emre Nuhoğlu
 
 ---
 
-## Chapter 0 — 15 Sentences to Take to the Table
+## Chapter 0 — 14 Sentences to Take to the Table
 
-*Memorize these. When there's no time to think at the table, the decision comes out of these fifteen sentences. The first 11 are the core; 12–15 were written in from v5's tournament execution.*
+*Memorize these. When there's no time to think at the table, the decision comes out of these fourteen sentences. The first 10 are the core; 11–14 were written in from v5's tournament execution.*
 
 1. **One pair in a bloated pot is a bluff-catcher — AA included.**
    This is your root error. Three bustouts came from here.
@@ -77,22 +77,20 @@ Emre Nuhoğlu
 9. **Live, profit comes from wide value 3-bets, not bluff 3-bets.**
    The field doesn't fold. Drop the balance, profit from the imbalance.
 
-10. **Naked AA in PLO is one pair in NLH.**
-    Without nut potential the hand doesn't play a big pot.
 
-11. **At 25–30bb value comes from fold equity, not from completing cards.**
+10. **At 25–30bb value comes from fold equity, not from completing cards.**
     The hand you're looking for isn't one that can develop, but one that's already good: an ace, broadway, a pair. Chapter 5.
 
-12. **The size you bet on the turn is the price of the decision you'll make on the river.**
+11. **The size you bet on the turn is the price of the decision you'll make on the river.**
     The second barrel buys up the luxury of a river check-fold. Chapter 11.
 
-13. **In ICM, a marginal call = the tournament-life version of the root error.**
+12. **In ICM, a marginal call = the tournament-life version of the root error.**
     Risk premium raises the bluff-catcher's pay-off threshold. Chapter 12.
 
-14. **Multiway, one pair is one class below what it is HU.**
+13. **Multiway, one pair is one class below what it is HU.**
     Every additional player multiplies the chance that someone has the nuts. Chapter 13.
 
-15. **A decision made on tilt comes from the wound, not the range — label the wound first.**
+14. **A decision made on tilt comes from the wound, not the range — label the wound first.**
     The other rules only engage once the tilt is noticed. Chapter 16.
 
 ---
