@@ -97,5 +97,17 @@ for (let i = 0; i < clips.length; i++) {
 }
 // Manifest: mevcut anahtarlar (debug/temizlik için).
 fs.writeFileSync(path.join(outDir, "manifest.json"), JSON.stringify(clips.map((c) => c.key)));
+
+// Yetim temizligi: anlatim degisince eski MP3 repoda ve deploy'da birikiyordu (D-audit).
+const live = new Set(clips.map((c) => c.key));
+let orphans = 0;
+for (const f of fs.readdirSync(outDir)) {
+  if (!f.endsWith(".mp3")) continue;
+  if (live.has(f.slice(0, -4))) continue;
+  fs.unlinkSync(path.join(outDir, f));
+  orphans++;
+}
+if (orphans) console.log(`Yetim MP3 silindi: ${orphans}`);
+
 console.log(`\nBitti: yeni ${made}, atlandı ${skip}, hata ${fail}. Toplam ${clips.length} cümle.`);
 if (fail) process.exit(1);
