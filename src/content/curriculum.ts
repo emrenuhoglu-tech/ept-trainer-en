@@ -340,12 +340,3 @@ export function multiwayMatrix(): MdTable | null {
   return tableFromSection("Chapter 13", "13.1");
 }
 
-/** PLO stack modes (Section 15.1): mode × difference from NLH × character. */
-export function ploModes(): MdTable | null {
-  return tableFromSection("Chapter 15", "15.1");
-}
-
-/** PLO SPR × stack-off matrix (Section 15.2): the commit threshold. */
-export function ploStackOff(): MdTable | null {
-  return tableFromSection("Chapter 15", "15.2");
-}

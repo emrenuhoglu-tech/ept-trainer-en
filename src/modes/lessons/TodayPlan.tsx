@@ -3,7 +3,7 @@ import { modules } from "../../data/modules";
 import { MODULE_PRETEST } from "./ColdOpen";
 import { daysUntilEPT, cornermanActive, getStats } from "../../lib/progress";
 import { dueEntries, confidentWrong } from "../../lib/karne";
-import { EVENTS, nextEvent, daysUntil } from "../../data/events";
+import { nextEvent, daysUntil } from "../../data/events";
 
 // Today's plan — lays out the existing signals (countdown, next event, due reviews, weakest
 // concept→module) on a single card. PURE COMPOSITION: NO new poker content; everything
@@ -20,7 +20,6 @@ function moduleForKavram(kavram: string): { id: string; title: string } | null {
   if (!id) {
     if (/^3-?bet|aralik|aralık|boyut/i.test(kavram)) id = "M5";
     else if (/bl[öo]f/i.test(kavram)) id = "M2";
-    else if (/plo/i.test(kavram)) id = "M9";
     else if (/turn|draw/i.test(kavram)) id = "M8";
     else if (/stack|mod|icm/i.test(kavram)) id = "M4";
   }
@@ -35,8 +34,6 @@ export function TodayPlan() {
     const due = dueEntries();
     const cw = confidentWrong();
     const weakK = (cw[0] || due[0])?.kavram; // confident-but-wrong first, else the heaviest due
-    const plo = EVENTS.find((e) => e.format === "PLO");
-    const ploIn = plo ? daysUntil(plo.start, today) : 999;
     const ev = nextEvent(today);
     return {
       today,
@@ -46,13 +43,12 @@ export function TodayPlan() {
       dueCount: due.length,
       topDue: due[0] ?? null,
       studyMod: weakK ? moduleForKavram(weakK) : null,
-      ploRamp: ploIn >= 0 && ploIn <= 6,
       wsopRamp: ev?.id === "wsop",
       practiced: getStats().practicedToday,
     };
   }, []);
 
-  const { today, cornerman, days, ev, dueCount, topDue, studyMod, ploRamp, wsopRamp, practiced } = plan;
+  const { today, cornerman, days, ev, dueCount, topDue, studyMod, wsopRamp, practiced } = plan;
   const evIn = ev ? daysUntil(ev.start, today) : 0;
 
   return (
@@ -72,11 +68,6 @@ export function TodayPlan() {
           </span>
           {evIn > 0 ? ` — ${evIn} days` : evIn === 0 ? " — today!" : " — in progress"}
         </div>
-      )}
-      {ploRamp && (
-        <a href="#/ders/M9" className="mt-1 block text-xs text-accent">
-          ↳ €25K PLO HR is coming up — refresh the M9 PLO fundamentals →
-        </a>
       )}
       {wsopRamp && (
         <a href="#/referans/bolum/17" className="mt-1 block text-xs text-accent">

@@ -87,7 +87,7 @@ const CARDS: BetCard[] = [
     ],
     note: {
       kind: "uyari",
-      text: "Book warning: an overbet = a big value bet, same filter applies — “if no hand weaker than yours will pay on the river, it isn't value” (Chapter 0.2 / Case 3). When unsure, fall back to the book's rule: check-fold a big pot, check-call a small one. In PLO, “two pot bets = stacks in the middle” (Chapter 8).",
+      text: "Book warning: an overbet = a big value bet, same filter applies — “if no hand weaker than yours will pay on the river, it isn't value” (Chapter 0.2 / Case 3). When unsure, fall back to the book's rule: check-fold a big pot, check-call a small one.",
     },
   },
 ];

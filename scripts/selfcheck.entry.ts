@@ -19,8 +19,6 @@ import {
   quickReference,
   bridgeBand,
   multiwayMatrix,
-  ploStackOff,
-  ploModes,
 } from "../src/content/curriculum";
 import { parseRange } from "../src/lib/handgrid";
 import { buildPools } from "../src/modes/quiz/quizEngine";
@@ -108,7 +106,7 @@ check("BTN→SB fold geçerli", poolsFor("BTN", "SB").flatWide === false);
 
 // The new v5 chapters (B11–B16) are rendered by ChapterView via sectionBlock.
 // If one comes back empty or a table vanishes, the new Reference view silently goes blank → stop the build.
-for (const n of [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) {
+for (const n of [11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]) {
   const body = sectionBlock("Chapter " + n);
   check(`C${n} sectionBlock non-empty`, body.trim().length > 0, String(body.length));
   check(`C${n} contains at least one table`, body.includes("|"));
@@ -183,20 +181,17 @@ check("D4-37 squeezeRange parses", squeezeRange() !== null);
   check("D6-55 quickRef Tilt card", !!qr.tilt && qr.tilt.rows.length > 0);
 }
 
-// D1-9 / D1-7 / D6-63: new postflop/PLO/bridge tables parse and the engine yields questions.
+// D1-9 / D1-7: new postflop/bridge tables parse and the engine yields questions.
 check("D1-9 bridgeBand (B14.1) parses", !!bridgeBand() && bridgeBand()!.rows.length > 0);
 check("D1-7 multiwayMatrix (B13.1) parses", !!multiwayMatrix() && multiwayMatrix()!.rows.length > 0);
 check("D1-7 postflop multiway Q generates", !!postflopQuestion("multiway"));
-check("D6-63 ploStackOff (B15.2) parses", !!ploStackOff() && ploStackOff()!.rows.length > 0);
-check("D6-63 ploModes (B15.1) parses", !!ploModes() && ploModes()!.rows.length > 0);
-check("D6-63 postflop PLO Q generates", !!postflopQuestion("plo"));
 
 // D4-38: structural integrity of the 57 scenarios — correct in range, source filled, kavram filled, count fixed.
 {
   const badCorrect = SCENARIOS.filter((s) => !(s.correct >= 0 && s.correct < s.options.length));
   const badSource = SCENARIOS.filter((s) => !s.source || !s.source.trim());
   const badKavram = SCENARIOS.filter((s) => typeof s.kavram !== "string" || !s.kavram);
-  check("D4-38 scenario count 397 (TR=EN parity)", SCENARIOS.length === 397, String(SCENARIOS.length));
+  check("D4-38 scenario count 337 (TR=EN parity)", SCENARIOS.length === 337, String(SCENARIOS.length));
   check("D4-38 all correct within options", badCorrect.length === 0, badCorrect.map((s) => s.q.slice(0, 24)).join("|"));
   check("D4-38 all source filled", badSource.length === 0, String(badSource.length));
   check("D4-38 all kavram filled", badKavram.length === 0, String(badKavram.length));

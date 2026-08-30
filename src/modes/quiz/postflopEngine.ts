@@ -11,7 +11,6 @@ import {
   riverThinValue,
   badRiverCatalog,
   multiwayMatrix,
-  ploStackOff,
   type MdTable,
 } from "../../content/curriculum";
 
@@ -25,7 +24,7 @@ export type PostflopAction =
   | "checkfold"
   | "call"
   | "fold";
-export type PostflopStreet = "turn" | "river" | "multiway" | "plo";
+export type PostflopStreet = "turn" | "river" | "multiway";
 
 export interface PostflopQuestion {
   kavram: string;
@@ -269,45 +268,14 @@ function qMultiway(): PostflopQuestion | null {
   };
 }
 
-function qPloStackOff(): PostflopQuestion | null {
-  const t = ploStackOff();
-  if (!t || t.rows.length === 0) return null;
-  // Column 1 = CAN stack off, column 2 = cannot. Calibration-marked cells are skipped
-  // (the same read-dependent-cell doctrine as the turn/river drills).
-  const crisp: { r: number; c: number }[] = [];
-  for (let r = 0; r < t.rows.length; r++)
-    for (let c = 1; c < t.headers.length; c++) {
-      const cell = t.rows[r][c] || "";
-      if (!cell.trim() || /kalibre|calibrate/i.test(cell)) continue;
-      crisp.push({ r, c });
-    }
-  if (!crisp.length) return null;
-  const p = pick(crisp);
-  const row = t.rows[p.r];
-  const can = p.c === 1;
-  return {
-    kavram: "postflop:plo:stackoff",
-    street: "plo",
-    headline: `PLO — SPR ${row[0]} on the flop. Your hand class: ${row[p.c]}.`,
-    prompt: "Can you stack off in this SPR band?",
-    answers: ["betvalue", "check"],
-    answerLabels: { betvalue: "Yes — stack off (commit)", check: "No — pot control" },
-    correct: can ? "betvalue" : "check",
-    note: `Book 15.2: at SPR ${row[0]} this class sits in the "${t.headers[p.c]}" column. The commit decision is made not on the flop, but on the street where you bloat the pot.`,
-    table: t,
-    highlightRow: p.r,
-    source: "15.2",
-  };
-}
 
 const TURN_GENS = [qTurnBarrel, qDrawTurn];
 const RIVER_GENS = [qRiverSize, qThinValue, qBadRiver];
 
 /** Build one postflop question for the chosen street ("all" mixes turn + river;
- *  "multiway" draws from B13.1, "plo" from B15.2 — turn/river behavior is unchanged). */
+ *  "multiway" draws from B13.1 — turn/river behavior is unchanged). */
 export function postflopQuestion(street: "all" | PostflopStreet): PostflopQuestion | null {
   if (street === "multiway") return qMultiway();
-  if (street === "plo") return qPloStackOff();
   const gens =
     street === "turn" ? TURN_GENS : street === "river" ? RIVER_GENS : [...TURN_GENS, ...RIVER_GENS];
   // shuffle then take the first that yields (so a missing table doesn't dead-end the drill)

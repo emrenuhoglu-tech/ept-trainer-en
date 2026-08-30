@@ -193,20 +193,6 @@ export const WHY_WRONG: Record<string, string[]> = {
       "Thinking the standard B4 range is unchanged is a leak: in this band the 3-bet nears commit and the bluff part collapses.",
       "Suited-connector bluffs are exactly the hand that's cut: it can't continue vs a 4-bet/jam, not suitable in this band.",
     ],
-  "€25K PLO HR, you have 30bb and naked AA. Your NLH reflex says 'under 30bb → Chapter 5 → 3-bet = JAM'. Does that hold in PLO?":
-    [
-      "'30bb jams in any game' is wrong: PLO is pot-limit, no jam — B5's NLH jam/fold reflex is invalid in PLO.",
-      "",
-      "Fold is too much: naked AA is played, but its value is in pre-commit (3-bet→SPR≤1), not postflop; not a fold.",
-      "Limp-call gives up AA's value in PLO: use a pot-raise to lower SPR and pre-commit.",
-    ],
-  "Short PLO (<25bb), you made a pot-raise. What does that mean?":
-    [
-      "It's not 'the continue decision is separate': in short PLO a pot-raise = commit, the remaining stack goes in on the flop.",
-      "",
-      "An info raise isn't cheap: a pot-raise commits the stack; pick your range assuming 'the stack goes in on the flop'.",
-      "'Be ready to fold' contradicts commit: if you pot-raised you must have entered with a strong danglerless hand, no turning back.",
-    ],
   "You busted SHR Day 1, 5 minutes have passed, mild tilt. Does an immediate re-entry (a second bullet into the same event) make sense?":
     [
       "'Get in now' is the series' most expensive decision (B16.1): SHR is one bullet, deciding under tilt = the bankroll-scale root error.",

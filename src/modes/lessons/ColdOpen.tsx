@@ -15,7 +15,6 @@ export const MODULE_PRETEST: Record<string, string> = {
   M6: "4bet-cevap",
   M7: "25-30bb-değer",
   M8: "turn-fold-equity",
-  M9: "plo-aa",
 };
 
 function pickByKavram(kavram: string): Scenario | null {

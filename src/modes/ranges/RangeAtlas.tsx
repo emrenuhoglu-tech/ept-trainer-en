@@ -258,10 +258,6 @@ function KisaBody({ act }: { act: Action }) {
         <Note>
           In this band <b>3-bet = jam</b> (commit). No flatting — not from the SB, not from the BB, not IP (Chapter 5.2).
         </Note>
-        <Note>
-          <b>This card is invalid in PLO</b> — at pot-limit there is no jam, only a pot-raise; at 25–60bb
-          B5 is INVALID (Chapter 15.1).
-        </Note>
         {rows.map((r, i) => (
           <div key={i}>
             <div className="mb-1 text-xs font-semibold text-neutral-300">{r.vs}</div>

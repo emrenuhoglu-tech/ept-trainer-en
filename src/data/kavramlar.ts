@@ -10,7 +10,6 @@ export const DRILL_CONCEPTS = [
   "3bet-aralik",
   "blof-secimi",
   "draw",
-  "plo",
   "boyut",
   "icm",
   "icm-cover",

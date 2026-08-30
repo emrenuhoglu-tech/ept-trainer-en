@@ -1,6 +1,6 @@
 // Lokal Monte-Carlo equity — NESNEL kart matematiği (GTO yorumu değil, board.ts sınıfı).
 // Sim el bitiminde showdown olduysa (villain_cards biliniyor) hero'nun all-in anındaki
-// equity'sini gösterir. Yalnız NLH (2+2 hole); PLO ilk sürümde kapsam dışı → null.
+// equity'sini gösterir. Yalnız NLH (2+2 hole).
 
 interface Card { r: number; s: number } // r: 2..14, s: 0..3
 const RANKS = "23456789TJQKA";
